@@ -1,8 +1,9 @@
 import os
 import tempfile
 
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
+from app.core.security import verify_api_key
 from app.services.voice_service import transcribe_audio
 
 
@@ -13,7 +14,10 @@ router = APIRouter(
 
 
 @router.post("/transcribe")
-async def transcribe(file: UploadFile = File(...)):
+async def transcribe(
+    file: UploadFile = File(...),
+    _key: str = Depends(verify_api_key),
+):
 
     allowed_types = {
         "audio/wav",

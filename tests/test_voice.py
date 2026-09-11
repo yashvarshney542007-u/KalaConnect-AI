@@ -2,7 +2,9 @@ import os
 from fastapi.testclient import TestClient
 from app.main import app
 
-client = TestClient(app)
+AUTH_KEY = os.getenv("KALACONNECT_AI_API_KEY", "test-key-for-unit-tests-only")
+os.environ.setdefault("KALACONNECT_AI_API_KEY", AUTH_KEY)
+client = TestClient(app, headers={"Authorization": f"Bearer {os.environ['KALACONNECT_AI_API_KEY']}"})
 
 
 def test_transcribe_unsupported_file_type():

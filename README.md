@@ -11,14 +11,14 @@ AI microservice for the KalaConnect platform — Voice-to-text transcription and
 
 ## API Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET  | `/` | Service status |
-| GET  | `/health` | Health check |
-| POST | `/api/voice/transcribe` | Transcribe audio (WAV, MP3, OGG, WEBM, MP4) |
-| POST | `/api/vision/analyze` | Analyze craft image (JPG, PNG, WEBP, max 10 MB) |
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| GET  | `/` | None | Service status |
+| GET  | `/health` | None | Health check |
+| POST | `/api/voice/transcribe` | Bearer `<API_KEY>` | Transcribe audio (WAV, MP3, OGG, WEBM, MP4) |
+| POST | `/api/vision/analyze` | Bearer `<API_KEY>` | Analyze craft image (JPG, PNG, WEBP, max 10 MB) |
 
-See [`docs/AI_API.md`](docs/AI_API.md) for full request/response documentation.
+See [`docs/AI_API.md`](docs/AI_API.md) for full request/response documentation and authentication details.
 
 ## Running Locally
 
@@ -30,7 +30,12 @@ source venv/bin/activate             # macOS / Linux
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Start the service
+# 3. Configure environment variables
+# Copy .env.example to .env and set your API key
+copy .env.example .env               # Windows
+# cp .env.example .env               # macOS / Linux
+
+# 4. Start the service
 python -m uvicorn app.main:app --host 127.0.0.1 --port 8000 --reload
 ```
 
@@ -57,6 +62,8 @@ app/
 ├── api/
 │   ├── voice.py          # POST /api/voice/transcribe
 │   └── vision.py         # POST /api/vision/analyze
+├── core/
+│   └── security.py       # API key authentication & verification
 ├── models/
 │   ├── stt_model.py      # faster-whisper singleton
 │   └── vision_model.py   # SmolVLM singleton (lazy-loaded)
@@ -66,7 +73,11 @@ app/
 └── main.py               # FastAPI app
 
 tests/
+├── test_app.py
+├── test_auth.py          # Comprehensive authentication test suite
 ├── test_health.py
+├── test_vision.py
+├── test_voice.py
 ├── voice/
 │   └── test_voice_api.py
 └── vision/

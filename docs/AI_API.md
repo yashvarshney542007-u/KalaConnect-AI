@@ -36,13 +36,52 @@ http://127.0.0.1:8000
 
 ---
 
+## Authentication
+
+All AI processing endpoints require an API key passed in the `Authorization` header as a Bearer token:
+
+```http
+Authorization: Bearer <API_KEY>
+```
+
+The API key is configured via the `KALACONNECT_AI_API_KEY` environment variable (loaded from `.env` via `python-dotenv`).
+
+| Endpoint | Access | Required Header |
+|----------|--------|-----------------|
+| `GET /` | Public | None |
+| `GET /health` | Public | None |
+| `POST /api/voice/transcribe` | Protected | `Authorization: Bearer <API_KEY>` |
+| `POST /api/vision/analyze` | Protected | `Authorization: Bearer <API_KEY>` |
+
+### Authentication Errors (401 Unauthorized)
+
+If the `Authorization` header is missing, malformed, or contains an invalid key, the service returns `HTTP 401`:
+
+```json
+{
+  "detail": "Authentication required. Provide a valid Authorization: Bearer <API_KEY> header."
+}
+```
+
+or:
+
+```json
+{
+  "detail": "Invalid API key."
+}
+```
+
+The API key is never revealed in error responses.
+
+---
+
 ## Endpoints
 
 ---
 
 ### GET /health
 
-Returns the health status of the AI service.
+Returns the health status of the AI service. No authentication required.
 
 **Request**
 
@@ -112,17 +151,23 @@ Transcribes an audio file to text using faster-whisper (Whisper Small).
 ```bash
 curl -X POST http://127.0.0.1:8000/api/voice/transcribe \
   -H "accept: application/json" \
+  -H "Authorization: Bearer <API_KEY>" \
   -F "file=@recording.wav"
 ```
 
 **Example Python**
 
 ```python
+import os
 import requests
+
+api_key = os.getenv("KALACONNECT_AI_API_KEY", "your-api-key")
+headers = {"Authorization": f"Bearer {api_key}"}
 
 with open("recording.wav", "rb") as f:
     response = requests.post(
         "http://127.0.0.1:8000/api/voice/transcribe",
+        headers=headers,
         files={"file": ("recording.wav", f, "audio/wav")},
     )
 print(response.json())
@@ -175,17 +220,23 @@ Analyzes a craft or artisan product image using SmolVLM-256M-Instruct.
 ```bash
 curl -X POST http://127.0.0.1:8000/api/vision/analyze \
   -H "accept: application/json" \
+  -H "Authorization: Bearer <API_KEY>" \
   -F "file=@pottery.jpg"
 ```
 
 **Example Python**
 
 ```python
+import os
 import requests
+
+api_key = os.getenv("KALACONNECT_AI_API_KEY", "your-api-key")
+headers = {"Authorization": f"Bearer {api_key}"}
 
 with open("pottery.jpg", "rb") as f:
     response = requests.post(
         "http://127.0.0.1:8000/api/vision/analyze",
+        headers=headers,
         files={"file": ("pottery.jpg", f, "image/jpeg")},
     )
 print(response.json())

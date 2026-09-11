@@ -1,8 +1,9 @@
 import os
 import tempfile
 
-from fastapi import APIRouter, UploadFile, File, HTTPException
+from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
+from app.core.security import verify_api_key
 from app.services.vision_service import analyze_image
 
 router = APIRouter(
@@ -21,7 +22,10 @@ ALLOWED_IMAGE_TYPES = {
 
 
 @router.post("/analyze")
-def analyze(file: UploadFile = File(...)):
+def analyze(
+    file: UploadFile = File(...),
+    _key: str = Depends(verify_api_key),
+):
     if file.content_type not in ALLOWED_IMAGE_TYPES:
         raise HTTPException(
             status_code=400,
