@@ -411,3 +411,404 @@
   color: var(--text-muted);
   margin: 0;
 }
+
+/* ==========================================================================
+   CHECKOUT MODAL (ADDRESS & MULTI-PAYMENT GATEWAY)
+   ========================================================================== */
+.checkout-modal-container {
+  max-width: 780px;
+  width: 100%;
+  padding: 24px 28px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.checkout-header {
+  border-bottom: 1.5px solid var(--border-subtle);
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+}
+
+.checkout-header h3 {
+  font-size: 1.5rem;
+  font-family: var(--font-serif);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.checkout-header p {
+  font-size: 0.86rem;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.checkout-main-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .checkout-main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-section-box {
+  background: white;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.checkout-section-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #F0ECE6;
+}
+
+.checkout-section-title span.step-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  font-size: 0.76rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+/* Address Form Grid */
+.address-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.address-form-grid .full-span {
+  grid-column: 1 / -1;
+}
+
+.form-group-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group-item label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group-item input,
+.form-group-item select {
+  padding: 10px 12px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  outline: none;
+  background: #FCFAF8;
+  color: var(--text-main);
+  transition: all var(--transition-fast);
+}
+
+.form-group-item input:focus,
+.form-group-item select:focus {
+  border-color: var(--primary);
+  background: white;
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* Payment Selector Tabs */
+.payment-tabs-bar {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: #F3EFE9;
+  padding: 3px;
+  border-radius: var(--radius-pill);
+  gap: 3px;
+  margin-bottom: 16px;
+}
+
+.payment-tab-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 8px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: transparent;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.payment-tab-btn.active {
+  background: white;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Bank Selection Badges */
+.bank-selection-header {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.bank-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.bank-badge-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: #FAFAF9;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+}
+
+.bank-badge-btn:hover {
+  border-color: #D6CCC2;
+  background: white;
+}
+
+.bank-badge-btn.active {
+  border-color: var(--primary);
+  background: #FFF9F5;
+  box-shadow: 0 0 0 2px var(--primary-glow);
+}
+
+.bank-logo-box {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: white;
+  flex-shrink: 0;
+}
+
+.bank-badge-name {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+/* Specific Bank Brand Colors */
+.bank-hdfc { background: #004C8F; }
+.bank-sbi { background: #1C3F94; }
+.bank-icici { background: #B83A20; }
+.bank-axis { background: #97144D; }
+.bank-kotak { background: #ED1C24; }
+.bank-pnb { background: #A21035; }
+.bank-bob { background: #F26522; }
+
+/* UPI Selector Options */
+.upi-apps-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.upi-app-chip {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1.5px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  background: #FAFAF9;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.upi-app-chip:hover {
+  border-color: #D6CCC2;
+  background: white;
+}
+
+.upi-app-chip.active {
+  border-color: #107B40;
+  background: #F0FDF4;
+  color: #107B40;
+}
+
+/* Cash on Delivery Conditional Box */
+.cod-details-box {
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: #FAF8F5;
+  border: 1px dashed #D6CCC2;
+  margin-bottom: 10px;
+}
+
+.cod-alert-disabled {
+  background: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  color: #991B1B;
+}
+
+.cod-alert-disabled h6 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: #B91C1C;
+}
+
+.cod-alert-disabled p {
+  font-size: 0.82rem;
+  margin: 0;
+  line-height: 1.4;
+  color: #7F1D1D;
+}
+
+.cod-allowed-box {
+  background: #F0FDF4;
+  border: 1.5px solid #86EFAC;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  color: #166534;
+}
+
+.cod-allowed-box h6 {
+  font-size: 0.92rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Sidebar Order Summary */
+.checkout-summary-sidebar {
+  background: #FAF8F5;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  height: fit-content;
+}
+
+.checkout-summary-sidebar h4 {
+  font-size: 1.05rem;
+  font-family: var(--font-serif);
+  color: var(--secondary);
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 8px;
+  margin-bottom: 14px;
+}
+
+.checkout-mini-items {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.checkout-mini-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+}
+
+.checkout-mini-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.checkout-mini-item-info {
+  flex: 1;
+}
+
+.checkout-mini-item-info h6 {
+  font-size: 0.82rem;
+  margin: 0;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 140px;
+}
+
+.checkout-mini-item-info span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.btn-confirm-pay {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--primary);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(194, 89, 39, 0.35);
+  margin-top: 16px;
+}
+
+.btn-confirm-pay:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(194, 89, 39, 0.45);
+}
+
+.btn-confirm-pay:disabled {
+  background: #A8A29E;
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
