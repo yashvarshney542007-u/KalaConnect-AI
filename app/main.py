@@ -1,6 +1,16 @@
+import sys
+from pathlib import Path
+
+# Ensure project root is in sys.path so direct execution (e.g. IDE Run button) works
+project_root = Path(__file__).resolve().parent.parent
+if str(project_root) not in sys.path:
+    sys.path.insert(0, str(project_root))
+
+import uvicorn
 from fastapi import FastAPI
 
 from app.api.voice import router as voice_router
+from app.api.vision import router as vision_router
 
 
 app = FastAPI(
@@ -26,3 +36,8 @@ def health():
 
 
 app.include_router(voice_router)
+app.include_router(vision_router)
+
+
+if __name__ == "__main__":
+    uvicorn.run("app.main:app", host="127.0.0.1", port=8000, reload=True)
