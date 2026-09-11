@@ -1,5 +1,8 @@
 from fastapi import FastAPI
 
+from app.api.voice import router as voice_router
+
+
 app = FastAPI(
     title="KalaConnect AI",
     description="AI services for KalaConnect - Image, Voice and Speech AI",
@@ -20,3 +23,6 @@ def health():
         "status": "ok",
         "service": "kalaconnect-ai"
     }
+
+
+app.include_router(voice_router)

@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# IDE
+.vscode/
+.idea/
+
+# Model files
+*.bin
+*.safetensors
+*.pt
+*.pth
+*.onnx
+
+# Cache
+.cache/
+huggingface_cache/
+
+# Audio generated locally
+*.wav
+*.mp3
+*.flac
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
