@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Publish Product - Kala Connect AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy:#022D69;
+  --orange:#F98509;
+  --green:#04702D;
+  --terracotta:#D04F02;
+  --bg:#FFFDF8;
+  --surface:#FFFFFF;
+  --text:#1E252C;
+  --muted:#68717A;
+  --border:#E7DFD2;
+  --shadow:0 14px 34px rgba(31,42,55,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+
+  font-family:
+  "DM Sans",
+  "Noto Sans Devanagari",
+  sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar{
+
+  min-height:92px;
+
+  padding:0 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:20px;
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  background:rgba(255,253,248,.96);
+
+  border-bottom:1px solid var(--border);
+
+  backdrop-filter:blur(12px);
+}
+
+.brand{
+
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+}
+
+.brand img{
+
+  width:58px;
+  height:58px;
+
+  object-fit:contain;
+
+  padding:4px;
+
+  border:1px solid var(--border);
+
+  border-radius:16px;
+
+  background:#fff;
+}
+
+.brand strong{
+
+  display:block;
+
+  color:var(--navy);
+
+  font-size:21px;
+}
+
+.brand small{
+
+  display:block;
+
+  margin-top:4px;
+
+  color:var(--muted);
+
+  font-size:12px;
+}
+
+.header-actions{
+
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.lang-btn,
+.top-back{
+
+  min-height:44px;
+
+  padding:9px 15px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-weight:600;
+}
+
+.lang-btn{
+
+  border:none;
+
+  background:#EEF4F9;
+
+  color:var(--navy);
+}
+
+.top-back{
+
+  border:1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--navy);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.container{
+
+  width:calc(100% - 80px);
+
+  max-width:1100px;
+
+  margin:0 auto;
+}
+
+main{
+
+  padding:30px 0 55px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-head{
+
+  margin-bottom:24px;
+}
+
+.step{
+
+  display:inline-flex;
+
+  padding:6px 11px;
+
+  margin-bottom:10px;
+
+  border-radius:999px;
+
+  background:#EEF4F9;
+
+  color:var(--navy);
+
+  font-size:12px;
+
+  font-weight:700;
+}
+
+.page-head h1{
+
+  color:var(--navy);
+
+  font-size:clamp(34px,4vw,46px);
+
+  line-height:1.08;
+
+  letter-spacing:-.7px;
+}
+
+.page-head p{
+
+  max-width:700px;
+
+  margin-top:9px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  line-height:1.6;
+}
+
+
+/* =========================
+   REVIEW GRID
+========================= */
+
+.publish-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  minmax(0,.9fr)
+  minmax(0,1.1fr);
+
+  gap:20px;
+
+  align-items:start;
+}
+
+.panel{
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+}
+
+
+/* IMAGE */
+
+.image-panel{
+
+  padding:20px;
+}
+
+.image-frame{
+
+  width:100%;
+
+  aspect-ratio:4 / 3;
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:#F4F0E9;
+
+  border:1px solid var(--border);
+}
+
+.image-frame img{
+
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.image-caption{
+
+  margin-top:14px;
+}
+
+.image-caption h3{
+
+  color:var(--navy);
+
+  font-size:18px;
+}
+
+.image-caption p{
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.5;
+}
+
+
+/* DETAILS */
+
+.details-panel{
+
+  padding:24px;
+}
+
+.details-title{
+
+  display:flex;
+
+  align-items:flex-start;
+  justify-content:space-between;
+
+  gap:15px;
+
+  margin-bottom:20px;
+}
+
+.details-title h2{
+
+  color:var(--navy);
+
+  font-size:24px;
+}
+
+.ready-chip{
+
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  background:#EEF8F0;
+
+  color:var(--green);
+
+  font-size:12px;
+
+  font-weight:700;
+
+  white-space:nowrap;
+}
+
+.summary-list{
+
+  display:grid;
+
+  gap:12px;
+}
+
+.summary-item{
+
+  padding:15px 16px;
+
+  border:1px solid var(--border);
+
+  border-radius:15px;
+
+  background:#fff;
+}
+
+.summary-item small{
+
+  display:block;
+
+  margin-bottom:5px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+.summary-item strong{
+
+  display:block;
+
+  color:var(--text);
+
+  font-size:16px;
+
+  line-height:1.5;
+
+  overflow-wrap:anywhere;
+}
+
+.description-value{
+
+  white-space:pre-wrap;
+
+  font-weight:500 !important;
+}
+
+
+/* PRICE */
+
+.price-box{
+
+  margin-top:18px;
+
+  padding:20px;
+
+  border-radius:18px;
+
+  background:#F2FAF4;
+
+  border:1px solid #CEE6D4;
+}
+
+.price-box small{
+
+  display:block;
+
+  margin-bottom:6px;
+
+  color:var(--muted);
+
+  font-size:12px;
+
+  font-weight:600;
+}
+
+.price-value{
+
+  color:var(--green);
+
+  font-size:30px;
+
+  font-weight:700;
+}
+
+
+/* NOTE */
+
+.confirm-note{
+
+  margin-top:18px;
+
+  padding:13px 14px;
+
+  border-left:3px solid var(--orange);
+
+  border-radius:10px;
+
+  background:#FFF9F1;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.55;
+}
+
+
+/* BUTTONS */
+
+.footer-actions{
+
+  margin-top:22px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.btn{
+
+  min-height:52px;
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-size:15px;
+
+  font-weight:600;
+}
+
+.btn-secondary{
+
+  border:1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--navy);
+}
+
+.btn-primary{
+
+  border:none;
+
+  background:var(--navy);
+
+  color:#fff;
+
+  padding-left:28px;
+  padding-right:28px;
+
+  box-shadow:
+  0 9px 20px
+  rgba(2,45,105,.15);
+}
+
+
+/* =========================
+   SUCCESS STATE
+========================= */
+
+.success-state{
+
+  display:none;
+
+  min-height:460px;
+
+  padding:50px 28px;
+
+  align-items:center;
+  justify-content:center;
+
+  text-align:center;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+
+  border-radius:26px;
+
+  box-shadow:var(--shadow);
+}
+
+.success-state.show{
+
+  display:flex;
+}
+
+.success-content{
+
+  max-width:540px;
+
+  margin:0 auto;
+}
+
+.success-icon{
+
+  width:78px;
+  height:78px;
+
+  margin:0 auto 18px;
+
+  display:grid;
+  place-items:center;
+
+  border-radius:24px;
+
+  background:#EEF8F0;
+
+  color:var(--green);
+
+  font-size:38px;
+
+  font-weight:700;
+}
+
+.success-content h2{
+
+  color:var(--navy);
+
+  font-size:31px;
+}
+
+.success-content p{
+
+  margin-top:10px;
+
+  color:var(--muted);
+
+  font-size:15px;
+
+  line-height:1.6;
+}
+
+.success-price{
+
+  display:inline-flex;
+
+  margin-top:18px;
+
+  padding:10px 16px;
+
+  border-radius:999px;
+
+  background:#F2FAF4;
+
+  color:var(--green);
+
+  font-size:18px;
+
+  font-weight:700;
+}
+
+.dashboard-btn{
+
+  margin-top:24px;
+
+  min-height:52px;
+
+  padding:12px 25px;
+
+  border:none;
+
+  border-radius:999px;
+
+  background:var(--navy);
+
+  color:#fff;
+
+  cursor:pointer;
+
+  font-size:16px;
+
+  font-weight:600;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:850px){
+
+  .publish-grid{
+
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:680px){
+
+  .topbar{
+
+    min-height:80px;
+
+    padding:0 14px;
+  }
+
+  .brand img{
+
+    width:52px;
+    height:52px;
+  }
+
+  .brand strong{
+
+    font-size:17px;
+  }
+
+  .brand small{
+
+    font-size:10px;
+  }
+
+  .top-back{
+
+    display:none;
+  }
+
+  .container{
+
+    width:calc(100% - 28px);
+  }
+
+  main{
+
+    padding-top:22px;
+  }
+
+  .image-panel,
+  .details-panel{
+
+    padding:18px;
+  }
+
+  .details-title{
+
+    flex-direction:column;
+  }
+
+  .footer-actions{
+
+    flex-direction:column-reverse;
+  }
+
+  .btn{
+
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+  <a
+    href="artisan-dashboard.html"
+    class="brand"
+  >
+
+    <img
+      src="logo.jpeg"
+      alt="Kala Connect AI Logo"
+    >
+
+    <div>
+
+      <strong id="brandName">
+        Kala Connect AI
+      </strong>
+
+      <small>
+        Artisan Market and Space AI
+      </small>
+
+    </div>
+
+  </a>
+
+
+  <div class="header-actions">
+
+    <button
+      class="lang-btn"
+      id="languageBtn"
+      type="button"
+    >
+      🌐 EN
+    </button>
+
+    <button
+      class="top-back"
+      id="topBackBtn"
+      type="button"
+    >
+      Back
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="container">
+
+
+  <!-- NORMAL PUBLISH VIEW -->
+
+  <div id="publishView">
+
+
+    <section class="page-head">
+
+      <span
+        class="step"
+        id="stepText"
+      >
+        Step 4 · Ready to Publish
+      </span>
+
+      <h1 id="pageTitle">
+        Review & Publish
+      </h1>
+
+      <p id="pageText">
+        Check the final product details and selling price before publishing your product.
+      </p>
+
+    </section>
+
+
+    <section class="publish-grid">
+
+
+      <!-- IMAGE -->
+
+      <div class="panel image-panel">
+
+        <div class="image-frame">
+
+          <img
+            id="productImage"
+            src=""
+            alt="Product preview"
+          >
+
+        </div>
+
+        <div class="image-caption">
+
+          <h3 id="imageTitle">
+            Product Image
+          </h3>
+
+          <p id="imageText">
+            This is the image customers will see with your product.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- DETAILS -->
+
+      <div class="panel details-panel">
+
+        <div class="details-title">
+
+          <h2 id="detailsTitle">
+            Final Product Details
+          </h2>
+
+          <span
+            class="ready-chip"
+            id="readyChip"
+          >
+            Ready to publish
+          </span>
+
+        </div>
+
+
+        <div class="summary-list">
+
+
+          <div class="summary-item">
+
+            <small id="nameLabel">
+              Product Name
+            </small>
+
+            <strong id="productName">
+              Not provided
+            </strong>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <small id="craftLabel">
+              Craft
+            </small>
+
+            <strong id="craftValue">
+              Not provided
+            </strong>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <small id="materialLabel">
+              Material
+            </small>
+
+            <strong id="materialValue">
+              Not provided
+            </strong>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <small id="techniqueLabel">
+              Technique
+            </small>
+
+            <strong id="techniqueValue">
+              Not provided
+            </strong>
+
+          </div>
+
+
+          <div class="summary-item">
+
+            <small id="descriptionLabel">
+              Product Description
+            </small>
+
+            <strong
+              id="descriptionValue"
+              class="description-value"
+            >
+              Not provided
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="price-box">
+
+          <small id="priceLabel">
+            Final Selling Price
+          </small>
+
+          <div
+            class="price-value"
+            id="finalPriceValue"
+          >
+            ₹0
+          </div>
+
+        </div>
+
+
+        <div
+          class="confirm-note"
+          id="confirmNote"
+        >
+          After publishing, this product will be added to your listed products.
+        </div>
+
+
+        <div class="footer-actions">
+
+          <button
+            type="button"
+            class="btn btn-secondary"
+            id="backBtn"
+          >
+            ← Back to Price
+          </button>
+
+          <button
+            type="button"
+            class="btn btn-primary"
+            id="publishBtn"
+          >
+            Publish Product
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+  </div>
+
+
+
+  <!-- SUCCESS VIEW -->
+
+  <section
+    class="success-state"
+    id="successState"
+  >
+
+    <div class="success-content">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h2 id="successTitle">
+        Product Published Successfully
+      </h2>
+
+      <p id="successText">
+        Your product has been added to your listed products and is ready to appear in your artisan workspace.
+      </p>
+
+      <div
+        class="success-price"
+        id="successPrice"
+      >
+        ₹0
+      </div>
+
+      <br>
+
+      <button
+        class="dashboard-btn"
+        id="dashboardBtn"
+        type="button"
+      >
+        Go to Dashboard
+      </button>
+
+    </div>
+
+  </section>
+
+
+</div>
+
+</main>
+
+
+<script>
+
+
+/* =====================================
+   LOAD DRAFT
+===================================== */
+
+let draft = {};
+
+try{
+
+  draft = JSON.parse(
+    localStorage.getItem(
+      "kalaConnectDraftProduct"
+    ) || "{}"
+  );
+
+}catch(error){
+
+  console.error(
+    "Could not load draft:",
+    error
+  );
+
+  draft = {};
+}
+
+
+/* =====================================
+   LANGUAGE
+===================================== */
+
+let currentLanguage =
+  localStorage.getItem(
+    "kalaConnectLanguage"
+  ) || "en";
+
+
+const translations = {
+
+  en:{
+
+    brand:
+    "Kala Connect AI",
+
+    step:
+    "Step 4 · Ready to Publish",
+
+    title:
+    "Review & Publish",
+
+    text:
+    "Check the final product details and selling price before publishing your product.",
+
+    imageTitle:
+    "Product Image",
+
+    imageText:
+    "This is the image customers will see with your product.",
+
+    detailsTitle:
+    "Final Product Details",
+
+    ready:
+    "Ready to publish",
+
+    productName:
+    "Product Name",
+
+    craft:
+    "Craft",
+
+    material:
+    "Material",
+
+    technique:
+    "Technique",
+
+    description:
+    "Product Description",
+
+    price:
+    "Final Selling Price",
+
+    missing:
+    "Not provided",
+
+    note:
+    "After publishing, this product will be added to your listed products.",
+
+    back:
+    "← Back to Price",
+
+    topBack:
+    "Back",
+
+    publish:
+    "Publish Product",
+
+    successTitle:
+    "Product Published Successfully",
+
+    successText:
+    "Your product has been added to your listed products and is ready to appear in your artisan workspace.",
+
+    dashboard:
+    "Go to Dashboard"
+
+  },
+
+
+  hi:{
+
+    brand:
+    "कला Connect AI",
+
+    step:
+    "चरण 4 · प्रकाशित करने के लिए तैयार",
+
+    title:
+    "जाँचें और प्रकाशित करें",
+
+    text:
+    "उत्पाद प्रकाशित करने से पहले अंतिम विवरण और विक्रय मूल्य जाँचें।",
+
+    imageTitle:
+    "उत्पाद की तस्वीर",
+
+    imageText:
+    "ग्राहकों को आपके उत्पाद के साथ यही तस्वीर दिखाई जाएगी।",
+
+    detailsTitle:
+    "अंतिम उत्पाद विवरण",
+
+    ready:
+    "प्रकाशित करने के लिए तैयार",
+
+    productName:
+    "उत्पाद का नाम",
+
+    craft:
+    "कला",
+
+    material:
+    "सामग्री",
+
+    technique:
+    "तकनीक",
+
+    description:
+    "उत्पाद विवरण",
+
+    price:
+    "अंतिम विक्रय मूल्य",
+
+    missing:
+    "जानकारी उपलब्ध नहीं",
+
+    note:
+    "प्रकाशित करने के बाद यह उत्पाद आपके सूचीबद्ध उत्पादों में जुड़ जाएगा।",
+
+    back:
+    "← मूल्य पर वापस",
+
+    topBack:
+    "वापस",
+
+    publish:
+    "उत्पाद प्रकाशित करें",
+
+    successTitle:
+    "उत्पाद सफलतापूर्वक प्रकाशित हुआ",
+
+    successText:
+    "आपका उत्पाद सूचीबद्ध उत्पादों में जोड़ दिया गया है और अब आपके कारीगर कार्यक्षेत्र में दिखाई देने के लिए तैयार है।",
+
+    dashboard:
+    "डैशबोर्ड पर जाएँ"
+
+  }
+
+};
+
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const brandName =
+  document.getElementById(
+    "brandName"
+  );
+
+const languageBtn =
+  document.getElementById(
+    "languageBtn"
+  );
+
+const stepText =
+  document.getElementById(
+    "stepText"
+  );
+
+const pageTitle =
+  document.getElementById(
+    "pageTitle"
+  );
+
+const pageText =
+  document.getElementById(
+    "pageText"
+  );
+
+const imageTitle =
+  document.getElementById(
+    "imageTitle"
+  );
+
+const imageText =
+  document.getElementById(
+    "imageText"
+  );
+
+const detailsTitle =
+  document.getElementById(
+    "detailsTitle"
+  );
+
+const readyChip =
+  document.getElementById(
+    "readyChip"
+  );
+
+const nameLabel =
+  document.getElementById(
+    "nameLabel"
+  );
+
+const craftLabel =
+  document.getElementById(
+    "craftLabel"
+  );
+
+const materialLabel =
+  document.getElementById(
+    "materialLabel"
+  );
+
+const techniqueLabel =
+  document.getElementById(
+    "techniqueLabel"
+  );
+
+const descriptionLabel =
+  document.getElementById(
+    "descriptionLabel"
+  );
+
+const priceLabel =
+  document.getElementById(
+    "priceLabel"
+  );
+
+const confirmNote =
+  document.getElementById(
+    "confirmNote"
+  );
+
+const backBtn =
+  document.getElementById(
+    "backBtn"
+  );
+
+const topBackBtn =
+  document.getElementById(
+    "topBackBtn"
+  );
+
+const publishBtn =
+  document.getElementById(
+    "publishBtn"
+  );
+
+const successTitle =
+  document.getElementById(
+    "successTitle"
+  );
+
+const successText =
+  document.getElementById(
+    "successText"
+  );
+
+const dashboardBtn =
+  document.getElementById(
+    "dashboardBtn"
+  );
+
+
+/* =====================================
+   PRODUCT VALUES
+===================================== */
+
+const productNameValue =
+  document.getElementById(
+    "productName"
+  );
+
+const craftValue =
+  document.getElementById(
+    "craftValue"
+  );
+
+const materialValue =
+  document.getElementById(
+    "materialValue"
+  );
+
+const techniqueValue =
+  document.getElementById(
+    "techniqueValue"
+  );
+
+const descriptionValue =
+  document.getElementById(
+    "descriptionValue"
+  );
+
+const finalPriceValue =
+  document.getElementById(
+    "finalPriceValue"
+  );
+
+const successPrice =
+  document.getElementById(
+    "successPrice"
+  );
+
+const productImage =
+  document.getElementById(
+    "productImage"
+  );
+
+
+/* =====================================
+   IMAGE
+===================================== */
+
+if(draft.imageDataUrl){
+
+  productImage.src =
+    draft.imageDataUrl;
+
+}else if(draft.imagePreview){
+
+  productImage.src =
+    draft.imagePreview;
+
+}else if(draft.image){
+
+  productImage.src =
+    draft.image;
+
+}else{
+
+  productImage.src =
+    "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=85";
+
+}
+
+
+/* =====================================
+   RENDER PRODUCT
+===================================== */
+
+function renderProduct(){
+
+  const text =
+    translations[currentLanguage];
+
+  productNameValue.textContent =
+    draft.productName ||
+    draft.name ||
+    text.missing;
+
+  craftValue.textContent =
+    draft.craft ||
+    text.missing;
+
+  materialValue.textContent =
+    draft.material ||
+    text.missing;
+
+  techniqueValue.textContent =
+    draft.technique ||
+    text.missing;
+
+  descriptionValue.textContent =
+    draft.description ||
+    text.missing;
+
+
+  const price =
+    Number(
+      draft.finalSellingPrice ||
+      draft.recommendedPrice ||
+      0
+    );
+
+
+  finalPriceValue.textContent =
+    `₹${price.toLocaleString("en-IN")}`;
+
+  successPrice.textContent =
+    `₹${price.toLocaleString("en-IN")}`;
+
+}
+
+
+/* =====================================
+   APPLY LANGUAGE
+===================================== */
+
+function applyLanguage(){
+
+  const text =
+    translations[currentLanguage];
+
+  document.documentElement.lang =
+    currentLanguage;
+
+  brandName.textContent =
+    text.brand;
+
+  stepText.textContent =
+    text.step;
+
+  pageTitle.textContent =
+    text.title;
+
+  pageText.textContent =
+    text.text;
+
+  imageTitle.textContent =
+    text.imageTitle;
+
+  imageText.textContent =
+    text.imageText;
+
+  detailsTitle.textContent =
+    text.detailsTitle;
+
+  readyChip.textContent =
+    text.ready;
+
+  nameLabel.textContent =
+    text.productName;
+
+  craftLabel.textContent =
+    text.craft;
+
+  materialLabel.textContent =
+    text.material;
+
+  techniqueLabel.textContent =
+    text.technique;
+
+  descriptionLabel.textContent =
+    text.description;
+
+  priceLabel.textContent =
+    text.price;
+
+  confirmNote.textContent =
+    text.note;
+
+  backBtn.textContent =
+    text.back;
+
+  topBackBtn.textContent =
+    text.topBack;
+
+  publishBtn.textContent =
+    text.publish;
+
+  successTitle.textContent =
+    text.successTitle;
+
+  successText.textContent =
+    text.successText;
+
+  dashboardBtn.textContent =
+    text.dashboard;
+
+  languageBtn.textContent =
+    currentLanguage === "en"
+      ? "🌐 EN"
+      : "🌐 HI";
+
+  renderProduct();
+
+}
+
+
+applyLanguage();
+
+
+/* =====================================
+   LANGUAGE TOGGLE
+===================================== */
+
+languageBtn.onclick = () => {
+
+  currentLanguage =
+    currentLanguage === "en"
+      ? "hi"
+      : "en";
+
+  localStorage.setItem(
+    "kalaConnectLanguage",
+    currentLanguage
+  );
+
+  applyLanguage();
+
+};
+
+
+/* =====================================
+   BACK
+===================================== */
+
+function goBack(){
+
+  window.location.href =
+    "artisan-price-prediction.html";
+
+}
+
+backBtn.onclick =
+  goBack;
+
+topBackBtn.onclick =
+  goBack;
+
+
+/* =====================================
+   PUBLISH
+===================================== */
+
+publishBtn.onclick = () => {
+
+
+  const finalPrice =
+    Number(
+      draft.finalSellingPrice ||
+      draft.recommendedPrice ||
+      0
+    );
+
+
+  if(
+    !draft.productName ||
+    !draft.craft ||
+    !draft.material ||
+    !draft.technique ||
+    !draft.description ||
+    finalPrice <= 0
+  ){
+
+    alert(
+      currentLanguage === "hi"
+        ? "कुछ उत्पाद जानकारी अधूरी है। कृपया वापस जाकर सभी विवरण पूरा करें।"
+        : "Some product information is incomplete. Please go back and complete all details."
+    );
+
+    return;
+  }
+
+
+  let products = [];
+
+  try{
+
+    products = JSON.parse(
+      localStorage.getItem(
+        "kalaConnectProducts"
+      ) || "[]"
+    );
+
+  }catch(error){
+
+    products = [];
+
+  }
+
+
+  const publishedProduct = {
+
+    id:
+      Date.now(),
+
+    productName:
+      draft.productName,
+
+    craft:
+      draft.craft,
+
+    material:
+      draft.material,
+
+    technique:
+      draft.technique,
+
+    description:
+      draft.description,
+
+    imageDataUrl:
+      draft.imageDataUrl || "",
+
+    imagePreview:
+      draft.imagePreview || "",
+
+    image:
+      draft.image || "",
+
+    finalSellingPrice:
+      finalPrice,
+
+    minimumPrice:
+      draft.minimumPrice || null,
+
+    maximumPrice:
+      draft.maximumPrice || null,
+
+    recommendedPrice:
+      draft.recommendedPrice || null,
+
+    status:
+      "Listed",
+
+    publishedAt:
+      new Date().toISOString()
+
+  };
+
+
+  products.unshift(
+    publishedProduct
+  );
+
+
+  localStorage.setItem(
+    "kalaConnectProducts",
+    JSON.stringify(products)
+  );
+
+
+  localStorage.removeItem(
+    "kalaConnectEditingProductId"
+  );
+
+
+  document.getElementById(
+    "publishView"
+  ).style.display =
+    "none";
+
+
+  document.getElementById(
+    "successState"
+  ).classList.add(
+    "show"
+  );
+
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
+};
+
+
+/* =====================================
+   DASHBOARD
+===================================== */
+
+dashboardBtn.onclick = () => {
+
+  window.location.href =
+    "artisan-dashboard.html";
+
+};
+
+</script>
+
+</body>
+</html>

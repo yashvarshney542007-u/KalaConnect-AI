@@ -1,0 +1,885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>View Product - Kala Connect AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --navy:#022D69;
+  --orange:#F98509;
+  --green:#04702D;
+  --bg:#FFFDF8;
+  --surface:#FFFFFF;
+  --soft:#F8F3E9;
+  --text:#1E252C;
+  --muted:#68717A;
+  --border:#E7DFD2;
+  --shadow:0 14px 34px rgba(31,42,55,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  min-height:100vh;
+  font-family:"DM Sans","Noto Sans Devanagari",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+/* HEADER */
+
+.topbar{
+  min-height:92px;
+  padding:0 40px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(255,253,248,.96);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.brand img{
+  width:68px;
+  height:68px;
+  object-fit:contain;
+  padding:4px;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.brand strong{
+  display:block;
+  color:var(--navy);
+  font-size:22px;
+}
+
+.brand small{
+  display:block;
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.lang-btn,
+.back-btn{
+  min-height:48px;
+  padding:10px 15px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:15px;
+  font-weight:600;
+}
+
+.lang-btn{
+  border:none;
+  background:#EEF4F9;
+  color:var(--navy);
+}
+
+.back-btn{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--navy);
+}
+
+/* LAYOUT */
+
+.container{
+  width:calc(100% - 80px);
+  max-width:1180px;
+  margin:0 auto;
+}
+
+main{
+  padding:34px 0 52px;
+}
+
+.page-head{
+  margin-bottom:22px;
+}
+
+.eyebrow{
+  display:inline-flex;
+  padding:6px 10px;
+  margin-bottom:10px;
+  border-radius:999px;
+  background:#EEF4F9;
+  color:var(--navy);
+  font-size:12px;
+  font-weight:700;
+}
+
+.page-head h1{
+  color:var(--navy);
+  font-size:clamp(34px,4vw,48px);
+  line-height:1.05;
+  letter-spacing:-.6px;
+}
+
+.page-head p{
+  margin-top:9px;
+  max-width:700px;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.6;
+}
+
+/* PRODUCT VIEW */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:20px;
+  align-items:start;
+}
+
+.panel{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+
+.image-panel{
+  padding:20px;
+}
+
+.image-frame{
+  width:100%;
+  aspect-ratio:4/3;
+  overflow:hidden;
+  border-radius:18px;
+  background:#F4F0E9;
+  border:1px solid var(--border);
+}
+
+.image-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+.image-caption{
+  margin-top:14px;
+}
+
+.image-caption h3{
+  color:var(--navy);
+  font-size:18px;
+}
+
+.image-caption p{
+  margin-top:5px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+
+.details-panel{
+  padding:24px;
+}
+
+.details-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:18px;
+}
+
+.details-head h2{
+  color:var(--navy);
+  font-size:24px;
+}
+
+.status-chip{
+  padding:7px 11px;
+  border-radius:999px;
+  background:#EEF8F0;
+  color:var(--green);
+  font-size:12px;
+  font-weight:700;
+  white-space:nowrap;
+}
+
+.details-list{
+  display:grid;
+  gap:12px;
+}
+
+.detail-item{
+  padding:15px 16px;
+  border:1px solid var(--border);
+  border-radius:15px;
+  background:#fff;
+}
+
+.detail-item small{
+  display:block;
+  margin-bottom:5px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+}
+
+.detail-item strong{
+  display:block;
+  color:var(--text);
+  font-size:16px;
+  line-height:1.5;
+  overflow-wrap:anywhere;
+}
+
+.description{
+  white-space:pre-wrap;
+  font-weight:500 !important;
+}
+
+.price-box{
+  margin-top:18px;
+  padding:20px;
+  border:1px solid #CEE6D4;
+  border-radius:18px;
+  background:#F2FAF4;
+}
+
+.price-box small{
+  display:block;
+  margin-bottom:6px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:600;
+}
+
+.price{
+  color:var(--green);
+  font-size:30px;
+  font-weight:700;
+}
+
+.footer-actions{
+  margin-top:22px;
+  display:flex;
+  justify-content:flex-start;
+}
+
+.dashboard-button{
+  min-height:52px;
+  padding:12px 22px;
+  border:none;
+  border-radius:999px;
+  background:var(--navy);
+  color:#fff;
+  cursor:pointer;
+  font-size:16px;
+  font-weight:600;
+}
+
+/* EMPTY / NOT FOUND */
+
+.empty-state{
+  display:none;
+  padding:48px 24px;
+  text-align:center;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+
+.empty-state.show{
+  display:block;
+}
+
+.empty-state h2{
+  color:var(--navy);
+  font-size:28px;
+}
+
+.empty-state p{
+  margin:10px auto 20px;
+  max-width:520px;
+  color:var(--muted);
+  line-height:1.6;
+}
+
+@media(max-width:900px){
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:680px){
+  .topbar{
+    min-height:82px;
+    padding:0 14px;
+  }
+
+  .brand img{
+    width:56px;
+    height:56px;
+  }
+
+  .brand strong{
+    font-size:18px;
+  }
+
+  .brand small{
+    font-size:10px;
+  }
+
+  .back-btn{
+    display:none;
+  }
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  main{
+    padding:26px 0 36px;
+  }
+
+  .image-panel,
+  .details-panel{
+    padding:18px;
+  }
+
+  .details-head{
+    flex-direction:column;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <a href="artisan-dashboard.html" class="brand">
+
+    <img src="logo.jpeg" alt="Kala Connect AI Logo">
+
+    <div>
+      <strong id="brandName">Kala Connect AI</strong>
+      <small>Artisan Market and Space AI</small>
+    </div>
+
+  </a>
+
+  <div class="header-actions">
+
+    <button class="lang-btn" id="languageBtn" type="button">
+      🌐 <span id="languageShort">EN</span>
+    </button>
+
+    <button class="back-btn" id="topBackBtn" type="button">
+      Back to Dashboard
+    </button>
+
+  </div>
+
+</header>
+
+<main>
+
+  <div class="container">
+
+    <div id="productView">
+
+      <section class="page-head">
+
+        <div class="eyebrow" id="eyebrow">
+          Listed Product
+        </div>
+
+        <h1 id="pageTitle">
+          Product Details
+        </h1>
+
+        <p id="pageText">
+          View the product information currently saved in your artisan workspace.
+        </p>
+
+      </section>
+
+      <section class="product-grid">
+
+        <div class="panel image-panel">
+
+          <div class="image-frame">
+            <img id="productImage" src="" alt="Product image">
+          </div>
+
+          <div class="image-caption">
+
+            <h3 id="imageTitle">
+              Product Image
+            </h3>
+
+            <p id="imageText">
+              This is the image saved with your product.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="panel details-panel">
+
+          <div class="details-head">
+
+            <h2 id="detailsTitle">
+              Product Information
+            </h2>
+
+            <span class="status-chip" id="statusValue">
+              Listed
+            </span>
+
+          </div>
+
+          <div class="details-list">
+
+            <div class="detail-item">
+              <small id="nameLabel">Product Name</small>
+              <strong id="nameValue">Not provided</strong>
+            </div>
+
+            <div class="detail-item">
+              <small id="craftLabel">Craft</small>
+              <strong id="craftValue">Not provided</strong>
+            </div>
+
+            <div class="detail-item">
+              <small id="materialLabel">Material</small>
+              <strong id="materialValue">Not provided</strong>
+            </div>
+
+            <div class="detail-item">
+              <small id="techniqueLabel">Technique</small>
+              <strong id="techniqueValue">Not provided</strong>
+            </div>
+
+            <div class="detail-item">
+              <small id="descriptionLabel">Product Description</small>
+              <strong class="description" id="descriptionValue">Not provided</strong>
+            </div>
+
+          </div>
+
+          <div class="price-box">
+
+            <small id="priceLabel">
+              Final Selling Price
+            </small>
+
+            <div class="price" id="priceValue">
+              ₹0
+            </div>
+
+          </div>
+
+          <div class="footer-actions">
+
+            <button
+              class="dashboard-button"
+              id="dashboardBtn"
+              type="button"
+            >
+              ← Back to Dashboard
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+    <section class="empty-state" id="emptyState">
+
+      <h2 id="emptyTitle">
+        Product not found
+      </h2>
+
+      <p id="emptyText">
+        We could not find the selected product. Please return to your dashboard and choose a product again.
+      </p>
+
+      <button
+        class="dashboard-button"
+        id="emptyDashboardBtn"
+        type="button"
+      >
+        Back to Dashboard
+      </button>
+
+    </section>
+
+  </div>
+
+</main>
+
+<script>
+
+/* =====================================
+   LANGUAGE
+===================================== */
+
+let currentLanguage =
+  localStorage.getItem("kalaConnectLanguage") || "en";
+
+const translations = {
+
+  en:{
+    brand:"Kala Connect AI",
+    backTop:"Back to Dashboard",
+    eyebrow:"Listed Product",
+    title:"Product Details",
+    text:"View the product information currently saved in your artisan workspace.",
+    imageTitle:"Product Image",
+    imageText:"This is the image saved with your product.",
+    detailsTitle:"Product Information",
+    name:"Product Name",
+    craft:"Craft",
+    material:"Material",
+    technique:"Technique",
+    description:"Product Description",
+    price:"Final Selling Price",
+    missing:"Not provided",
+    dashboard:"← Back to Dashboard",
+    emptyTitle:"Product not found",
+    emptyText:"We could not find the selected product. Please return to your dashboard and choose a product again.",
+    emptyDashboard:"Back to Dashboard"
+  },
+
+  hi:{
+    brand:"कला Connect AI",
+    backTop:"डैशबोर्ड पर वापस",
+    eyebrow:"सूचीबद्ध उत्पाद",
+    title:"उत्पाद विवरण",
+    text:"अपने कारीगर कार्यक्षेत्र में सहेजी गई उत्पाद जानकारी देखें।",
+    imageTitle:"उत्पाद की तस्वीर",
+    imageText:"यह आपके उत्पाद के साथ सहेजी गई तस्वीर है।",
+    detailsTitle:"उत्पाद जानकारी",
+    name:"उत्पाद का नाम",
+    craft:"कला",
+    material:"सामग्री",
+    technique:"तकनीक",
+    description:"उत्पाद विवरण",
+    price:"अंतिम विक्रय मूल्य",
+    missing:"जानकारी उपलब्ध नहीं",
+    dashboard:"← डैशबोर्ड पर वापस",
+    emptyTitle:"उत्पाद नहीं मिला",
+    emptyText:"चुना गया उत्पाद नहीं मिला। कृपया डैशबोर्ड पर वापस जाकर उत्पाद फिर से चुनें।",
+    emptyDashboard:"डैशबोर्ड पर वापस"
+  }
+
+};
+
+
+/* =====================================
+   LOAD SELECTED PRODUCT
+===================================== */
+
+const selectedProductId =
+  localStorage.getItem("kalaConnectViewingProductId");
+
+let products = [];
+
+try{
+  products = JSON.parse(
+    localStorage.getItem("kalaConnectProducts") || "[]"
+  );
+}catch(error){
+  products = [];
+}
+
+const selectedProduct =
+  products.find(product =>
+    String(product.id) === String(selectedProductId)
+  );
+
+
+/* =====================================
+   ELEMENTS
+===================================== */
+
+const productView =
+  document.getElementById("productView");
+
+const emptyState =
+  document.getElementById("emptyState");
+
+const productImage =
+  document.getElementById("productImage");
+
+const nameValue =
+  document.getElementById("nameValue");
+
+const craftValue =
+  document.getElementById("craftValue");
+
+const materialValue =
+  document.getElementById("materialValue");
+
+const techniqueValue =
+  document.getElementById("techniqueValue");
+
+const descriptionValue =
+  document.getElementById("descriptionValue");
+
+const priceValue =
+  document.getElementById("priceValue");
+
+const statusValue =
+  document.getElementById("statusValue");
+
+
+/* =====================================
+   RENDER PRODUCT
+===================================== */
+
+function renderProduct(){
+
+  const text = translations[currentLanguage];
+
+  if(!selectedProduct){
+
+    productView.style.display = "none";
+    emptyState.classList.add("show");
+
+    return;
+  }
+
+  productView.style.display = "block";
+  emptyState.classList.remove("show");
+
+  nameValue.textContent =
+    selectedProduct.productName ||
+    selectedProduct.name ||
+    text.missing;
+
+  craftValue.textContent =
+    selectedProduct.craft ||
+    text.missing;
+
+  materialValue.textContent =
+    selectedProduct.material ||
+    text.missing;
+
+  techniqueValue.textContent =
+    selectedProduct.technique ||
+    text.missing;
+
+  descriptionValue.textContent =
+    selectedProduct.description ||
+    text.missing;
+
+  statusValue.textContent =
+    selectedProduct.status ||
+    text.listed;
+
+  const price =
+    Number(
+      selectedProduct.finalSellingPrice ||
+      selectedProduct.recommendedPrice ||
+      0
+    );
+
+  priceValue.textContent =
+    `₹${price.toLocaleString("en-IN")}`;
+
+  if(selectedProduct.imageDataUrl){
+
+    productImage.src =
+      selectedProduct.imageDataUrl;
+
+  }else if(selectedProduct.imagePreview){
+
+    productImage.src =
+      selectedProduct.imagePreview;
+
+  }else if(selectedProduct.image){
+
+    productImage.src =
+      selectedProduct.image;
+
+  }else{
+
+    productImage.src =
+      "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=85";
+
+  }
+
+}
+
+
+/* =====================================
+   APPLY LANGUAGE
+===================================== */
+
+function applyLanguage(){
+
+  const text =
+    translations[currentLanguage];
+
+  document.documentElement.lang =
+    currentLanguage;
+
+  document.getElementById("brandName").textContent =
+    text.brand;
+
+  document.getElementById("languageShort").textContent =
+    currentLanguage === "hi"
+      ? "हि"
+      : "EN";
+
+  document.getElementById("topBackBtn").textContent =
+    text.backTop;
+
+  document.getElementById("eyebrow").textContent =
+    text.eyebrow;
+
+  document.getElementById("pageTitle").textContent =
+    text.title;
+
+  document.getElementById("pageText").textContent =
+    text.text;
+
+  document.getElementById("imageTitle").textContent =
+    text.imageTitle;
+
+  document.getElementById("imageText").textContent =
+    text.imageText;
+
+  document.getElementById("detailsTitle").textContent =
+    text.detailsTitle;
+
+  document.getElementById("nameLabel").textContent =
+    text.name;
+
+  document.getElementById("craftLabel").textContent =
+    text.craft;
+
+  document.getElementById("materialLabel").textContent =
+    text.material;
+
+  document.getElementById("techniqueLabel").textContent =
+    text.technique;
+
+  document.getElementById("descriptionLabel").textContent =
+    text.description;
+
+  document.getElementById("priceLabel").textContent =
+    text.price;
+
+  document.getElementById("dashboardBtn").textContent =
+    text.dashboard;
+
+  document.getElementById("emptyTitle").textContent =
+    text.emptyTitle;
+
+  document.getElementById("emptyText").textContent =
+    text.emptyText;
+
+  document.getElementById("emptyDashboardBtn").textContent =
+    text.emptyDashboard;
+
+  renderProduct();
+
+}
+
+
+/* =====================================
+   LANGUAGE TOGGLE
+===================================== */
+
+document.getElementById("languageBtn").onclick = () => {
+
+  currentLanguage =
+    currentLanguage === "en"
+      ? "hi"
+      : "en";
+
+  localStorage.setItem(
+    "kalaConnectLanguage",
+    currentLanguage
+  );
+
+  applyLanguage();
+
+};
+
+
+/* =====================================
+   BACK TO DASHBOARD
+===================================== */
+
+function goToDashboard(){
+
+  window.location.href =
+    "artisan-dashboard.html";
+
+}
+
+document.getElementById("topBackBtn").onclick =
+  goToDashboard;
+
+document.getElementById("dashboardBtn").onclick =
+  goToDashboard;
+
+document.getElementById("emptyDashboardBtn").onclick =
+  goToDashboard;
+
+
+/* =====================================
+   START
+===================================== */
+
+applyLanguage();
+
+</script>
+
+</body>
+</html>
