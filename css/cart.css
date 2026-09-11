@@ -342,6 +342,25 @@
   transform: translateY(-1px);
 }
 
+.cart-signin-notice {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #FFF8E6;
+  border: 1px solid #FFE08A;
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  margin: 12px 0 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #8C5300;
+}
+
+.cart-signin-notice svg {
+  flex-shrink: 0;
+  color: #B45309;
+}
+
 /* Checkout Success Modal */
 .order-success-content {
   text-align: center;

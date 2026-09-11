@@ -223,10 +223,43 @@ const Cart = {
         discountRow.style.display = 'none';
       }
     }
+
+    // Check signed in user status for checkout button and prompt
+    const loggedInUser = window.Auth && window.Auth.currentUser;
+    const checkoutBtn = document.getElementById('checkoutBtn');
+    const signInNotice = document.getElementById('cartSignInNotice');
+
+    if (signInNotice) {
+      signInNotice.style.display = (!loggedInUser && this.items.length > 0) ? 'flex' : 'none';
+    }
+
+    if (checkoutBtn) {
+      if (!loggedInUser) {
+        checkoutBtn.innerHTML = `
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right: 6px; vertical-align: -2px;"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Sign In to Place Order
+        `;
+        checkoutBtn.style.background = '#8F4F24';
+      } else {
+        checkoutBtn.innerHTML = `Proceed to Order (Fair Trade Link)`;
+        checkoutBtn.style.background = '';
+      }
+    }
   },
 
   handleCheckout() {
     if (this.items.length === 0) return;
+
+    // MANDATORY REQUIREMENT: Must be signed in to place an order
+    const loggedInUser = window.Auth && window.Auth.currentUser;
+    if (!loggedInUser) {
+      this.closeDrawer();
+      window.App.showToast('Please sign in or create an account to place your order.', 'warning');
+      if (window.Auth && window.Auth.openAuthModal) {
+        window.Auth.openAuthModal('signin');
+      }
+      return;
+    }
 
     const orderId = 'VIR-' + Math.floor(100000 + Math.random() * 900000);
     const subtotal = this.getSubtotal();
@@ -238,20 +271,17 @@ const Cart = {
     // Close cart drawer
     this.closeDrawer();
 
-    const loggedInUser = window.Auth && window.Auth.currentUser;
-    const recipientText = loggedInUser ? `for <strong>${loggedInUser.name}</strong> (${loggedInUser.city || 'India'})` : 'to your registered address';
+    const recipientText = `for <strong>${loggedInUser.name}</strong> (${loggedInUser.city || 'India'})`;
 
     // Award Kala loyalty points & increment customer database order count
-    if (loggedInUser) {
-      loggedInUser.kalaPoints = (loggedInUser.kalaPoints || 100) + Math.round(total / 50);
-      loggedInUser.ordersCount = (loggedInUser.ordersCount || 0) + 1;
-      loggedInUser.isFirstTime = false;
-      localStorage.setItem('kalaconnect_user', JSON.stringify(loggedInUser));
-      if (window.Auth && window.Auth.updateUserInDatabase) {
-        window.Auth.updateUserInDatabase(loggedInUser);
-      }
-      if (window.Auth.renderNavAuth) window.Auth.renderNavAuth();
+    loggedInUser.kalaPoints = (loggedInUser.kalaPoints || 100) + Math.round(total / 50);
+    loggedInUser.ordersCount = (loggedInUser.ordersCount || 0) + 1;
+    loggedInUser.isFirstTime = false;
+    localStorage.setItem('kalaconnect_user', JSON.stringify(loggedInUser));
+    if (window.Auth && window.Auth.updateUserInDatabase) {
+      window.Auth.updateUserInDatabase(loggedInUser);
     }
+    if (window.Auth.renderNavAuth) window.Auth.renderNavAuth();
 
     // Mark customer as having completed an order
     localStorage.setItem('kalaconnectai_ordered_before', 'true');
