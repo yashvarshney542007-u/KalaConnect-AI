@@ -1634,45 +1634,160 @@ document.getElementById("saveDraftBtn").addEventListener("click", () => {
   );
 });
 
-document.getElementById("continueBtn").addEventListener("click", () => {
+document
+  .getElementById("continueBtn")
+  .addEventListener(
+    "click",
+    async () => {
 
-  if (!selectedImageFile) {
 
-    alert(
-      document.documentElement.lang === "hi"
-        ? "कृपया आगे बढ़ने से पहले उत्पाद की तस्वीर जोड़ें।"
-        : "Please add a product image before continuing."
-    );
+      /* IMAGE REQUIRED */
 
-    return;
-  }
+      if(!selectedImageFile){
 
-  const productData = {
+        return;
 
-    productName: document.getElementById("productName").value.trim(),
+      }
 
-    craft: document.getElementById("craftType").value.trim(),
 
-    material: document.getElementById("material").value.trim(),
 
-    technique: document.getElementById("technique").value.trim(),
+      /* =================================
+         CURRENT MANUAL DETAILS
+      ================================= */
 
-    description: document.getElementById("description").value.trim(),
+      let productData = {
 
-    voiceLanguage: voiceLanguage.value,
+        productName:
+          document
+            .getElementById("productName")
+            .value
+            .trim(),
 
-    hasVoiceRecording: Boolean(recordedBlob)
+        craft:
+          document
+            .getElementById("craftType")
+            .value
+            .trim(),
 
-  };
+        material:
+          document
+            .getElementById("material")
+            .value
+            .trim(),
 
-  localStorage.setItem(
-    "kalaConnectDraftProduct",
-    JSON.stringify(productData)
+        technique:
+          document
+            .getElementById("technique")
+            .value
+            .trim(),
+
+        description:
+          document
+            .getElementById("description")
+            .value
+            .trim(),
+
+        voiceLanguage:
+          voiceLanguage.value,
+
+        hasVoiceRecording:
+          Boolean(recordedBlob)
+
+      };
+
+
+
+      /* =================================
+         AI API
+      ================================= */
+
+      if(API_CONFIG.USE_AI_API){
+
+        try{
+
+          const result =
+            await analyzeProductWithAI({
+
+              imageFile:
+                selectedImageFile,
+
+              audioBlob:
+                recordedBlob,
+
+              language:
+                voiceLanguage.value
+
+            });
+
+
+          productData = {
+
+            ...productData,
+
+            productName:
+              result.data?.productName ||
+              productData.productName,
+
+            craft:
+              result.data?.craft ||
+              productData.craft,
+
+            material:
+              result.data?.material ||
+              productData.material,
+
+            technique:
+              result.data?.technique ||
+              productData.technique,
+
+            description:
+              result.data?.description ||
+              productData.description,
+
+            transcript:
+              result.transcript || ""
+
+          };
+
+
+        }catch(error){
+
+          console.error(
+            "AI analysis failed:",
+            error
+          );
+
+          /*
+            AI fail hone par current
+            manual data continue karega.
+            Frontend crash nahi karega.
+          */
+
+        }
+
+      }
+
+
+
+      /* =================================
+         SAVE TEMPORARILY
+      ================================= */
+
+      localStorage.setItem(
+        "kalaConnectDraftProduct",
+        JSON.stringify(productData)
+      );
+
+
+      /* =================================
+         NEXT PAGE
+      ================================= */
+
+      window.location.href =
+        "artisan-review-product.html";
+
+    }
   );
-
-  window.location.href = "artisan-review-product.html";
-
-});
 
 
 const overlay = document.getElementById("languageOverlay");

@@ -251,6 +251,12 @@ function setLanguage(lang){
 
 document.getElementById("languageButton").addEventListener("click",()=>overlay.classList.add("show"));
 setLanguage(currentLanguage);
+
+document
+  .getElementById("profileBtn")
+  .addEventListener("click", () => {
+    window.location.href = "artisan-profile.html";
+  });
 </script>
 </body>
 </html>
