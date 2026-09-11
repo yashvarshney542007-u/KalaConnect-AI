@@ -47,6 +47,22 @@ const Marketplace = {
     if (regionSelect) {
       regionSelect.addEventListener('change', (e) => {
         this.currentRegion = e.target.value;
+
+        // If a specific region is chosen, check if current category has crafts in that region.
+        // If not, auto-switch to 'all' so the user immediately sees the region's crafts!
+        if (this.currentRegion !== 'all' && this.currentCategory !== 'all') {
+          const hasCatInRegion = this.products.some(item => 
+            item.category === this.currentCategory &&
+            ((item.state && item.state.toLowerCase() === this.currentRegion.toLowerCase()) ||
+             (item.region && item.region.toLowerCase().includes(this.currentRegion.toLowerCase())))
+          );
+          if (!hasCatInRegion) {
+            this.currentCategory = 'all';
+            document.querySelectorAll('.chip-btn').forEach(c => {
+              c.classList.toggle('active', c.dataset.category === 'all');
+            });
+          }
+        }
         this.applyFilters();
       });
     }
@@ -95,6 +111,34 @@ const Marketplace = {
 
     if (this.filteredProducts.length === 0) {
       const isStateFilter = this.currentRegion !== 'all';
+      const regionCrafts = isStateFilter ? this.products.filter(item => 
+        (item.state && item.state.toLowerCase() === this.currentRegion.toLowerCase()) ||
+        (item.region && item.region.toLowerCase().includes(this.currentRegion.toLowerCase()))
+      ) : [];
+
+      // If region has crafts but not in this specific category/filter
+      if (isStateFilter && regionCrafts.length > 0) {
+        const availableCategories = [...new Set(regionCrafts.map(p => p.category))].join(', ');
+        grid.innerHTML = `
+          <div class="empty-results">
+            <div style="font-size: 2.5rem; margin-bottom: 10px;">🎨</div>
+            <h3>No "${this.currentCategory}" Currently in ${this.currentRegion}</h3>
+            <p style="max-width: 540px; margin: 0 auto 20px;">
+              We have <strong>${regionCrafts.length} GI-certified artisan crafts</strong> from <strong>${this.currentRegion}</strong> in: <em>${availableCategories}</em>.
+            </p>
+            <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+              <button class="chip-btn active" onclick="Marketplace.showAllInCurrentRegion()">
+                View All ${regionCrafts.length} Crafts in ${this.currentRegion}
+              </button>
+              <button class="chip-btn" onclick="Marketplace.resetFilters()">
+                Show All Indian Crafts
+              </button>
+            </div>
+          </div>
+        `;
+        return;
+      }
+
       grid.innerHTML = `
         <div class="empty-results">
           <div style="font-size: 2.5rem; margin-bottom: 10px;">🇮🇳</div>
@@ -164,6 +208,24 @@ const Marketplace = {
         </div>
       </article>
     `).join('');
+  },
+
+  showAllInCurrentRegion() {
+    this.currentCategory = 'all';
+    this.currentRoom = 'all';
+    this.searchQuery = '';
+
+    const searchInput = document.getElementById('marketplaceSearchInput');
+    if (searchInput) searchInput.value = '';
+
+    const roomSelect = document.getElementById('roomFilterSelect');
+    if (roomSelect) roomSelect.value = 'all';
+
+    document.querySelectorAll('.chip-btn').forEach(c => {
+      c.classList.toggle('active', c.dataset.category === 'all');
+    });
+
+    this.applyFilters();
   },
 
   resetFilters() {

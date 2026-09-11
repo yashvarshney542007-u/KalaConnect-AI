@@ -160,6 +160,40 @@ const ARTISAN_PRODUCTS = [
   },
   // ── ARUNACHAL PRADESH (STATE) ──
   {
+    id: "art-005-thangka",
+    name: "Tawang Monpa Sacred Buddhist Thangka Painting",
+    category: "Paintings & Folk Art",
+    craftForm: "Monpa Thangka Scroll Art",
+    state: "Arunachal Pradesh",
+    isUT: false,
+    region: "Tawang Monastery, Arunachal Pradesh",
+    price: 5200,
+    marketEstimate: 9200,
+    artisanSharePercent: 86,
+    giCertified: true,
+    rating: 4.9,
+    reviewCount: 38,
+    image: "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=800&auto=format&fit=crop&q=80",
+    dimensions: "24 x 36 inches Silk Mount",
+    materials: "Organic Cotton Canvas, Natural Mineral Pigments, 24K Gold Powder",
+    description: "Sacred meditative scroll depicting Green Tara hand-painted by high-altitude Monpa master artists using ancient Buddhist mineral recipes.",
+    artisan: {
+      name: "Lobsang Lama",
+      community: "Tawang Monastery Guild",
+      experience: "29 years",
+      village: "Tawang, Arunachal Pradesh",
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80",
+      story: "Master heritage thangka artist preserving century-old Buddhist contemplative iconography and natural mineral grinding traditions."
+    },
+    spaceCompatibility: {
+      rooms: ["living_room", "study_desk", "dining_pooja"],
+      styles: ["royal_heritage", "bohemian", "minimalist"],
+      dominantColors: ["#D4AF37", "#8B0000", "#1D3557"],
+      lightingVibe: "Warm ambient or natural spotlight",
+      placementSuggestion: "Centerpiece for spiritual calm, living rooms, and contemplative study sanctuaries."
+    }
+  },
+  {
     id: "art-005",
     name: "Monpa Sacred Buddhist Mask of Mahakala",
     category: "Woodcraft & Toys",
