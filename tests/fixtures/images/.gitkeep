@@ -1,0 +1,8 @@
+# Fixture directory for vision test images
+#
+# To enable vision integration tests, place craft images in this directory.
+# Example: tests/fixtures/images/sample_craft.jpg
+#
+# Files in this directory are NOT committed to Git (*.jpg, *.png, *.webp
+# are excluded by .gitignore).
+# Team members must provide their own craft images locally.

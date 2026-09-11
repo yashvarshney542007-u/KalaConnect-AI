@@ -1,40 +1,63 @@
+# Virtual environments
+venv/
+.venv/
+
 # Python
 __pycache__/
 *.py[cod]
 *.pyo
 
-# Virtual environment
-venv/
-.venv/
-
 # Environment variables
 .env
+.env.*
 
 # IDE
 .vscode/
 .idea/
 
-# Model files
-*.bin
-*.safetensors
+# Hugging Face / ML cache
+.cache/
+huggingface/
+
+# Model weights (do NOT commit these)
 *.pt
 *.pth
+*.bin
+*.safetensors
 *.onnx
 
-# Cache
-.cache/
-huggingface_cache/
+# Whisper model cache
+whisper_cache/
 
-# Audio generated locally
+# Test media (audio / images — must not be committed)
+tests/fixtures/audio/*
+!tests/fixtures/audio/.gitkeep
+tests/fixtures/images/*
+!tests/fixtures/images/.gitkeep
 *.wav
 *.mp3
 *.flac
+*.ogg
+*.webm
+*.jpg
+*.jpeg
+*.png
+*.webp
+
+# Evaluation data (images and auto-generated results)
+evaluation/images/*
+!evaluation/images/.gitkeep
+evaluation/results/*
+!evaluation/results/.gitkeep
+
+# Logs
+*.log
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/

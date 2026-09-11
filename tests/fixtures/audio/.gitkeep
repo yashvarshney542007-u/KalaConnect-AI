@@ -1,0 +1,7 @@
+# Fixture directory for voice audio files
+#
+# To enable voice integration tests, place audio files in this directory.
+# Example: tests/fixtures/audio/sample_hi.wav
+#
+# Files in this directory are NOT committed to Git (*.wav is in .gitignore).
+# Team members must provide their own test audio files locally.

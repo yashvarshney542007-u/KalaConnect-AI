@@ -1,0 +1,14 @@
+# .gitkeep — evaluation/images/ directory
+#
+# Place 30–50 authentic artisan/craft images here for evaluation.
+# Supported formats: JPG, JPEG, PNG, WEBP
+#
+# Image sourcing rules:
+# - Use only images your team owns OR images with a Creative Commons
+#   license that permits use (CC0, CC-BY, CC-BY-SA).
+# - DO NOT use copyrighted stock photos.
+# - Document each image's source in evaluation/metadata.csv.
+#
+# Images are excluded from Git (.gitignore) to avoid committing large
+# binary files and to protect any licensed material.
+# Team members must add images locally before running evaluate_vision.py.
