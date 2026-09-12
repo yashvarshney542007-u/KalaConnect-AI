@@ -8,8 +8,8 @@ if str(project_root) not in sys.path:
 
 from dotenv import load_dotenv
 
-# Load environment variables from .env (no-op if file does not exist)
-load_dotenv()
+# Load environment variables from project .env explicitly
+load_dotenv(project_root / ".env")
 
 import uvicorn
 from fastapi import FastAPI
