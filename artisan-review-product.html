@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Review Product Details - Kala Connect AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy:#022D69;
+  --orange:#F98509;
+  --green:#04702D;
+  --bg:#FFFDF8;
+  --surface:#FFFFFF;
+  --soft:#F8F3E9;
+  --text:#1E252C;
+  --muted:#68717A;
+  --border:#E7DFD2;
+  --danger:#D93025;
+
+  --shadow:
+    0 14px 34px rgba(31,42,55,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:
+    "DM Sans",
+    "Noto Sans Devanagari",
+    sans-serif;
+
+  background:var(--bg);
+  color:var(--text);
+
+  min-height:100vh;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.topbar{
+  min-height:92px;
+
+  padding:0 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:18px;
+
+  position:sticky;
+  top:0;
+
+  z-index:1000;
+
+  background:
+    rgba(255,253,248,.96);
+
+  backdrop-filter:
+    blur(14px);
+
+  border-bottom:
+    1px solid var(--border);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+
+  gap:13px;
+}
+
+.brand img{
+  width:68px;
+  height:68px;
+
+  object-fit:contain;
+
+  padding:4px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:18px;
+}
+
+.brand strong{
+  display:block;
+
+  font-size:22px;
+
+  color:var(--navy);
+
+  line-height:1.05;
+}
+
+.brand small{
+  display:block;
+
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+}
+
+.actions{
+  display:flex;
+  align-items:center;
+
+  gap:10px;
+}
+
+.lang-btn,
+.back-top{
+  min-height:48px;
+
+  padding:
+    10px 15px;
+
+  border-radius:999px;
+
+  font-size:15px;
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.lang-btn{
+  border:none;
+
+  background:#EEF4F9;
+
+  color:var(--navy);
+}
+
+.back-top{
+  border:
+    1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--navy);
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container{
+  width:
+    calc(100% - 80px);
+
+  max-width:1180px;
+
+  margin:
+    0 auto;
+}
+
+main{
+  padding:
+    34px 0 52px;
+}
+
+
+/* =========================
+   PAGE HEADER
+========================= */
+
+.page-head{
+  margin-bottom:22px;
+}
+
+.eyebrow{
+  display:inline-flex;
+
+  padding:
+    6px 10px;
+
+  margin-bottom:10px;
+
+  border-radius:999px;
+
+  background:#EEF4F9;
+
+  color:var(--navy);
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.page-head h1{
+  color:var(--navy);
+
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      48px
+    );
+
+  line-height:1.05;
+
+  letter-spacing:-.6px;
+}
+
+.page-head p{
+  margin-top:9px;
+
+  max-width:700px;
+
+  color:var(--muted);
+
+  font-size:16px;
+
+  line-height:1.6;
+}
+
+
+/* =========================
+   REVIEW GRID
+========================= */
+
+.review-grid{
+  display:grid;
+
+  grid-template-columns:
+    minmax(0,.9fr)
+    minmax(0,1.1fr);
+
+  gap:20px;
+
+  align-items:start;
+}
+
+.panel{
+  background:#fff;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:24px;
+
+  box-shadow:var(--shadow);
+
+  overflow:hidden;
+}
+
+
+/* =========================
+   IMAGE PANEL
+========================= */
+
+.image-panel{
+  padding:20px;
+}
+
+.image-frame{
+  width:100%;
+
+  aspect-ratio:4/3;
+
+  overflow:hidden;
+
+  border-radius:18px;
+
+  background:#F4F0E9;
+
+  border:
+    1px solid var(--border);
+}
+
+.image-frame img{
+  width:100%;
+  height:100%;
+
+  object-fit:cover;
+
+  display:block;
+}
+
+.image-caption{
+  margin-top:14px;
+}
+
+.image-caption h3{
+  color:var(--navy);
+
+  font-size:18px;
+}
+
+.image-caption p{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.55;
+}
+
+
+/* =========================
+   DETAILS PANEL
+========================= */
+
+.details-panel{
+  padding:24px;
+}
+
+.panel-title{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:flex-start;
+
+  gap:14px;
+
+  margin-bottom:18px;
+}
+
+.panel-title h2{
+  color:var(--navy);
+
+  font-size:24px;
+}
+
+.ai-note{
+  padding:
+    8px 11px;
+
+  border-radius:999px;
+
+  background:#FFF2E2;
+
+  color:#9A4F10;
+
+  font-size:12px;
+  font-weight:700;
+
+  white-space:nowrap;
+}
+
+.helper{
+  margin-bottom:8px;
+
+  padding:
+    13px 14px;
+
+  border-left:
+    3px solid var(--orange);
+
+  border-radius:10px;
+
+  background:#FFF9F1;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.6;
+}
+
+.required-note{
+  margin-bottom:18px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.5;
+}
+
+.required{
+  color:var(--danger);
+
+  font-weight:700;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+.field.full{
+  grid-column:
+    1 / -1;
+}
+
+.field label{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#313A43;
+
+  font-size:14px;
+
+  font-weight:600;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  background:#fff;
+
+  color:var(--text);
+
+  outline:none;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.field input,
+.field select{
+  min-height:50px;
+
+  padding:
+    11px 13px;
+}
+
+.field textarea{
+  min-height:130px;
+
+  padding:
+    12px 13px;
+
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:
+    rgba(2,45,105,.5);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(2,45,105,.06);
+}
+
+
+/* =========================
+   ERROR STATE
+========================= */
+
+.field-error{
+  border-color:
+    var(--danger) !important;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(217,48,37,.10) !important;
+
+  background:
+    #FFF9F8 !important;
+}
+
+.field-error:focus{
+  border-color:
+    var(--danger) !important;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(217,48,37,.14) !important;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.footer-actions{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  gap:12px;
+
+  margin-top:22px;
+}
+
+.secondary-btn,
+.primary-btn{
+  min-height:52px;
+
+  padding:
+    12px 20px;
+
+  border-radius:999px;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.secondary-btn{
+  border:
+    1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--navy);
+}
+
+.primary-btn{
+  border:none;
+
+  background:var(--navy);
+
+  color:#fff;
+}
+
+
+/* =========================
+   LANGUAGE OVERLAY
+========================= */
+
+.overlay{
+  position:fixed;
+
+  inset:0;
+
+  z-index:5000;
+
+  display:none;
+
+  place-items:center;
+
+  padding:20px;
+
+  background:
+    rgba(12,21,31,.65);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+.overlay.show{
+  display:grid;
+}
+
+.lang-card{
+  width:
+    min(460px,100%);
+
+  padding:24px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:24px;
+
+  box-shadow:
+    0 24px 70px
+    rgba(12,21,31,.22);
+}
+
+.lang-card h3{
+  font-size:22px;
+
+  margin-bottom:6px;
+}
+
+.lang-card p{
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin-bottom:18px;
+}
+
+.lang-options{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px;
+}
+
+.lang-option{
+  min-height:62px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:15px;
+
+  background:#fff;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:680px){
+
+  .topbar{
+    padding:
+      0 14px;
+
+    min-height:82px;
+  }
+
+  .brand img{
+    width:56px;
+    height:56px;
+  }
+
+  .brand strong{
+    font-size:18px;
+  }
+
+  .brand small{
+    font-size:10px;
+  }
+
+  .back-top{
+    display:none;
+  }
+
+  .container{
+    width:
+      calc(100% - 28px);
+  }
+
+  main{
+    padding:
+      26px 0 36px;
+  }
+
+  .details-panel,
+  .image-panel{
+    padding:18px;
+  }
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .panel-title{
+    flex-direction:column;
+  }
+
+  .ai-note{
+    white-space:normal;
+  }
+
+  .footer-actions{
+    flex-direction:
+      column-reverse;
+  }
+
+  .footer-actions button{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="topbar">
+
+  <a
+    href="index.html"
+    class="brand"
+  >
+
+    <img
+      src="logo.jpeg"
+      alt="Kala Connect AI Logo"
+    >
+
+    <div>
+
+      <strong id="brandName">
+        Kala Connect AI
+      </strong>
+
+      <small>
+        Artisan Market and Space AI
+      </small>
+
+    </div>
+
+  </a>
+
+
+  <div class="actions">
+
+    <button
+      class="lang-btn"
+      id="languageButton"
+      type="button"
+    >
+      🌐
+      <span id="languageShort">
+        EN
+      </span>
+    </button>
+
+    <a
+      href="artisan-upload-camera-fixed.html"
+      class="back-top"
+      id="topBack"
+    >
+      Back
+    </a>
+
+  </div>
+
+</header>
+
+
+<main>
+
+  <div class="container">
+
+
+    <section class="page-head">
+
+      <div
+        class="eyebrow"
+        id="eyebrow"
+      >
+        Step 2 of 3
+      </div>
+
+      <h1 id="pageTitle">
+        Review Product Details
+      </h1>
+
+      <p id="pageText">
+        Please check the product information below. You can correct any detail before continuing to price prediction.
+      </p>
+
+    </section>
+
+
+
+    <section class="review-grid">
+
+
+      <div class="panel image-panel">
+
+        <div class="image-frame">
+
+          <img
+            id="productImage"
+            src=""
+            alt="Product preview"
+          >
+
+        </div>
+
+        <div class="image-caption">
+
+          <h3 id="imageTitle">
+            Product Image
+          </h3>
+
+          <p id="imageText">
+            This image is shown for review only.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="panel details-panel">
+
+
+        <div class="panel-title">
+
+          <div>
+
+            <h2 id="detailsTitle">
+              Product Details
+            </h2>
+
+          </div>
+
+          <span
+            class="ai-note"
+            id="aiNote"
+          >
+            AI-assisted details
+          </span>
+
+        </div>
+
+
+        <div
+          class="helper"
+          id="helperText"
+        >
+          Please review and correct anything that needs changes before moving to price prediction.
+        </div>
+
+
+        <p
+          class="required-note"
+          id="requiredNote"
+        >
+          Fields marked with
+          <span class="required">*</span>
+          are required.
+        </p>
+
+
+        <div class="form-grid">
+
+
+          <div class="field full">
+
+            <label
+              for="productName"
+              id="labelName"
+            >
+              Product Name
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="productName"
+              type="text"
+              placeholder="Enter product name"
+            >
+
+          </div>
+
+
+
+          <div class="field">
+
+            <label
+              for="craft"
+              id="labelCraft"
+            >
+              Craft
+              <span class="required">*</span>
+            </label>
+
+            <select id="craft">
+
+              <option value="">
+                Select craft *
+              </option>
+
+              <option>
+                Blue Pottery
+              </option>
+
+              <option>
+                Handloom / Weaving
+              </option>
+
+              <option>
+                Madhubani Painting
+              </option>
+
+              <option>
+                Wood Carving
+              </option>
+
+              <option>
+                Metal Craft
+              </option>
+
+              <option>
+                Jewellery
+              </option>
+
+              <option>
+                Embroidery
+              </option>
+
+              <option>
+                Block Printing
+              </option>
+
+              <option>
+                Terracotta / Pottery
+              </option>
+
+              <option>
+                Basketry / Cane Craft
+              </option>
+
+              <option>
+                Leather Craft
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <div class="field">
+
+            <label
+              for="material"
+              id="labelMaterial"
+            >
+              Material
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="material"
+              type="text"
+              placeholder="Enter material"
+            >
+
+          </div>
+
+
+
+          <div class="field full">
+
+            <label
+              for="technique"
+              id="labelTechnique"
+            >
+              Technique
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="technique"
+              type="text"
+              placeholder="Enter technique"
+            >
+
+          </div>
+
+
+
+          <div class="field full">
+
+            <label
+              for="description"
+              id="labelDescription"
+            >
+              Product Description
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="description"
+              placeholder="Enter product description"
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="footer-actions">
+
+          <button
+            class="secondary-btn"
+            id="backBtn"
+            type="button"
+          >
+            Back
+          </button>
+
+          <button
+            class="primary-btn"
+            id="continueBtn"
+            type="button"
+          >
+            Continue to Price Prediction
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
+
+</main>
+
+
+
+<div
+  class="overlay"
+  id="languageOverlay"
+>
+
+  <div class="lang-card">
+
+    <h3>
+      Choose your language
+    </h3>
+
+    <p>
+      Important actions will switch language.
+    </p>
+
+    <div class="lang-options">
+
+      <button
+        class="lang-option"
+        onclick="setLanguage('en')"
+        type="button"
+      >
+        English
+      </button>
+
+      <button
+        class="lang-option"
+        onclick="setLanguage('hi')"
+        type="button"
+      >
+        हिन्दी
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<script>
+
+
+/* =====================================
+   LOAD DRAFT
+===================================== */
+
+const draft = JSON.parse(
+  localStorage.getItem(
+    "kalaConnectDraftProduct"
+  ) || "{}"
+);
+
+
+const productName =
+  document.getElementById(
+    "productName"
+  );
+
+const craft =
+  document.getElementById(
+    "craft"
+  );
+
+const material =
+  document.getElementById(
+    "material"
+  );
+
+const technique =
+  document.getElementById(
+    "technique"
+  );
+
+const description =
+  document.getElementById(
+    "description"
+  );
+
+const productImage =
+  document.getElementById(
+    "productImage"
+  );
+
+
+productName.value =
+  draft.productName ||
+  draft.name ||
+  "";
+
+craft.value =
+  draft.craft ||
+  "";
+
+material.value =
+  draft.material ||
+  "";
+
+technique.value =
+  draft.technique ||
+  "";
+
+description.value =
+  draft.description ||
+  "";
+
+
+
+/* =====================================
+   PRODUCT IMAGE
+===================================== */
+
+if(draft.imageDataUrl){
+
+  productImage.src =
+    draft.imageDataUrl;
+
+}else if(draft.imagePreview){
+
+  productImage.src =
+    draft.imagePreview;
+
+}else if(draft.image){
+
+  productImage.src =
+    draft.image;
+
+}else{
+
+  productImage.src =
+    "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=85";
+
+}
+
+
+
+/* =====================================
+   BACK BUTTON
+===================================== */
+
+document
+  .getElementById(
+    "backBtn"
+  )
+  .addEventListener(
+    "click",
+    () => {
+
+      window.location.href =
+        "artisan-upload-camera-fixed.html";
+
+    }
+  );
+
+
+
+/* =====================================
+   REMOVE ERROR WHILE EDITING
+===================================== */
+
+[
+  productName,
+  craft,
+  material,
+  technique,
+  description
+]
+.forEach(field => {
+
+  field.addEventListener(
+    "input",
+    () => {
+
+      field
+        .classList
+        .remove(
+          "field-error"
+        );
+
+    }
+  );
+
+
+  field.addEventListener(
+    "change",
+    () => {
+
+      field
+        .classList
+        .remove(
+          "field-error"
+        );
+
+    }
+  );
+
+});
+
+
+
+/* =====================================
+   CONTINUE + VALIDATION
+===================================== */
+
+document
+  .getElementById(
+    "continueBtn"
+  )
+  .onclick = () => {
+
+
+    const productNameValue =
+      productName
+        .value
+        .trim();
+
+    const craftValue =
+      craft
+        .value
+        .trim();
+
+    const materialValue =
+      material
+        .value
+        .trim();
+
+    const techniqueValue =
+      technique
+        .value
+        .trim();
+
+    const descriptionValue =
+      description
+        .value
+        .trim();
+
+
+    const allFields = [
+
+      productName,
+      craft,
+      material,
+      technique,
+      description
+
+    ];
+
+
+    /* Remove old errors first */
+
+    allFields
+      .forEach(field => {
+
+        field
+          .classList
+          .remove(
+            "field-error"
+          );
+
+      });
+
+
+
+    /* Find first missing field */
+
+    let firstMissingField =
+      null;
+
+
+    if(!productNameValue){
+
+      productName
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        productName;
+
+    }
+
+
+    if(!craftValue){
+
+      craft
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        craft;
+
+    }
+
+
+    if(!materialValue){
+
+      material
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        material;
+
+    }
+
+
+    if(!techniqueValue){
+
+      technique
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        technique;
+
+    }
+
+
+    if(!descriptionValue){
+
+      description
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        description;
+
+    }
+
+
+
+    /* If something is missing,
+       stay on this page */
+
+    if(firstMissingField){
+
+      firstMissingField.focus();
+
+      firstMissingField
+        .scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      return;
+
+    }
+
+
+
+    /* All required values complete */
+
+    const oldDraft =
+      JSON.parse(
+        localStorage.getItem(
+          "kalaConnectDraftProduct"
+        ) || "{}"
+      );
+
+
+    const updatedDraft = {
+
+      ...oldDraft,
+
+      productName:
+        productNameValue,
+
+      craft:
+        craftValue,
+
+      material:
+        materialValue,
+
+      technique:
+        techniqueValue,
+
+      description:
+        descriptionValue
+
+    };
+
+
+    localStorage.setItem(
+      "kalaConnectDraftProduct",
+      JSON.stringify(
+        updatedDraft
+      )
+    );
+
+
+    window.location.href =
+      "artisan-price-prediction.html";
+
+  };
+
+
+
+/* =====================================
+   LANGUAGE
+===================================== */
+
+const overlay =
+  document.getElementById(
+    "languageOverlay"
+  );
+
+
+document
+  .getElementById(
+    "languageButton"
+  )
+  .addEventListener(
+    "click",
+    () => {
+
+      overlay
+        .classList
+        .add(
+          "show"
+        );
+
+    }
+  );
+
+
+
+function setLanguage(lang){
+
+  const hi =
+    lang === "hi";
+
+
+  document.documentElement.lang =
+    lang;
+
+
+  document
+    .getElementById(
+      "brandName"
+    )
+    .textContent =
+      hi
+        ? "कला Connect AI"
+        : "Kala Connect AI";
+
+
+  document
+    .getElementById(
+      "languageShort"
+    )
+    .textContent =
+      hi
+        ? "हि"
+        : "EN";
+
+
+  document
+    .getElementById(
+      "topBack"
+    )
+    .textContent =
+      hi
+        ? "वापस"
+        : "Back";
+
+
+  document
+    .getElementById(
+      "eyebrow"
+    )
+    .textContent =
+      hi
+        ? "चरण 2 / 3"
+        : "Step 2 of 3";
+
+
+  document
+    .getElementById(
+      "pageTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद विवरण जाँचें"
+        : "Review Product Details";
+
+
+  document
+    .getElementById(
+      "pageText"
+    )
+    .textContent =
+      hi
+        ? "नीचे दी गई उत्पाद जानकारी जाँचें। मूल्य अनुमान पर जाने से पहले आप किसी भी विवरण को सुधार सकते हैं।"
+        : "Please check the product information below. You can correct any detail before continuing to price prediction.";
+
+
+  document
+    .getElementById(
+      "imageTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद की तस्वीर"
+        : "Product Image";
+
+
+  document
+    .getElementById(
+      "imageText"
+    )
+    .textContent =
+      hi
+        ? "यह तस्वीर केवल जाँच के लिए दिखाई गई है।"
+        : "This image is shown for review only.";
+
+
+  document
+    .getElementById(
+      "detailsTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद विवरण"
+        : "Product Details";
+
+
+  document
+    .getElementById(
+      "aiNote"
+    )
+    .textContent =
+      hi
+        ? "AI-सहायित विवरण"
+        : "AI-assisted details";
+
+
+  document
+    .getElementById(
+      "helperText"
+    )
+    .textContent =
+      hi
+        ? "मूल्य अनुमान पर जाने से पहले सभी विवरण जाँचें और ज़रूरत होने पर सुधारें।"
+        : "Please review and correct anything that needs changes before moving to price prediction.";
+
+
+  document
+    .getElementById(
+      "requiredNote"
+    )
+    .innerHTML =
+      hi
+        ? 'जिन फ़ील्ड के साथ <span class="required">*</span> है, उन्हें भरना आवश्यक है।'
+        : 'Fields marked with <span class="required">*</span> are required.';
+
+
+
+  document
+    .getElementById(
+      "labelName"
+    )
+    .innerHTML =
+      hi
+        ? 'उत्पाद का नाम <span class="required">*</span>'
+        : 'Product Name <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelCraft"
+    )
+    .innerHTML =
+      hi
+        ? 'कला <span class="required">*</span>'
+        : 'Craft <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelMaterial"
+    )
+    .innerHTML =
+      hi
+        ? 'सामग्री <span class="required">*</span>'
+        : 'Material <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelTechnique"
+    )
+    .innerHTML =
+      hi
+        ? 'तकनीक <span class="required">*</span>'
+        : 'Technique <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelDescription"
+    )
+    .innerHTML =
+      hi
+        ? 'उत्पाद विवरण <span class="required">*</span>'
+        : 'Product Description <span class="required">*</span>';
+
+
+
+  craft.options[0]
+    .textContent =
+      hi
+        ? "कला चुनें *"
+        : "Select craft *";
+
+
+  document
+    .getElementById(
+      "backBtn"
+    )
+    .textContent =
+      hi
+        ? "वापस"
+        : "Back";
+
+
+  document
+    .getElementById(
+      "continueBtn"
+    )
+    .textContent =
+      hi
+        ? "मूल्य अनुमान पर जाएँ"
+        : "Continue to Price Prediction";
+
+
+  productName.placeholder =
+    hi
+      ? "उत्पाद का नाम दर्ज करें"
+      : "Enter product name";
+
+
+  material.placeholder =
+    hi
+      ? "सामग्री दर्ज करें"
+      : "Enter material";
+
+
+  technique.placeholder =
+    hi
+      ? "तकनीक दर्ज करें"
+      : "Enter technique";
+
+
+  description.placeholder =
+    hi
+      ? "उत्पाद विवरण दर्ज करें"
+      : "Enter product description";
+
+
+  localStorage.setItem(
+    "kalaConnectLanguage",
+    lang
+  );
+
+
+  overlay
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+
+setLanguage(
+  localStorage.getItem(
+    "kalaConnectLanguage"
+  ) || "en"
+);
+
+
+</script>
+
+</body>
+</html>

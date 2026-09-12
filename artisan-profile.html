@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Artisan Profile - Kala Connect AI</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#022D69;--orange:#F98509;--terracotta:#D04F02;--green:#04702D;--bg:#FFFDF8;--surface:#fff;--soft:#F8F3E9;--text:#1E252C;--muted:#68717A;--border:#E7DFD2;--danger:#B42318;--shadow:0 16px 40px rgba(31,42,55,.08)}
+*{box-sizing:border-box;margin:0;padding:0}body{font-family:"DM Sans","Noto Sans Devanagari",sans-serif;background:var(--bg);color:var(--text);min-height:100vh}a{text-decoration:none;color:inherit}button,input,select{font:inherit}
+.topbar{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:0 40px;background:rgba(255,253,248,.97);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:1000}
+.brand{display:flex;align-items:center;gap:13px}.brand img{width:68px;height:68px;object-fit:contain;border:1px solid var(--border);border-radius:18px;padding:4px;background:#fff}.brand-copy strong{display:block;font-size:22px;color:var(--navy);line-height:1.05}.brand-copy small{display:block;margin-top:5px;color:var(--muted);font-size:13px}
+.top-actions{display:flex;align-items:center;gap:10px}.lang-btn,.back-btn{min-height:48px;padding:10px 15px;border-radius:999px;font-size:15px;font-weight:600;cursor:pointer}.lang-btn{border:none;background:#EEF4F9;color:var(--navy)}.back-btn{border:1px solid var(--border);background:#fff;color:var(--navy)}
+.container{width:calc(100% - 80px);max-width:1000px;margin:0 auto}main{padding:34px 0 52px}.page-head{margin-bottom:24px}.eyebrow{color:var(--terracotta);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.page-head h1{color:var(--navy);font-size:clamp(34px,4vw,48px);line-height:1.08}.page-head p{margin-top:10px;color:var(--muted);line-height:1.6;max-width:680px}
+.profile-card{background:#fff;border:1px solid var(--border);border-radius:24px;box-shadow:var(--shadow);overflow:hidden}.profile-summary{padding:24px;background:linear-gradient(135deg,#EEF4F9,#FFF9F1);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px}.avatar{width:72px;height:72px;border-radius:22px;background:var(--navy);color:#fff;display:grid;place-items:center;font-size:28px;font-weight:700;flex:0 0 auto}.summary-copy h2{color:var(--navy);font-size:24px}.summary-copy p{color:var(--muted);margin-top:4px;font-size:14px}
+.form-wrap{padding:24px}.section-title{color:var(--navy);font-size:20px;margin-bottom:16px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field label{display:block;margin-bottom:7px;color:#313A43;font-size:14px;font-weight:600}.field input,.field select{width:100%;min-height:50px;border:1px solid var(--border);border-radius:14px;background:#fff;color:var(--text);padding:11px 13px;outline:none;transition:.2s}.field input:focus,.field select:focus{border-color:rgba(2,45,105,.5);box-shadow:0 0 0 4px rgba(2,45,105,.06)}.field input:disabled,.field select:disabled{background:#F7F5F1;color:#58616A;cursor:not-allowed}.field-error{border-color:var(--danger)!important;box-shadow:0 0 0 4px rgba(180,35,24,.08)!important;background:#FFF9F8!important}
+.note{margin-top:16px;padding:12px 14px;border-left:3px solid var(--orange);background:#FFF9F1;color:var(--muted);border-radius:10px;font-size:13px;line-height:1.55}.actions{display:flex;gap:10px;justify-content:flex-end;margin-top:22px;flex-wrap:wrap}.btn{min-height:50px;padding:12px 19px;border-radius:999px;font-weight:600;cursor:pointer}.btn.secondary{border:1px solid var(--border);background:#fff;color:var(--navy)}.btn.primary{border:none;background:var(--navy);color:#fff}.btn.danger{border:1px solid #F0C9C5;background:#FFF7F6;color:var(--danger);margin-right:auto}.hidden{display:none!important}.success-box{display:none;margin-top:14px;padding:12px 14px;border-radius:12px;background:#F2FBF5;color:var(--green);font-size:14px;font-weight:600}.success-box.show{display:block}
+.language-overlay{position:fixed;inset:0;z-index:5000;display:none;place-items:center;background:rgba(12,21,31,.65);backdrop-filter:blur(12px);padding:20px}.language-overlay.show{display:grid}.language-card{width:min(460px,100%);background:#fff;border:1px solid var(--border);border-radius:24px;padding:24px;box-shadow:0 24px 70px rgba(12,21,31,.22)}.language-card h3{font-size:22px;margin-bottom:6px}.language-card p{color:var(--muted);font-size:14px;margin-bottom:18px}.language-options{display:grid;grid-template-columns:1fr 1fr;gap:10px}.language-option{min-height:58px;border:1px solid var(--border);border-radius:15px;background:#fff;cursor:pointer;font-size:17px;font-weight:600}
+@media(max-width:680px){.topbar{padding:0 14px;min-height:82px}.brand img{width:56px;height:56px}.brand-copy strong{font-size:18px}.brand-copy small{font-size:10px}.back-btn{display:none}.container{width:calc(100% - 28px)}main{padding:26px 0 36px}.profile-summary,.form-wrap{padding:18px}.form-grid{grid-template-columns:1fr}.actions{flex-direction:column}.actions .btn{width:100%}.btn.danger{margin-right:0;order:3}}
+</style>
+</head>
+<body>
+<header class="topbar">
+<a href="artisan-dashboard.html" class="brand"><img src="logo.jpeg" alt="Kala Connect AI Logo"><div class="brand-copy"><strong id="brandName">Kala Connect AI</strong><small>Artisan Market and Space AI</small></div></a>
+<div class="top-actions"><a href="artisan-dashboard.html" class="back-btn" id="backBtn">← Dashboard</a><button class="lang-btn" id="languageButton">🌐 <span id="languageShort">EN</span></button></div>
+</header>
+<main><div class="container">
+<section class="page-head"><div class="eyebrow" id="eyebrow">Artisan Account</div><h1 id="pageTitle">Your Profile</h1><p id="pageText">View and update the basic details used across your artisan workspace.</p></section>
+<section class="profile-card">
+<div class="profile-summary"><div class="avatar" id="avatar">A</div><div class="summary-copy"><h2 id="summaryName">Artisan</h2><p id="summaryState">Kala Connect AI Artisan</p></div></div>
+<div class="form-wrap"><h3 class="section-title" id="detailsTitle">Profile Details</h3>
+<div class="form-grid">
+<div class="field"><label for="artisanName" id="nameLabel">Artisan Name *</label><input id="artisanName" type="text" placeholder="Enter artisan name" disabled></div>
+<div class="field"><label for="mobileNumber" id="mobileLabel">Mobile Number *</label><input id="mobileNumber" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit mobile number" disabled></div>
+<div class="field"><label for="state" id="stateLabel">State / Union Territory *</label><select id="state" disabled><option value="">Select State / Union Territory</option>
+<option>Andaman and Nicobar Islands</option><option>Andhra Pradesh</option><option>Arunachal Pradesh</option><option>Assam</option><option>Bihar</option><option>Chandigarh</option><option>Chhattisgarh</option><option>Dadra and Nagar Haveli and Daman and Diu</option><option>Delhi</option><option>Goa</option><option>Gujarat</option><option>Haryana</option><option>Himachal Pradesh</option><option>Jammu and Kashmir</option><option>Jharkhand</option><option>Karnataka</option><option>Kerala</option><option>Ladakh</option><option>Lakshadweep</option><option>Madhya Pradesh</option><option>Maharashtra</option><option>Manipur</option><option>Meghalaya</option><option>Mizoram</option><option>Nagaland</option><option>Odisha</option><option>Puducherry</option><option>Punjab</option><option>Rajasthan</option><option>Sikkim</option><option>Tamil Nadu</option><option>Telangana</option><option>Tripura</option><option>Uttar Pradesh</option><option>Uttarakhand</option><option>West Bengal</option>
+</select></div>
+<div class="field"><label for="preferredLanguage" id="languageLabel">Preferred Interface Language</label><select id="preferredLanguage" disabled><option value="en">English</option><option value="hi">हिन्दी</option></select></div>
+</div>
+<div class="note" id="profileNote">For now, profile changes are stored locally. Later this page can be connected to the Django artisan profile API.</div>
+<div class="success-box" id="successBox">Profile saved successfully.</div>
+<div class="actions"><button class="btn danger" id="logoutBtn">Log Out</button><button class="btn secondary hidden" id="cancelBtn">Cancel</button><button class="btn primary" id="editBtn">Edit Profile</button><button class="btn primary hidden" id="saveBtn">Save Changes</button></div>
+</div></section>
+</div></main>
+
+<div class="language-overlay" id="languageOverlay"><div class="language-card"><h3 id="languageModalTitle">Choose your language</h3><p id="languageModalText">Important actions will switch language.</p><div class="language-options"><button class="language-option" onclick="setLanguage('en')">English</button><button class="language-option" onclick="setLanguage('hi')">हिन्दी</button></div></div></div>
+
+<script>
+const PROFILE_KEY="kalaConnectArtisanProfile";
+const artisanName=document.getElementById("artisanName"),mobileNumber=document.getElementById("mobileNumber"),state=document.getElementById("state"),preferredLanguage=document.getElementById("preferredLanguage"),editBtn=document.getElementById("editBtn"),saveBtn=document.getElementById("saveBtn"),cancelBtn=document.getElementById("cancelBtn"),successBox=document.getElementById("successBox");
+let currentLanguage=localStorage.getItem("kalaConnectLanguage")||"en",originalProfile={};
+function safeParse(v){try{return v?JSON.parse(v):{}}catch(e){return{}}}
+function loadProfile(){
+ const p=safeParse(localStorage.getItem(PROFILE_KEY));
+ originalProfile={name:p.name||localStorage.getItem("artisanName")||"",mobile:p.mobile||localStorage.getItem("artisanMobile")||localStorage.getItem("artisanPhone")||"",state:p.state||localStorage.getItem("artisanState")||"",language:p.language||localStorage.getItem("kalaConnectLanguage")||"en"};
+ artisanName.value=originalProfile.name;mobileNumber.value=originalProfile.mobile;state.value=originalProfile.state;preferredLanguage.value=originalProfile.language;updateSummary();
+}
+function updateSummary(){const n=artisanName.value.trim()||(currentLanguage==="hi"?"कारीगर":"Artisan");document.getElementById("summaryName").textContent=n;document.getElementById("avatar").textContent=n.charAt(0).toUpperCase();document.getElementById("summaryState").textContent=state.value||(currentLanguage==="hi"?"Kala Connect AI कारीगर":"Kala Connect AI Artisan")}
+function setEditing(on){[artisanName,mobileNumber,state,preferredLanguage].forEach(el=>{el.disabled=!on;el.classList.remove("field-error")});editBtn.classList.toggle("hidden",on);saveBtn.classList.toggle("hidden",!on);cancelBtn.classList.toggle("hidden",!on);if(on)artisanName.focus()}
+editBtn.onclick=()=>{successBox.classList.remove("show");setEditing(true)};
+cancelBtn.onclick=()=>{artisanName.value=originalProfile.name||"";mobileNumber.value=originalProfile.mobile||"";state.value=originalProfile.state||"";preferredLanguage.value=originalProfile.language||"en";updateSummary();setEditing(false);successBox.classList.remove("show")};
+saveBtn.onclick=()=>{
+ [artisanName,mobileNumber,state].forEach(f=>f.classList.remove("field-error"));let bad=null;
+ if(!artisanName.value.trim()){artisanName.classList.add("field-error");bad=bad||artisanName}
+ const mobile=mobileNumber.value.replace(/\D/g,"");if(mobile.length!==10){mobileNumber.classList.add("field-error");bad=bad||mobileNumber}
+ if(!state.value){state.classList.add("field-error");bad=bad||state}
+ if(bad){bad.focus();bad.scrollIntoView({behavior:"smooth",block:"center"});return}
+ const p={name:artisanName.value.trim(),mobile,state:state.value,language:preferredLanguage.value};
+ localStorage.setItem(PROFILE_KEY,JSON.stringify(p));localStorage.setItem("kalaConnectLanguage",p.language);originalProfile={...p};currentLanguage=p.language;updateSummary();setLanguage(currentLanguage,false);setEditing(false);successBox.textContent=currentLanguage==="hi"?"प्रोफ़ाइल सफलतापूर्वक सहेजी गई।":"Profile saved successfully.";successBox.classList.add("show");
+};
+[artisanName,state].forEach(el=>{el.addEventListener("input",()=>{el.classList.remove("field-error");updateSummary()});el.addEventListener("change",()=>{el.classList.remove("field-error");updateSummary()})});
+mobileNumber.oninput=()=>{mobileNumber.value=mobileNumber.value.replace(/\D/g,"").slice(0,10);mobileNumber.classList.remove("field-error")};
+document.getElementById("logoutBtn").onclick=()=>{localStorage.removeItem("artisanLoggedIn");window.location.href="artisan-login.html"};
+const languageOverlay=document.getElementById("languageOverlay");document.getElementById("languageButton").onclick=()=>languageOverlay.classList.add("show");languageOverlay.onclick=e=>{if(e.target===languageOverlay)languageOverlay.classList.remove("show")};
+function setLanguage(lang,closeModal=true){
+ currentLanguage=lang;const hi=lang==="hi";document.documentElement.lang=lang;localStorage.setItem("kalaConnectLanguage",lang);
+ document.getElementById("brandName").textContent=hi?"कला Connect AI":"Kala Connect AI";document.getElementById("languageShort").textContent=hi?"हि":"EN";document.getElementById("backBtn").textContent=hi?"← डैशबोर्ड":"← Dashboard";document.getElementById("eyebrow").textContent=hi?"कारीगर खाता":"Artisan Account";document.getElementById("pageTitle").textContent=hi?"आपकी प्रोफ़ाइल":"Your Profile";document.getElementById("pageText").textContent=hi?"अपने कारीगर कार्यक्षेत्र में उपयोग होने वाली मूल जानकारी देखें और अपडेट करें।":"View and update the basic details used across your artisan workspace.";document.getElementById("detailsTitle").textContent=hi?"प्रोफ़ाइल विवरण":"Profile Details";document.getElementById("nameLabel").textContent=hi?"कारीगर का नाम *":"Artisan Name *";document.getElementById("mobileLabel").textContent=hi?"मोबाइल नंबर *":"Mobile Number *";document.getElementById("stateLabel").textContent=hi?"राज्य / केंद्र शासित प्रदेश *":"State / Union Territory *";document.getElementById("languageLabel").textContent=hi?"पसंदीदा इंटरफ़ेस भाषा":"Preferred Interface Language";
+ document.getElementById("profileNote").textContent=hi?"अभी प्रोफ़ाइल बदलाव इस डिवाइस पर स्थानीय रूप से सहेजे जाते हैं। बाद में इसे Django artisan profile API से जोड़ा जा सकता है।":"For now, profile changes are stored locally. Later this page can be connected to the Django artisan profile API.";editBtn.textContent=hi?"प्रोफ़ाइल संपादित करें":"Edit Profile";saveBtn.textContent=hi?"बदलाव सहेजें":"Save Changes";cancelBtn.textContent=hi?"रद्द करें":"Cancel";document.getElementById("logoutBtn").textContent=hi?"लॉग आउट":"Log Out";document.getElementById("languageModalTitle").textContent=hi?"अपनी भाषा चुनें":"Choose your language";document.getElementById("languageModalText").textContent=hi?"महत्वपूर्ण क्रियाएँ चयनित भाषा में दिखेंगी।":"Important actions will switch language.";preferredLanguage.value=lang;updateSummary();if(closeModal)languageOverlay.classList.remove("show");
+}
+loadProfile();setLanguage(currentLanguage,false);setEditing(false);
+</script>
+</body>
+</html>
