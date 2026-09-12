@@ -50,6 +50,43 @@ class PricePredictRequest(BaseModel):
     artisan_data: ArtisanData = Field(default_factory=ArtisanData)
     derived_data: DerivedData = Field(default_factory=DerivedData)
 
+    model_config = {
+        "json_schema_extra": {
+            "example": {
+                "ai_data": {
+                    "productName": "Blue Pottery Vase",
+                    "craft": "Blue Pottery",
+                    "material": "Ceramic",
+                    "technique": "Hand-painted",
+                    "description": "Handcrafted decorative floral vase"
+                },
+                "artisan_data": {
+                    "state": "Rajasthan",
+                    "region": "Jaipur",
+                    "district": "Jaipur",
+                    "size_length_cm": 20.0,
+                    "size_width_cm": 20.0,
+                    "size_height_cm": 30.0,
+                    "weight_kg": 1.8,
+                    "labor_days": 3.0,
+                    "artisan_skill_level": "Skilled",
+                    "production_quantity": 10,
+                    "market_channel": "Artisan Direct"
+                },
+                "derived_data": {
+                    "product_type": "Vase",
+                    "labor_hours": 24.0,
+                    "complexity_score": 6.5,
+                    "material_cost_inr": 500.0,
+                    "labor_cost_inr": 900.0,
+                    "overhead_cost_inr": 200.0,
+                    "market_demand_score": 7.2,
+                    "seasonality_score": 5.0
+                }
+            }
+        }
+    }
+
 
 class PricePredictResponse(BaseModel):
     """Price prediction response."""
