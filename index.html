@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,14 +7,14 @@
   <meta name="description" content="Direct market linkage for marginalized Indian artisans. Discover GI-certified authentic crafts with AI Space Recommendation and fair pricing transparency." />
   
   <!-- Favicon with official emblem -->
-  <link rel="icon" type="image/png" href="{% static 'assets/logo.png' %}" />
+  <link rel="icon" type="image/png" href="assets/logo.png" />
 
   <!-- CSS Stylesheets -->
-  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/marketplace.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/space_ai.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
-  <link rel="stylesheet" href="{% static 'css/auth.css' %}" />
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/marketplace.css" />
+  <link rel="stylesheet" href="css/space_ai.css" />
+  <link rel="stylesheet" href="css/cart.css" />
+  <link rel="stylesheet" href="css/auth.css" />
 </head>
 <body>
 
@@ -38,7 +37,7 @@
       <div class="nav-row">
         <!-- Brand Logo with official emblem -->
         <div class="brand-logo" onclick="App.switchView('marketplace')">
-          <img src="{% static 'assets/logo.png' %}" alt="KalaConnect AI Emblem" class="brand-logo-img" />
+          <img src="assets/logo.png" alt="KalaConnect AI Emblem" class="brand-logo-img" />
           <div class="brand-text">
             <h1>KalaConnect AI</h1>
             <span>Artisan Market & Space AI</span>
@@ -470,7 +469,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
-            <img src="{% static 'assets/logo.png' %}" alt="KalaConnect AI" style="width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: white; padding: 2px;" />
+            <img src="assets/logo.png" alt="KalaConnect AI" style="width: 44px; height: 44px; object-fit: contain; border-radius: 10px; background: white; padding: 2px;" />
             <h3 style="margin: 0; font-size: 1.5rem; color: white;">KalaConnect AI</h3>
           </div>
           <p>
@@ -520,14 +519,14 @@
 
   <!-- Supabase JS SDK & Configuration -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="{% static 'js/supabase-config.js' %}"></script>
+  <script src="js/supabase-config.js"></script>
 
   <!-- Scripts -->
-  <script src="{% static 'js/products.js' %}"></script>
-  <script src="{% static 'js/cart.js' %}"></script>
-  <script src="{% static 'js/auth.js' %}"></script>
-  <script src="{% static 'js/marketplace.js' %}"></script>
-  <script src="{% static 'js/space_ai.js' %}"></script>
-  <script src="{% static 'js/app.js' %}"></script>
+  <script src="js/products.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/marketplace.js"></script>
+  <script src="js/space_ai.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

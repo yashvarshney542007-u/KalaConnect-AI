@@ -1,0 +1,435 @@
+/* ==========================================================================
+   AI SPACE RECOMMENDATION STUDIO STYLING
+   Interactive Room Matcher, Palette Analyzer & "Place in Room" Canvas
+   ========================================================================== */
+
+.space-studio-section {
+  padding: 40px 0 80px;
+}
+
+.studio-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px;
+}
+
+.studio-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, rgba(200, 90, 50, 0.12), rgba(212, 175, 55, 0.15));
+  border: 1px solid rgba(200, 90, 50, 0.3);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+
+.studio-title {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+}
+
+.studio-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* Studio Tabs Switcher */
+.studio-mode-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.studio-tab-btn {
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all var(--transition-fast);
+}
+
+.studio-tab-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.studio-tab-btn.active {
+  background: var(--text-main);
+  color: white;
+  border-color: var(--text-main);
+  box-shadow: var(--shadow-md);
+}
+
+/* Mode 1: Guided Space Stylist */
+.stylist-layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.stylist-controls-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.controls-group {
+  margin-bottom: 24px;
+}
+
+.controls-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.select-grid-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.option-btn {
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: #FAF8F5;
+  color: var(--text-main);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.option-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.option-btn.selected {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+/* Palette Circles */
+.palette-picker {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.palette-swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.palette-swatch:hover {
+  transform: scale(1.1);
+}
+
+.palette-swatch.selected {
+  border-color: var(--text-main);
+  transform: scale(1.15);
+  box-shadow: 0 0 0 2px var(--bg-surface);
+}
+
+.btn-run-ai-match {
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), #9e3814);
+  color: white;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 16px var(--primary-glow);
+  transition: all var(--transition-fast);
+}
+
+.btn-run-ai-match:hover {
+  opacity: 0.95;
+  transform: translateY(-1px);
+}
+
+/* Stylist Results Area */
+.stylist-results-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.ai-match-banner {
+  background: linear-gradient(135deg, #FFF9F5, #FBF6EF);
+  border: 1px solid rgba(200, 90, 50, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.harmony-score-box {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.score-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: conic-gradient(var(--primary) calc(var(--score, 92) * 1%), #EBE5DF 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.score-circle::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  background: white;
+  border-radius: 50%;
+}
+
+.score-circle span {
+  position: relative;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.score-info h4 {
+  font-size: 1.15rem;
+  margin-bottom: 4px;
+}
+
+.score-info p {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}
+
+.stylist-curated-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* Mode 2: Interactive Room Visualizer & "Place in Room" Canvas */
+.visualizer-card {
+  background: var(--bg-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.visualizer-top-bar {
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #FAF7F2;
+}
+
+.preset-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.preset-selector span {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.upload-room-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px dashed var(--primary);
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Canvas Area */
+.canvas-container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  background: #23201D;
+  overflow: hidden;
+  user-select: none;
+}
+
+.canvas-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.canvas-decor-item {
+  position: absolute;
+  top: 45%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  z-index: 10;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.45));
+  transition: transform 0.1s ease;
+}
+
+.canvas-decor-item:active {
+  cursor: grabbing;
+}
+
+.canvas-decor-item img {
+  max-width: 190px;
+  max-height: 190px;
+  object-fit: contain;
+  pointer-events: none;
+  border-radius: 8px;
+  border: 2px dashed rgba(255,255,255,0.7);
+}
+
+.canvas-controls-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background: rgba(28, 25, 23, 0.85);
+  backdrop-filter: var(--glass-blur);
+  padding: 10px 16px;
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: white;
+  font-size: 0.8rem;
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.canvas-controls-overlay button {
+  background: rgba(255,255,255,0.15);
+  border: none;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.canvas-controls-overlay button:hover {
+  background: var(--primary);
+}
+
+/* Visualizer Bottom Tray (Craft Selector) */
+.visualizer-craft-tray {
+  padding: 20px 24px;
+  background: var(--bg-surface);
+}
+
+.tray-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.craft-thumbnails-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+}
+
+.craft-thumb-card {
+  flex: 0 0 130px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px;
+  text-align: center;
+  cursor: pointer;
+  background: #FAF7F4;
+  transition: all var(--transition-fast);
+}
+
+.craft-thumb-card:hover, .craft-thumb-card.active {
+  border-color: var(--primary);
+  background: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.craft-thumb-card img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+}
+
+.craft-thumb-card h6 {
+  font-size: 0.76rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.craft-thumb-card span {
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .stylist-layout {
+    grid-template-columns: 1fr;
+  }
+}

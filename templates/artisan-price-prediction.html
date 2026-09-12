@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Price Prediction - Kala Connect AI</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --navy:#022D69;
+  --orange:#F98509;
+  --green:#04702D;
+  --terracotta:#D04F02;
+  --bg:#FFFDF8;
+  --sand:#F8F3E9;
+  --text:#1E252C;
+  --muted:#68717A;
+  --border:#E7DFD2;
+  --shadow:0 14px 36px rgba(31,42,55,.08);
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:"DM Sans","Noto Sans Devanagari",sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  min-height:100vh;
+}
+
+button,
+input{
+  font:inherit;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+/* HEADER */
+
+.topbar{
+  min-height:92px;
+  padding:0 40px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:rgba(255,253,248,.96);
+  border-bottom:1px solid var(--border);
+
+  position:sticky;
+  top:0;
+  z-index:1000;
+
+  backdrop-filter:blur(12px);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:13px;
+}
+
+.brand img{
+  width:58px;
+  height:58px;
+  object-fit:contain;
+  padding:4px;
+
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+}
+
+.brand strong{
+  display:block;
+  color:var(--navy);
+  font-size:21px;
+}
+
+.brand small{
+  display:block;
+  margin-top:4px;
+  color:var(--muted);
+  font-size:12px;
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.lang-btn,
+.back-top{
+  min-height:44px;
+  padding:9px 15px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+  font-weight:600;
+}
+
+.lang-btn{
+  border:none;
+  background:#EEF4F9;
+  color:var(--navy);
+}
+
+.back-top{
+  border:1px solid var(--border);
+  background:#fff;
+  color:var(--navy);
+}
+
+
+/* MAIN */
+
+.container{
+  width:calc(100% - 80px);
+  max-width:960px;
+  margin:0 auto;
+}
+
+main{
+  padding:28px 0 55px;
+}
+
+
+/* PAGE HEADER */
+
+.page-head{
+  margin-bottom:24px;
+}
+
+.step-badge{
+  display:inline-flex;
+
+  padding:6px 11px;
+  margin-bottom:10px;
+
+  border-radius:999px;
+
+  background:#EEF4F9;
+  color:var(--navy);
+
+  font-size:12px;
+  font-weight:700;
+}
+
+.page-head h1{
+  color:var(--navy);
+
+  font-size:clamp(34px,4vw,45px);
+  line-height:1.08;
+
+  letter-spacing:-.7px;
+}
+
+.page-head p{
+  margin-top:9px;
+
+  max-width:670px;
+
+  color:var(--muted);
+
+  font-size:16px;
+  line-height:1.6;
+}
+
+
+/* MAIN PRICE CARD */
+
+.price-card{
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:25px;
+
+  padding:30px;
+
+  box-shadow:var(--shadow);
+}
+
+
+/* AI HEADER */
+
+.ai-heading{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:20px;
+
+  padding-bottom:23px;
+  margin-bottom:25px;
+
+  border-bottom:1px solid var(--border);
+}
+
+.ai-heading h2{
+  color:var(--navy);
+  font-size:25px;
+}
+
+.ai-heading p{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.5;
+}
+
+.ai-chip{
+  flex-shrink:0;
+
+  padding:7px 11px;
+
+  border-radius:999px;
+
+  background:#FFF0DF;
+  color:#A25820;
+
+  font-size:12px;
+  font-weight:700;
+}
+
+
+/* PRICES */
+
+.price-results{
+  display:grid;
+
+  grid-template-columns:1fr 1fr;
+
+  gap:16px;
+
+  margin-bottom:25px;
+}
+
+.price-result{
+  min-height:158px;
+
+  padding:22px;
+
+  border-radius:20px;
+}
+
+.range-card{
+  background:#F8FBFF;
+  border:1px solid #DCE7F3;
+}
+
+.recommended-card{
+  background:#F2FAF4;
+  border:1px solid #CFE8D6;
+}
+
+.price-label{
+  display:block;
+
+  margin-bottom:12px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  font-weight:600;
+}
+
+.price-number{
+  color:var(--navy);
+
+  font-size:31px;
+  font-weight:700;
+  line-height:1.1;
+}
+
+.recommended-card .price-number{
+  color:var(--green);
+}
+
+.price-result p{
+  margin-top:10px;
+
+  color:var(--muted);
+
+  font-size:13px;
+  line-height:1.5;
+}
+
+
+/* WHY THIS PRICE */
+
+.reason-section{
+  margin-top:5px;
+
+  padding:23px;
+
+  background:#FFFCF7;
+
+  border:1px solid var(--border);
+  border-radius:20px;
+}
+
+.reason-title{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  margin-bottom:17px;
+}
+
+.reason-title h3{
+  color:var(--navy);
+  font-size:20px;
+}
+
+.reason-title span{
+  color:var(--muted);
+  font-size:12px;
+}
+
+.reason-grid{
+  display:grid;
+
+  grid-template-columns:repeat(3,1fr);
+
+  gap:12px;
+}
+
+.reason-item{
+  padding:15px;
+
+  background:#fff;
+
+  border:1px solid var(--border);
+  border-radius:14px;
+}
+
+.reason-item small{
+  display:block;
+
+  margin-bottom:5px;
+
+  color:var(--muted);
+  font-size:12px;
+}
+
+.reason-item strong{
+  color:var(--text);
+
+  font-size:15px;
+  font-weight:600;
+
+  overflow-wrap:anywhere;
+}
+
+
+/* SELLING PRICE */
+
+.final-price-section{
+  margin-top:25px;
+
+  padding-top:25px;
+
+  border-top:1px solid var(--border);
+}
+
+.final-price-section h3{
+  color:var(--navy);
+  font-size:21px;
+}
+
+.final-price-section > p{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:14px;
+  line-height:1.5;
+}
+
+.price-input-wrapper{
+  max-width:430px;
+
+  margin-top:15px;
+
+  display:flex;
+  align-items:center;
+
+  border:1px solid #CEC5B7;
+  border-radius:15px;
+
+  background:#fff;
+
+  overflow:hidden;
+}
+
+.rupee{
+  min-height:56px;
+
+  padding:0 17px;
+
+  display:flex;
+  align-items:center;
+
+  background:#F8F5EF;
+
+  border-right:1px solid var(--border);
+
+  color:var(--navy);
+
+  font-size:20px;
+  font-weight:700;
+}
+
+.price-input-wrapper input{
+  width:100%;
+  min-height:56px;
+
+  padding:10px 15px;
+
+  border:none;
+  outline:none;
+
+  color:var(--text);
+
+  font-size:19px;
+  font-weight:600;
+}
+
+.price-input-wrapper:focus-within{
+  border-color:rgba(2,45,105,.55);
+
+  box-shadow:
+  0 0 0 4px rgba(2,45,105,.06);
+}
+
+
+/* NOTE */
+
+.model-note{
+  margin-top:16px;
+
+  padding:12px 14px;
+
+  border-radius:12px;
+
+  background:#FFF8EE;
+
+  color:#80572D;
+
+  font-size:12px;
+  line-height:1.5;
+}
+
+
+/* BUTTONS */
+
+.bottom-actions{
+  margin-top:25px;
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  gap:12px;
+}
+
+.btn{
+  min-height:52px;
+
+  padding:12px 22px;
+
+  border-radius:999px;
+
+  cursor:pointer;
+
+  font-size:15px;
+  font-weight:600;
+}
+
+.btn-secondary{
+  border:1px solid var(--border);
+
+  background:#fff;
+  color:var(--navy);
+}
+
+.btn-primary{
+  border:none;
+
+  background:var(--navy);
+  color:#fff;
+
+  padding-left:27px;
+  padding-right:27px;
+
+  box-shadow:0 9px 20px rgba(2,45,105,.15);
+}
+
+
+/* ERROR */
+
+.error-message{
+  display:none;
+
+  margin-top:10px;
+
+  color:#B42318;
+
+  font-size:13px;
+}
+
+.error-message.show{
+  display:block;
+}
+
+
+/* MOBILE */
+
+@media(max-width:720px){
+
+  .topbar{
+    min-height:80px;
+    padding:0 14px;
+  }
+
+  .brand img{
+    width:52px;
+    height:52px;
+  }
+
+  .brand strong{
+    font-size:17px;
+  }
+
+  .brand small{
+    font-size:10px;
+  }
+
+  .back-top{
+    display:none;
+  }
+
+  .container{
+    width:calc(100% - 28px);
+  }
+
+  main{
+    padding-top:23px;
+  }
+
+  .price-card{
+    padding:19px;
+    border-radius:20px;
+  }
+
+  .ai-heading{
+    flex-direction:column;
+    gap:12px;
+  }
+
+  .price-results{
+    grid-template-columns:1fr;
+  }
+
+  .reason-grid{
+    grid-template-columns:1fr;
+  }
+
+  .bottom-actions{
+    flex-direction:column-reverse;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header class="topbar">
+
+  <a href="artisan-dashboard.html" class="brand">
+
+    <img src="logo.jpeg" alt="Kala Connect AI Logo">
+
+    <div>
+      <strong id="brandName">Kala Connect AI</strong>
+      <small>Artisan Market and Space AI</small>
+    </div>
+
+  </a>
+
+  <div class="header-actions">
+
+    <button
+      class="lang-btn"
+      id="languageBtn"
+      type="button"
+    >
+      🌐 EN
+    </button>
+
+    <button
+      class="back-top"
+      id="topBackBtn"
+      type="button"
+    >
+      Back
+    </button>
+
+  </div>
+
+</header>
+
+
+<main>
+
+<div class="container">
+
+  <section class="page-head">
+
+    <span
+      class="step-badge"
+      id="stepText"
+    >
+      Step 3 of 3
+    </span>
+
+    <h1 id="pageTitle">
+      Price Your Product
+    </h1>
+
+    <p id="pageDescription">
+      Review the AI suggested fair price and choose the final selling price for your product.
+    </p>
+
+  </section>
+
+
+  <section class="price-card">
+
+    <div class="ai-heading">
+
+      <div>
+
+        <h2 id="predictionHeading">
+          AI Price Prediction
+        </h2>
+
+        <p id="predictionDescription">
+          The suggested price is based on the verified product details you provided.
+        </p>
+
+      </div>
+
+      <span
+        class="ai-chip"
+        id="aiChip"
+      >
+        AI-assisted estimate
+      </span>
+
+    </div>
+
+
+    <!-- PRICE RESULTS -->
+
+    <div class="price-results">
+
+      <div class="price-result range-card">
+
+        <span
+          class="price-label"
+          id="rangeLabel"
+        >
+          Suggested Fair Price Range
+        </span>
+
+        <div
+          class="price-number"
+          id="priceRange"
+        >
+          ₹1,200 – ₹1,500
+        </div>
+
+        <p id="rangeHelp">
+          A reasonable market range predicted for this product.
+        </p>
+
+      </div>
+
+
+      <div class="price-result recommended-card">
+
+        <span
+          class="price-label"
+          id="recommendedLabel"
+        >
+          Recommended Price
+        </span>
+
+        <div
+          class="price-number"
+          id="recommendedPrice"
+        >
+          ₹1,350
+        </div>
+
+        <p id="recommendedHelp">
+          This is the model's suggested selling price within the fair range.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- WHY THIS PRICE -->
+
+    <div class="reason-section">
+
+      <div class="reason-title">
+
+        <h3 id="whyTitle">
+          Why this price?
+        </h3>
+
+        <span id="verifiedText">
+          Based on verified details
+        </span>
+
+      </div>
+
+      <div class="reason-grid">
+
+        <div class="reason-item">
+
+          <small id="craftLabel">
+            Craft
+          </small>
+
+          <strong id="craftValue">
+            Not provided
+          </strong>
+
+        </div>
+
+
+        <div class="reason-item">
+
+          <small id="materialLabel">
+            Material
+          </small>
+
+          <strong id="materialValue">
+            Not provided
+          </strong>
+
+        </div>
+
+
+        <div class="reason-item">
+
+          <small id="techniqueLabel">
+            Technique
+          </small>
+
+          <strong id="techniqueValue">
+            Not provided
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- FINAL SELLING PRICE -->
+
+    <div class="final-price-section">
+
+      <h3 id="sellingTitle">
+        Final Selling Price
+      </h3>
+
+      <p id="sellingHelp">
+        You can keep the recommended price or enter the price you want to sell your product for.
+      </p>
+
+
+      <div class="price-input-wrapper">
+
+        <span class="rupee">
+          ₹
+        </span>
+
+        <input
+          type="number"
+          id="finalPrice"
+          min="1"
+          step="1"
+          value="1350"
+          aria-label="Final Selling Price"
+        >
+
+      </div>
+
+      <div
+        class="error-message"
+        id="priceError"
+      >
+        Please enter a valid selling price.
+      </div>
+
+
+      <div
+        class="model-note"
+        id="modelNote"
+      >
+        The AI suggestion is a pricing aid. You remain in control of the final selling price.
+      </div>
+
+    </div>
+
+
+    <!-- ACTIONS -->
+
+    <div class="bottom-actions">
+
+      <button
+        type="button"
+        class="btn btn-secondary"
+        id="backBtn"
+      >
+        ← Back
+      </button>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="continueBtn"
+      >
+        Continue to Publish →
+      </button>
+
+    </div>
+
+  </section>
+
+</div>
+
+</main>
+
+
+<script>
+
+/* =========================================
+   LANGUAGE
+========================================= */
+
+let currentLanguage =
+  localStorage.getItem("kalaConnectLanguage") || "en";
+
+
+const translations = {
+
+  en:{
+
+    brand:"Kala Connect AI",
+
+    step:"Step 3 of 3",
+
+    title:"Price Your Product",
+
+    description:
+    "Review the AI suggested fair price and choose the final selling price for your product.",
+
+    predictionHeading:"AI Price Prediction",
+
+    predictionDescription:
+    "The suggested price is based on the verified product details you provided.",
+
+    aiChip:"AI-assisted estimate",
+
+    rangeLabel:"Suggested Fair Price Range",
+
+    rangeHelp:
+    "A reasonable market range predicted for this product.",
+
+    recommendedLabel:"Recommended Price",
+
+    recommendedHelp:
+    "This is the model's suggested selling price within the fair range.",
+
+    whyTitle:"Why this price?",
+
+    verified:"Based on verified details",
+
+    craft:"Craft",
+
+    material:"Material",
+
+    technique:"Technique",
+
+    missing:"Not provided",
+
+    sellingTitle:"Final Selling Price",
+
+    sellingHelp:
+    "You can keep the recommended price or enter the price you want to sell your product for.",
+
+    note:
+    "The AI suggestion is a pricing aid. You remain in control of the final selling price.",
+
+    back:"← Back",
+
+    topBack:"Back",
+
+    continue:"Continue to Publish →",
+
+    error:"Please enter a valid selling price."
+
+  },
+
+
+  hi:{
+
+    brand:"कला Connect AI",
+
+    step:"चरण 3 में से 3",
+
+    title:"अपने उत्पाद की कीमत तय करें",
+
+    description:
+    "AI द्वारा सुझाई गई उचित मूल्य सीमा देखें और अपने उत्पाद का अंतिम विक्रय मूल्य तय करें।",
+
+    predictionHeading:"AI मूल्य अनुमान",
+
+    predictionDescription:
+    "सुझाई गई कीमत आपके द्वारा सत्यापित उत्पाद विवरण पर आधारित है।",
+
+    aiChip:"AI-सहायता प्राप्त अनुमान",
+
+    rangeLabel:"सुझाई गई उचित मूल्य सीमा",
+
+    rangeHelp:
+    "इस उत्पाद के लिए अनुमानित उचित बाजार मूल्य सीमा।",
+
+    recommendedLabel:"अनुशंसित मूल्य",
+
+    recommendedHelp:
+    "यह उचित मूल्य सीमा के भीतर मॉडल द्वारा सुझाया गया विक्रय मूल्य है।",
+
+    whyTitle:"यह कीमत क्यों?",
+
+    verified:"सत्यापित विवरण पर आधारित",
+
+    craft:"शिल्प",
+
+    material:"सामग्री",
+
+    technique:"तकनीक",
+
+    missing:"जानकारी उपलब्ध नहीं",
+
+    sellingTitle:"अंतिम विक्रय मूल्य",
+
+    sellingHelp:
+    "आप अनुशंसित मूल्य रख सकते हैं या अपनी पसंद का विक्रय मूल्य दर्ज कर सकते हैं।",
+
+    note:
+    "AI सुझाव केवल मूल्य निर्धारण में सहायता के लिए है। अंतिम विक्रय मूल्य आपके नियंत्रण में है।",
+
+    back:"← वापस",
+
+    topBack:"वापस",
+
+    continue:"प्रकाशित करने के लिए आगे बढ़ें →",
+
+    error:"कृपया सही विक्रय मूल्य दर्ज करें।"
+
+  }
+
+};
+
+
+/* =========================================
+   LOAD PRODUCT DRAFT
+========================================= */
+
+let productDraft = {};
+
+try{
+
+  productDraft = JSON.parse(
+    localStorage.getItem("kalaConnectDraftProduct") || "{}"
+  );
+
+}catch(error){
+
+  console.error(
+    "Could not load product draft:",
+    error
+  );
+
+  productDraft = {};
+
+}
+
+
+/* =========================================
+   TEMPORARY MOCK PRICE
+   Later teammate's API will replace this.
+========================================= */
+
+const storedRecommendedPrice =
+  Number(productDraft.recommendedPrice) || 1350;
+
+const storedMinimumPrice =
+  Number(productDraft.minimumPrice) || 1200;
+
+const storedMaximumPrice =
+  Number(productDraft.maximumPrice) || 1500;
+
+
+/* =========================================
+   ELEMENTS
+========================================= */
+
+const brandName =
+  document.getElementById("brandName");
+
+const languageBtn =
+  document.getElementById("languageBtn");
+
+const stepText =
+  document.getElementById("stepText");
+
+const pageTitle =
+  document.getElementById("pageTitle");
+
+const pageDescription =
+  document.getElementById("pageDescription");
+
+const predictionHeading =
+  document.getElementById("predictionHeading");
+
+const predictionDescription =
+  document.getElementById("predictionDescription");
+
+const aiChip =
+  document.getElementById("aiChip");
+
+const rangeLabel =
+  document.getElementById("rangeLabel");
+
+const rangeHelp =
+  document.getElementById("rangeHelp");
+
+const recommendedLabel =
+  document.getElementById("recommendedLabel");
+
+const recommendedHelp =
+  document.getElementById("recommendedHelp");
+
+const whyTitle =
+  document.getElementById("whyTitle");
+
+const verifiedText =
+  document.getElementById("verifiedText");
+
+const craftLabel =
+  document.getElementById("craftLabel");
+
+const materialLabel =
+  document.getElementById("materialLabel");
+
+const techniqueLabel =
+  document.getElementById("techniqueLabel");
+
+const craftValue =
+  document.getElementById("craftValue");
+
+const materialValue =
+  document.getElementById("materialValue");
+
+const techniqueValue =
+  document.getElementById("techniqueValue");
+
+const sellingTitle =
+  document.getElementById("sellingTitle");
+
+const sellingHelp =
+  document.getElementById("sellingHelp");
+
+const modelNote =
+  document.getElementById("modelNote");
+
+const backBtn =
+  document.getElementById("backBtn");
+
+const topBackBtn =
+  document.getElementById("topBackBtn");
+
+const continueBtn =
+  document.getElementById("continueBtn");
+
+const finalPrice =
+  document.getElementById("finalPrice");
+
+const priceError =
+  document.getElementById("priceError");
+
+
+/* =========================================
+   PRODUCT DATA
+========================================= */
+
+function renderProductDetails(){
+
+  const text =
+    translations[currentLanguage];
+
+  craftValue.textContent =
+    productDraft.craft ||
+    text.missing;
+
+  materialValue.textContent =
+    productDraft.material ||
+    text.missing;
+
+  techniqueValue.textContent =
+    productDraft.technique ||
+    text.missing;
+
+}
+
+
+/* =========================================
+   PRICE
+========================================= */
+
+document.getElementById("priceRange").textContent =
+  `₹${storedMinimumPrice.toLocaleString("en-IN")} – ₹${storedMaximumPrice.toLocaleString("en-IN")}`;
+
+document.getElementById("recommendedPrice").textContent =
+  `₹${storedRecommendedPrice.toLocaleString("en-IN")}`;
+
+finalPrice.value =
+  productDraft.finalSellingPrice ||
+  storedRecommendedPrice;
+
+
+/* =========================================
+   APPLY LANGUAGE
+========================================= */
+
+function applyLanguage(){
+
+  const text =
+    translations[currentLanguage];
+
+  document.documentElement.lang =
+    currentLanguage;
+
+  brandName.textContent =
+    text.brand;
+
+  stepText.textContent =
+    text.step;
+
+  pageTitle.textContent =
+    text.title;
+
+  pageDescription.textContent =
+    text.description;
+
+  predictionHeading.textContent =
+    text.predictionHeading;
+
+  predictionDescription.textContent =
+    text.predictionDescription;
+
+  aiChip.textContent =
+    text.aiChip;
+
+  rangeLabel.textContent =
+    text.rangeLabel;
+
+  rangeHelp.textContent =
+    text.rangeHelp;
+
+  recommendedLabel.textContent =
+    text.recommendedLabel;
+
+  recommendedHelp.textContent =
+    text.recommendedHelp;
+
+  whyTitle.textContent =
+    text.whyTitle;
+
+  verifiedText.textContent =
+    text.verified;
+
+  craftLabel.textContent =
+    text.craft;
+
+  materialLabel.textContent =
+    text.material;
+
+  techniqueLabel.textContent =
+    text.technique;
+
+  sellingTitle.textContent =
+    text.sellingTitle;
+
+  sellingHelp.textContent =
+    text.sellingHelp;
+
+  modelNote.textContent =
+    text.note;
+
+  backBtn.textContent =
+    text.back;
+
+  topBackBtn.textContent =
+    text.topBack;
+
+  continueBtn.textContent =
+    text.continue;
+
+  priceError.textContent =
+    text.error;
+
+  languageBtn.textContent =
+    currentLanguage === "en"
+      ? "🌐 EN"
+      : "🌐 HI";
+
+  renderProductDetails();
+
+}
+
+
+applyLanguage();
+
+
+/* =========================================
+   LANGUAGE TOGGLE
+========================================= */
+
+languageBtn.onclick = () => {
+
+  currentLanguage =
+    currentLanguage === "en"
+      ? "hi"
+      : "en";
+
+  localStorage.setItem(
+    "kalaConnectLanguage",
+    currentLanguage
+  );
+
+  applyLanguage();
+
+};
+
+
+/* =========================================
+   BACK
+========================================= */
+
+function goBack(){
+
+  window.location.href =
+    "artisan-review-product.html";
+
+}
+
+backBtn.onclick =
+  goBack;
+
+topBackBtn.onclick =
+  goBack;
+
+
+/* =========================================
+   CONTINUE
+========================================= */
+
+continueBtn.onclick = () => {
+
+  const enteredPrice =
+    Number(finalPrice.value);
+
+  if(
+    !enteredPrice ||
+    enteredPrice <= 0
+  ){
+
+    priceError.classList.add("show");
+
+    finalPrice.focus();
+
+    return;
+
+  }
+
+  priceError.classList.remove("show");
+
+
+  const updatedDraft = {
+
+    ...productDraft,
+
+    minimumPrice:
+      storedMinimumPrice,
+
+    maximumPrice:
+      storedMaximumPrice,
+
+    recommendedPrice:
+      storedRecommendedPrice,
+
+    finalSellingPrice:
+      enteredPrice
+
+  };
+
+
+  localStorage.setItem(
+    "kalaConnectDraftProduct",
+    JSON.stringify(updatedDraft)
+  );
+
+
+  window.location.href =
+    "artisan-publish-product.html";
+
+};
+
+
+/* remove error when typing */
+
+finalPrice.addEventListener(
+  "input",
+  () => {
+
+    priceError.classList.remove("show");
+
+  }
+);
+
+</script>
+
+</body>
+</html>
