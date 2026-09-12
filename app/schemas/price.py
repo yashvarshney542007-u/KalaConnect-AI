@@ -10,7 +10,7 @@ Pipeline order in /docs:
 """
 
 from typing import Any, Dict, List, Optional
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, model_validator
 
 
 CRAFT_COMPLEXITY = {
@@ -34,7 +34,13 @@ CRAFT_COMPLEXITY = {
 
 
 class VisionOutput(BaseModel):
-    """Exact JSON returned by POST /api/vision/analyze"""
+    """
+    JSON returned by POST /api/vision/analyze.
+    Accepts either the full envelope { "success": true, "analysis": { ... } }
+    or the direct analysis dictionary.
+    """
+    model_config = {"extra": "allow"}
+
     craft: Optional[str] = Field(None, description="Craft type detected from image")
     material: Optional[str] = Field(None, description="Material identified from image")
     product_type: Optional[str] = Field(None, description="Object type detected")
@@ -45,13 +51,29 @@ class VisionOutput(BaseModel):
     possible_region: Optional[str] = Field(None, description="Geographic region if visually justified")
     confidence: Optional[float] = Field(None, description="Model confidence 0.0 to 1.0")
 
+    @model_validator(mode="before")
+    @classmethod
+    def extract_nested_analysis(cls, data: Any) -> Any:
+        if isinstance(data, dict) and "analysis" in data and isinstance(data["analysis"], dict):
+            merged = {**data["analysis"]}
+            for k, v in data.items():
+                if k != "analysis" and k not in merged:
+                    merged[k] = v
+            return merged
+        return data
+
 
 class VoiceOutput(BaseModel):
-    """Exact JSON returned by POST /api/voice/transcribe"""
+    """
+    JSON returned by POST /api/voice/transcribe.
+    Accepts { "text": "...", "language": "...", "language_probability": ... }
+    and any additional optional fields.
+    """
+    model_config = {"extra": "allow"}
+
     text: Optional[str] = Field(None, description="Transcription of the artisan voice recording")
     language: Optional[str] = Field(None, description="Detected language code")
     language_probability: Optional[float] = Field(None, description="Language detection confidence")
-
 
 
 class PricePredictRequest(BaseModel):
