@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: kalaconnect-ai
+    runtime: python
+    plan: free
+    region: oregon
+    branch: deployment/cloud
+    buildCommand: "pip install -r requirements.txt && python manage.py collectstatic --no-input"
+    startCommand: "gunicorn --bind 0.0.0.0:$PORT config.wsgi:application"
+    envVars:
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: "localhost,127.0.0.1"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://*.onrender.com,http://localhost:8000,http://127.0.0.1:8000"
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: SUPABASE_SECRET_KEY
+        sync: false

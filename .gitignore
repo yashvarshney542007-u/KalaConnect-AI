@@ -9,6 +9,8 @@ venv/
 
 # Environment variables
 .env
+.env.*
+!.env.example
 
 # IDE
 .vscode/
@@ -24,6 +26,7 @@ venv/
 # Cache
 .cache/
 huggingface_cache/
+staticfiles/
 
 # Audio generated locally
 *.wav
@@ -39,3 +42,6 @@ Thumbs.db
 .coverage
 htmlcov/
 db.sqlite3
+
+# Node
+node_modules/

@@ -1,43 +1,46 @@
 import os
 
 from dotenv import load_dotenv
-from supabase import create_client, Client
+from supabase import Client, create_client
 
 
-# Load values from .env
 load_dotenv()
 
 
-SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_URL = (os.getenv("SUPABASE_URL") or "").strip()
+SUPABASE_PUBLISHABLE_KEY = (os.getenv("SUPABASE_PUBLISHABLE_KEY") or "").strip()
+SUPABASE_SECRET_KEY = (os.getenv("SUPABASE_SECRET_KEY") or "").strip()
 
-SUPABASE_PUBLISHABLE_KEY = os.getenv(
-    "SUPABASE_PUBLISHABLE_KEY"
+
+class MissingSupabaseClient:
+    """Graceful stub used when Supabase env vars are not configured."""
+
+    def __getattr__(self, _name):
+        raise RuntimeError(
+            "Supabase is not configured. Set SUPABASE_URL, "
+            "SUPABASE_PUBLISHABLE_KEY, and SUPABASE_SECRET_KEY in the environment."
+        )
+
+    def __bool__(self):
+        return False
+
+
+def _build_client(url: str, key: str) -> Client | MissingSupabaseClient:
+    if not url or not key:
+        return MissingSupabaseClient()
+
+    try:
+        return create_client(url, key)
+    except Exception:
+        return MissingSupabaseClient()
+
+
+supabase: Client | MissingSupabaseClient = _build_client(
+    SUPABASE_URL,
+    SUPABASE_PUBLISHABLE_KEY,
 )
 
-
-if not SUPABASE_URL:
-    raise ValueError(
-        "SUPABASE_URL is missing from .env"
-    )
-
-
-if not SUPABASE_PUBLISHABLE_KEY:
-    raise ValueError(
-        "SUPABASE_PUBLISHABLE_KEY is missing from .env"
-    )
-
-
-supabase: Client = create_client(
+supabase_admin: Client | MissingSupabaseClient = _build_client(
     SUPABASE_URL,
-    SUPABASE_PUBLISHABLE_KEY
-)
-
-SUPABASE_SECRET_KEY = os.getenv("SUPABASE_SECRET_KEY")
-
-if not SUPABASE_SECRET_KEY:
-    raise ValueError("SUPABASE_SECRET_KEY is missing from .env")
-
-supabase_admin: Client = create_client(
-    SUPABASE_URL,
-    SUPABASE_SECRET_KEY
+    SUPABASE_SECRET_KEY,
 )

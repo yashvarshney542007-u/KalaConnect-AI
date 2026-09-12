@@ -4,147 +4,81 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 
-# --------------------------------------------------
-# BASE DIRECTORY
-# --------------------------------------------------
-
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# --------------------------------------------------
-# LOAD ENVIRONMENT VARIABLES
-# --------------------------------------------------
 
 load_dotenv(BASE_DIR / ".env")
 
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") or "dev-secret-key-change-me"
 
-# --------------------------------------------------
-# SECURITY
-# --------------------------------------------------
+DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY")
+ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
+if os.getenv("RENDER_EXTERNAL_HOSTNAME"):
+    ALLOWED_HOSTS.append(os.getenv("RENDER_EXTERNAL_HOSTNAME"))
+ALLOWED_HOSTS.extend(
+    host.strip()
+    for host in os.getenv("ALLOWED_HOSTS", "").split(",")
+    if host.strip()
+)
 
-if not SECRET_KEY:
-    raise ValueError("DJANGO_SECRET_KEY is missing from .env")
-
-
-DEBUG = os.getenv("DEBUG", "True").lower() == "true"
-
-
-ALLOWED_HOSTS = [
-    "127.0.0.1",
-    "localhost",
+CSRF_TRUSTED_ORIGINS = [
+    origin.strip()
+    for origin in os.getenv("CSRF_TRUSTED_ORIGINS", "").split(",")
+    if origin.strip()
 ]
-
-
-# --------------------------------------------------
-# APPLICATIONS
-# --------------------------------------------------
+if DEBUG:
+    CSRF_TRUSTED_ORIGINS.extend([
+        "http://localhost:8000",
+        "http://127.0.0.1:8000",
+    ])
 
 INSTALLED_APPS = [
-    # Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
-    # Third-party apps
     "rest_framework",
-
-    # Our Django app
     "crazyyy",
 ]
 
-
-# --------------------------------------------------
-# MIDDLEWARE
-# --------------------------------------------------
-
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
-
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-
     "django.middleware.common.CommonMiddleware",
-
     "django.middleware.csrf.CsrfViewMiddleware",
-
     "django.contrib.auth.middleware.AuthenticationMiddleware",
-
     "django.contrib.messages.middleware.MessageMiddleware",
-
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-
-# --------------------------------------------------
-# URL CONFIGURATION
-# --------------------------------------------------
-
 ROOT_URLCONF = "config.urls"
-
-
-# --------------------------------------------------
-# TEMPLATES
-# --------------------------------------------------
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-
-        "DIRS": [
-            BASE_DIR / "templates",
-        ],
-
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
-
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.request",
-
                 "django.contrib.auth.context_processors.auth",
-
                 "django.contrib.messages.context_processors.messages",
             ],
         },
     },
 ]
 
-
-# --------------------------------------------------
-# WSGI
-# --------------------------------------------------
-
 WSGI_APPLICATION = "config.wsgi.application"
-
-
-# --------------------------------------------------
-# DATABASE
-# --------------------------------------------------
-#
-# IMPORTANT:
-# Supabase Auth and Supabase database are separate things.
-#
-# For now Django itself will use SQLite.
-# Supabase is being used for authentication.
-#
-# Later we can connect Django ORM directly to Supabase PostgreSQL.
-# --------------------------------------------------
 
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-
         "NAME": BASE_DIR / "db.sqlite3",
     }
 }
-
-
-# --------------------------------------------------
-# PASSWORD VALIDATION
-# --------------------------------------------------
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -153,21 +87,18 @@ AUTH_PASSWORD_VALIDATORS = [
             "UserAttributeSimilarityValidator"
         ),
     },
-
     {
         "NAME": (
             "django.contrib.auth.password_validation."
             "MinimumLengthValidator"
         ),
     },
-
     {
         "NAME": (
             "django.contrib.auth.password_validation."
             "CommonPasswordValidator"
         ),
     },
-
     {
         "NAME": (
             "django.contrib.auth.password_validation."
@@ -176,33 +107,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# --------------------------------------------------
-# INTERNATIONALIZATION
-# --------------------------------------------------
-
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "Asia/Kolkata"
-
 USE_I18N = True
-
 USE_TZ = True
 
-
-# --------------------------------------------------
-# STATIC FILES
-# --------------------------------------------------
-
-STATIC_URL = "static/"
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
-
-
-# --------------------------------------------------
-# DEFAULT PRIMARY KEY
-# --------------------------------------------------
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATICFILES_STORAGE = (
+    "whitenoise.storage.CompressedManifestStaticFilesStorage"
+)
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
