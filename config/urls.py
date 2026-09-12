@@ -1,23 +1,74 @@
 from django.contrib import admin
 from django.urls import path
+from django.views.generic import TemplateView
 
 from config import views
+from crazyyy import views as frontend_views
 
 
 urlpatterns = [
 
-    # Test endpoint
+    # Customer frontend
     path(
         "",
-        views.home,
+        frontend_views.index,
         name="home"
     ),
 
     path(
-    "auth/protected-test/",
-    views.protected_test,
-    name="protected_test"
-),
+        "auth/protected-test/",
+        views.protected_test,
+        name="protected_test"
+    ),
+    # Seller frontend
+    path(
+        "seller/",
+        TemplateView.as_view(template_name="artisan-login.html"),
+        name="seller",
+    ),
+
+    path(
+        "seller/register/",
+        TemplateView.as_view(template_name="artisan-register.html"),
+        name="seller-register",
+    ),
+
+    path(
+        "seller/dashboard/",
+        TemplateView.as_view(template_name="artisan-dashboard.html"),
+        name="seller-dashboard",
+    ),
+
+    path(
+        "seller/profile/",
+        TemplateView.as_view(template_name="artisan-profile.html"),
+        name="seller-profile",
+    ),
+
+    path(
+        "seller/upload/",
+        TemplateView.as_view(
+            template_name="artisan-upload-camera-fixed.html"
+        ),
+        name="seller-upload",
+    ),
+
+    path(
+        "seller/publish/",
+        TemplateView.as_view(
+            template_name="artisan-publish-product.html"
+        ),
+        name="seller-publish",
+    ),
+
+    path(
+        "seller/price-prediction/",
+        TemplateView.as_view(
+            template_name="artisan-price-prediction.html"
+        ),
+        name="seller-price-prediction",
+    ),
+
 
 
     # Django admin
@@ -180,13 +231,13 @@ path(
 
 path(
     "orders/<uuid:order_id>/",
-    views.get_order_detail,
+    views.get_order,
     name="get_order_detail"
 ),
 
 path(
     "artisan/orders/",
-    views.get_artisan_orders,
+    views.artisan_orders,
     name="get_artisan_orders"
 ),
 
