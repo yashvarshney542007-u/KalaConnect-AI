@@ -1022,7 +1022,151 @@ main{
 
           </div>
 
+<!-- PRICING / ML INPUTS -->
 
+<div class="field">
+  <label for="category">
+    Category <span class="required">*</span>
+  </label>
+  <input
+    id="category"
+    type="text"
+    placeholder="Enter category"
+  >
+</div>
+
+<div class="field">
+  <label for="subcategory">
+    Subcategory <span class="required">*</span>
+  </label>
+  <input
+    id="subcategory"
+    type="text"
+    placeholder="Enter subcategory"
+  >
+</div>
+
+<div class="field">
+  <label for="state">
+    State <span class="required">*</span>
+  </label>
+  <input
+    id="state"
+    type="text"
+    placeholder="Enter state"
+  >
+</div>
+
+<div class="field">
+  <label for="region">
+    Region <span class="required">*</span>
+  </label>
+  <input
+    id="region"
+    type="text"
+    placeholder="Enter region"
+  >
+</div>
+
+<div class="field">
+  <label for="size">
+    Size <span class="required">*</span>
+  </label>
+  <input
+    id="size"
+    type="text"
+    placeholder="Enter size"
+  >
+</div>
+
+<div class="field">
+  <label for="complexity">
+    Complexity <span class="required">*</span>
+  </label>
+  <select id="complexity">
+    <option value="">Select complexity *</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+</div>
+
+<div class="field">
+  <label for="customization">
+    Customization <span class="required">*</span>
+  </label>
+  <select id="customization">
+    <option value="">Select customization *</option>
+    <option value="None">None</option>
+    <option value="Basic">Basic</option>
+    <option value="High">High</option>
+  </select>
+</div>
+
+<div class="field">
+  <label for="laborHours">
+    Labor Hours <span class="required">*</span>
+  </label>
+  <input
+    id="laborHours"
+    type="number"
+    min="0.1"
+    step="0.1"
+    placeholder="e.g. 8"
+  >
+</div>
+
+<div class="field">
+  <label for="rawMaterialCost">
+    Raw Material Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="rawMaterialCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 500"
+  >
+</div>
+
+<div class="field">
+  <label for="packagingCost">
+    Packaging Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="packagingCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 50"
+  >
+</div>
+
+<div class="field">
+  <label for="transportCost">
+    Transport Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="transportCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 100"
+  >
+</div>
+
+<div class="field">
+  <label for="directCost">
+    Direct Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="directCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 650"
+  >
+</div>
 
           <div class="field full">
 
@@ -1163,6 +1307,42 @@ const productImage =
     "productImage"
   );
 
+const category =
+  document.getElementById("category");
+
+const subcategory =
+  document.getElementById("subcategory");
+
+const state =
+  document.getElementById("state");
+
+const region =
+  document.getElementById("region");
+
+const size =
+  document.getElementById("size");
+
+const complexity =
+  document.getElementById("complexity");
+
+const customization =
+  document.getElementById("customization");
+
+const laborHours =
+  document.getElementById("laborHours");
+
+const rawMaterialCost =
+  document.getElementById("rawMaterialCost");
+
+const packagingCost =
+  document.getElementById("packagingCost");
+
+const transportCost =
+  document.getElementById("transportCost");
+
+const directCost =
+  document.getElementById("directCost");
+
 
 productName.value =
   draft.productName ||
@@ -1184,7 +1364,53 @@ technique.value =
 description.value =
   draft.description ||
   "";
+category.value =
+  draft.category ||
+  "";
 
+subcategory.value =
+  draft.subcategory ||
+  "";
+
+state.value =
+  draft.state ||
+  "";
+
+region.value =
+  draft.region ||
+  "";
+
+size.value =
+  draft.size ||
+  "";
+
+complexity.value =
+  draft.complexity ||
+  "";
+
+customization.value =
+  draft.customization ||
+  "";
+
+laborHours.value =
+  draft.laborHours ??
+  "";
+
+rawMaterialCost.value =
+  draft.rawMaterialCost ??
+  "";
+
+packagingCost.value =
+  draft.packagingCost ??
+  "";
+
+transportCost.value =
+  draft.transportCost ??
+  "";
+
+directCost.value =
+  draft.directCost ??
+  "";
 
 
 /* =====================================
@@ -1244,7 +1470,19 @@ document
   craft,
   material,
   technique,
-  description
+  description,
+  category,
+  subcategory,
+  state,
+  region,
+  size,
+  complexity,
+  customization,
+  laborHours,
+  rawMaterialCost,
+  packagingCost,
+  transportCost,
+  directCost
 ]
 .forEach(field => {
 
@@ -1315,6 +1553,42 @@ document
         .value
         .trim();
 
+    const categoryValue =
+      category.value.trim();
+
+    const subcategoryValue =
+      subcategory.value.trim();
+
+    const stateValue =
+      state.value.trim();
+
+    const regionValue =
+      region.value.trim();
+
+    const sizeValue =
+      size.value.trim();
+
+    const complexityValue =
+      complexity.value.trim();
+
+    const customizationValue =
+      customization.value.trim();
+
+    const laborHoursValue =
+      laborHours.value.trim();
+
+    const rawMaterialCostValue =
+      rawMaterialCost.value.trim();
+
+    const packagingCostValue =
+      packagingCost.value.trim();
+
+    const transportCostValue =
+      transportCost.value.trim();
+
+    const directCostValue =
+      directCost.value.trim();
+
 
     const allFields = [
 
@@ -1322,7 +1596,19 @@ document
       craft,
       material,
       technique,
-      description
+      description,
+      category,
+      subcategory,
+      state,
+      region,
+      size,
+      complexity,
+      customization,
+      laborHours,
+      rawMaterialCost,
+      packagingCost,
+      transportCost,
+      directCost
 
     ];
 
@@ -1422,6 +1708,78 @@ document
 
     }
 
+    if(!categoryValue){
+      category.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || category;
+    }
+
+    if(!subcategoryValue){
+      subcategory.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || subcategory;
+    }
+
+    if(!stateValue){
+      state.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || state;
+    }
+
+    if(!regionValue){
+      region.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || region;
+    }
+
+    if(!sizeValue){
+      size.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || size;
+    }
+
+    if(!complexityValue){
+      complexity.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || complexity;
+    }
+
+    if(!customizationValue){
+      customization.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || customization;
+    }
+
+    if(!laborHoursValue || Number(laborHoursValue) <= 0){
+      laborHours.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || laborHours;
+    }
+
+    if(!rawMaterialCostValue || Number(rawMaterialCostValue) < 0){
+      rawMaterialCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || rawMaterialCost;
+    }
+
+    if(!packagingCostValue || Number(packagingCostValue) < 0){
+      packagingCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || packagingCost;
+    }
+
+    if(!transportCostValue || Number(transportCostValue) < 0){
+      transportCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || transportCost;
+    }
+
+    if(!directCostValue || Number(directCostValue) < 0){
+      directCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || directCost;
+    }
+
 
 
     /* If something is missing,
@@ -1453,7 +1811,7 @@ document
       );
 
 
-    const updatedDraft = {
+     const updatedDraft = {
 
       ...oldDraft,
 
@@ -1470,7 +1828,43 @@ document
         techniqueValue,
 
       description:
-        descriptionValue
+        descriptionValue,
+
+      category:
+        categoryValue,
+
+      subcategory:
+        subcategoryValue,
+
+      state:
+        stateValue,
+
+      region:
+        regionValue,
+
+      size:
+        sizeValue,
+
+      complexity:
+        complexityValue,
+
+      customization:
+        customizationValue,
+
+      laborHours:
+        Number(laborHoursValue),
+
+      rawMaterialCost:
+        Number(rawMaterialCostValue),
+
+      packagingCost:
+        Number(packagingCostValue),
+
+      transportCost:
+        Number(transportCostValue),
+
+      directCost:
+        Number(directCostValue)
 
     };
 
