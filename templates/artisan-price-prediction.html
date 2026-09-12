@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -601,9 +602,9 @@ main{
 
 <header class="topbar">
 
-  <a href="artisan-dashboard.html" class="brand">
+  <a href="{% url 'seller-dashboard' %}" class="brand">
 
-    <img src="logo.jpeg" alt="Kala Connect AI Logo">
+    <img src="{% static 'assets/images/logo.png' %}" alt="Kala Connect AI Logo">
 
     <div>
       <strong id="brandName">Kala Connect AI</strong>
@@ -1032,19 +1033,65 @@ try{
 
 
 /* =========================================
-   TEMPORARY MOCK PRICE
-   Later teammate's API will replace this.
+   ML PRICE PREDICTION
 ========================================= */
 
-const storedRecommendedPrice =
-  Number(productDraft.recommendedPrice) || 1350;
+let storedRecommendedPrice = 0;
+let storedMinimumPrice = 0;
+let storedMaximumPrice = 0;
 
-const storedMinimumPrice =
-  Number(productDraft.minimumPrice) || 1200;
+async function getPredictedPrice() {
 
-const storedMaximumPrice =
-  Number(productDraft.maximumPrice) || 1500;
+  const requestData = {
+    product: productDraft.productName,
+    category: productDraft.category,
+    subcategory: productDraft.subcategory,
+    craft: productDraft.craft,
+    material: productDraft.material,
+    technique: productDraft.technique,
+    state: productDraft.state,
+    region: productDraft.region,
+    size: productDraft.size,
+    complexity: productDraft.complexity,
+    customization: productDraft.customization,
 
+    labor_hours: Number(productDraft.laborHours),
+    raw_material_cost: Number(productDraft.rawMaterialCost),
+    packaging_cost: Number(productDraft.packagingCost),
+    transport_cost: Number(productDraft.transportCost),
+    direct_cost: Number(productDraft.directCost)
+  };
+
+  const response = await fetch(
+    "{% url 'predict_price' %}",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(requestData)
+    }
+  );
+
+  const result = await response.json();
+
+  if (!response.ok || !result.success) {
+    throw new Error(
+      result.error || "Price prediction failed"
+    );
+  }
+
+  storedRecommendedPrice =
+    Number(result.predicted_price);
+
+  storedMinimumPrice =
+    Number(result.market_features.market_price_min);
+
+  storedMaximumPrice =
+    Number(result.market_features.market_price_max);
+
+  return result;
+}
 
 /* =========================================
    ELEMENTS
@@ -1163,15 +1210,40 @@ function renderProductDetails(){
    PRICE
 ========================================= */
 
-document.getElementById("priceRange").textContent =
-  `₹${storedMinimumPrice.toLocaleString("en-IN")} – ₹${storedMaximumPrice.toLocaleString("en-IN")}`;
+async function loadPricePrediction() {
 
-document.getElementById("recommendedPrice").textContent =
-  `₹${storedRecommendedPrice.toLocaleString("en-IN")}`;
+  try {
 
-finalPrice.value =
-  productDraft.finalSellingPrice ||
-  storedRecommendedPrice;
+    await getPredictedPrice();
+
+    document.getElementById("priceRange").textContent =
+      `₹${storedMinimumPrice.toLocaleString("en-IN")} – ₹${storedMaximumPrice.toLocaleString("en-IN")}`;
+
+    document.getElementById("recommendedPrice").textContent =
+      `₹${storedRecommendedPrice.toLocaleString("en-IN")}`;
+
+    finalPrice.value =
+      productDraft.finalSellingPrice ||
+      storedRecommendedPrice;
+
+  } catch (error) {
+
+    console.error(
+      "Price prediction error:",
+      error
+    );
+
+    document.getElementById("priceRange").textContent =
+      "Unable to calculate";
+
+    document.getElementById("recommendedPrice").textContent =
+      "Prediction failed";
+
+  }
+
+}
+
+loadPricePrediction();
 
 
 /* =========================================
@@ -1296,8 +1368,7 @@ languageBtn.onclick = () => {
 function goBack(){
 
   window.location.href =
-    "artisan-review-product.html";
-
+    "/seller/price-prediction/";
 }
 
 backBtn.onclick =
@@ -1358,7 +1429,7 @@ continueBtn.onclick = () => {
 
 
   window.location.href =
-    "artisan-publish-product.html";
+    "{% url 'seller-publish' %}";
 
 };
 
