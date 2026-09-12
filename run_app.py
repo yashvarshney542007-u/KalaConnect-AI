@@ -34,11 +34,11 @@ def run_server():
             with socketserver.TCPServer(("", attempt_port), handler) as httpd:
                 url = f"http://localhost:{attempt_port}"
                 print("=" * 70)
-                print("✨ KALACONNECT AI - CUSTOMER MARKETPLACE & AI SPACE STUDIO (MEMBER 5)")
+                print("** KALACONNECT AI - CUSTOMER MARKETPLACE & AI SPACE STUDIO (MEMBER 5) **")
                 print("=" * 70)
-                print(f"🚀 Server running at: {url}")
-                print(f"📁 Root directory:   {script_dir}")
-                print(f"🛠️ Press Ctrl+C to stop the server")
+                print(f">> Server running at: {url}")
+                print(f">> Root directory:   {script_dir}")
+                print(f">> Press Ctrl+C to stop the server")
                 print("=" * 70)
                 
                 # Open browser
@@ -51,5 +51,5 @@ if __name__ == '__main__':
     try:
         run_server()
     except KeyboardInterrupt:
-        print("\n👋 Server stopped successfully.")
+        print("\nServer stopped successfully.")
         sys.exit(0)
