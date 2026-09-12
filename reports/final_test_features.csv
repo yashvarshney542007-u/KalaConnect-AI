@@ -1,0 +1,751 @@
+product,category,subcategory,craft,material,technique,state,region,size,complexity,customization,labor_hours,raw_material_cost,packaging_cost,transport_cost,direct_cost,market_reference_price,market_price_min,market_price_max,market_comparable_count,actual_selling_price
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Low,Standard,3.6,80,20,20,120,1300.0,470.0,2940.0,69.0,740
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,3.0,160,15,20,195,785.0,350.0,1340.0,58.0,760
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.3,220,35,25,280,980.0,430.0,1770.0,187.0,830
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,3.3,420,25,20,465,1745.0,840.0,3760.0,60.0,1300
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Moderate,31.2,2450,330,255,3035,9240.0,5170.0,11920.0,56.0,9700
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Moderate,9.3,260,60,70,390,1510.0,480.0,2690.0,57.0,1700
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Moderate,59.3,830,160,315,1305,8970.0,2560.0,14630.0,159.0,13400
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,Medium,Standard,35.7,360,95,180,635,8370.0,2690.0,19090.0,43.0,6880
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,22.1,1640,205,285,2130,9240.0,5170.0,11920.0,56.0,8670
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,5.9,1430,65,140,1635,4340.0,1850.0,9610.0,68.0,3470
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,Light,48.8,1960,215,255,2430,15485.0,7950.0,29890.0,56.0,13980
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.4,320,30,30,380,980.0,430.0,1770.0,187.0,1120
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.9,130,15,35,180,780.0,330.0,1310.0,176.0,680
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,91.0,2000,500,400,2900,20275.0,8760.0,29980.0,58.0,21220
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.8,540,40,60,640,1600.0,780.0,3370.0,157.0,1560
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,10.7,210,40,25,275,1745.0,840.0,3760.0,60.0,2030
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,3.8,1040,60,105,1205,3150.0,1560.0,5610.0,59.0,2750
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Light,13.8,530,40,35,605,2650.0,1100.0,5860.0,63.0,2900
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,5.4,260,25,20,305,1270.0,560.0,2170.0,64.0,1100
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,High,15.3,180,70,75,325,4550.0,1270.0,12160.0,61.0,3620
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Low,Standard,5.8,320,35,30,385,1320.0,590.0,2380.0,55.0,1790
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,10.4,500,70,155,725,4340.0,1850.0,9610.0,68.0,3760
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,13.3,2720,110,185,3015,12200.0,6390.0,15960.0,57.0,7850
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,11.0,860,160,210,1230,3150.0,1560.0,5610.0,59.0,4380
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,High,25.1,2410,295,305,3010,6770.0,2480.0,11120.0,77.0,9970
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,3.6,220,45,50,315,780.0,330.0,1310.0,176.0,1120
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Low,Moderate,25.4,1290,155,290,1735,7020.0,2480.0,13800.0,49.0,9050
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,High,35.6,260,175,195,630,4550.0,1270.0,12160.0,61.0,9750
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Low,Standard,7.8,240,60,40,340,1410.0,670.0,2480.0,55.0,1840
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,3.6,140,40,30,210,780.0,330.0,1310.0,176.0,1010
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,3.1,340,40,50,430,1600.0,780.0,3370.0,157.0,1010
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Moderate,3.5,150,15,25,190,1410.0,670.0,2480.0,55.0,730
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Light,6.9,230,30,50,310,1745.0,840.0,3760.0,60.0,1860
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,Light,11.3,180,35,55,270,2175.0,650.0,3170.0,56.0,1890
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,High,High,7.8,490,90,90,670,1600.0,780.0,3370.0,157.0,2710
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,2.3,250,25,20,295,780.0,330.0,1310.0,176.0,690
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Light,3.9,760,25,25,810,4750.0,2020.0,8290.0,48.0,1710
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.8,220,25,30,275,980.0,430.0,1770.0,187.0,1020
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.1,320,30,80,430,1600.0,780.0,3370.0,157.0,1650
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,High,3.2,250,30,35,315,890.0,380.0,1720.0,71.0,1120
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.6,220,20,35,275,780.0,330.0,1310.0,176.0,890
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Standard,11.2,310,55,65,430,2295.0,830.0,4280.0,46.0,2380
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Light,2.8,50,15,20,85,780.0,310.0,1500.0,45.0,520
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Light,24.2,2340,290,390,3020,15435.0,8220.0,29230.0,76.0,15970
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.9,280,60,35,375,1600.0,780.0,3370.0,157.0,1460
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.3,390,25,30,445,980.0,430.0,1770.0,187.0,1220
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Standard,51.1,3680,430,625,4735,26175.0,15050.0,29840.0,66.0,25810
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,101.1,5010,465,785,6260,28640.0,12200.0,62560.0,178.0,41540
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,Moderate,58.4,2900,445,565,3910,15485.0,7950.0,29890.0,56.0,23740
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,High,3.0,200,15,30,245,780.0,330.0,1310.0,176.0,880
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Moderate,20.5,410,50,125,585,6260.0,3070.0,8990.0,64.0,4570
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Light,69.6,5420,250,640,6310,33640.0,15130.0,63680.0,166.0,32160
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,8.4,830,100,120,1050,5285.0,2300.0,8680.0,62.0,3800
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Light,5.3,400,40,35,475,1320.0,590.0,2380.0,55.0,1530
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,High,42.5,2210,365,290,2865,9240.0,5170.0,11920.0,56.0,11290
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Light,83.3,5970,445,540,6955,28640.0,12200.0,62560.0,178.0,30630
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Light,121.0,4260,340,475,5075,33640.0,15130.0,63680.0,166.0,33970
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Low,Standard,3.2,270,15,25,310,1320.0,590.0,2380.0,55.0,1060
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,47.4,4160,195,240,4595,33640.0,15130.0,63680.0,166.0,16220
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Standard,9.9,450,35,70,555,2295.0,830.0,4280.0,46.0,2630
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,55.3,2830,195,260,3285,33640.0,15130.0,63680.0,166.0,18510
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,54.2,1840,345,670,2855,12200.0,6390.0,15960.0,57.0,15830
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,1.5,200,20,20,240,780.0,330.0,1310.0,176.0,570
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,12.3,380,65,55,500,8970.0,2560.0,14630.0,159.0,3280
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Standard,2.3,160,15,30,205,735.0,250.0,1200.0,58.0,600
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,112.4,5520,655,790,6965,33640.0,15130.0,63680.0,166.0,39360
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Standard,6.0,290,30,55,375,1875.0,980.0,2780.0,60.0,1530
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.7,240,35,30,305,780.0,330.0,1310.0,176.0,820
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,36.1,380,85,135,600,6260.0,3070.0,8990.0,64.0,8570
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Moderate,5.5,150,20,20,190,1300.0,470.0,2940.0,69.0,920
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,High,5.3,120,35,45,200,735.0,250.0,1200.0,58.0,1140
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Light,24.3,1120,220,235,1575,14870.0,4730.0,21830.0,48.0,8110
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,High,30.5,3520,285,465,4270,12200.0,6390.0,15960.0,57.0,12970
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,7.2,290,20,30,340,2295.0,830.0,4280.0,46.0,1360
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,9.5,2270,180,250,2700,8485.0,5940.0,14090.0,36.0,6110
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,13.4,2200,170,300,2670,9240.0,5170.0,11920.0,56.0,6770
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Light,2.7,390,25,60,475,980.0,430.0,1770.0,187.0,1050
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,113.0,5310,590,465,6365,28640.0,12200.0,62560.0,178.0,42290
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.8,380,30,45,455,1600.0,780.0,3370.0,157.0,1570
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,25.1,1880,310,375,2565,9240.0,5170.0,11920.0,56.0,9550
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,10.2,1820,100,190,2110,6770.0,2480.0,11120.0,77.0,5580
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,28.2,610,150,100,860,8970.0,2560.0,14630.0,159.0,6960
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,14.5,1210,105,220,1535,5285.0,2300.0,8680.0,62.0,4900
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,34.5,620,150,120,890,8970.0,2560.0,14630.0,159.0,8230
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.9,220,25,45,290,780.0,330.0,1310.0,176.0,820
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Moderate,30.3,2170,240,265,2675,10220.0,4390.0,20120.0,51.0,13800
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,Moderate,23.0,530,65,140,735,6260.0,3070.0,8990.0,64.0,6970
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Low,Light,2.3,310,20,30,360,1320.0,590.0,2380.0,55.0,890
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,5.4,100,15,30,145,780.0,310.0,1500.0,45.0,1150
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,3.0,450,30,40,520,1600.0,780.0,3370.0,157.0,1160
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Moderate,2.9,310,35,55,400,980.0,430.0,1770.0,187.0,1150
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,6.5,270,65,60,395,1410.0,670.0,2480.0,55.0,1890
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Standard,1.8,140,15,25,180,945.0,400.0,1670.0,66.0,600
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.7,200,20,20,240,780.0,330.0,1310.0,176.0,600
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Light,15.0,1010,80,140,1230,4815.0,2570.0,9490.0,66.0,5000
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Light,21.3,1770,130,305,2205,8120.0,4550.0,14020.0,65.0,8410
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,10.0,680,65,110,855,6770.0,2480.0,11120.0,77.0,3360
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,67.4,5710,470,525,6705,33640.0,15130.0,63680.0,166.0,27980
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Standard,26.1,2780,315,305,3400,8120.0,4550.0,14020.0,65.0,11870
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,High,12.4,1420,130,220,1770,6770.0,2480.0,11120.0,77.0,6120
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,6.6,230,55,75,360,910.0,430.0,1540.0,60.0,1450
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,5.0,520,60,85,665,1600.0,780.0,3370.0,157.0,1860
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,25.6,730,85,110,925,8970.0,2560.0,14630.0,159.0,6920
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.3,130,15,25,170,780.0,330.0,1310.0,176.0,480
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,16.8,2540,130,240,2910,9240.0,5170.0,11920.0,56.0,8060
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Standard,2.2,130,15,20,165,1300.0,470.0,2940.0,69.0,610
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Standard,11.0,390,35,30,455,2650.0,1100.0,5860.0,63.0,2510
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Low,Standard,2.4,190,25,25,240,1320.0,590.0,2380.0,55.0,840
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Light,8.1,390,45,40,475,2295.0,830.0,4280.0,46.0,1950
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,17.0,1750,140,210,2100,8485.0,5940.0,14090.0,36.0,7440
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,18.0,570,130,135,835,7020.0,2480.0,13800.0,49.0,6840
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,6.6,430,40,110,580,1600.0,780.0,3370.0,157.0,2080
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,2.2,430,40,45,515,1600.0,780.0,3370.0,157.0,1080
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Standard,39.0,2090,255,405,2750,15435.0,8220.0,29230.0,76.0,18050
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,98.4,6540,580,745,7865,28640.0,12200.0,62560.0,178.0,35320
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,12.3,440,60,100,600,4750.0,2020.0,8290.0,48.0,3590
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,31.9,620,160,260,1040,8970.0,2560.0,14630.0,159.0,8980
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,5.4,380,60,95,535,1600.0,780.0,3370.0,157.0,1830
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,3.2,120,30,35,185,910.0,430.0,1540.0,60.0,760
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,High,5.4,50,15,25,90,780.0,310.0,1500.0,45.0,940
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Light,14.8,320,60,130,510,6260.0,3070.0,8990.0,64.0,4710
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,High,Moderate,10.8,410,55,40,505,1875.0,980.0,2780.0,60.0,2390
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,8.8,810,80,155,1045,3150.0,1560.0,5610.0,59.0,3650
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,6.6,850,60,85,995,4340.0,1850.0,9610.0,68.0,2760
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,11.8,1070,140,180,1390,8485.0,5940.0,14090.0,36.0,5560
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,87.2,4010,335,425,4770,28640.0,12200.0,62560.0,178.0,30820
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,5.3,550,70,95,715,3150.0,1560.0,5610.0,59.0,2370
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,6.3,100,25,50,175,780.0,310.0,1500.0,45.0,1480
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,26.6,1650,175,385,2210,6770.0,2480.0,11120.0,77.0,8200
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Moderate,71.2,8000,340,440,8780,28640.0,12200.0,62560.0,178.0,29350
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Moderate,21.1,2300,185,355,2840,15435.0,8220.0,29230.0,76.0,12840
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,18.1,390,50,75,515,4750.0,2020.0,8290.0,48.0,3340
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,21.9,1070,110,215,1395,7020.0,2480.0,13800.0,49.0,6800
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,High,30.8,320,95,160,575,4550.0,1270.0,12160.0,61.0,6390
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Light,8.4,170,35,55,260,1745.0,840.0,3760.0,60.0,1890
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,18.8,620,65,65,750,8970.0,2560.0,14630.0,159.0,4260
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Light,1.9,170,20,25,215,890.0,380.0,1720.0,71.0,660
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.8,290,40,60,390,780.0,330.0,1310.0,176.0,1110
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Light,20.7,150,45,70,265,2990.0,750.0,6380.0,57.0,4070
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,5.4,160,25,50,235,910.0,430.0,1540.0,60.0,1120
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Moderate,7.4,230,40,35,305,1320.0,590.0,2380.0,55.0,1990
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,102.7,4740,360,700,5800,28640.0,12200.0,62560.0,178.0,35410
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,75.4,5150,440,270,5860,33640.0,15130.0,63680.0,166.0,24130
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Large,High,Standard,18.6,440,60,70,570,3190.0,1180.0,6800.0,73.0,3610
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Standard,26.2,2640,165,330,3135,8120.0,4550.0,14020.0,65.0,10350
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,3.6,200,35,40,275,780.0,330.0,1310.0,176.0,1190
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,Medium,Light,49.5,280,220,165,665,8370.0,2690.0,19090.0,43.0,10970
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,41.1,630,105,240,975,8970.0,2560.0,14630.0,159.0,10260
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,32.9,2340,280,290,2910,12200.0,6390.0,15960.0,57.0,13610
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,40.3,4720,215,200,5135,28640.0,12200.0,62560.0,178.0,19350
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,High,1.3,110,15,20,145,780.0,310.0,1500.0,45.0,430
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Light,5.7,230,35,40,305,1320.0,590.0,2380.0,55.0,1570
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,5.3,360,30,25,415,1270.0,560.0,2170.0,64.0,1580
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,3.5,130,20,50,200,780.0,330.0,1310.0,176.0,870
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,3.3,230,15,20,265,2295.0,830.0,4280.0,46.0,730
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Light,3.3,110,20,30,160,780.0,310.0,1500.0,45.0,800
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Moderate,70.2,5650,240,350,6240,33640.0,15130.0,63680.0,166.0,31650
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Moderate,63.9,440,265,240,945,8370.0,2690.0,19090.0,43.0,13400
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,60.1,3730,310,230,4270,28640.0,12200.0,62560.0,178.0,23420
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.7,250,25,45,320,980.0,430.0,1770.0,187.0,860
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,53.6,6000,365,470,6835,33640.0,15130.0,63680.0,166.0,24660
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Light,5.0,220,15,40,275,890.0,380.0,1720.0,71.0,1260
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Light,12.2,1100,190,120,1410,5285.0,2300.0,8680.0,62.0,5280
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,9.8,930,100,110,1140,3150.0,1560.0,5610.0,59.0,3570
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Light,17.6,1230,105,200,1535,8120.0,4550.0,14020.0,65.0,7210
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,56.5,2130,265,540,2935,20275.0,8760.0,29980.0,58.0,18470
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Large,High,Light,25.6,750,45,65,860,3190.0,1180.0,6800.0,73.0,4510
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Moderate,24.7,1480,205,340,2025,10780.0,3610.0,21210.0,55.0,9370
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,19.0,390,60,110,560,6260.0,3070.0,8990.0,64.0,4160
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Light,27.1,370,135,165,670,6260.0,3070.0,8990.0,64.0,6760
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,26.7,540,120,125,785,8970.0,2560.0,14630.0,159.0,5570
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,High,12.6,2740,120,150,3010,15485.0,7950.0,29890.0,56.0,8630
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,136.0,5850,415,535,6800,28640.0,12200.0,62560.0,178.0,45110
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Moderate,22.3,330,35,80,445,4550.0,1270.0,12160.0,61.0,4440
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,44.7,4020,260,375,4655,12200.0,6390.0,15960.0,57.0,14550
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,1.5,260,15,30,305,980.0,430.0,1770.0,187.0,630
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,1.4,190,15,20,225,890.0,380.0,1720.0,71.0,490
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Moderate,8.3,370,45,40,455,1410.0,670.0,2480.0,55.0,1930
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,9.2,1210,80,130,1420,3150.0,1560.0,5610.0,59.0,3980
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,3.2,240,15,20,275,1270.0,560.0,2170.0,64.0,750
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,24.8,1800,250,245,2295,6770.0,2480.0,11120.0,77.0,9770
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,3.7,250,25,30,305,1410.0,670.0,2480.0,55.0,990
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Light,1.4,230,20,20,270,980.0,430.0,1770.0,187.0,580
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Medium,Moderate,8.3,600,25,45,670,2650.0,1100.0,5860.0,63.0,2730
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.8,80,15,20,115,780.0,330.0,1310.0,176.0,430
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,83.3,4830,495,585,5910,28640.0,12200.0,62560.0,178.0,35700
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,31.5,320,145,145,610,8970.0,2560.0,14630.0,159.0,7040
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Standard,4.4,250,35,35,320,945.0,400.0,1670.0,66.0,1270
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Light,24.0,1070,175,180,1425,7020.0,2480.0,13800.0,49.0,6610
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,32.3,1450,285,390,2125,9240.0,5170.0,11920.0,56.0,9040
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Standard,6.7,140,30,55,225,1510.0,480.0,2690.0,57.0,1140
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Moderate,42.2,810,165,160,1135,8970.0,2560.0,14630.0,159.0,9130
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,High,6.0,160,30,30,220,945.0,400.0,1670.0,66.0,1290
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,9.3,320,45,50,415,1410.0,670.0,2480.0,55.0,2310
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Light,12.4,1050,115,150,1315,6770.0,2480.0,11120.0,77.0,5400
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.7,180,35,25,240,780.0,330.0,1310.0,176.0,840
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Moderate,52.3,2980,720,625,4325,22530.0,11420.0,29950.0,59.0,28610
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,3.5,200,35,50,285,780.0,330.0,1310.0,176.0,1150
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,High,9.1,280,60,75,415,1410.0,670.0,2480.0,55.0,2360
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,8.0,380,50,65,495,1600.0,780.0,3370.0,157.0,1810
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Standard,6.6,3280,140,255,3675,15485.0,7950.0,29890.0,56.0,7370
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,53.8,3730,250,240,4220,28640.0,12200.0,62560.0,178.0,17180
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Standard,11.4,750,70,75,895,7020.0,2480.0,13800.0,49.0,3790
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,3.7,190,35,50,275,780.0,330.0,1310.0,176.0,1070
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Moderate,50.8,1990,395,620,3005,10220.0,4390.0,20120.0,51.0,18320
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Standard,36.2,3570,465,565,4600,22530.0,11420.0,29950.0,59.0,21350
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,64.5,4120,330,265,4715,28640.0,12200.0,62560.0,178.0,19490
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Standard,9.8,310,85,90,485,1510.0,480.0,2690.0,57.0,2270
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Light,26.4,810,135,190,1135,10220.0,4390.0,20120.0,51.0,8780
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,High,81.7,8010,470,555,9035,33640.0,15130.0,63680.0,166.0,43500
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Light,64.9,5150,365,480,5995,33640.0,15130.0,63680.0,166.0,23990
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,Medium,Standard,29.2,340,155,145,640,8370.0,2690.0,19090.0,43.0,7420
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,9.0,1360,85,115,1560,6770.0,2480.0,11120.0,77.0,3740
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Moderate,43.1,5450,500,560,6510,26175.0,15050.0,29840.0,66.0,26270
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.8,140,25,35,200,780.0,330.0,1310.0,176.0,770
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,High,15.2,1970,115,135,2220,6770.0,2480.0,11120.0,77.0,6090
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Moderate,86.7,4880,370,430,5680,28640.0,12200.0,62560.0,178.0,30640
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,5.8,400,30,45,475,1600.0,780.0,3370.0,157.0,1670
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Light,33.2,5320,405,385,6110,26175.0,15050.0,29840.0,66.0,20660
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,111.2,3230,460,650,4340,33640.0,15130.0,63680.0,166.0,27890
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,5.2,280,65,75,420,980.0,430.0,1770.0,187.0,1640
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,5.9,400,75,90,565,1600.0,780.0,3370.0,157.0,2000
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.1,400,50,35,485,1600.0,780.0,3370.0,157.0,1370
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Standard,60.8,2160,420,790,3370,22530.0,11420.0,29950.0,59.0,23620
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,9.3,570,60,125,755,1600.0,780.0,3370.0,157.0,2250
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Light,25.9,620,85,130,835,7045.0,3190.0,8810.0,70.0,4950
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.7,160,20,40,220,980.0,430.0,1770.0,187.0,810
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,8.8,640,65,75,780,3150.0,1560.0,5610.0,59.0,2940
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,Light,30.1,570,95,135,800,6260.0,3070.0,8990.0,64.0,6250
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,25.7,340,95,115,550,8970.0,2560.0,14630.0,159.0,5470
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,35.8,630,140,130,900,8970.0,2560.0,14630.0,159.0,7100
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Light,11.3,840,135,145,1120,4340.0,1850.0,9610.0,68.0,4150
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Moderate,10.1,1450,80,90,1620,4340.0,1850.0,9610.0,68.0,4710
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,12.2,520,60,85,665,4750.0,2020.0,8290.0,48.0,2880
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,8.0,240,35,45,320,2295.0,830.0,4280.0,46.0,1850
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,High,25.0,490,100,80,670,6260.0,3070.0,8990.0,64.0,6110
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,103.2,5550,480,460,6490,28640.0,12200.0,62560.0,178.0,36530
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,28.3,1570,195,200,1965,10220.0,4390.0,20120.0,51.0,9180
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,127.1,5900,665,625,7190,28640.0,12200.0,62560.0,178.0,51630
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Standard,13.1,250,60,90,400,2650.0,1100.0,5860.0,63.0,3740
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,31.9,650,120,135,905,8970.0,2560.0,14630.0,159.0,8360
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,42.4,1560,460,315,2335,12200.0,6390.0,15960.0,57.0,14630
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,1.6,70,15,20,105,785.0,350.0,1340.0,58.0,370
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,High,32.9,280,170,240,690,4550.0,1270.0,12160.0,61.0,9690
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,High,4.8,120,25,35,180,890.0,380.0,1720.0,71.0,1270
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Light,5.7,270,25,40,335,1320.0,590.0,2380.0,55.0,1800
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Standard,26.5,980,75,110,1165,7045.0,3190.0,8810.0,70.0,5880
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Standard,2.8,240,25,30,295,1320.0,590.0,2380.0,55.0,980
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,59.4,5060,240,275,5575,28640.0,12200.0,62560.0,178.0,21200
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,84.5,7540,355,620,8515,33640.0,15130.0,63680.0,166.0,32370
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,12.7,1460,85,140,1685,5285.0,2300.0,8680.0,62.0,4770
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,Medium,Standard,47.4,1830,210,585,2625,22530.0,11420.0,29950.0,59.0,17640
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Light,8.6,570,30,70,670,1875.0,980.0,2780.0,60.0,2290
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Moderate,35.9,750,100,140,990,8970.0,2560.0,14630.0,159.0,10150
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Medium,Light,13.1,1270,85,145,1500,4815.0,2570.0,9490.0,66.0,4350
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Standard,21.8,1160,110,155,1425,10780.0,3610.0,21210.0,55.0,7180
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Moderate,35.2,2270,345,320,2935,10220.0,4390.0,20120.0,51.0,16530
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,7.3,430,50,110,590,1600.0,780.0,3370.0,157.0,2190
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Standard,30.0,3580,230,365,4175,20275.0,8760.0,29980.0,58.0,12490
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,9.5,260,95,110,465,1600.0,780.0,3370.0,157.0,2560
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Moderate,59.3,1880,285,465,2630,14870.0,4730.0,21830.0,48.0,16410
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,High,25.9,430,70,75,575,7045.0,3190.0,8810.0,70.0,5660
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Light,15.1,220,40,45,305,4550.0,1270.0,12160.0,61.0,2970
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Moderate,32.9,1410,240,460,2110,8120.0,4550.0,14020.0,65.0,10560
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,42.2,4990,225,450,5665,28640.0,12200.0,62560.0,178.0,22030
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,High,91.7,5270,380,745,6395,33640.0,15130.0,63680.0,166.0,37490
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,5.8,150,20,30,200,910.0,430.0,1540.0,60.0,1090
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Moderate,6.2,330,45,55,430,1320.0,590.0,2380.0,55.0,1690
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,High,27.6,2330,375,250,2955,8485.0,5940.0,14090.0,36.0,11790
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,73.4,2800,380,300,3480,33640.0,15130.0,63680.0,166.0,27780
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,3.1,210,15,25,250,890.0,380.0,1720.0,71.0,750
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,13.5,720,70,50,840,4750.0,2020.0,8290.0,48.0,3520
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,2.6,80,15,20,115,785.0,350.0,1340.0,58.0,550
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Light,9.2,1860,85,230,2175,8485.0,5940.0,14090.0,36.0,5480
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.7,200,35,45,280,780.0,330.0,1310.0,176.0,850
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,2.6,160,20,30,210,780.0,330.0,1310.0,176.0,620
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Standard,17.4,960,135,260,1355,8120.0,4550.0,14020.0,65.0,6610
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,1.8,510,45,45,600,3150.0,1560.0,5610.0,59.0,1250
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,6.7,110,50,45,205,910.0,430.0,1540.0,60.0,1420
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Light,31.0,1310,130,295,1735,10780.0,3610.0,21210.0,55.0,10140
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,111.8,7960,490,700,9150,28640.0,12200.0,62560.0,178.0,40860
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Low,Standard,15.3,1100,85,215,1400,7020.0,2480.0,13800.0,49.0,6280
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.9,420,50,60,530,1600.0,780.0,3370.0,157.0,2110
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,High,3.7,190,30,30,250,780.0,330.0,1310.0,176.0,1120
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,1.3,100,15,20,135,890.0,380.0,1720.0,71.0,400
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,5.5,80,30,25,135,780.0,310.0,1500.0,45.0,950
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Medium,High,8.1,1180,110,85,1375,4815.0,2570.0,9490.0,66.0,3770
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Light,4.9,180,20,30,230,1270.0,560.0,2170.0,64.0,1250
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,104.6,5650,635,385,6670,33640.0,15130.0,63680.0,166.0,39420
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Low,Light,7.2,330,40,50,420,4350.0,1820.0,9000.0,54.0,2460
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,18.8,730,70,75,875,4750.0,2020.0,8290.0,48.0,4200
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Light,42.3,4560,290,495,5345,26175.0,15050.0,29840.0,66.0,21780
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,6.0,140,35,40,215,910.0,430.0,1540.0,60.0,1150
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Light,57.7,3550,370,805,4725,26175.0,15050.0,29840.0,66.0,22920
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.4,260,50,45,355,1600.0,780.0,3370.0,157.0,1310
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,16.4,850,135,200,1185,7020.0,2480.0,13800.0,49.0,6590
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Light,25.6,1360,205,390,1955,8485.0,5940.0,14090.0,36.0,8830
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Standard,49.3,1830,270,335,2435,15485.0,7950.0,29890.0,56.0,13050
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,6.1,820,45,70,935,3150.0,1560.0,5610.0,59.0,2920
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,27.4,410,90,110,610,8970.0,2560.0,14630.0,159.0,7080
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Standard,6.7,250,25,20,295,1745.0,840.0,3760.0,60.0,1640
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,123.3,4410,735,625,5770,28640.0,12200.0,62560.0,178.0,48380
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,3.6,210,45,30,285,780.0,330.0,1310.0,176.0,1130
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Large,High,Standard,9.5,490,40,40,570,3190.0,1180.0,6800.0,73.0,2410
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,36.3,3340,355,450,4145,20275.0,8760.0,29980.0,58.0,15940
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,21.8,1660,260,185,2105,6770.0,2480.0,11120.0,77.0,9540
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,84.5,5130,500,590,6220,28640.0,12200.0,62560.0,178.0,30910
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Low,Standard,7.7,270,35,45,350,4350.0,1820.0,9000.0,54.0,1700
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Moderate,32.0,2310,355,400,3065,20275.0,8760.0,29980.0,58.0,13590
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,87.4,4170,265,525,4960,28640.0,12200.0,62560.0,178.0,32930
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,8.2,480,65,90,635,1600.0,780.0,3370.0,157.0,2290
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,5.4,1000,55,90,1145,4340.0,1850.0,9610.0,68.0,2750
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.9,390,40,50,480,980.0,430.0,1770.0,187.0,1130
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Low,Standard,14.7,160,55,60,275,4350.0,1820.0,9000.0,54.0,2550
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,30.0,690,170,160,1020,8970.0,2560.0,14630.0,159.0,8530
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Light,38.6,760,100,235,1095,7045.0,3190.0,8810.0,70.0,8760
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Light,17.9,1640,245,190,2075,14870.0,4730.0,21830.0,48.0,8530
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Standard,11.1,500,65,55,620,2650.0,1100.0,5860.0,63.0,3630
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,High,High,46.0,2010,405,645,3060,10780.0,3610.0,21210.0,55.0,18600
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,High,32.5,2950,135,275,3360,10220.0,4390.0,20120.0,51.0,13300
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Moderate,7.6,430,30,45,505,2295.0,830.0,4280.0,46.0,2020
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Standard,13.1,1560,80,115,1755,10780.0,3610.0,21210.0,55.0,5340
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Standard,69.4,4050,400,455,4905,20275.0,8760.0,29980.0,58.0,25280
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,40.9,630,140,285,1055,8970.0,2560.0,14630.0,159.0,12510
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,18.5,590,105,135,830,8970.0,2560.0,14630.0,159.0,5150
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,75.3,5110,215,330,5655,28640.0,12200.0,62560.0,178.0,30780
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Moderate,19.5,850,70,170,1090,8970.0,2560.0,14630.0,159.0,6650
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,9.2,1450,140,120,1710,4340.0,1850.0,9610.0,68.0,4040
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Standard,4.5,190,40,30,260,945.0,400.0,1670.0,66.0,1300
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,2.7,250,45,50,345,780.0,330.0,1310.0,176.0,1000
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,36.0,5280,135,405,5820,33640.0,15130.0,63680.0,166.0,18100
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,High,3.7,240,40,35,315,780.0,330.0,1310.0,176.0,1110
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,2.1,190,15,25,230,1410.0,670.0,2480.0,55.0,640
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Light,60.7,420,190,140,750,8370.0,2690.0,19090.0,43.0,11890
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Light,64.8,260,240,225,725,8370.0,2690.0,19090.0,43.0,17380
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,9.1,140,35,50,225,1270.0,560.0,2170.0,64.0,2220
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,1.2,180,15,20,215,780.0,330.0,1310.0,176.0,470
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,14.2,550,60,100,710,8970.0,2560.0,14630.0,159.0,4240
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,29.9,360,120,165,645,6260.0,3070.0,8990.0,64.0,6920
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Standard,4.8,250,35,35,320,1510.0,480.0,2690.0,57.0,1270
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Low,Standard,7.7,300,55,100,455,1510.0,480.0,2690.0,57.0,1980
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,4.1,250,30,20,300,890.0,380.0,1720.0,71.0,1090
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,24.5,440,80,135,655,8970.0,2560.0,14630.0,159.0,5810
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Light,31.9,3690,365,430,4485,22530.0,11420.0,29950.0,59.0,18670
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Light,3.9,280,25,35,340,1410.0,670.0,2480.0,55.0,1030
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,26.9,410,80,135,625,6260.0,3070.0,8990.0,64.0,5500
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.6,500,30,55,585,1600.0,780.0,3370.0,157.0,1640
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.7,270,25,55,350,1600.0,780.0,3370.0,157.0,1280
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,1.9,260,20,25,305,980.0,430.0,1770.0,187.0,760
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,6.9,500,50,130,680,1600.0,780.0,3370.0,157.0,2080
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Moderate,47.5,5080,285,465,5830,28640.0,12200.0,62560.0,178.0,22040
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,1.6,220,15,20,255,890.0,380.0,1720.0,71.0,630
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,High,136.5,6990,775,830,8595,33640.0,15130.0,63680.0,166.0,56240
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,0.9,210,20,25,255,780.0,330.0,1310.0,176.0,500
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Low,Moderate,12.6,310,45,75,430,4350.0,1820.0,9000.0,54.0,3480
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,78.4,7050,335,625,8010,28640.0,12200.0,62560.0,178.0,32650
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.7,200,20,35,255,780.0,330.0,1310.0,176.0,750
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Standard,5.0,170,45,55,270,945.0,400.0,1670.0,66.0,1490
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,High,19.5,160,65,80,305,2990.0,750.0,6380.0,57.0,4850
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,3.7,950,55,50,1055,3150.0,1560.0,5610.0,59.0,2140
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,14.8,990,140,175,1305,10220.0,4390.0,20120.0,51.0,6730
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Moderate,18.7,2120,240,375,2735,8120.0,4550.0,14020.0,65.0,8590
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,High,33.3,570,300,190,1060,7020.0,2480.0,13800.0,49.0,12340
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,34.3,3510,450,715,4675,12200.0,6390.0,15960.0,57.0,15770
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Low,Light,23.1,590,175,190,955,7020.0,2480.0,13800.0,49.0,8120
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,Standard,10.1,240,50,70,360,2175.0,650.0,3170.0,56.0,1770
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Light,8.6,180,30,25,235,1270.0,560.0,2170.0,64.0,1570
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Light,57.1,3960,745,955,5660,26175.0,15050.0,29840.0,66.0,29600
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,7.0,800,95,150,1045,3150.0,1560.0,5610.0,59.0,3160
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,4.8,110,20,20,150,780.0,310.0,1500.0,45.0,920
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,7.7,420,30,50,500,1745.0,840.0,3760.0,60.0,2070
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,3.7,90,15,30,135,780.0,310.0,1500.0,45.0,760
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,32.5,1880,190,440,2510,12200.0,6390.0,15960.0,57.0,9660
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Moderate,97.5,2880,580,685,4145,20275.0,8760.0,29980.0,58.0,28160
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,5.6,400,75,105,580,1600.0,780.0,3370.0,157.0,1960
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Low,Standard,18.7,190,45,90,325,4550.0,1270.0,12160.0,61.0,3700
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Moderate,42.7,2810,290,465,3565,12200.0,6390.0,15960.0,57.0,12830
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Light,21.3,520,70,85,675,8970.0,2560.0,14630.0,159.0,6620
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,High,Light,29.7,1220,115,235,1570,4750.0,2020.0,8290.0,48.0,8830
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Moderate,3.6,160,30,25,215,890.0,380.0,1720.0,71.0,1100
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Moderate,5.0,220,35,50,305,945.0,400.0,1670.0,66.0,1410
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Moderate,36.7,3470,455,525,4450,22530.0,11420.0,29950.0,59.0,19080
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,155.0,5140,815,770,6725,28640.0,12200.0,62560.0,178.0,50110
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Standard,50.4,3640,335,785,4760,22530.0,11420.0,29950.0,59.0,25130
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Moderate,20.8,680,55,55,790,8970.0,2560.0,14630.0,159.0,4500
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Standard,39.5,2010,340,415,2765,14870.0,4730.0,21830.0,48.0,13440
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Standard,28.1,1900,145,240,2285,10220.0,4390.0,20120.0,51.0,12060
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,26.3,320,110,85,515,6260.0,3070.0,8990.0,64.0,5410
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,76.1,6190,255,695,7140,33640.0,15130.0,63680.0,166.0,32430
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Light,8.8,490,40,55,585,2650.0,1100.0,5860.0,63.0,2470
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Moderate,15.5,200,40,50,290,2990.0,750.0,6380.0,57.0,3320
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,23.4,1290,165,270,1725,8485.0,5940.0,14090.0,36.0,7840
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,38.2,4580,245,330,5155,28640.0,12200.0,62560.0,178.0,18760
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,High,5.7,340,55,55,450,980.0,430.0,1770.0,187.0,1800
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,12.9,1610,80,225,1915,6770.0,2480.0,11120.0,77.0,4990
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,2.4,410,45,40,495,1600.0,780.0,3370.0,157.0,1100
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Standard,5.3,150,15,45,210,1300.0,470.0,2940.0,69.0,1190
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,Moderate,26.7,2140,380,420,2940,8485.0,5940.0,14090.0,36.0,10960
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Standard,2.8,100,15,20,135,735.0,250.0,1200.0,58.0,610
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,Moderate,35.8,2310,525,545,3380,8485.0,5940.0,14090.0,36.0,15140
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,20.9,1190,95,155,1440,10220.0,4390.0,20120.0,51.0,6200
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Standard,10.8,430,20,45,495,6260.0,3070.0,8990.0,64.0,2510
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.2,310,30,50,390,980.0,430.0,1770.0,187.0,1080
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Standard,15.4,500,80,60,640,2650.0,1100.0,5860.0,63.0,4120
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Standard,8.5,250,50,90,390,1510.0,480.0,2690.0,57.0,1880
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,Moderate,21.6,360,50,125,535,6260.0,3070.0,8990.0,64.0,5640
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Standard,99.0,8150,280,470,8900,28640.0,12200.0,62560.0,178.0,34050
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,58.0,3200,430,435,4065,20275.0,8760.0,29980.0,58.0,17270
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,High,2.2,250,25,40,315,980.0,430.0,1770.0,187.0,900
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Low,Standard,12.2,350,60,80,490,4350.0,1820.0,9000.0,54.0,2980
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,High,1.2,230,15,25,270,780.0,330.0,1310.0,176.0,560
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,7.8,320,65,110,495,1600.0,780.0,3370.0,157.0,2030
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Light,43.9,250,100,175,525,8370.0,2690.0,19090.0,43.0,11680
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Light,7.1,560,30,55,645,2650.0,1100.0,5860.0,63.0,1980
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,8.3,310,35,55,400,2295.0,830.0,4280.0,46.0,2140
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Standard,4.6,370,20,45,435,1875.0,980.0,2780.0,60.0,1410
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Moderate,14.4,2770,135,170,3075,14870.0,4730.0,21830.0,48.0,8970
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,2.3,170,25,35,230,780.0,330.0,1310.0,176.0,720
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Standard,33.8,2920,555,650,4125,26175.0,15050.0,29840.0,66.0,20370
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,4.9,160,15,20,195,1270.0,560.0,2170.0,64.0,960
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Standard,7.1,310,40,30,380,1745.0,840.0,3760.0,60.0,2100
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Moderate,79.3,2540,445,535,3520,26175.0,15050.0,29840.0,66.0,29210
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Moderate,17.8,1920,130,225,2275,10220.0,4390.0,20120.0,51.0,7760
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,113.4,5730,605,865,7200,33640.0,15130.0,63680.0,166.0,39760
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,16.0,620,90,235,945,6770.0,2480.0,11120.0,77.0,5310
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,High,18.6,250,55,50,355,8370.0,2690.0,19090.0,43.0,3530
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Standard,41.5,5350,380,800,6530,26175.0,15050.0,29840.0,66.0,26300
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Moderate,32.7,270,145,145,560,6260.0,3070.0,8990.0,64.0,7470
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Moderate,13.3,2760,95,210,3065,10220.0,4390.0,20120.0,51.0,7940
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Light,5.6,130,25,20,175,1300.0,470.0,2940.0,69.0,1010
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,3.0,250,45,45,340,780.0,330.0,1310.0,176.0,1140
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Light,7.2,320,50,55,425,1320.0,590.0,2380.0,55.0,1730
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,2.3,210,25,30,265,780.0,330.0,1310.0,176.0,700
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Standard,4.5,260,25,55,340,1320.0,590.0,2380.0,55.0,1520
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,24.1,1580,245,195,2020,10220.0,4390.0,20120.0,51.0,10580
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,5.8,280,50,55,385,1410.0,670.0,2480.0,55.0,1610
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,Light,24.7,2190,160,270,2620,10220.0,4390.0,20120.0,51.0,11950
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,95.0,3180,600,510,4290,33640.0,15130.0,63680.0,166.0,34010
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Light,48.4,390,175,310,875,8370.0,2690.0,19090.0,43.0,13490
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Standard,38.5,240,145,130,515,8370.0,2690.0,19090.0,43.0,7090
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Medium,Moderate,7.9,330,25,30,385,2650.0,1100.0,5860.0,63.0,1810
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,High,6.9,280,20,45,345,2175.0,650.0,3170.0,56.0,1680
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,3.1,120,15,20,155,780.0,310.0,1500.0,45.0,730
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,3.1,650,35,55,740,3150.0,1560.0,5610.0,59.0,1550
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,21.6,1360,285,305,1950,6770.0,2480.0,11120.0,77.0,9170
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Moderate,9.3,760,85,130,975,4815.0,2570.0,9490.0,66.0,3730
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,9.9,1700,70,185,1955,5285.0,2300.0,8680.0,62.0,4520
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.6,130,15,30,175,780.0,330.0,1310.0,176.0,480
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Standard,32.1,3370,270,460,4100,15485.0,7950.0,29890.0,56.0,16320
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Standard,5.8,330,35,45,410,1875.0,980.0,2780.0,60.0,1930
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,9.9,1780,95,185,2060,10220.0,4390.0,20120.0,51.0,6320
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Moderate,26.0,460,80,180,720,8970.0,2560.0,14630.0,159.0,7000
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Moderate,9.3,260,55,80,395,1320.0,590.0,2380.0,55.0,2720
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,7.0,390,35,85,510,1600.0,780.0,3370.0,157.0,1730
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,23.1,990,70,105,1165,4750.0,2020.0,8290.0,48.0,5770
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Light,1.8,260,15,25,300,980.0,430.0,1770.0,187.0,720
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,3.3,140,20,30,190,780.0,330.0,1310.0,176.0,920
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,43.7,610,105,245,960,8970.0,2560.0,14630.0,159.0,9680
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Moderate,3.4,90,15,35,140,890.0,380.0,1720.0,71.0,880
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,High,10.2,1070,85,95,1250,6770.0,2480.0,11120.0,77.0,4700
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Moderate,3.5,160,20,20,200,890.0,380.0,1720.0,71.0,760
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Light,10.3,1210,120,180,1510,4815.0,2570.0,9490.0,66.0,5360
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Light,9.0,220,25,40,285,2295.0,830.0,4280.0,46.0,1680
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.4,480,50,75,605,1600.0,780.0,3370.0,157.0,1660
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,28.5,680,115,125,920,8970.0,2560.0,14630.0,159.0,8190
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Moderate,87.9,4890,340,730,5960,33640.0,15130.0,63680.0,166.0,34650
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,2.8,510,30,40,580,1600.0,780.0,3370.0,157.0,1320
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Light,19.9,2150,125,235,2510,6770.0,2480.0,11120.0,77.0,8230
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Standard,7.8,230,20,65,315,1745.0,840.0,3760.0,60.0,2370
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Light,27.2,850,260,295,1405,7020.0,2480.0,13800.0,49.0,8690
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,5.4,970,100,120,1190,3150.0,1560.0,5610.0,59.0,3030
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,High,53.3,450,145,355,950,8370.0,2690.0,19090.0,43.0,13430
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Standard,19.4,170,55,55,280,2990.0,750.0,6380.0,57.0,3550
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Moderate,20.8,280,95,125,500,4550.0,1270.0,12160.0,61.0,5110
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,61.0,5420,570,775,6765,20275.0,8760.0,29980.0,58.0,24760
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Standard,10.5,370,55,70,495,1875.0,980.0,2780.0,60.0,2330
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Standard,38.7,2220,265,510,2995,14870.0,4730.0,21830.0,48.0,13130
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Medium,Light,1.1,340,20,20,380,1320.0,590.0,2380.0,55.0,740
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,45.7,3340,260,385,3985,33640.0,15130.0,63680.0,166.0,17810
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,6.3,260,40,95,395,1600.0,780.0,3370.0,157.0,1790
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Standard,16.2,1970,265,315,2550,15435.0,8220.0,29230.0,76.0,10660
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,27.7,480,120,105,705,8970.0,2560.0,14630.0,159.0,6630
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,6.3,320,75,95,490,1600.0,780.0,3370.0,157.0,1960
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Medium,High,19.7,350,90,135,575,4350.0,1820.0,9000.0,54.0,5550
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,5.4,240,50,40,330,910.0,430.0,1540.0,60.0,1300
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,39.0,2850,265,280,3395,12200.0,6390.0,15960.0,57.0,13350
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Standard,36.0,3580,365,255,4200,15485.0,7950.0,29890.0,56.0,14590
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Standard,46.8,2120,425,335,2880,14870.0,4730.0,21830.0,48.0,19730
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,5.4,380,30,55,465,1410.0,670.0,2480.0,55.0,1560
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,5.5,240,40,55,335,910.0,430.0,1540.0,60.0,1210
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Medium,High,6.6,330,55,55,440,980.0,430.0,1770.0,187.0,1650
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,100.1,4940,570,605,6115,33640.0,15130.0,63680.0,166.0,41520
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Medium,High,6.5,80,20,25,125,780.0,310.0,1500.0,45.0,1300
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,7.1,550,50,55,655,1600.0,780.0,3370.0,157.0,1850
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,2.1,110,15,20,145,785.0,350.0,1340.0,58.0,610
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.2,210,20,50,280,1600.0,780.0,3370.0,157.0,1010
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,High,Light,8.2,290,40,45,375,1875.0,980.0,2780.0,60.0,1540
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,73.5,6500,370,745,7615,28640.0,12200.0,62560.0,178.0,36250
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,4.8,140,25,55,220,910.0,430.0,1540.0,60.0,1140
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,High,21.5,2290,190,155,2635,15485.0,7950.0,29890.0,56.0,8880
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,High,112.4,6590,350,595,7535,28640.0,12200.0,62560.0,178.0,38650
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Light,16.8,1070,140,125,1335,7020.0,2480.0,13800.0,49.0,6290
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,94.2,7950,315,705,8970,28640.0,12200.0,62560.0,178.0,39080
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,53.3,7710,470,420,8600,28640.0,12200.0,62560.0,178.0,29830
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Standard,32.4,370,90,95,555,7045.0,3190.0,8810.0,70.0,6560
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,High,6.4,170,75,100,345,980.0,430.0,1770.0,187.0,1880
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,Medium,Standard,48.6,4120,345,615,5080,22530.0,11420.0,29950.0,59.0,29940
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,High,13.2,200,35,85,320,4550.0,1270.0,12160.0,61.0,3520
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,7.1,480,80,70,630,1600.0,780.0,3370.0,157.0,2410
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Light,20.2,1170,220,245,1635,10780.0,3610.0,21210.0,55.0,7940
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,29.5,800,65,130,995,8970.0,2560.0,14630.0,159.0,6400
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,1.6,340,30,30,400,1600.0,780.0,3370.0,157.0,710
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Moderate,56.7,2660,405,645,3710,26175.0,15050.0,29840.0,66.0,21430
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.2,110,15,25,150,780.0,330.0,1310.0,176.0,420
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,86.7,5690,345,320,6355,28640.0,12200.0,62560.0,178.0,28350
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Standard,9.4,1480,80,145,1705,8120.0,4550.0,14020.0,65.0,4160
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Moderate,30.2,1830,285,390,2505,9240.0,5170.0,11920.0,56.0,10790
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Moderate,33.5,2900,295,575,3770,15435.0,8220.0,29230.0,76.0,16890
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,104.3,4600,320,545,5465,33640.0,15130.0,63680.0,166.0,34500
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Medium,Moderate,10.3,240,50,50,340,4350.0,1820.0,9000.0,54.0,2960
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,High,2.1,240,15,20,275,890.0,380.0,1720.0,71.0,790
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,122.8,4860,610,965,6435,28640.0,12200.0,62560.0,178.0,43080
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,2.8,160,15,20,195,785.0,350.0,1340.0,58.0,590
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Light,8.8,490,40,65,595,2650.0,1100.0,5860.0,63.0,2580
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,2.3,210,35,40,285,780.0,330.0,1310.0,176.0,910
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Light,71.1,3470,405,935,4810,22530.0,11420.0,29950.0,59.0,29970
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Moderate,5.6,110,50,35,195,735.0,250.0,1200.0,58.0,1220
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,2.5,250,25,25,300,780.0,330.0,1310.0,176.0,790
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,Moderate,33.9,360,100,170,630,6260.0,3070.0,8990.0,64.0,8630
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Light,97.6,5000,490,415,5905,33640.0,15130.0,63680.0,166.0,34230
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,85.3,6140,290,535,6965,28640.0,12200.0,62560.0,178.0,29520
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Standard,3.5,110,20,45,175,735.0,250.0,1200.0,58.0,850
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,22.2,2090,280,410,2780,5285.0,2300.0,8680.0,62.0,9180
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Standard,57.7,2900,330,605,3835,26175.0,15050.0,29840.0,66.0,21690
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,41.1,430,225,325,980,8970.0,2560.0,14630.0,159.0,12190
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Light,18.1,2030,155,185,2370,5285.0,2300.0,8680.0,62.0,6910
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Light,7.2,210,25,40,275,2990.0,750.0,6380.0,57.0,1810
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,5.0,320,50,55,425,1600.0,780.0,3370.0,157.0,1340
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Light,6.1,140,15,35,190,780.0,310.0,1500.0,45.0,980
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,High,2.4,140,15,25,180,780.0,330.0,1310.0,176.0,620
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,5.6,270,30,65,365,1600.0,780.0,3370.0,157.0,1560
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,2.8,250,25,30,305,780.0,330.0,1310.0,176.0,880
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,7.3,640,55,135,830,4340.0,1850.0,9610.0,68.0,2880
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Light,15.5,1670,230,260,2160,8485.0,5940.0,14090.0,36.0,6430
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,High,11.7,790,90,100,980,3150.0,1560.0,5610.0,59.0,4280
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,26.9,990,135,170,1295,7020.0,2480.0,13800.0,49.0,7630
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.6,610,65,85,760,1600.0,780.0,3370.0,157.0,1940
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,118.3,6170,545,610,7325,28640.0,12200.0,62560.0,178.0,42160
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,40.5,960,200,275,1435,7020.0,2480.0,13800.0,49.0,10770
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Light,15.8,590,110,160,860,4340.0,1850.0,9610.0,68.0,5420
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Standard,8.4,1380,90,210,1680,5285.0,2300.0,8680.0,62.0,4410
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Light,1.6,120,15,20,155,785.0,350.0,1340.0,58.0,530
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Moderate,120.2,4090,515,670,5275,33640.0,15130.0,63680.0,166.0,43090
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,Moderate,32.2,1010,250,295,1555,6770.0,2480.0,11120.0,77.0,11050
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,108.7,8850,715,635,10200,28640.0,12200.0,62560.0,178.0,45960
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Large,High,Light,12.9,240,25,50,315,3190.0,1180.0,6800.0,73.0,2450
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,15.0,1190,80,190,1460,8485.0,5940.0,14090.0,36.0,5550
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Moderate,60.0,3090,520,565,4175,22530.0,11420.0,29950.0,59.0,26340
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.6,220,25,35,280,780.0,330.0,1310.0,176.0,610
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Light,29.4,3720,185,330,4235,28640.0,12200.0,62560.0,178.0,14200
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Light,91.9,7230,240,710,8180,33640.0,15130.0,63680.0,166.0,33290
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Moderate,14.8,170,45,70,285,2990.0,750.0,6380.0,57.0,3030
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Low,Standard,10.3,180,25,55,260,4550.0,1270.0,12160.0,61.0,2810
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,Moderate,35.3,980,135,305,1420,7020.0,2480.0,13800.0,49.0,8960
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Standard,8.3,310,35,25,370,2295.0,830.0,4280.0,46.0,1700
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.0,280,25,30,335,980.0,430.0,1770.0,187.0,820
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Standard,43.2,1570,270,435,2275,15435.0,8220.0,29230.0,76.0,21480
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,Light,8.5,200,50,35,285,2175.0,650.0,3170.0,56.0,1700
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,20.9,570,100,60,730,8970.0,2560.0,14630.0,159.0,5020
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Moderate,4.0,80,25,35,140,780.0,310.0,1500.0,45.0,870
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,1.5,90,15,20,125,780.0,330.0,1310.0,176.0,430
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.2,200,15,20,235,780.0,330.0,1310.0,176.0,520
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Medium,Medium,Light,17.9,1100,140,265,1505,5285.0,2300.0,8680.0,62.0,6610
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,Medium,Moderate,45.3,1610,145,220,1975,10780.0,3610.0,21210.0,55.0,11660
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,4.4,200,25,25,250,890.0,380.0,1720.0,71.0,1060
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,1.7,170,25,20,215,780.0,330.0,1310.0,176.0,630
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,24.6,300,130,190,620,8970.0,2560.0,14630.0,159.0,7020
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Light,52.1,2950,540,560,4050,15485.0,7950.0,29890.0,56.0,21010
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,28.6,3240,285,560,4085,12200.0,6390.0,15960.0,57.0,13430
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Light,54.2,950,230,275,1455,8970.0,2560.0,14630.0,159.0,12630
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Light,50.2,3520,575,995,5090,22530.0,11420.0,29950.0,59.0,29370
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,High,3.5,200,20,20,240,1300.0,470.0,2940.0,69.0,1060
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,10.5,240,30,30,300,2295.0,830.0,4280.0,46.0,1880
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Moderate,18.4,1910,115,190,2215,10220.0,4390.0,20120.0,51.0,7750
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Moderate,9.0,350,20,40,410,2295.0,830.0,4280.0,46.0,1690
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,High,17.7,2290,110,220,2620,14870.0,4730.0,21830.0,48.0,9300
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,Moderate,22.1,2880,220,295,3395,15485.0,7950.0,29890.0,56.0,10410
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,High,Standard,11.0,260,30,60,350,1875.0,980.0,2780.0,60.0,2000
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Moderate,25.1,2010,335,365,2710,14870.0,4730.0,21830.0,48.0,11310
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Moderate,111.1,5710,725,525,6960,28640.0,12200.0,62560.0,178.0,44050
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,32.5,690,165,140,995,8970.0,2560.0,14630.0,159.0,8730
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,21.3,2050,215,300,2565,9240.0,5170.0,11920.0,56.0,8380
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Large,High,Light,23.2,2340,230,320,2890,8120.0,4550.0,14020.0,65.0,9430
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,95.0,3030,420,550,4000,33640.0,15130.0,63680.0,166.0,27440
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,4.0,210,20,45,275,1600.0,780.0,3370.0,157.0,930
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Low,Standard,10.2,660,30,60,750,2650.0,1100.0,5860.0,63.0,2840
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,3.4,80,15,20,115,780.0,310.0,1500.0,45.0,560
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.5,200,25,40,265,980.0,430.0,1770.0,187.0,770
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,3.5,600,45,40,685,1600.0,780.0,3370.0,157.0,1550
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Standard,1.8,140,15,20,175,780.0,310.0,1500.0,45.0,540
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Light,17.5,340,65,55,460,2295.0,830.0,4280.0,46.0,2880
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,High,13.9,1220,70,195,1485,3150.0,1560.0,5610.0,59.0,4600
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Medium,Medium,Moderate,15.6,650,45,60,755,2650.0,1100.0,5860.0,63.0,4390
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,Light,84.9,2060,665,880,3605,26175.0,15050.0,29840.0,66.0,29950
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,119.2,5710,355,940,7005,33640.0,15130.0,63680.0,166.0,39150
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Low,Standard,14.2,270,65,100,435,4550.0,1270.0,12160.0,61.0,4280
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Standard,9.5,170,40,40,250,1300.0,470.0,2940.0,69.0,1810
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Moderate,43.2,270,140,275,685,4550.0,1270.0,12160.0,61.0,11510
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Low,Standard,6.1,80,35,40,155,1300.0,470.0,2940.0,69.0,1330
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,High,7.1,150,15,35,200,1270.0,560.0,2170.0,64.0,1420
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,128.6,4900,365,790,6055,33640.0,15130.0,63680.0,166.0,34040
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Moderate,4.1,100,25,25,150,735.0,250.0,1200.0,58.0,790
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Moderate,23.8,610,110,105,825,8970.0,2560.0,14630.0,159.0,5680
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Light,109.4,4080,220,640,4940,33640.0,15130.0,63680.0,166.0,31610
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.5,360,30,40,430,980.0,430.0,1770.0,187.0,1000
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Medium,Moderate,6.1,290,30,40,360,2295.0,830.0,4280.0,46.0,1460
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Light,38.8,2300,410,535,3245,15435.0,8220.0,29230.0,76.0,17620
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Medium,Moderate,16.7,330,45,50,425,4350.0,1820.0,9000.0,54.0,3240
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,High,7.8,510,60,110,680,1600.0,780.0,3370.0,157.0,2480
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Standard,22.8,540,60,140,740,8970.0,2560.0,14630.0,159.0,5790
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,3.4,210,20,50,280,780.0,330.0,1310.0,176.0,1160
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,9.6,170,35,55,260,2295.0,830.0,4280.0,46.0,2270
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Light,3.4,90,20,20,130,780.0,310.0,1500.0,45.0,740
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Standard,2.0,80,15,20,115,735.0,250.0,1200.0,58.0,440
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,18.8,680,60,115,855,4750.0,2020.0,8290.0,48.0,4390
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,25.0,1140,120,165,1425,9240.0,5170.0,11920.0,56.0,7830
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Moderate,35.9,2330,170,440,2940,12200.0,6390.0,15960.0,57.0,11010
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,67.2,5490,295,325,6110,28640.0,12200.0,62560.0,178.0,25430
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Moderate,1.0,110,15,20,145,735.0,250.0,1200.0,58.0,380
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,Medium,Standard,7.0,240,55,30,325,1875.0,980.0,2780.0,60.0,1890
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Light,2.2,120,15,20,155,1300.0,470.0,2940.0,69.0,540
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Standard,3.2,80,15,20,115,2990.0,750.0,6380.0,57.0,700
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Moderate,4.5,1550,80,75,1705,4815.0,2570.0,9490.0,66.0,3520
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,High,6.0,220,50,60,330,890.0,380.0,1720.0,71.0,1670
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,5.6,160,30,45,235,910.0,430.0,1540.0,60.0,910
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,79.0,4750,200,495,5445,33640.0,15130.0,63680.0,166.0,24760
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,4.4,560,45,105,710,1600.0,780.0,3370.0,157.0,1790
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,8.5,880,65,115,1060,4340.0,1850.0,9610.0,68.0,3070
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,Standard,10.5,170,65,70,305,2175.0,650.0,3170.0,56.0,2580
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,Medium,Standard,20.0,210,70,85,365,8370.0,2690.0,19090.0,43.0,4260
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Low,Standard,27.5,1990,320,485,2795,15435.0,8220.0,29230.0,76.0,17390
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Standard,5.6,260,20,45,325,910.0,430.0,1540.0,60.0,1190
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Light,37.6,1830,355,395,2580,22530.0,11420.0,29950.0,59.0,20350
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Light,17.9,310,95,105,510,4550.0,1270.0,12160.0,61.0,5190
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Moderate,3.5,170,35,30,235,780.0,330.0,1310.0,176.0,990
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Small,Low,Light,7.9,140,30,30,200,2990.0,750.0,6380.0,57.0,2170
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,110.0,4580,650,455,5685,33640.0,15130.0,63680.0,166.0,37630
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.3,340,60,45,445,1600.0,780.0,3370.0,157.0,1360
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,13.3,1910,135,195,2240,8485.0,5940.0,14090.0,36.0,7190
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,69.6,5380,335,495,6210,28640.0,12200.0,62560.0,178.0,29810
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.0,140,15,20,175,780.0,330.0,1310.0,176.0,390
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,1.4,230,20,30,280,780.0,330.0,1310.0,176.0,660
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Light,91.6,3930,230,415,4575,28640.0,12200.0,62560.0,178.0,27730
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,11.2,920,90,200,1210,4815.0,2570.0,9490.0,66.0,4670
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,Medium,Light,48.6,780,115,305,1200,8970.0,2560.0,14630.0,159.0,10620
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Standard,45.0,3250,385,365,4000,14870.0,4730.0,21830.0,48.0,14760
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,98.4,5320,455,660,6435,33640.0,15130.0,63680.0,166.0,35380
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,6.8,470,25,30,525,1745.0,840.0,3760.0,60.0,2160
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Small,Low,Standard,2.1,130,15,20,165,735.0,250.0,1200.0,58.0,540
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,High,High,20.8,660,85,160,905,6260.0,3070.0,8990.0,64.0,6510
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,High,25.5,970,235,210,1415,7020.0,2480.0,13800.0,49.0,8370
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.3,330,40,35,405,980.0,430.0,1770.0,187.0,1080
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Moderate,19.4,140,55,95,290,4550.0,1270.0,12160.0,61.0,4590
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Moderate,88.4,6050,310,615,6975,33640.0,15130.0,63680.0,166.0,34060
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,High,39.1,680,120,150,950,8970.0,2560.0,14630.0,159.0,9190
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,3.4,580,50,35,665,1600.0,780.0,3370.0,157.0,1510
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Standard,9.3,750,80,80,910,3150.0,1560.0,5610.0,59.0,3290
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,98.2,6340,640,570,7550,33640.0,15130.0,63680.0,166.0,42290
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,42.1,5040,325,470,5835,28640.0,12200.0,62560.0,178.0,22620
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,0.9,100,15,20,135,785.0,350.0,1340.0,58.0,390
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,4.3,560,70,65,695,1600.0,780.0,3370.0,157.0,1610
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,High,41.0,730,155,180,1065,8970.0,2560.0,14630.0,159.0,8340
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Medium,High,29.3,1680,225,290,2195,10220.0,4390.0,20120.0,51.0,11130
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Medium,Low,Standard,1.3,260,15,20,295,945.0,400.0,1670.0,66.0,610
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Medium,High,Moderate,36.6,1200,205,340,1745,10780.0,3610.0,21210.0,55.0,12150
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Light,9.9,280,70,50,400,1410.0,670.0,2480.0,55.0,2280
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,67.1,3030,225,270,3525,33640.0,15130.0,63680.0,166.0,19650
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,2.4,240,30,25,295,980.0,430.0,1770.0,187.0,790
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,59.3,3840,330,305,4475,28640.0,12200.0,62560.0,178.0,24210
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Medium,Low,Standard,3.4,120,25,20,165,1320.0,590.0,2380.0,55.0,880
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Small,Low,Standard,13.4,1370,75,150,1595,10220.0,4390.0,20120.0,51.0,5690
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Large,Medium,Standard,20.5,1150,85,75,1310,4750.0,2020.0,8290.0,48.0,4990
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,1.9,200,15,35,250,780.0,330.0,1310.0,176.0,610
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,High,Moderate,53.9,2680,320,260,3260,15485.0,7950.0,29890.0,56.0,18610
+Moradabad Brass Lamp,Lighting,Metalware,Moradabad Metal Craft,Brass,Metal Engraving,Uttar Pradesh,North India,Small,Low,Light,12.1,640,155,210,1005,3150.0,1560.0,5610.0,59.0,4820
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Light,3.4,170,15,30,215,785.0,350.0,1340.0,58.0,930
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,3.7,350,40,40,430,1600.0,780.0,3370.0,157.0,1210
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Large,High,Moderate,43.5,360,135,215,710,8370.0,2690.0,19090.0,43.0,9710
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,65.2,6700,380,470,7550,28640.0,12200.0,62560.0,178.0,27210
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Light,38.5,4560,235,395,5190,20275.0,8760.0,29980.0,58.0,18690
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Moderate,23.7,950,180,325,1455,6770.0,2480.0,11120.0,77.0,8370
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,3.1,270,30,30,330,980.0,430.0,1770.0,187.0,990
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Small,Medium,Moderate,19.1,390,40,80,510,4350.0,1820.0,9000.0,54.0,4730
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,20.4,1620,215,330,2165,8485.0,5940.0,14090.0,36.0,7720
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Medium,Medium,Moderate,17.6,2500,160,165,2825,15485.0,7950.0,29890.0,56.0,8860
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Moderate,20.8,510,80,105,695,7045.0,3190.0,8810.0,70.0,4600
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Medium,Medium,Standard,12.2,2650,230,180,3060,8485.0,5940.0,14090.0,36.0,8470
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Small,Medium,High,28.1,1050,185,355,1590,7020.0,2480.0,13800.0,49.0,9780
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Moderate,22.3,5490,325,245,6060,20275.0,8760.0,29980.0,58.0,15650
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,0.9,150,15,20,185,780.0,330.0,1310.0,176.0,380
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Standard,3.9,440,50,55,545,1600.0,780.0,3370.0,157.0,1410
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Small,Medium,High,13.1,1010,105,130,1245,4815.0,2570.0,9490.0,66.0,4990
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Moderate,6.2,430,75,55,560,1600.0,780.0,3370.0,157.0,2070
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Medium,Low,Standard,7.5,220,25,20,265,2295.0,830.0,4280.0,46.0,1450
+Blue Pottery Plate,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Standard,3.1,240,35,40,315,780.0,330.0,1310.0,176.0,1040
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Medium,Medium,Light,25.0,440,65,80,585,6260.0,3070.0,8990.0,64.0,5320
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Light,2.8,230,30,50,310,980.0,430.0,1770.0,187.0,910
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,High,9.0,170,55,55,280,1300.0,470.0,2940.0,69.0,2230
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Medium,High,Light,57.1,2400,395,595,3390,22530.0,11420.0,29950.0,59.0,27340
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,10.0,1050,120,105,1275,4340.0,1850.0,9610.0,68.0,4220
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Large,High,High,48.3,5150,555,430,6135,26175.0,15050.0,29840.0,66.0,26230
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Large,Medium,Moderate,13.0,270,90,140,500,1510.0,480.0,2690.0,57.0,2810
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,11.5,430,35,85,550,1745.0,840.0,3760.0,60.0,3100
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Large,High,Light,10.7,350,50,75,475,1875.0,980.0,2780.0,60.0,2250
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Small,Low,Light,3.0,100,20,30,150,780.0,330.0,1310.0,176.0,890
+Pipili Applique Wall Hanging,Home Decor,Textile Craft,Pipili Applique,Cotton,Applique,Odisha,East India,Small,Low,Standard,5.8,200,20,20,240,1270.0,560.0,2170.0,64.0,1090
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,High,46.5,2440,345,355,3140,20275.0,8760.0,29980.0,58.0,15000
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Small,Low,Standard,2.6,830,45,60,935,4340.0,1850.0,9610.0,68.0,1920
+Kalamkari Wall Art,Painting,Textile Painting,Kalamkari,Cotton,Block Printing,Andhra Pradesh,South India,Small,Low,Moderate,4.8,500,25,45,570,1745.0,840.0,3760.0,60.0,1650
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,High,Standard,101.9,6560,480,400,7440,28640.0,12200.0,62560.0,178.0,36120
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Medium,Standard,6.0,250,45,70,365,1410.0,670.0,2480.0,55.0,1780
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Moderate,38.2,1560,350,305,2215,14870.0,4730.0,21830.0,48.0,14110
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Moderate,18.6,4420,300,295,5015,20275.0,8760.0,29980.0,58.0,12430
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Standard,5.9,100,15,35,150,1300.0,470.0,2940.0,69.0,870
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,11.2,2650,245,250,3145,9240.0,5170.0,11920.0,56.0,6820
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Light,40.6,1520,235,380,2135,12200.0,6390.0,15960.0,57.0,14330
+Phulkari Dupatta,Textiles,Embroidery,Phulkari,Cotton,Hand Embroidery,Punjab,North India,Standard,High,Moderate,34.8,600,190,205,995,8970.0,2560.0,14630.0,159.0,10980
+Terracotta Decorative Pot,Home Decor,Pottery,Terracotta,Clay,Hand Moulding,West Bengal,East India,Medium,Low,Light,2.9,170,15,25,210,910.0,430.0,1540.0,60.0,640
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Standard,28.1,1470,200,240,1910,15435.0,8220.0,29230.0,76.0,12580
+Blue Pottery Vase,Home Decor,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Large,Medium,Light,4.7,260,25,75,360,1600.0,780.0,3370.0,157.0,1330
+Sandalwood Carving,Home Decor,Wood Craft,Sandalwood Carving,Sandalwood,Wood Carving,Karnataka,South India,Large,High,Moderate,34.7,2900,355,500,3755,20275.0,8760.0,29980.0,58.0,14940
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Low,Light,20.6,260,60,100,420,4550.0,1270.0,12160.0,61.0,4240
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,High,2.8,150,20,20,190,785.0,350.0,1340.0,58.0,820
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,Medium,Standard,123.0,5420,520,435,6375,33640.0,15130.0,63680.0,166.0,36170
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Medium,Medium,Light,3.6,70,15,30,115,1300.0,470.0,2940.0,69.0,810
+Bastar Bell Metal Figure,Home Decor,Metal Craft,Bastar Dhokra,Bell Metal,Lost Wax Casting,Chhattisgarh,Central India,Large,High,Standard,39.5,2800,440,495,3735,12200.0,6390.0,15960.0,57.0,14970
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Small,Low,Standard,2.7,100,15,20,135,785.0,350.0,1340.0,58.0,600
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Large,High,Standard,12.8,250,65,85,400,2175.0,650.0,3170.0,56.0,2910
+Channapatna Wooden Toy,Toys,Wooden Toys,Channapatna,Wood,Lac Turning,Karnataka,South India,Large,Low,Standard,3.0,190,15,20,225,1410.0,670.0,2480.0,55.0,770
+Banarasi Silk Saree,Textiles,Saree,Banarasi,Silk,Handloom Weaving,Uttar Pradesh,North India,Standard,High,Standard,59.9,6430,345,585,7360,33640.0,15130.0,63680.0,166.0,30890
+Pashmina Shawl,Textiles,Shawl,Pashmina,Pashmina Wool,Hand Embroidery,Jammu and Kashmir,North India,Standard,Medium,Standard,68.2,8140,315,530,8985,28640.0,12200.0,62560.0,178.0,29490
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Medium,Light,19.0,250,100,100,450,4550.0,1270.0,12160.0,61.0,5130
+Thanjavur Painting,Painting,Traditional Painting,Thanjavur Painting,Wood,Gold Leaf Work,Tamil Nadu,South India,Small,Medium,Light,16.9,2300,205,270,2775,15435.0,8220.0,29230.0,76.0,9790
+Madhubani Painting,Painting,Folk Painting,Madhubani,Paper,Hand Painting,Bihar,East India,Medium,Low,Standard,10.4,220,45,40,305,4550.0,1270.0,12160.0,61.0,2850
+Kondapalli Doll,Toys,Wooden Toys,Kondapalli Toys,Soft Wood,Hand Painting,Andhra Pradesh,South India,Small,Low,Standard,3.6,250,15,20,285,890.0,380.0,1720.0,71.0,870
+Dhokra Figurine,Home Decor,Metal Craft,Dhokra,Brass,Lost Wax Casting,Chhattisgarh,Central India,Medium,High,Moderate,21.9,1710,145,385,2240,6770.0,2480.0,11120.0,77.0,9930
+Kutch Embroidery Bag,Fashion,Bags,Kutch Embroidery,Cotton,Hand Embroidery,Gujarat,West India,Large,High,Light,20.0,840,50,105,995,7045.0,3190.0,8810.0,70.0,5410
+Kashmir Walnut Box,Home Decor,Wood Craft,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Jammu and Kashmir,North India,Large,High,Moderate,65.3,1440,410,460,2310,14870.0,4730.0,21830.0,48.0,19520
+Sikki Grass Basket,Home Decor,Natural Fibre,Sikki Craft,Sikki Grass,Hand Weaving,Bihar,East India,Small,Low,Light,3.3,80,20,20,120,780.0,310.0,1500.0,45.0,770
+Jaipur Blue Pottery Bowl,Tableware,Pottery,Blue Pottery,Ceramic,Glazing,Rajasthan,West India,Medium,Low,Standard,1.3,290,20,30,340,980.0,430.0,1770.0,187.0,650

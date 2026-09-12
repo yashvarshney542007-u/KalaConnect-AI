@@ -1,0 +1,54 @@
+
+KALACONNECT PRICE PREDICTION
+FINAL MODEL EVALUATION
+
+Test records: 750
+
+PERFORMANCE
+------------------------------
+
+MAE:
+₹771.20
+
+RMSE:
+₹1340.57
+
+Median Absolute Error:
+₹333.71
+
+R²:
+0.9844
+
+
+INTERPRETATION
+------------------------------
+
+MAE represents the average absolute
+difference between predicted and actual
+synthetic selling prices.
+
+RMSE penalizes large prediction errors
+more heavily than MAE.
+
+Median Absolute Error represents the
+typical absolute prediction error and is
+less affected by expensive outliers.
+
+R² measures the proportion of variation
+in selling prices explained by the model.
+
+
+DATASET NOTE
+------------------------------
+
+The model was trained and evaluated on a
+domain-informed synthetic dataset.
+
+The synthetic price distributions were
+calibrated against Indian handicraft
+marketplace price ranges.
+
+These metrics therefore measure
+performance on synthetic held-out test
+data and should not be presented as
+validated real-world accuracy.

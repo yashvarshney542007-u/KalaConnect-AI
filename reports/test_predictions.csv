@@ -1,0 +1,751 @@
+record_id,craft,material,technique,size,region,actual_selling_price,predicted_price,absolute_error
+SIH-00791,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,740,940.3246712523314,200.32467125233143
+SIH-02880,Channapatna,Wood,Lac Turning,Small,South India,760,788.7801798179335,28.78017981793346
+SIH-02373,Blue Pottery,Ceramic,Glazing,Medium,West India,830,940.5046883647083,110.50468836470827
+SIH-01352,Kalamkari,Cotton,Block Printing,Small,South India,1300,1709.301422526839,409.3014225268389
+SIH-03383,Dhokra,Brass,Lost Wax Casting,Large,Central India,9700,10954.410650405543,1254.4106504055435
+SIH-03434,Terracotta,Clay,Hand Moulding,Large,East India,1700,2166.829962133559,466.8299621335591
+SIH-01130,Phulkari,Cotton,Hand Embroidery,Standard,North India,13400,13280.243665387523,119.75633461247708
+SIH-00550,Madhubani,Paper,Hand Painting,Large,East India,6880,7676.885182949386,796.885182949386
+SIH-02836,Dhokra,Brass,Lost Wax Casting,Large,Central India,8670,8437.596157308724,232.4038426912757
+SIH-00627,Dhokra,Brass,Lost Wax Casting,Small,Central India,3470,3384.8665109056055,85.13348909439446
+SIH-00669,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,13980,15095.221828028647,1115.221828028647
+SIH-01860,Blue Pottery,Ceramic,Glazing,Medium,West India,1120,896.8277348769789,223.17226512302113
+SIH-00123,Blue Pottery,Ceramic,Glazing,Small,West India,680,758.6158667059517,78.6158667059517
+SIH-02548,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,21220,23241.77943247195,2021.7794324719507
+SIH-01908,Blue Pottery,Ceramic,Glazing,Large,West India,1560,1553.5257584274577,6.474241572542269
+SIH-04673,Kalamkari,Cotton,Block Printing,Small,South India,2030,2286.190449317108,256.1904493171078
+SIH-00184,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,2750,2571.323782034772,178.6762179652278
+SIH-02797,Kalamkari,Cotton,Block Printing,Medium,South India,2900,2856.0427872638274,43.95721273617255
+SIH-02846,Pipili Applique,Cotton,Applique,Small,East India,1100,1151.533619808244,51.53361980824411
+SIH-04629,Madhubani,Paper,Hand Painting,Medium,East India,3620,4118.895993827962,498.89599382796223
+SIH-01958,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1790,1278.6114661472584,511.3885338527416
+SIH-04764,Dhokra,Brass,Lost Wax Casting,Small,Central India,3760,3772.269411889237,12.269411889236835
+SIH-01165,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,7850,6792.857626960613,1057.1423730393872
+SIH-04181,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,4380,4241.933259087969,138.06674091203058
+SIH-00612,Dhokra,Brass,Lost Wax Casting,Medium,Central India,9970,9499.028989007278,470.97101099272186
+SIH-01873,Blue Pottery,Ceramic,Glazing,Small,West India,1120,1013.4820945341735,106.51790546582652
+SIH-04740,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,9050,8228.663189628081,821.3368103719185
+SIH-04962,Madhubani,Paper,Hand Painting,Medium,East India,9750,8193.541874009637,1556.4581259903625
+SIH-04435,Channapatna,Wood,Lac Turning,Large,South India,1840,1582.7101640578967,257.2898359421033
+SIH-01721,Blue Pottery,Ceramic,Glazing,Small,West India,1010,821.8394195025594,188.1605804974406
+SIH-04355,Blue Pottery,Ceramic,Glazing,Large,West India,1010,1364.4345348410652,354.4345348410652
+SIH-00234,Channapatna,Wood,Lac Turning,Large,South India,730,1227.5118810981767,497.5118810981767
+SIH-00157,Kalamkari,Cotton,Block Printing,Small,South India,1860,1850.9262606974726,9.073739302527429
+SIH-02265,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,1890,2070.4554746128333,180.4554746128333
+SIH-01648,Blue Pottery,Ceramic,Glazing,Large,West India,2710,2455.991221700695,254.00877829930505
+SIH-01198,Blue Pottery,Ceramic,Glazing,Small,West India,690,815.0547676126125,125.05476761261252
+SIH-01236,Kalamkari,Cotton,Block Printing,Large,South India,1710,2753.267252447593,1043.267252447593
+SIH-04997,Blue Pottery,Ceramic,Glazing,Medium,West India,1020,829.5874947165894,190.4125052834106
+SIH-01729,Blue Pottery,Ceramic,Glazing,Large,West India,1650,1380.1365492283194,269.8634507716806
+SIH-00712,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1120,1158.3942357694477,38.39423576944773
+SIH-00810,Blue Pottery,Ceramic,Glazing,Small,West India,890,665.5582795841219,224.44172041587808
+SIH-02891,Pipili Applique,Cotton,Applique,Medium,East India,2380,2081.247270754432,298.75272924556793
+SIH-01162,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,520,835.0764927183145,315.0764927183145
+SIH-03689,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,15970,14204.510163303676,1765.4898366963243
+SIH-00212,Blue Pottery,Ceramic,Glazing,Large,West India,1460,1409.7944272010755,50.20557279892455
+SIH-04828,Blue Pottery,Ceramic,Glazing,Medium,West India,1220,995.1663661498296,224.83363385017037
+SIH-03041,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,25810,25403.46559911723,406.53440088277057
+SIH-01870,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,41540,37641.6216661295,3898.3783338705034
+SIH-00319,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,23740,22827.9063405865,912.0936594134982
+SIH-02733,Blue Pottery,Ceramic,Glazing,Small,West India,880,886.5891707372293,6.589170737229324
+SIH-03254,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,4570,5747.86530408406,1177.86530408406
+SIH-04535,Banarasi,Silk,Handloom Weaving,Standard,North India,32160,28840.52929554915,3319.4707044508505
+SIH-03762,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,3800,4165.864235956197,365.86423595619726
+SIH-00331,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1530,1375.3259432917403,154.67405670825974
+SIH-02424,Dhokra,Brass,Lost Wax Casting,Large,Central India,11290,13243.36462323166,1953.3646232316605
+SIH-03096,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,30630,33003.43927976326,2373.439279763261
+SIH-02660,Banarasi,Silk,Handloom Weaving,Standard,North India,33970,34967.65778929877,997.6577892987698
+SIH-00355,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1060,1035.8199525389919,24.180047461008144
+SIH-01804,Banarasi,Silk,Handloom Weaving,Standard,North India,16220,19713.734548012166,3493.7345480121658
+SIH-04859,Pipili Applique,Cotton,Applique,Medium,East India,2630,1967.025399576506,662.9746004234939
+SIH-01095,Banarasi,Silk,Handloom Weaving,Standard,North India,18510,20009.11429015281,1499.114290152811
+SIH-04282,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,15830,16923.954858689496,1093.9548586894962
+SIH-00044,Blue Pottery,Ceramic,Glazing,Small,West India,570,661.071238066188,91.07123806618802
+SIH-02216,Phulkari,Cotton,Hand Embroidery,Standard,North India,3280,4265.788542346053,985.788542346053
+SIH-01514,Terracotta,Clay,Hand Moulding,Small,East India,600,803.834981166332,203.834981166332
+SIH-02844,Banarasi,Silk,Handloom Weaving,Standard,North India,39360,41928.732836560834,2568.7328365608337
+SIH-03115,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,1530,1473.0125433497124,56.98745665028764
+SIH-00290,Blue Pottery,Ceramic,Glazing,Small,West India,820,724.1059798001579,95.89402019984209
+SIH-02479,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,8570,7024.949842558886,1545.0501574411137
+SIH-02805,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,920,1353.8434326840643,433.8434326840643
+SIH-04693,Terracotta,Clay,Hand Moulding,Small,East India,1140,1299.4001269161745,159.4001269161745
+SIH-01323,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,8110,9745.070945287838,1635.0709452878382
+SIH-04664,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,12970,12706.85367273409,263.14632726590935
+SIH-00554,Pipili Applique,Cotton,Applique,Medium,East India,1360,1568.0784006798594,208.07840067985944
+SIH-02118,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,6110,6254.034106097096,144.0341060970959
+SIH-02211,Dhokra,Brass,Lost Wax Casting,Large,Central India,6770,7069.69944742,299.69944742000007
+SIH-00622,Blue Pottery,Ceramic,Glazing,Medium,West India,1050,947.8278386394486,102.1721613605514
+SIH-01102,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,42290,37678.572879395666,4611.427120604334
+SIH-00890,Blue Pottery,Ceramic,Glazing,Large,West India,1570,1485.5732335993753,84.42676640062473
+SIH-00069,Dhokra,Brass,Lost Wax Casting,Large,Central India,9550,9919.752936382214,369.7529363822141
+SIH-03976,Dhokra,Brass,Lost Wax Casting,Medium,Central India,5580,5144.715716994087,435.2842830059126
+SIH-00487,Phulkari,Cotton,Hand Embroidery,Standard,North India,6960,7205.486935224993,245.48693522499343
+SIH-00970,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,4900,5502.0680026915215,602.0680026915215
+SIH-04675,Phulkari,Cotton,Hand Embroidery,Standard,North India,8230,8351.316297527033,121.31629752703338
+SIH-03576,Blue Pottery,Ceramic,Glazing,Small,West India,820,755.0528950414446,64.94710495855543
+SIH-02634,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,13800,11209.420515016689,2590.579484983311
+SIH-04300,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6970,6278.276903965258,691.7230960347424
+SIH-04503,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,890,1043.664073932906,153.66407393290592
+SIH-03923,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,1150,999.7437752555325,150.25622474446754
+SIH-03895,Blue Pottery,Ceramic,Glazing,Large,West India,1160,1350.0043541434889,190.00435414348885
+SIH-02175,Blue Pottery,Ceramic,Glazing,Medium,West India,1150,1122.6781731553992,27.321826844600764
+SIH-01418,Channapatna,Wood,Lac Turning,Large,South India,1890,1589.4219139841462,300.57808601585384
+SIH-02728,Channapatna,Wood,Lac Turning,Medium,South India,600,767.6832743647747,167.68327436477466
+SIH-01768,Blue Pottery,Ceramic,Glazing,Small,West India,600,634.6984651833427,34.698465183342705
+SIH-02169,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,5000,4883.186876877485,116.81312312251521
+SIH-00220,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,8410,7783.899720277458,626.1002797225419
+SIH-00600,Dhokra,Brass,Lost Wax Casting,Medium,Central India,3360,3978.410090486289,618.4100904862889
+SIH-00200,Banarasi,Silk,Handloom Weaving,Standard,North India,27980,30531.00226377061,2551.0022637706097
+SIH-03787,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,11870,10115.124808947088,1754.8751910529118
+SIH-00860,Dhokra,Brass,Lost Wax Casting,Medium,Central India,6120,6006.718573914501,113.28142608549933
+SIH-01947,Terracotta,Clay,Hand Moulding,Medium,East India,1450,1399.3427807237686,50.657219276231444
+SIH-01872,Blue Pottery,Ceramic,Glazing,Large,West India,1860,1619.3075701258422,240.69242987415782
+SIH-01481,Phulkari,Cotton,Hand Embroidery,Standard,North India,6920,6511.186722491808,408.8132775081922
+SIH-03291,Blue Pottery,Ceramic,Glazing,Small,West India,480,603.5222180391629,123.52221803916291
+SIH-00368,Dhokra,Brass,Lost Wax Casting,Large,Central India,8060,7185.943435168088,874.0565648319116
+SIH-00839,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,610,951.2712736040321,341.2712736040321
+SIH-02571,Kalamkari,Cotton,Block Printing,Medium,South India,2510,2264.5195059979887,245.48049400201126
+SIH-03160,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,840,986.0750643379952,146.07506433799517
+SIH-00643,Pipili Applique,Cotton,Applique,Medium,East India,1950,1923.6535406238327,26.34645937616733
+SIH-03479,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,7440,7288.249614939609,151.75038506039073
+SIH-03958,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6840,6260.671626496665,579.3283735033347
+SIH-02267,Blue Pottery,Ceramic,Glazing,Large,West India,2080,1670.2744443816637,409.72555561833633
+SIH-02935,Blue Pottery,Ceramic,Glazing,Large,West India,1080,1202.6304972766357,122.63049727663565
+SIH-03775,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,18050,16827.94233166918,1222.057668330821
+SIH-02281,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,35320,38574.26647690247,3254.2664769024705
+SIH-01435,Kalamkari,Cotton,Block Printing,Large,South India,3590,3573.924531587255,16.075468412745067
+SIH-04871,Phulkari,Cotton,Hand Embroidery,Standard,North India,8980,8619.35242744619,360.64757255380937
+SIH-03009,Blue Pottery,Ceramic,Glazing,Large,West India,1830,1838.7081397907405,8.70813979074046
+SIH-03602,Terracotta,Clay,Hand Moulding,Medium,East India,760,997.2082395929792,237.20823959297923
+SIH-04280,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,940,1192.2321771338911,252.23217713389113
+SIH-02776,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,4710,4732.208948728033,22.208948728032738
+SIH-04896,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,2390,2150.563085957662,239.43691404233778
+SIH-04436,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3650,3227.221767435395,422.7782325646049
+SIH-04213,Dhokra,Brass,Lost Wax Casting,Small,Central India,2760,2969.785941139691,209.7859411396912
+SIH-03822,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,5560,6061.49386710422,501.49386710422004
+SIH-01552,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,30820,30418.56099454741,401.4390054525902
+SIH-04155,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,2370,2414.1484674572157,44.1484674572157
+SIH-01559,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,1480,1128.2375737881148,351.7624262118852
+SIH-01362,Dhokra,Brass,Lost Wax Casting,Medium,Central India,8200,8634.898266967773,434.89826696777345
+SIH-01452,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,29350,32691.28513093703,3341.2851309370308
+SIH-01615,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,12840,13372.431072506366,532.431072506366
+SIH-02528,Kalamkari,Cotton,Block Printing,Large,South India,3340,4276.667244025644,936.6672440256443
+SIH-04194,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6800,7591.20752336724,791.2075233672404
+SIH-03222,Madhubani,Paper,Hand Painting,Medium,East India,6390,6564.85927536125,174.85927536125018
+SIH-03779,Kalamkari,Cotton,Block Printing,Small,South India,1890,2070.0124690776092,180.01246907760924
+SIH-03544,Phulkari,Cotton,Hand Embroidery,Standard,North India,4260,5502.356086073023,1242.356086073023
+SIH-00578,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,660,833.9625152358003,173.9625152358003
+SIH-03037,Blue Pottery,Ceramic,Glazing,Small,West India,1110,837.541631380901,272.458368619099
+SIH-01927,Madhubani,Paper,Hand Painting,Small,East India,4070,3808.9311351096876,261.0688648903124
+SIH-01834,Terracotta,Clay,Hand Moulding,Medium,East India,1120,1185.0642042841628,65.06420428416277
+SIH-03735,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1990,1622.4069794402367,367.5930205597633
+SIH-01262,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,35410,37655.60918630587,2245.609186305868
+SIH-01427,Banarasi,Silk,Handloom Weaving,Standard,North India,24130,28693.533619356695,4563.5336193566945
+SIH-00692,Pipili Applique,Cotton,Applique,Large,East India,3610,3620.979138560274,10.979138560273896
+SIH-03067,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,10350,9049.44057818495,1300.5594218150509
+SIH-02938,Blue Pottery,Ceramic,Glazing,Small,West India,1190,906.3740067231302,283.62599327686985
+SIH-01955,Madhubani,Paper,Hand Painting,Large,East India,10970,11256.715137266356,286.71513726635567
+SIH-04677,Phulkari,Cotton,Hand Embroidery,Standard,North India,10260,9433.843310119553,826.1566898804467
+SIH-02108,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,13610,11191.906945539384,2418.0930544606163
+SIH-04036,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,19350,19773.12581716836,423.1258171683585
+SIH-00326,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,430,1012.139454540018,582.139454540018
+SIH-00870,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1570,1350.1652722796307,219.8347277203693
+SIH-01787,Pipili Applique,Cotton,Applique,Small,East India,1580,1198.1198288166797,381.8801711833203
+SIH-01895,Blue Pottery,Ceramic,Glazing,Small,West India,870,770.1618111899907,99.83818881000934
+SIH-04255,Pipili Applique,Cotton,Applique,Medium,East India,730,1201.8672532379496,471.8672532379496
+SIH-01181,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,800,898.8337322114585,98.83373221145848
+SIH-01865,Banarasi,Silk,Handloom Weaving,Standard,North India,31650,27969.452161227993,3680.547838772007
+SIH-03290,Madhubani,Paper,Hand Painting,Large,East India,13400,14162.334282432668,762.3342824326683
+SIH-01188,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,23420,22596.864102257183,823.1358977428172
+SIH-00066,Blue Pottery,Ceramic,Glazing,Medium,West India,860,870.2997315388884,10.299731538888409
+SIH-00110,Banarasi,Silk,Handloom Weaving,Standard,North India,24660,27504.625203158004,2844.6252031580043
+SIH-03505,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1260,1030.9906685230753,229.00933147692467
+SIH-02835,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,5280,5114.517711894432,165.48228810556793
+SIH-04554,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3570,3304.1032835385613,265.8967164614387
+SIH-01670,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,7210,6528.145856303184,681.8541436968162
+SIH-01336,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,18470,20152.629120050813,1682.629120050813
+SIH-00508,Pipili Applique,Cotton,Applique,Large,East India,4510,4414.0261161083945,95.97388389160551
+SIH-02808,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,9370,9569.354631727356,199.3546317273558
+SIH-03625,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,4160,5126.0890857947325,966.0890857947325
+SIH-03801,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6760,6681.855607004112,78.14439299588776
+SIH-01322,Phulkari,Cotton,Hand Embroidery,Standard,North India,5570,7099.180475693431,1529.1804756934307
+SIH-03632,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,8630,9288.35322172196,658.3532217219599
+SIH-03717,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,45110,40617.35371902154,4492.646280978457
+SIH-04730,Madhubani,Paper,Hand Painting,Medium,East India,4440,4965.084854625502,525.084854625502
+SIH-02820,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,14550,14089.803343200289,460.1966567997115
+SIH-04864,Blue Pottery,Ceramic,Glazing,Medium,West India,630,888.7625437330244,258.76254373302436
+SIH-03382,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,490,819.9753752056085,329.97537520560854
+SIH-01050,Channapatna,Wood,Lac Turning,Large,South India,1930,1870.7078110549774,59.292188945022644
+SIH-01589,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3980,3225.3278908251523,754.6721091748477
+SIH-01920,Pipili Applique,Cotton,Applique,Small,East India,750,959.3757041970357,209.3757041970357
+SIH-03249,Dhokra,Brass,Lost Wax Casting,Medium,Central India,9770,8541.63379871592,1228.3662012840796
+SIH-01213,Channapatna,Wood,Lac Turning,Large,South India,990,1149.5990069820346,159.59900698203455
+SIH-04329,Blue Pottery,Ceramic,Glazing,Medium,West India,580,763.4248861583746,183.42488615837465
+SIH-04843,Kalamkari,Cotton,Block Printing,Medium,South India,2730,2577.7843077447133,152.21569225528674
+SIH-00784,Blue Pottery,Ceramic,Glazing,Small,West India,430,600.0690856658703,170.06908566587026
+SIH-01593,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,35700,32480.561117407975,3219.438882592025
+SIH-03215,Phulkari,Cotton,Hand Embroidery,Standard,North India,7040,7672.186271719891,632.186271719891
+SIH-04311,Channapatna,Wood,Lac Turning,Medium,South India,1270,1078.2135100536716,191.7864899463284
+SIH-00306,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6610,7489.062790475365,879.0627904753646
+SIH-02631,Dhokra,Brass,Lost Wax Casting,Large,Central India,9040,11052.37935761617,2012.3793576161697
+SIH-03251,Terracotta,Clay,Hand Moulding,Large,East India,1140,1479.8055531064992,339.80555310649925
+SIH-03733,Phulkari,Cotton,Hand Embroidery,Standard,North India,9130,10443.159086756128,1313.159086756128
+SIH-04275,Channapatna,Wood,Lac Turning,Medium,South India,1290,1253.9527692870552,36.04723071294484
+SIH-00409,Channapatna,Wood,Lac Turning,Large,South India,2310,1773.144291067796,536.8557089322039
+SIH-04024,Dhokra,Brass,Lost Wax Casting,Medium,Central India,5400,5052.995512545031,347.0044874549694
+SIH-01129,Blue Pottery,Ceramic,Glazing,Small,West India,840,701.7952265051808,138.20477349481916
+SIH-04459,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,28610,27158.00795993529,1451.9920400647097
+SIH-02226,Blue Pottery,Ceramic,Glazing,Small,West India,1150,850.5455341066527,299.45446589334733
+SIH-00299,Channapatna,Wood,Lac Turning,Large,South India,2360,2122.506413159229,237.49358684077106
+SIH-02122,Blue Pottery,Ceramic,Glazing,Large,West India,1810,1805.9279307747456,4.072069225254381
+SIH-02012,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,7370,9333.31817293269,1963.3181729326898
+SIH-03671,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,17180,21250.884663909717,4070.8846639097173
+SIH-02595,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,3790,4152.6159627364705,362.61596273647046
+SIH-02560,Blue Pottery,Ceramic,Glazing,Small,West India,1070,859.4685808654604,210.53141913453965
+SIH-03131,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,18320,17985.421320627,334.57867937300034
+SIH-04955,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,21350,21388.272881913013,38.27288191301341
+SIH-03945,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,19490,24064.859534569307,4574.859534569307
+SIH-01946,Terracotta,Clay,Hand Moulding,Large,East India,2270,2105.7074201550813,164.2925798449187
+SIH-03919,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,8780,8423.780215722545,356.2197842774549
+SIH-04175,Banarasi,Silk,Handloom Weaving,Standard,North India,43500,36570.0905544554,6929.909445544603
+SIH-03863,Banarasi,Silk,Handloom Weaving,Standard,North India,23990,27958.798356430583,3968.798356430583
+SIH-03272,Madhubani,Paper,Hand Painting,Large,East India,7420,7239.698330248691,180.30166975130942
+SIH-00757,Dhokra,Brass,Lost Wax Casting,Medium,Central India,3740,4383.316648132584,643.3166481325843
+SIH-04198,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,26270,25101.53766354584,1168.4623364541585
+SIH-02224,Blue Pottery,Ceramic,Glazing,Small,West India,770,653.0447377402606,116.95526225973936
+SIH-01294,Dhokra,Brass,Lost Wax Casting,Medium,Central India,6090,6280.3033832325145,190.30338323251453
+SIH-03569,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,30640,32083.452763675214,1443.4527636752136
+SIH-02673,Blue Pottery,Ceramic,Glazing,Large,West India,1670,1601.0110471652806,68.98895283471938
+SIH-01809,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,20660,20529.45205955264,130.547940447359
+SIH-03830,Banarasi,Silk,Handloom Weaving,Standard,North India,27890,34946.15172697369,7056.151726973687
+SIH-02246,Blue Pottery,Ceramic,Glazing,Medium,West India,1640,1297.5189686236045,342.48103137639555
+SIH-04106,Blue Pottery,Ceramic,Glazing,Large,West India,2000,1784.868576668312,215.13142333168798
+SIH-04054,Blue Pottery,Ceramic,Glazing,Large,West India,1370,1248.2685644488429,121.73143555115712
+SIH-04886,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,23620,25998.497406982777,2378.4974069827767
+SIH-03790,Blue Pottery,Ceramic,Glazing,Large,West India,2250,2387.2032715283767,137.20327152837672
+SIH-01398,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,4950,6309.9076051351885,1359.9076051351885
+SIH-01963,Blue Pottery,Ceramic,Glazing,Medium,West India,810,853.9698932721712,43.96989327217125
+SIH-01104,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,2940,2889.869941745059,50.130058254941105
+SIH-03253,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6250,6658.974435512127,408.97443551212655
+SIH-01024,Phulkari,Cotton,Hand Embroidery,Standard,North India,5470,6399.4933196223155,929.4933196223155
+SIH-04902,Phulkari,Cotton,Hand Embroidery,Standard,North India,7100,8202.80190607443,1102.80190607443
+SIH-00722,Dhokra,Brass,Lost Wax Casting,Small,Central India,4150,4256.363909790695,106.36390979069529
+SIH-02861,Dhokra,Brass,Lost Wax Casting,Small,Central India,4710,3808.78593641082,901.2140635891801
+SIH-02911,Kalamkari,Cotton,Block Printing,Large,South India,2880,3621.620025124618,741.6200251246182
+SIH-02969,Pipili Applique,Cotton,Applique,Medium,East India,1850,1754.494684546451,95.50531545354897
+SIH-01979,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6110,6269.036660235661,159.03666023566075
+SIH-04248,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,36530,35924.8931184403,605.1068815597027
+SIH-00015,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,9180,9533.298958513105,353.2989585131054
+SIH-02955,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,51630,47250.590195321485,4379.409804678515
+SIH-01229,Kalamkari,Cotton,Block Printing,Medium,South India,3740,2841.281226959637,898.718773040363
+SIH-01700,Phulkari,Cotton,Hand Embroidery,Standard,North India,8360,7828.487619057299,531.5123809427014
+SIH-03114,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,14630,14211.30481632447,418.69518367553064
+SIH-02703,Channapatna,Wood,Lac Turning,Small,South India,370,799.9513240490651,429.9513240490651
+SIH-00080,Madhubani,Paper,Hand Painting,Medium,East India,9690,8090.647980006195,1599.3520199938048
+SIH-03618,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1270,1174.1315446487524,95.86845535124758
+SIH-03538,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1800,1341.2153876623952,458.7846123376048
+SIH-02389,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,5880,6316.454975901144,436.4549759011443
+SIH-00872,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,980,1074.4719530927414,94.47195309274139
+SIH-04222,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,21200,22553.05066631661,1353.0506663166088
+SIH-00372,Banarasi,Silk,Handloom Weaving,Standard,North India,32370,35541.65977759627,3171.6597775962728
+SIH-04445,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,4770,4785.741093290898,15.74109329089788
+SIH-00677,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,17640,20360.698743521654,2720.6987435216543
+SIH-01933,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,2290,1910.5043232413564,379.49567675864364
+SIH-01506,Phulkari,Cotton,Hand Embroidery,Standard,North India,10150,8648.246720178313,1501.753279821687
+SIH-02474,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,4350,5091.246002691672,741.2460026916724
+SIH-03228,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,7180,7243.790819345346,63.79081934534588
+SIH-03524,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,16530,13350.39796144591,3179.6020385540905
+SIH-00808,Blue Pottery,Ceramic,Glazing,Large,West India,2190,1803.951387410806,386.0486125891939
+SIH-01421,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,12490,14449.421770058045,1959.4217700580448
+SIH-04429,Blue Pottery,Ceramic,Glazing,Large,West India,2560,2378.83872665544,181.16127334455996
+SIH-01624,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,16410,17819.517780868482,1409.517780868482
+SIH-03231,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,5660,6117.276496457633,457.2764964576327
+SIH-03110,Madhubani,Paper,Hand Painting,Medium,East India,2970,3611.0687723747196,641.0687723747196
+SIH-03519,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,10560,11425.936045033313,865.9360450333133
+SIH-03691,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,22030,22810.690029973404,780.6900299734043
+SIH-02427,Banarasi,Silk,Handloom Weaving,Standard,North India,37490,36876.2719910521,613.7280089479027
+SIH-03751,Terracotta,Clay,Hand Moulding,Medium,East India,1090,1110.8272815661867,20.827281566186684
+SIH-03980,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1690,1670.3359410270323,19.664058972967723
+SIH-03794,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,11790,11132.215070300961,657.7849296990389
+SIH-03486,Banarasi,Silk,Handloom Weaving,Standard,North India,27780,26405.34053724529,1374.6594627547092
+SIH-00291,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,750,875.3371439577977,125.33714395779771
+SIH-01671,Kalamkari,Cotton,Block Printing,Large,South India,3520,4117.35065521773,597.3506552177296
+SIH-01406,Channapatna,Wood,Lac Turning,Small,South India,550,737.351268146941,187.35126814694104
+SIH-03049,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,5480,5948.500092755627,468.5000927556266
+SIH-00834,Blue Pottery,Ceramic,Glazing,Small,West India,850,762.1412593349005,87.8587406650995
+SIH-02996,Blue Pottery,Ceramic,Glazing,Small,West India,620,924.7878904430954,304.7878904430954
+SIH-00818,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,6610,6681.800534949618,71.80053494961794
+SIH-02766,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,1250,1977.3347630514927,727.3347630514927
+SIH-00430,Terracotta,Clay,Hand Moulding,Medium,East India,1420,1298.002403395878,121.99759660412201
+SIH-01428,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,10140,9299.656591899571,840.3434081004289
+SIH-01698,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,40860,40478.244817969215,381.75518203078536
+SIH-03899,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6280,6015.406725865056,264.5932741349443
+SIH-00453,Blue Pottery,Ceramic,Glazing,Large,West India,2110,1466.8510443002015,643.1489556997985
+SIH-04774,Blue Pottery,Ceramic,Glazing,Small,West India,1120,940.3951178796897,179.60488212031032
+SIH-04521,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,400,788.7991280614287,388.79912806142875
+SIH-00018,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,950,1017.6400697636363,67.64006976363635
+SIH-00830,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,3770,4482.484002288049,712.4840022880489
+SIH-00507,Pipili Applique,Cotton,Applique,Small,East India,1250,1125.5626309922936,124.43736900770637
+SIH-03182,Banarasi,Silk,Handloom Weaving,Standard,North India,39420,37499.61574782085,1920.384252179152
+SIH-01555,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,2460,2727.023635386641,267.0236353866412
+SIH-02111,Kalamkari,Cotton,Block Printing,Large,South India,4200,4873.434201371799,673.4342013717987
+SIH-01271,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,21780,22145.42875389411,365.42875389410983
+SIH-01091,Terracotta,Clay,Hand Moulding,Medium,East India,1150,1175.8451040082255,25.845104008225462
+SIH-02946,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,22920,26783.91577834129,3863.9157783412884
+SIH-02793,Blue Pottery,Ceramic,Glazing,Large,West India,1310,1413.3212766468205,103.32127664682048
+SIH-03023,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6590,6607.542647274448,17.542647274448427
+SIH-01076,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,8830,9164.51364634025,334.5136463402505
+SIH-01906,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,13050,16606.953319745357,3556.9533197453566
+SIH-03195,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,2920,2440.223476643746,479.7765233562541
+SIH-02686,Phulkari,Cotton,Hand Embroidery,Standard,North India,7080,6712.376230234744,367.62376976525593
+SIH-02510,Kalamkari,Cotton,Block Printing,Small,South India,1640,1687.5221488041498,47.522148804149765
+SIH-02649,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,48380,39191.09651772755,9188.90348227245
+SIH-02705,Blue Pottery,Ceramic,Glazing,Small,West India,1130,783.6787292383979,346.32127076160214
+SIH-00628,Pipili Applique,Cotton,Applique,Large,East India,2410,2278.4308242046736,131.56917579532637
+SIH-00417,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,15940,17387.00570902845,1447.00570902845
+SIH-00091,Dhokra,Brass,Lost Wax Casting,Medium,Central India,9540,7809.975708290289,1730.0242917097112
+SIH-03232,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,30910,34165.73879082036,3255.73879082036
+SIH-01599,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,1700,2726.0677910404265,1026.0677910404265
+SIH-00252,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,13590,16070.43326517655,2480.433265176551
+SIH-04149,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,32930,30208.927620299502,2721.0723797004975
+SIH-00539,Blue Pottery,Ceramic,Glazing,Large,West India,2290,2038.9558689867063,251.04413101329374
+SIH-04657,Dhokra,Brass,Lost Wax Casting,Small,Central India,2750,2828.0820693834403,78.08206938344028
+SIH-04976,Blue Pottery,Ceramic,Glazing,Medium,West India,1130,1070.600442720288,59.3995572797121
+SIH-01966,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,2550,3594.5837487397184,1044.5837487397184
+SIH-00221,Phulkari,Cotton,Hand Embroidery,Standard,North India,8530,8053.785230828724,476.2147691712762
+SIH-01433,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,8760,8386.70930109481,373.29069890518986
+SIH-02461,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,8530,9358.661157652046,828.6611576520463
+SIH-02537,Kalamkari,Cotton,Block Printing,Medium,South India,3630,2505.584687180758,1124.415312819242
+SIH-02276,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,18600,16120.068013104628,2479.9319868953717
+SIH-04763,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,13300,11247.424803056536,2052.575196943464
+SIH-03636,Pipili Applique,Cotton,Applique,Medium,East India,2020,2025.2858690013973,5.285869001397259
+SIH-02446,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,5340,5468.107989220838,128.10798922083814
+SIH-03858,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,25280,23612.51869406165,1667.4813059383487
+SIH-00309,Phulkari,Cotton,Hand Embroidery,Standard,North India,12510,9902.208510313556,2607.791489686444
+SIH-03099,Phulkari,Cotton,Hand Embroidery,Standard,North India,5150,5905.315316002437,755.3153160024367
+SIH-03474,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,30780,26202.821866979422,4577.178133020578
+SIH-00764,Phulkari,Cotton,Hand Embroidery,Standard,North India,6650,6782.740992055394,132.7409920553937
+SIH-03712,Dhokra,Brass,Lost Wax Casting,Small,Central India,4040,4047.8195629421816,7.819562942181619
+SIH-01740,Channapatna,Wood,Lac Turning,Medium,South India,1300,1038.481247248028,261.518752751972
+SIH-03269,Blue Pottery,Ceramic,Glazing,Small,West India,1000,1015.6291497547936,15.629149754793616
+SIH-04598,Banarasi,Silk,Handloom Weaving,Standard,North India,18100,19370.92331682457,1270.92331682457
+SIH-03287,Blue Pottery,Ceramic,Glazing,Small,West India,1110,1088.8912232147377,21.108776785262307
+SIH-03564,Channapatna,Wood,Lac Turning,Large,South India,640,1014.4899673876671,374.4899673876671
+SIH-03755,Madhubani,Paper,Hand Painting,Large,East India,11890,11728.002828114764,161.99717188523573
+SIH-03750,Madhubani,Paper,Hand Painting,Large,East India,17380,13256.419535573801,4123.580464426199
+SIH-04228,Pipili Applique,Cotton,Applique,Small,East India,2220,1537.2722060804444,682.7277939195556
+SIH-00734,Blue Pottery,Ceramic,Glazing,Small,West India,470,755.0530933305681,285.0530933305681
+SIH-00743,Phulkari,Cotton,Hand Embroidery,Standard,North India,4240,4607.254363071736,367.2543630717364
+SIH-01116,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6920,6747.13641899402,172.86358100598045
+SIH-03922,Terracotta,Clay,Hand Moulding,Large,East India,1270,1370.367045749821,100.36704574982105
+SIH-00473,Terracotta,Clay,Hand Moulding,Large,East India,1980,1716.1538719972195,263.84612800278046
+SIH-03587,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1090,968.8361399442401,121.16386005575987
+SIH-03873,Phulkari,Cotton,Hand Embroidery,Standard,North India,5810,6220.772200101055,410.7722001010552
+SIH-01753,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,18670,18834.537229087695,164.53722908769487
+SIH-04076,Channapatna,Wood,Lac Turning,Large,South India,1030,1207.5269660042968,177.5269660042968
+SIH-04682,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,5500,6048.130085285769,548.1300852857694
+SIH-03937,Blue Pottery,Ceramic,Glazing,Large,West India,1640,1429.5797624749885,210.42023752501154
+SIH-02998,Blue Pottery,Ceramic,Glazing,Large,West India,1280,1347.2537279635662,67.25372796356623
+SIH-02233,Blue Pottery,Ceramic,Glazing,Medium,West India,760,877.6704492306098,117.67044923060985
+SIH-00619,Blue Pottery,Ceramic,Glazing,Large,West India,2080,1918.360991163836,161.63900883616407
+SIH-00394,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,22040,25307.184173068643,3267.184173068643
+SIH-02299,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,630,819.9753752056085,189.97537520560854
+SIH-03146,Banarasi,Silk,Handloom Weaving,Standard,North India,56240,52252.46372571067,3987.5362742893267
+SIH-02961,Blue Pottery,Ceramic,Glazing,Small,West India,500,634.6984651833427,134.6984651833427
+SIH-00880,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,3480,3644.835467598682,164.83546759868204
+SIH-04919,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,32650,33684.38845952442,1034.3884595244235
+SIH-00747,Blue Pottery,Ceramic,Glazing,Small,West India,750,766.3357076714228,16.335707671422824
+SIH-01816,Channapatna,Wood,Lac Turning,Medium,South India,1490,1146.8287084537142,343.17129154628583
+SIH-01201,Madhubani,Paper,Hand Painting,Small,East India,4850,4012.488462051356,837.5115379486442
+SIH-00531,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,2140,2313.009497863167,173.00949786316687
+SIH-04012,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,6730,6511.4674362117385,218.53256378826154
+SIH-04182,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,8590,8970.538252880797,380.5382528807968
+SIH-00790,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,12340,10731.009164143608,1608.9908358563916
+SIH-03695,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,15770,15671.795657103605,98.20434289639525
+SIH-01028,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,8120,7564.123260073806,555.8767399261942
+SIH-03380,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,1770,2031.1244001672749,261.12440016727487
+SIH-01616,Pipili Applique,Cotton,Applique,Small,East India,1570,1490.0254416560738,79.97455834392622
+SIH-04055,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,29600,29316.245929198216,283.7540708017841
+SIH-03162,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3160,3153.7857928154444,6.214207184555562
+SIH-03843,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,920,971.1610797278554,51.161079727855395
+SIH-00009,Kalamkari,Cotton,Block Printing,Small,South India,2070,2221.448360579687,151.44836057968678
+SIH-03008,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,760,874.903874509092,114.90387450909202
+SIH-04910,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,9660,11084.199535505613,1424.1995355056133
+SIH-02926,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,28160,27261.60535329112,898.394646708879
+SIH-03018,Blue Pottery,Ceramic,Glazing,Large,West India,1960,1707.160270009923,252.8397299900771
+SIH-04589,Madhubani,Paper,Hand Painting,Medium,East India,3700,3926.652487185933,226.65248718593284
+SIH-01666,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,12830,14723.045308122662,1893.0453081226624
+SIH-04513,Phulkari,Cotton,Hand Embroidery,Standard,North India,6620,5881.349500302498,738.6504996975018
+SIH-02214,Kalamkari,Cotton,Block Printing,Large,South India,8830,7548.6544793536,1281.3455206463996
+SIH-01742,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1100,1038.7325652113896,61.267434788610444
+SIH-04208,Channapatna,Wood,Lac Turning,Medium,South India,1410,1276.6612028405934,133.33879715940657
+SIH-03169,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,19080,22310.934392478062,3230.9343924780624
+SIH-01789,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,50110,49785.50352503833,324.4964749616702
+SIH-02331,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,25130,25519.811355445374,389.8113554453739
+SIH-02285,Phulkari,Cotton,Hand Embroidery,Standard,North India,4500,6367.35414695393,1867.3541469539296
+SIH-02237,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,13440,14777.472688180585,1337.4726881805855
+SIH-01422,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,12060,9566.036335964118,2493.963664035882
+SIH-03594,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,5410,5904.887677193012,494.88767719301177
+SIH-04759,Banarasi,Silk,Handloom Weaving,Standard,North India,32430,32362.444738838403,67.55526116159672
+SIH-03868,Kalamkari,Cotton,Block Printing,Medium,South India,2470,2344.8093850583073,125.19061494169273
+SIH-04247,Madhubani,Paper,Hand Painting,Small,East India,3320,3125.810483981205,194.18951601879508
+SIH-04665,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,7840,8021.652400438049,181.65240043804897
+SIH-02093,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,18760,19927.343253746178,1167.3432537461777
+SIH-04744,Blue Pottery,Ceramic,Glazing,Medium,West India,1800,1362.0962205117276,437.90377948827245
+SIH-00644,Dhokra,Brass,Lost Wax Casting,Medium,Central India,4990,5600.025744237676,610.025744237676
+SIH-00599,Blue Pottery,Ceramic,Glazing,Large,West India,1100,1187.997103389691,87.99710338969089
+SIH-04078,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,1190,1242.663988936164,52.66398893616406
+SIH-01124,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,10960,11800.2913757138,840.2913757137994
+SIH-01778,Terracotta,Clay,Hand Moulding,Small,East India,610,791.0439653482317,181.04396534823172
+SIH-04047,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,15140,14310.58214993597,829.4178500640301
+SIH-00193,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,6200,7300.166403474093,1100.1664034740934
+SIH-03198,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,2510,3511.849173699502,1001.849173699502
+SIH-03661,Blue Pottery,Ceramic,Glazing,Medium,West India,1080,955.7331179993989,124.26688200060107
+SIH-01850,Kalamkari,Cotton,Block Printing,Medium,South India,4120,3303.8953101747456,816.1046898252544
+SIH-00288,Terracotta,Clay,Hand Moulding,Large,East India,1880,1860.8795146169705,19.120485383029518
+SIH-01282,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,5640,5964.102136809469,324.1021368094689
+SIH-03861,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,34050,35170.72744482958,1120.7274448295793
+SIH-03946,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,17270,21878.308292459526,4608.308292459526
+SIH-01145,Blue Pottery,Ceramic,Glazing,Medium,West India,900,1121.2012274110994,221.20122741109935
+SIH-03120,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,2980,3354.8966603515937,374.8966603515937
+SIH-03810,Blue Pottery,Ceramic,Glazing,Small,West India,560,947.1198193422588,387.1198193422588
+SIH-02313,Blue Pottery,Ceramic,Glazing,Large,West India,2030,1945.1333138151895,84.86668618481053
+SIH-01544,Madhubani,Paper,Hand Painting,Large,East India,11680,9041.927616629815,2638.072383370185
+SIH-01339,Kalamkari,Cotton,Block Printing,Medium,South India,1980,2146.687534696751,166.68753469675084
+SIH-01372,Pipili Applique,Cotton,Applique,Medium,East India,2140,1855.017208094966,284.982791905034
+SIH-04692,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,1410,1394.7123689449563,15.287631055043676
+SIH-01554,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,8970,8028.018263458809,941.9817365411909
+SIH-00403,Blue Pottery,Ceramic,Glazing,Small,West India,720,940.1683596015455,220.1683596015455
+SIH-00444,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,20370,22347.86024359685,1977.8602435968496
+SIH-01892,Pipili Applique,Cotton,Applique,Small,East India,960,1066.5795544063922,106.57955440639216
+SIH-02481,Kalamkari,Cotton,Block Printing,Small,South India,2100,1800.7639234150283,299.23607658497167
+SIH-04201,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,29210,27966.844666149667,1243.1553338503327
+SIH-02375,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,7760,8296.226984691953,536.2269846919535
+SIH-04926,Banarasi,Silk,Handloom Weaving,Standard,North India,39760,42762.4427168198,3002.4427168198017
+SIH-01630,Dhokra,Brass,Lost Wax Casting,Medium,Central India,5310,5687.096397749107,377.0963977491074
+SIH-03803,Madhubani,Paper,Hand Painting,Large,East India,3530,5127.2080903021015,1597.2080903021015
+SIH-03044,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,26300,25427.904613748276,872.0953862517235
+SIH-00255,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,7470,7819.440497751555,349.4404977515551
+SIH-01211,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,7940,7592.4510670349,347.5489329651
+SIH-01265,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,1010,1196.6343968406936,186.63439684069363
+SIH-04878,Blue Pottery,Ceramic,Glazing,Small,West India,1140,985.812897527675,154.18710247232502
+SIH-02221,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1730,1646.8793395145794,83.12066048542056
+SIH-00506,Blue Pottery,Ceramic,Glazing,Small,West India,700,694.6832450781885,5.31675492181148
+SIH-02330,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,1520,1368.0086728535825,151.99132714641746
+SIH-03627,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,10580,9335.013025947746,1244.9869740522536
+SIH-00721,Channapatna,Wood,Lac Turning,Large,South India,1610,1470.4107096392163,139.5892903607837
+SIH-03332,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,11950,9080.924769295252,2869.075230704748
+SIH-00253,Banarasi,Silk,Handloom Weaving,Standard,North India,34010,34136.73507395675,126.73507395674824
+SIH-03419,Madhubani,Paper,Hand Painting,Large,East India,13490,11791.634410905373,1698.3655890946266
+SIH-00151,Madhubani,Paper,Hand Painting,Large,East India,7090,8343.391283599429,1253.3912835994288
+SIH-00709,Kalamkari,Cotton,Block Printing,Medium,South India,1810,2337.352737069604,527.3527370696038
+SIH-00752,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,1680,2048.1324677578923,368.1324677578923
+SIH-00912,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,730,849.2146779798641,119.21467797986406
+SIH-04661,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,1550,2212.591801317594,662.5918013175942
+SIH-03699,Dhokra,Brass,Lost Wax Casting,Medium,Central India,9170,8990.372587789947,179.62741221005308
+SIH-00566,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,3730,4328.136150725961,598.1361507259608
+SIH-00945,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,4520,4717.379341753158,197.37934175315786
+SIH-03706,Blue Pottery,Ceramic,Glazing,Small,West India,480,719.2729175628174,239.27291756281738
+SIH-04322,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,16320,15286.95028981267,1033.0497101873298
+SIH-02381,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,1930,1486.310172797921,443.68982720207896
+SIH-04708,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,6320,6029.053056698978,290.94694330102175
+SIH-03143,Phulkari,Cotton,Hand Embroidery,Standard,North India,7000,7512.825310707546,512.8253107075461
+SIH-04382,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,2720,2006.2575882223018,713.7424117776982
+SIH-04060,Blue Pottery,Ceramic,Glazing,Large,West India,1730,1618.244786418798,111.75521358120204
+SIH-00367,Kalamkari,Cotton,Block Printing,Large,South India,5770,5543.61523041926,226.38476958073988
+SIH-00496,Blue Pottery,Ceramic,Glazing,Medium,West India,720,803.1571489640182,83.15714896401823
+SIH-01043,Blue Pottery,Ceramic,Glazing,Small,West India,920,705.0164144530172,214.9835855469828
+SIH-02944,Phulkari,Cotton,Hand Embroidery,Standard,North India,9680,9712.334098065397,32.334098065397484
+SIH-02465,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,880,1002.5857270390006,122.58572703900063
+SIH-03581,Dhokra,Brass,Lost Wax Casting,Medium,Central India,4700,4340.822925774819,359.17707422518106
+SIH-01057,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,760,1007.8657418518624,247.86574185186237
+SIH-00732,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,5360,4867.356801275589,492.6431987244114
+SIH-04265,Pipili Applique,Cotton,Applique,Medium,East India,1680,1748.683145626881,68.68314562688101
+SIH-00416,Blue Pottery,Ceramic,Glazing,Large,West India,1660,1478.3104015891295,181.68959841087053
+SIH-02963,Phulkari,Cotton,Hand Embroidery,Standard,North India,8190,7388.9753655385275,801.0246344614725
+SIH-04191,Banarasi,Silk,Handloom Weaving,Standard,North India,34650,35059.32723107761,409.3272310776083
+SIH-01042,Blue Pottery,Ceramic,Glazing,Large,West India,1320,1211.9354670082075,108.06453299179248
+SIH-01823,Dhokra,Brass,Lost Wax Casting,Medium,Central India,8230,7018.593557586031,1211.4064424139688
+SIH-03989,Kalamkari,Cotton,Block Printing,Small,South India,2370,1887.5132559938502,482.4867440061498
+SIH-02647,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,8690,9243.435450528625,553.4354505286246
+SIH-03151,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3030,2903.366348257163,126.63365174283717
+SIH-01216,Madhubani,Paper,Hand Painting,Large,East India,13430,13191.64278471472,238.35721528527938
+SIH-00415,Madhubani,Paper,Hand Painting,Small,East India,3550,3556.0060715313784,6.0060715313784385
+SIH-03045,Madhubani,Paper,Hand Painting,Medium,East India,5110,5380.166040143657,270.1660401436566
+SIH-02923,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,24760,26139.316033843552,1379.3160338435518
+SIH-00725,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,2330,1951.1418833475545,378.85811665244546
+SIH-03339,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,13130,14551.530358085343,1421.5303580853433
+SIH-04063,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,740,1109.4319989274127,369.4319989274127
+SIH-01361,Banarasi,Silk,Handloom Weaving,Standard,North India,17810,21333.671190100802,3523.671190100802
+SIH-00997,Blue Pottery,Ceramic,Glazing,Large,West India,1790,1523.5791252773133,266.4208747226867
+SIH-00649,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,10660,11978.082448077903,1318.0824480779029
+SIH-02908,Phulkari,Cotton,Hand Embroidery,Standard,North India,6630,7050.859282577101,420.8592825771011
+SIH-04347,Blue Pottery,Ceramic,Glazing,Large,West India,1960,1697.4555421022078,262.5444578977922
+SIH-01034,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,5550,5372.827422741155,177.1725772588452
+SIH-04999,Terracotta,Clay,Hand Moulding,Medium,East India,1300,1221.0239048706899,78.97609512931012
+SIH-02689,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,13350,12140.945253287839,1209.0547467121614
+SIH-03665,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,14590,15461.974806731607,871.9748067316068
+SIH-00863,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,19730,16116.751535128227,3613.2484648717727
+SIH-04455,Channapatna,Wood,Lac Turning,Large,South India,1560,1394.836738997974,165.16326100202605
+SIH-04881,Terracotta,Clay,Hand Moulding,Medium,East India,1210,1267.3175519666447,57.317551966644714
+SIH-01273,Blue Pottery,Ceramic,Glazing,Medium,West India,1650,1535.3292965310557,114.67070346894434
+SIH-03354,Banarasi,Silk,Handloom Weaving,Standard,North India,41520,36898.0091576407,4621.990842359301
+SIH-04869,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,1300,1379.6716988551407,79.67169885514068
+SIH-02851,Blue Pottery,Ceramic,Glazing,Large,West India,1850,1710.9714077802964,139.02859221970357
+SIH-00623,Channapatna,Wood,Lac Turning,Small,South India,610,722.9151149708778,112.91511497087777
+SIH-01363,Blue Pottery,Ceramic,Glazing,Large,West India,1010,1178.0400425819907,168.04004258199075
+SIH-02182,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,1540,1922.3047503075377,382.3047503075377
+SIH-01097,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,36250,34837.90020950495,1412.099790495049
+SIH-04698,Terracotta,Clay,Hand Moulding,Medium,East India,1140,1138.2757904637301,1.724209536269882
+SIH-02535,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,8880,10892.170714647023,2012.1707146470235
+SIH-00178,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,38650,39248.31905217661,598.3190521766082
+SIH-01120,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,6290,5874.782846352064,415.21715364793636
+SIH-02296,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,39080,36424.55997048298,2655.44002951702
+SIH-02941,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,29830,29925.92263758654,95.92263758654008
+SIH-01426,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,6560,6577.329395496779,17.329395496779398
+SIH-04594,Blue Pottery,Ceramic,Glazing,Medium,West India,1880,1446.7556399229816,433.2443600770184
+SIH-02895,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,29940,23518.443035540295,6421.556964459705
+SIH-02810,Madhubani,Paper,Hand Painting,Medium,East India,3520,3523.833228927473,3.833228927473101
+SIH-01176,Blue Pottery,Ceramic,Glazing,Large,West India,2410,1683.619301397207,726.380698602793
+SIH-03668,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,7940,8260.734297865854,320.7342978658544
+SIH-01757,Phulkari,Cotton,Hand Embroidery,Standard,North India,6400,7229.556059782801,829.5560597828007
+SIH-00062,Blue Pottery,Ceramic,Glazing,Large,West India,710,1109.2070295490948,399.20702954909484
+SIH-02979,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,21430,26047.842247545905,4617.842247545905
+SIH-01771,Blue Pottery,Ceramic,Glazing,Small,West India,420,706.3023887113941,286.3023887113941
+SIH-00462,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,28350,30249.610523827127,1899.6105238271266
+SIH-04614,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,4160,4937.1932185865035,777.1932185865035
+SIH-00280,Dhokra,Brass,Lost Wax Casting,Large,Central India,10790,11077.606010395488,287.60601039548783
+SIH-01579,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,16890,19426.85258351033,2536.8525835103283
+SIH-01936,Banarasi,Silk,Handloom Weaving,Standard,North India,34500,34780.24134108067,280.2413410806694
+SIH-04478,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,2960,3288.742929578236,328.7429295782358
+SIH-00621,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,790,1011.4917501217124,221.49175012171236
+SIH-00153,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,43080,45434.09426960304,2354.0942696030397
+SIH-00114,Channapatna,Wood,Lac Turning,Small,South India,590,761.0337170447783,171.0337170447783
+SIH-02068,Kalamkari,Cotton,Block Printing,Medium,South India,2580,2344.8093850583073,235.19061494169273
+SIH-02764,Blue Pottery,Ceramic,Glazing,Small,West India,910,725.2280155503522,184.7719844496478
+SIH-01039,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,29970,27428.218425437823,2541.7815745621774
+SIH-04893,Terracotta,Clay,Hand Moulding,Small,East India,1220,1222.986965398096,2.98696539809589
+SIH-02751,Blue Pottery,Ceramic,Glazing,Small,West India,790,710.9827188386607,79.01728116133927
+SIH-03065,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,8630,7522.144053218599,1107.8559467814011
+SIH-04173,Banarasi,Silk,Handloom Weaving,Standard,North India,34230,34135.5410768352,94.45892316479876
+SIH-03865,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,29520,32465.959106989616,2945.959106989616
+SIH-04798,Terracotta,Clay,Hand Moulding,Small,East India,850,901.7323621329269,51.73236213292694
+SIH-04901,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,9180,9405.678420585886,225.67842058588576
+SIH-04235,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,21690,24646.854344594118,2956.8543445941177
+SIH-01127,Phulkari,Cotton,Hand Embroidery,Standard,North India,12190,10930.815146247449,1259.1848537525511
+SIH-02684,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,6910,6639.660662168084,270.33933783191605
+SIH-04989,Madhubani,Paper,Hand Painting,Small,East India,1810,1738.5755618878684,71.42443811213161
+SIH-04274,Blue Pottery,Ceramic,Glazing,Large,West India,1340,1458.2925524894454,118.29255248944537
+SIH-01607,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,980,1062.9255651327467,82.92556513274667
+SIH-00492,Blue Pottery,Ceramic,Glazing,Small,West India,620,810.5394864325999,190.53948643259992
+SIH-02437,Blue Pottery,Ceramic,Glazing,Large,West India,1560,1418.0065355667184,141.9934644332816
+SIH-03408,Blue Pottery,Ceramic,Glazing,Small,West India,880,855.2308367322748,24.769163267725162
+SIH-02094,Dhokra,Brass,Lost Wax Casting,Small,Central India,2880,3182.3001207686702,302.30012076867024
+SIH-01868,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,6430,7527.021042930532,1097.0210429305316
+SIH-02578,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,4280,3698.7344844319605,581.2655155680395
+SIH-01567,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,7630,7910.436725023857,280.43672502385743
+SIH-01877,Blue Pottery,Ceramic,Glazing,Large,West India,1940,1827.305120167949,112.6948798320509
+SIH-03669,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,42160,39787.597514854904,2372.402485145096
+SIH-04121,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,10770,10840.98896825388,70.98896825387965
+SIH-01184,Dhokra,Brass,Lost Wax Casting,Small,Central India,5420,4957.600741079049,462.39925892095107
+SIH-02120,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,4410,4865.019819699346,455.01981969934604
+SIH-00858,Channapatna,Wood,Lac Turning,Small,South India,530,747.8491856207056,217.8491856207056
+SIH-01508,Banarasi,Silk,Handloom Weaving,Standard,North India,43090,41059.5698746877,2030.4301253122976
+SIH-01718,Dhokra,Brass,Lost Wax Casting,Medium,Central India,11050,9893.802181148543,1156.1978188514568
+SIH-03812,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,45960,42197.51211244346,3762.487887556541
+SIH-04153,Pipili Applique,Cotton,Applique,Large,East India,2450,2573.531349070102,123.5313490701019
+SIH-04803,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,5550,6232.316673099638,682.3166730996381
+SIH-02916,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,26340,26570.472450083373,230.47245008337268
+SIH-00595,Blue Pottery,Ceramic,Glazing,Small,West India,610,666.3316993350845,56.33169933508452
+SIH-00916,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,14200,16215.4465112613,2015.4465112612997
+SIH-01808,Banarasi,Silk,Handloom Weaving,Standard,North India,33290,36027.09847143445,2737.098471434452
+SIH-01590,Madhubani,Paper,Hand Painting,Small,East India,3030,3126.0141663319782,96.01416633197823
+SIH-02306,Madhubani,Paper,Hand Painting,Medium,East India,2810,2715.730399624962,94.26960037503795
+SIH-00322,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,8960,9909.162849873659,949.1628498736591
+SIH-00046,Pipili Applique,Cotton,Applique,Medium,East India,1700,1831.7692251263343,131.76922512633428
+SIH-00965,Blue Pottery,Ceramic,Glazing,Medium,West India,820,805.0349420112361,14.965057988763874
+SIH-00587,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,21480,18359.873375506202,3120.126624493798
+SIH-02174,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,1700,1924.2541438478775,224.25414384787746
+SIH-04507,Phulkari,Cotton,Hand Embroidery,Standard,North India,5020,6106.788875706652,1086.788875706652
+SIH-00379,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,870,1062.5573560335033,192.5573560335033
+SIH-04801,Blue Pottery,Ceramic,Glazing,Small,West India,430,629.8949909220082,199.89499092200822
+SIH-00180,Blue Pottery,Ceramic,Glazing,Small,West India,520,737.478635855573,217.47863585557297
+SIH-00519,Moradabad Metal Craft,Brass,Metal Engraving,Medium,North India,6610,6412.977185328801,197.02281467119883
+SIH-04697,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,11660,11708.740376046273,48.74037604627301
+SIH-01621,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1060,1003.4915703006563,56.50842969934365
+SIH-01558,Blue Pottery,Ceramic,Glazing,Small,West India,630,773.7157986308866,143.71579863088664
+SIH-02883,Phulkari,Cotton,Hand Embroidery,Standard,North India,7020,7235.392990752054,215.39299075205417
+SIH-00978,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,21010,22586.866388222774,1576.8663882227738
+SIH-01171,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,13430,12752.38415448611,677.6158455138902
+SIH-02308,Phulkari,Cotton,Hand Embroidery,Standard,North India,12630,12281.826714371971,348.1732856280287
+SIH-02575,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,29370,27888.01826382772,1481.9817361722817
+SIH-03605,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,1060,1287.1693443502763,227.16934435027633
+SIH-04353,Pipili Applique,Cotton,Applique,Medium,East India,1880,1810.928737258856,69.07126274114398
+SIH-01695,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,7750,8263.179622401944,513.1796224019436
+SIH-00434,Pipili Applique,Cotton,Applique,Medium,East India,1690,2020.8221324833721,330.8221324833721
+SIH-02417,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,9300,8954.818077813741,345.1819221862588
+SIH-04481,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,10410,12584.772143688479,2174.7721436884785
+SIH-01752,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,2000,1959.4275596935668,40.572440306433236
+SIH-01056,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,11310,12366.039624835072,1056.0396248350717
+SIH-00031,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,44050,41398.627913702694,2651.372086297306
+SIH-04652,Phulkari,Cotton,Hand Embroidery,Standard,North India,8730,8082.211759886436,647.7882401135639
+SIH-03912,Dhokra,Brass,Lost Wax Casting,Large,Central India,8380,8598.347384052591,218.34738405259122
+SIH-00107,Moradabad Metal Craft,Brass,Metal Engraving,Large,North India,9430,8924.135379120526,505.8646208794744
+SIH-01306,Banarasi,Silk,Handloom Weaving,Standard,North India,27440,32379.218631328964,4939.218631328964
+SIH-04006,Blue Pottery,Ceramic,Glazing,Large,West India,930,1283.907832516723,353.9078325167229
+SIH-02471,Kalamkari,Cotton,Block Printing,Medium,South India,2840,2497.7972024665487,342.2027975334513
+SIH-02100,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,560,845.7615456065705,285.7615456065705
+SIH-01537,Blue Pottery,Ceramic,Glazing,Medium,West India,770,783.1919647549485,13.191964754948458
+SIH-04093,Blue Pottery,Ceramic,Glazing,Large,West India,1550,1427.8753790477404,122.12462095225965
+SIH-04446,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,540,800.8108134797949,260.8108134797949
+SIH-01193,Pipili Applique,Cotton,Applique,Medium,East India,2880,3149.2600918179724,269.26009181797235
+SIH-01833,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,4600,4725.686309267729,125.68630926772857
+SIH-02079,Kalamkari,Cotton,Block Printing,Medium,South India,4390,3709.814276382869,680.1857236171309
+SIH-02317,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,29950,29504.148908811265,445.85109118873515
+SIH-01197,Banarasi,Silk,Handloom Weaving,Standard,North India,39150,44275.38815188644,5125.388151886436
+SIH-04546,Madhubani,Paper,Hand Painting,Medium,East India,4280,3536.6898110335424,743.3101889664576
+SIH-02498,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,1810,1549.3593177311732,260.6406822688268
+SIH-03260,Madhubani,Paper,Hand Painting,Medium,East India,11510,9495.808369641469,2014.1916303585313
+SIH-01715,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,1330,1162.0311155729923,167.96888442700765
+SIH-03236,Pipili Applique,Cotton,Applique,Small,East India,1420,1457.1270707297817,37.127070729781735
+SIH-01619,Banarasi,Silk,Handloom Weaving,Standard,North India,34040,39376.47396579526,5336.47396579526
+SIH-02562,Terracotta,Clay,Hand Moulding,Small,East India,790,1044.08282825493,254.08282825493006
+SIH-03536,Phulkari,Cotton,Hand Embroidery,Standard,North India,5680,7143.480592520695,1463.4805925206947
+SIH-04223,Banarasi,Silk,Handloom Weaving,Standard,North India,31610,33726.61351963155,2116.6135196315518
+SIH-00176,Blue Pottery,Ceramic,Glazing,Medium,West India,1000,865.4722921812108,134.52770781878917
+SIH-00651,Pipili Applique,Cotton,Applique,Medium,East India,1460,1741.0266272633517,281.02662726335166
+SIH-02147,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,17620,20140.433738007847,2520.433738007847
+SIH-00585,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,3240,4243.719371804874,1003.7193718048738
+SIH-04742,Blue Pottery,Ceramic,Glazing,Large,West India,2480,2266.9242510176628,213.07574898233725
+SIH-02651,Phulkari,Cotton,Hand Embroidery,Standard,North India,5790,6310.744794166703,520.7447941667033
+SIH-04444,Blue Pottery,Ceramic,Glazing,Small,West India,1160,1044.820430272598,115.17956972740194
+SIH-03366,Pipili Applique,Cotton,Applique,Medium,East India,2270,1810.820845771721,459.179154228279
+SIH-03951,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,740,883.8844304997765,143.8844304997765
+SIH-02708,Terracotta,Clay,Hand Moulding,Small,East India,440,767.1820034170705,327.1820034170705
+SIH-03334,Kalamkari,Cotton,Block Printing,Large,South India,4390,5070.517185726416,680.5171857264158
+SIH-00843,Dhokra,Brass,Lost Wax Casting,Large,Central India,7830,7099.759264432196,730.2407355678042
+SIH-03647,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,11010,11655.297509045598,645.2975090455984
+SIH-02202,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,25430,25737.20270021176,307.2027002117611
+SIH-03341,Terracotta,Clay,Hand Moulding,Small,East India,380,933.445559149498,553.445559149498
+SIH-00070,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,1890,1504.7083056307238,385.29169436927623
+SIH-03902,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,540,982.3007058827689,442.30070588276885
+SIH-04940,Madhubani,Paper,Hand Painting,Small,East India,700,1336.1262949495585,636.1262949495585
+SIH-01000,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,3520,3748.8376293158863,228.83762931588626
+SIH-04884,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,1670,1415.338567522659,254.6614324773409
+SIH-02241,Terracotta,Clay,Hand Moulding,Medium,East India,910,1186.1082588715599,276.1082588715599
+SIH-00534,Banarasi,Silk,Handloom Weaving,Standard,North India,24760,28977.4402048825,4217.4402048824995
+SIH-03854,Blue Pottery,Ceramic,Glazing,Large,West India,1790,1704.7069602979882,85.29303970201181
+SIH-00052,Dhokra,Brass,Lost Wax Casting,Small,Central India,3070,3469.683783391687,399.68378339168703
+SIH-01414,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,2580,2159.1631346180984,420.8368653819016
+SIH-01836,Madhubani,Paper,Hand Painting,Large,East India,4260,5147.909620218592,887.909620218592
+SIH-01254,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,17390,15829.186759595439,1560.813240404561
+SIH-02463,Terracotta,Clay,Hand Moulding,Medium,East India,1190,1194.9736983176763,4.973698317676281
+SIH-01048,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,20350,18617.69445826678,1732.3055417332216
+SIH-04929,Madhubani,Paper,Hand Painting,Medium,East India,5190,4484.73186095731,705.2681390426897
+SIH-01341,Blue Pottery,Ceramic,Glazing,Small,West India,990,906.3740067231302,83.62599327686985
+SIH-03399,Madhubani,Paper,Hand Painting,Small,East India,2170,1845.2630152321753,324.73698476782465
+SIH-02405,Banarasi,Silk,Handloom Weaving,Standard,North India,37630,37779.70909171541,149.7090917154128
+SIH-00279,Blue Pottery,Ceramic,Glazing,Large,West India,1360,1467.436302048327,107.43630204832698
+SIH-00013,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,7190,6804.008423100318,385.9915768996816
+SIH-00857,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,29810,29027.19182077918,782.8081792208213
+SIH-03730,Blue Pottery,Ceramic,Glazing,Small,West India,390,706.3023887113941,316.3023887113941
+SIH-00597,Blue Pottery,Ceramic,Glazing,Small,West India,660,647.668994034766,12.331005965233999
+SIH-02654,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,27730,29052.87722474052,1322.8772247405213
+SIH-00590,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,4670,4794.097863134218,124.09786313421773
+SIH-03626,Phulkari,Cotton,Hand Embroidery,Standard,North India,10620,10974.95966470275,354.95966470275016
+SIH-01627,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,14760,16279.754210985591,1519.7542109855913
+SIH-00140,Banarasi,Silk,Handloom Weaving,Standard,North India,35380,35991.196130014534,611.196130014534
+SIH-00913,Kalamkari,Cotton,Block Printing,Small,South India,2160,2026.8132036603547,133.1867963396453
+SIH-02371,Terracotta,Clay,Hand Moulding,Small,East India,540,770.6351357903641,230.63513579036407
+SIH-03494,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,6510,6543.053531612793,33.05353161279345
+SIH-00334,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,8370,8598.305160623117,228.30516062311654
+SIH-01047,Blue Pottery,Ceramic,Glazing,Medium,West India,1080,921.2854277969991,158.7145722030009
+SIH-01785,Madhubani,Paper,Hand Painting,Medium,East India,4590,4576.246783046294,13.753216953706215
+SIH-02958,Banarasi,Silk,Handloom Weaving,Standard,North India,34060,35081.374451980315,1021.3744519803149
+SIH-04761,Phulkari,Cotton,Hand Embroidery,Standard,North India,9190,9723.641616906903,533.6416169069034
+SIH-03546,Blue Pottery,Ceramic,Glazing,Large,West India,1510,1467.8323968151408,42.16760318485922
+SIH-00928,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,3290,2868.9630994140734,421.03690058592656
+SIH-04406,Banarasi,Silk,Handloom Weaving,Standard,North India,42290,39085.20739139157,3204.7926086084335
+SIH-04480,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,22620,23928.730945498988,1308.7309454989881
+SIH-03526,Channapatna,Wood,Lac Turning,Small,South India,390,722.9151149708778,332.91511497087777
+SIH-00502,Blue Pottery,Ceramic,Glazing,Large,West India,1610,1541.6997967376592,68.3002032623408
+SIH-00806,Phulkari,Cotton,Hand Embroidery,Standard,North India,8340,10233.587135565895,1893.5871355658946
+SIH-03847,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,11130,11107.527551328905,22.472448671094753
+SIH-04636,Channapatna,Wood,Lac Turning,Medium,South India,610,829.2515598710443,219.25155987104426
+SIH-00932,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Medium,North India,12150,11236.295320303676,913.7046796963241
+SIH-02188,Channapatna,Wood,Lac Turning,Large,South India,2280,1914.1852940235476,365.8147059764524
+SIH-03079,Banarasi,Silk,Handloom Weaving,Standard,North India,19650,22695.83714502283,3045.8371450228296
+SIH-00284,Blue Pottery,Ceramic,Glazing,Medium,West India,790,784.3039883117426,5.696011688257386
+SIH-02484,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,24210,23181.6959438961,1028.3040561039015
+SIH-01371,Kondapalli Toys,Soft Wood,Hand Painting,Medium,South India,880,992.3713003966477,112.37130039664771
+SIH-04786,Sandalwood Carving,Sandalwood,Wood Carving,Small,South India,5690,5887.501036181669,197.5010361816694
+SIH-00219,Kalamkari,Cotton,Block Printing,Large,South India,4990,5300.566505594883,310.566505594883
+SIH-00228,Blue Pottery,Ceramic,Glazing,Small,West India,610,676.02053977787,66.02053977787
+SIH-01594,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,18610,18139.31779587675,470.6822041232517
+SIH-03956,Moradabad Metal Craft,Brass,Metal Engraving,Small,North India,4820,4449.436358365151,370.56364163484886
+SIH-03907,Channapatna,Wood,Lac Turning,Small,South India,930,847.4899822707066,82.5100177292934
+SIH-01223,Blue Pottery,Ceramic,Glazing,Large,West India,1210,1331.93519766389,121.93519766389
+SIH-02747,Madhubani,Paper,Hand Painting,Large,East India,9710,10040.162311415423,330.16231141542266
+SIH-02229,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,27210,29633.168291225225,2423.1682912252254
+SIH-02158,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,18690,16837.688290319446,1852.3117096805545
+SIH-03011,Dhokra,Brass,Lost Wax Casting,Medium,Central India,8370,8167.177695758662,202.82230424133832
+SIH-02310,Blue Pottery,Ceramic,Glazing,Medium,West India,990,872.600828822634,117.39917117736604
+SIH-00292,Kutch Embroidery,Cotton,Hand Embroidery,Small,West India,4730,4575.019036474425,154.98096352557513
+SIH-02396,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,7720,8428.8582271169,708.8582271168998
+SIH-04588,Sandalwood Carving,Sandalwood,Wood Carving,Medium,South India,8860,10185.05107978112,1325.0510797811203
+SIH-03575,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,4600,6012.288538191853,1412.2885381918531
+SIH-03411,Bastar Dhokra,Bell Metal,Lost Wax Casting,Medium,Central India,8470,6937.7136086401415,1532.2863913598585
+SIH-03917,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Small,North India,9780,9992.10689151698,212.10689151697989
+SIH-04558,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,15650,14860.598067623792,789.4019323762077
+SIH-04850,Blue Pottery,Ceramic,Glazing,Small,West India,380,623.7515345637066,243.75153456370663
+SIH-02378,Blue Pottery,Ceramic,Glazing,Large,West India,1410,1323.8920419359865,86.10795806401347
+SIH-01748,Bastar Dhokra,Bell Metal,Lost Wax Casting,Small,Central India,4990,5075.947336623643,85.94733662364342
+SIH-00158,Blue Pottery,Ceramic,Glazing,Large,West India,2070,1770.3069139698327,299.69308603016725
+SIH-00535,Pipili Applique,Cotton,Applique,Medium,East India,1450,1569.1968255659567,119.19682556595671
+SIH-04862,Blue Pottery,Ceramic,Glazing,Small,West India,1040,761.5784630029912,278.42153699700884
+SIH-02019,Kutch Embroidery,Cotton,Hand Embroidery,Medium,West India,5320,5576.054544377945,256.0545443779447
+SIH-04606,Blue Pottery,Ceramic,Glazing,Medium,West India,910,899.2959717751573,10.70402822484266
+SIH-02464,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,2230,1959.8387076950703,270.1612923049297
+SIH-01962,Thanjavur Painting,Wood,Gold Leaf Work,Medium,South India,27340,24652.166458283802,2687.833541716198
+SIH-04360,Dhokra,Brass,Lost Wax Casting,Small,Central India,4220,3763.7736243511663,456.2263756488337
+SIH-01169,Thanjavur Painting,Wood,Gold Leaf Work,Large,South India,26230,25608.40549679073,621.5945032092714
+SIH-02795,Terracotta,Clay,Hand Moulding,Large,East India,2810,2869.2719602510942,59.27196025109424
+SIH-01942,Kalamkari,Cotton,Block Printing,Small,South India,3100,2503.1106754031352,596.8893245968648
+SIH-03621,Kondapalli Toys,Soft Wood,Hand Painting,Large,South India,2250,2058.817507540526,191.1824924594739
+SIH-01407,Blue Pottery,Ceramic,Glazing,Small,West India,890,793.9263807279794,96.07361927202055
+SIH-00030,Pipili Applique,Cotton,Applique,Small,East India,1090,1119.9168131065107,29.916813106510745
+SIH-04794,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,15000,19191.796007751724,4191.796007751724
+SIH-03296,Dhokra,Brass,Lost Wax Casting,Small,Central India,1920,2677.2838551514506,757.2838551514506
+SIH-00953,Kalamkari,Cotton,Block Printing,Small,South India,1650,1955.2921555739358,305.2921555739358
+SIH-02452,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,36120,36008.11875849118,111.88124150881777
+SIH-03361,Channapatna,Wood,Lac Turning,Large,South India,1780,1484.9723723376956,295.02762766230444
+SIH-04463,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,14110,14195.409998240375,85.40999824037499
+SIH-04177,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,12430,13360.039003633814,930.039003633814
+SIH-04377,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,870,1180.2470590083294,310.2470590083294
+SIH-00694,Dhokra,Brass,Lost Wax Casting,Large,Central India,6820,7506.138172274827,686.1381722748274
+SIH-00101,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,14330,11935.921641833016,2394.078358166984
+SIH-03558,Phulkari,Cotton,Hand Embroidery,Standard,North India,10980,9738.19539960383,1241.80460039617
+SIH-01819,Terracotta,Clay,Hand Moulding,Medium,East India,640,960.0139761646105,320.01397616461054
+SIH-03322,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,12580,12499.190776627358,80.80922337264201
+SIH-03604,Blue Pottery,Ceramic,Glazing,Large,West India,1330,1498.949979843891,168.94997984389101
+SIH-00249,Sandalwood Carving,Sandalwood,Wood Carving,Large,South India,14940,18203.826997310363,3263.8269973103634
+SIH-02933,Madhubani,Paper,Hand Painting,Medium,East India,4240,4558.917633161711,318.9176331617109
+SIH-01158,Channapatna,Wood,Lac Turning,Small,South India,820,949.2875817675831,129.2875817675831
+SIH-04140,Banarasi,Silk,Handloom Weaving,Standard,North India,36170,38495.89947840567,2325.8994784056704
+SIH-03592,Sikki Craft,Sikki Grass,Hand Weaving,Medium,East India,810,1057.1966920309405,247.19669203094054
+SIH-01783,Bastar Dhokra,Bell Metal,Lost Wax Casting,Large,Central India,14970,15010.267537684067,40.267537684067065
+SIH-02827,Channapatna,Wood,Lac Turning,Small,South India,600,740.8044005202337,140.80440052023368
+SIH-02329,Sikki Craft,Sikki Grass,Hand Weaving,Large,East India,2910,2448.9267598856904,461.07324011430956
+SIH-00606,Channapatna,Wood,Lac Turning,Large,South India,770,983.5370509556551,213.5370509556551
+SIH-00486,Banarasi,Silk,Handloom Weaving,Standard,North India,30890,29527.685910385884,1362.3140896141158
+SIH-03457,Pashmina,Pashmina Wool,Hand Embroidery,Standard,North India,29490,30889.786076306365,1399.7860763063654
+SIH-03255,Madhubani,Paper,Hand Painting,Medium,East India,5130,4495.770758288026,634.2292417119743
+SIH-00829,Thanjavur Painting,Wood,Gold Leaf Work,Small,South India,9790,11377.23528308474,1587.2352830847394
+SIH-04982,Madhubani,Paper,Hand Painting,Medium,East India,2850,2755.8627983856577,94.1372016143423
+SIH-04773,Kondapalli Toys,Soft Wood,Hand Painting,Small,South India,870,905.7291823198875,35.729182319887514
+SIH-02132,Dhokra,Brass,Lost Wax Casting,Medium,Central India,9930,8466.195831915507,1463.8041680844926
+SIH-02054,Kutch Embroidery,Cotton,Hand Embroidery,Large,West India,5410,5530.331955053951,120.33195505395088
+SIH-01002,Kashmir Walnut Wood Carving,Walnut Wood,Wood Carving,Large,North India,19520,19033.12329161905,486.87670838095073
+SIH-01611,Sikki Craft,Sikki Grass,Hand Weaving,Small,East India,770,880.431298126483,110.43129812648294
+SIH-02590,Blue Pottery,Ceramic,Glazing,Medium,West India,650,810.5991427652625,160.5991427652625
