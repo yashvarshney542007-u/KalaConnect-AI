@@ -254,6 +254,29 @@ const Marketplace = {
     const p = this.products.find(item => item.id === productId);
     if (!p) return;
 
+    // ── Compute tentative delivery date (mirrors Cart.getDeliveryDate logic) ──
+    const remoteStates = [
+      'Arunachal Pradesh', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
+      'Sikkim', 'Tripura', 'Assam', 'Jammu and Kashmir', 'Ladakh',
+      'Andaman and Nicobar', 'Lakshadweep', 'Himachal Pradesh', 'Uttarakhand'
+    ];
+    const isRemote   = remoteStates.includes(p.state);
+    const isDelicate = ['Handloom', 'Weaving', 'Embroidery', 'Zari'].some(
+      k => (p.craftForm || '').includes(k)
+    );
+    const minDays = isRemote ? 5 : 3;
+    const maxDays = (isRemote ? 8 : 6) + (isDelicate ? 1 : 0);
+    const today   = new Date();
+    const minDate = new Date(today); minDate.setDate(today.getDate() + minDays);
+    const maxDate = new Date(today); maxDate.setDate(today.getDate() + maxDays);
+    const fmtD    = (d) => d.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+    const deliveryLabel = `${fmtD(minDate)} – ${fmtD(maxDate)}`;
+    const deliveryNote  = isRemote
+      ? 'Remote region — allow extra transit time.'
+      : isDelicate
+        ? 'Delicate craft — carefully packed by artisan.'
+        : 'Standard artisan-direct shipping.';
+
     const modalContent = `
       <div class="pdp-grid">
         <div class="pdp-image-container">
@@ -290,6 +313,25 @@ const Marketplace = {
             <p>Direct Artisan Earning: <strong>${p.artisanSharePercent}% (₹${Math.round(p.price * p.artisanSharePercent / 100).toLocaleString('en-IN')})</strong>. Eliminates middlemen commissions, providing 3.4x higher net income to the maker.</p>
           </div>
 
+          <!-- Tentative Delivery Date -->
+          <div class="pdp-delivery-box">
+            <div class="pdp-delivery-header">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+                <rect x="1" y="3" width="15" height="13" rx="1"></rect>
+                <path d="M16 8h4l3 5v3h-7V8z"></path>
+                <circle cx="5.5" cy="18.5" r="2.5"></circle>
+                <circle cx="18.5" cy="18.5" r="2.5"></circle>
+              </svg>
+              Tentative Delivery Date
+            </div>
+            <div class="pdp-delivery-date">${deliveryLabel}</div>
+            <div class="pdp-delivery-note">${deliveryNote}</div>
+            <div class="pdp-delivery-meta">
+              <span>🚚 FREE artisan-direct delivery</span>
+              <span>📦 ${minDays}–${maxDays} business days</span>
+            </div>
+          </div>
+
           <p style="color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; margin-bottom: 14px;">
             ${p.description}
           </p>
@@ -308,7 +350,7 @@ const Marketplace = {
               <span>${p.spaceCompatibility.placementSuggestion}</span>
             </div>
             <div class="pdp-meta-item">
-              <strong>Vibe & Lighting</strong>
+              <strong>Vibe &amp; Lighting</strong>
               <span>${p.spaceCompatibility.lightingVibe}</span>
             </div>
           </div>

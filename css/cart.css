@@ -812,3 +812,272 @@
   transform: none;
 }
 
+/* ==========================================================================
+   DELIVERY DATE BADGE
+   ========================================================================== */
+.delivery-date-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #FFF7ED, #FEF3C7);
+  border: 1px solid #FCD34D;
+  color: #92400E;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 999px;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+}
+
+.checkout-mini-item-info .delivery-date-badge {
+  display: block;
+}
+
+/* ==========================================================================
+   UPI QR CODE BOX
+   ========================================================================== */
+.upi-qr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin: 16px 0 12px;
+  padding: 18px 16px;
+  background: #FAFAF9;
+  border: 1.5px solid #E2DAD0;
+  border-radius: var(--radius-md);
+}
+
+.upi-qr-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#upiQrCanvas {
+  border-radius: 8px;
+  border: 2px solid #E7E0D6;
+}
+
+.upi-qr-amount {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+}
+
+.upi-qr-id {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: monospace;
+  background: #F0EBE3;
+  padding: 3px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.upi-qr-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-light);
+  font-size: 0.74rem;
+  margin: 6px 0;
+}
+
+.upi-qr-divider::before,
+.upi-qr-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-subtle);
+}
+
+/* ==========================================================================
+   ORDER TRACKING TIMELINE
+   ========================================================================== */
+.order-tracking-section {
+  text-align: left;
+  background: #FDFBF8;
+  border: 1.5px solid #E8DFD0;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.tracking-section-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.tracking-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.tracking-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  padding-bottom: 14px;
+}
+
+/* Vertical connector line */
+.tracking-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 18px;
+  width: 2px;
+  bottom: 0;
+  background: #E2DAD0;
+  z-index: 0;
+}
+
+.tracking-step.done:not(:last-child)::after {
+  background: #10B981;
+}
+
+.tracking-step.active:not(:last-child)::after {
+  background: linear-gradient(to bottom, #F59E0B, #E2DAD0);
+}
+
+.tracking-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2.5px solid #D6CCC2;
+  background: white;
+  flex-shrink: 0;
+  margin-top: 1px;
+  position: relative;
+  z-index: 1;
+  transition: all 0.2s ease;
+}
+
+.tracking-step.done .tracking-dot {
+  background: #10B981;
+  border-color: #10B981;
+}
+
+.tracking-step.done .tracking-dot::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: white;
+  opacity: 0.4;
+}
+
+.tracking-step.active .tracking-dot {
+  background: #F59E0B;
+  border-color: #F59E0B;
+  box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.2);
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25); }
+  50%       { box-shadow: 0 0 0 7px rgba(245, 158, 11, 0.1); }
+}
+
+.tracking-content {
+  flex: 1;
+  padding-bottom: 2px;
+}
+
+.tracking-label {
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+}
+
+.tracking-step.done .tracking-label {
+  color: #065F46;
+}
+
+.tracking-step.active .tracking-label {
+  color: #92400E;
+}
+
+.tracking-date {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.tracking-step.done .tracking-date {
+  color: #047857;
+}
+
+.tracking-step.active .tracking-date {
+  color: #B45309;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   PER-ITEM RECEIPT (Order confirmation)
+   ========================================================================== */
+.order-items-receipt {
+  text-align: left;
+  background: #FAF8F5;
+  border: 1.5px solid #E8DFD0;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 16px;
+}
+
+.order-receipt-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #F0ECE6;
+  font-size: 0.82rem;
+}
+
+.order-receipt-item:last-child {
+  border-bottom: none;
+}
+
+.order-receipt-item img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.order-receipt-item-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-receipt-item-info strong {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+}
+
+.order-receipt-item-info span {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.order-receipt-date {
+  flex-shrink: 0;
+  font-size: 0.65rem;
+}
+

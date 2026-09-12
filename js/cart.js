@@ -247,6 +247,38 @@ const Cart = {
     }
   },
 
+  // ── Delivery date estimator ─────────────────────────────────────────────────
+  getDeliveryDate(item) {
+    // Remote / far-flung states get extra days
+    const remoteStates = [
+      'Arunachal Pradesh', 'Manipur', 'Meghalaya', 'Mizoram', 'Nagaland',
+      'Sikkim', 'Tripura', 'Assam', 'Jammu and Kashmir', 'Ladakh',
+      'Andaman and Nicobar', 'Lakshadweep', 'Himachal Pradesh', 'Uttarakhand'
+    ];
+    const isRemote = remoteStates.includes(item.state);
+    // Handloom / textile crafts take 1 extra day to pack
+    const isDelicate = ['Handloom', 'Weaving', 'Embroidery', 'Zari'].some(
+      k => (item.craftForm || '').includes(k)
+    );
+    const minDays = isRemote ? 5 : 3;
+    const maxDays = (isRemote ? 8 : 6) + (isDelicate ? 1 : 0);
+
+    const today = new Date();
+    const minDate = new Date(today); minDate.setDate(today.getDate() + minDays);
+    const maxDate = new Date(today); maxDate.setDate(today.getDate() + maxDays);
+
+    const fmt = (d) => d.toLocaleDateString('en-IN', { day: 'numeric', month: 'short' });
+    return { minDays, maxDays, label: `${fmt(minDate)} – ${fmt(maxDate)}`, minDate, maxDate };
+  },
+
+  // ── UPI QR URL builder (uses free QR Server API — no JS lib required) ──────
+  getUpiQrImgUrl(total) {
+    const upiId = 'kalaconnect@okaxis';
+    const upiLink = `upi://pay?pa=${upiId}&pn=KalaConnect%20AI&am=${total}&cu=INR&tn=ArtisanCraft`;
+    const encoded = encodeURIComponent(upiLink);
+    return `https://api.qrserver.com/v1/create-qr-code/?size=180x180&margin=8&data=${encoded}`;
+  },
+
   handleCheckout() {
     if (this.items.length === 0) return;
 
@@ -269,7 +301,14 @@ const Cart = {
   checkoutState: {
     paymentMethod: 'card', // 'card', 'upi', 'netbanking', 'cod'
     selectedBank: 'hdfc',
-    selectedUpiApp: 'gpay'
+    selectedUpiApp: 'gpay',
+    // Cached totals — set when modal opens so tab switching never loses them
+    cachedTotal: 0,
+    cachedSubtotal: 0,
+    cachedDiscount: 0,
+    cachedArtisanDirect: 0,
+    cachedWasFirstTime: false,
+    cachedItemsSnapshot: []
   },
 
   openCheckoutModal() {
@@ -282,6 +321,14 @@ const Cart = {
     const artisanDirect = this.getTotalArtisanDirectEarning();
     const wasFirstTime = this.isFirstTimeUser;
     const isCodAvailable = total >= 1000;
+
+    // Cache everything for use by switchPaymentTab & confirmOrderPlacement
+    this.checkoutState.cachedTotal = total;
+    this.checkoutState.cachedSubtotal = subtotal;
+    this.checkoutState.cachedDiscount = discount;
+    this.checkoutState.cachedArtisanDirect = artisanDirect;
+    this.checkoutState.cachedWasFirstTime = wasFirstTime;
+    this.checkoutState.cachedItemsSnapshot = JSON.parse(JSON.stringify(this.items));
 
     // If COD was active but order < 1000, fallback to Card
     if (this.checkoutState.paymentMethod === 'cod' && !isCodAvailable) {
@@ -302,16 +349,20 @@ const Cart = {
       return `<option value="${st}" ${isSelected}>${st}</option>`;
     }).join('');
 
-    const miniItemsHTML = this.items.map(item => `
+    const miniItemsHTML = this.items.map(item => {
+      const delivery = this.getDeliveryDate(item);
+      return `
       <div class="checkout-mini-item">
         <img src="${item.image}" alt="${item.name}" />
         <div class="checkout-mini-item-info">
           <h6>${item.name}</h6>
           <span>${item.quantity} × ₹${item.price.toLocaleString('en-IN')} (${item.craftForm})</span>
+          <span class="delivery-date-badge">🚚 Est. ${delivery.label}</span>
         </div>
         <strong>₹${(item.price * item.quantity).toLocaleString('en-IN')}</strong>
       </div>
-    `).join('');
+    `;
+    }).join('');
 
     const modalHTML = `
       <div class="checkout-modal-container">
@@ -529,9 +580,10 @@ const Cart = {
     }
 
     if (method === 'upi') {
+      const qrImgUrl = this.getUpiQrImgUrl(total);
       return `
         <div class="upi-payment-panel">
-          <div class="bank-selection-header">Select Popular UPI App</div>
+          <div class="bank-selection-header">Select Your UPI App</div>
           <div class="upi-apps-row">
             <div class="upi-app-chip ${this.checkoutState.selectedUpiApp === 'gpay' ? 'active' : ''}" onclick="Cart.selectUpiApp('gpay')">
               <span>🔵</span> Google Pay
@@ -547,12 +599,27 @@ const Cart = {
             </div>
           </div>
 
+          <!-- UPI QR Code — reliable img via QR Server API, no JS lib needed -->
+          <div class="upi-qr-box">
+            <div class="upi-qr-label">Scan &amp; Pay via any UPI App</div>
+            <img
+              src="${qrImgUrl}"
+              alt="UPI QR Code"
+              width="180" height="180"
+              style="border-radius:8px; border:2px solid #E7E0D6; display:block;"
+            />
+            <div class="upi-qr-amount">₹${total.toLocaleString('en-IN')}</div>
+            <div class="upi-qr-id">kalaconnect@okaxis</div>
+          </div>
+
+          <div class="upi-qr-divider"><span>or enter UPI ID manually</span></div>
+
           <div class="form-group-item" style="margin-top: 10px;">
-            <label>Enter UPI Virtual ID (VPA)</label>
+            <label>UPI Virtual ID (VPA)</label>
             <input type="text" id="chkUpiId" required placeholder="mobile@upi / yourname@oksbi" value="artisan.buyer@okhdfcbank" />
           </div>
           <p style="font-size: 0.74rem; color: var(--text-muted); margin-top: 6px;">
-            A payment request will be sent to your UPI app for fast authorization.
+            A payment request will be sent to your UPI app for authorization.
           </p>
         </div>
       `;
@@ -642,14 +709,18 @@ const Cart = {
     return '';
   },
 
-  switchPaymentTab(tabName) {
+  switchPaymentTab(tabName, evObj) {
     this.checkoutState.paymentMethod = tabName;
-    const total = this.getTotal();
+    // Always use the cached total from when the modal opened — never recompute
+    // from Cart.items here, as that can return 0 if state drifts between renders.
+    const total = this.checkoutState.cachedTotal || this.getTotal();
     const isCodAvailable = total >= 1000;
 
     // Update active class on tab buttons
     document.querySelectorAll('.payment-tab-btn').forEach(btn => btn.classList.remove('active'));
-    event.target.classList.add('active');
+    const activeBtn = (evObj && evObj.currentTarget) || (evObj && evObj.target) ||
+                      (typeof event !== 'undefined' && event && event.target);
+    if (activeBtn) activeBtn.classList.add('active');
 
     // Update dynamic area
     const area = document.getElementById('checkoutPaymentDynamicArea');
@@ -691,7 +762,21 @@ const Cart = {
 
   confirmOrderPlacement(e) {
     e.preventDefault();
-    if (this.items.length === 0) return;
+
+    // Use cached snapshot from modal open — items may have been cleared by re-renders
+    const itemsToProcess = this.items.length > 0
+      ? this.items
+      : this.checkoutState.cachedItemsSnapshot;
+
+    if (!itemsToProcess || itemsToProcess.length === 0) {
+      window.App.showToast('Your cart appears empty. Please add items and try again.', 'error');
+      return;
+    }
+
+    // Restore items if they drifted empty
+    if (this.items.length === 0 && itemsToProcess.length > 0) {
+      this.items = itemsToProcess;
+    }
 
     const loggedInUser = window.Auth && window.Auth.currentUser;
     if (!loggedInUser) {
@@ -699,11 +784,13 @@ const Cart = {
       return;
     }
 
-    const total = this.getTotal();
-    const subtotal = this.getSubtotal();
-    const discount = this.getDiscountAmount();
-    const artisanDirect = this.getTotalArtisanDirectEarning();
-    const wasFirstTime = this.isFirstTimeUser;
+    // Use cached values from modal open — safe even if Cart.items drifted empty.
+    // IMPORTANT: use explicit check, not || (since 0 is a valid falsy total that breaks ||)
+    const total        = (this.checkoutState.cachedTotal > 0)  ? this.checkoutState.cachedTotal  : this.getTotal();
+    const subtotal     = (this.checkoutState.cachedSubtotal > 0) ? this.checkoutState.cachedSubtotal : this.getSubtotal();
+    const discount     = this.checkoutState.cachedDiscount  !== undefined ? this.checkoutState.cachedDiscount  : this.getDiscountAmount();
+    const artisanDirect = this.checkoutState.cachedArtisanDirect > 0 ? this.checkoutState.cachedArtisanDirect : this.getTotalArtisanDirectEarning();
+    const wasFirstTime = this.checkoutState.cachedWasFirstTime;
     const isCodAvailable = total >= 1000;
 
     // Strict COD check
@@ -765,18 +852,56 @@ const Cart = {
     localStorage.setItem('kalaconnectai_ordered_before', 'true');
     this.isFirstTimeUser = false;
 
+    // Snapshot items before clearing (for receipt display)
+    window._lastOrderItems = JSON.parse(JSON.stringify(this.items));
+
     // Clear cart
     const purchasedItemsCount = this.getItemCount();
     this.items = [];
     this.save();
 
-    // Open Confirmation Receipt Modal
+    // ── Build per-item delivery info ──────────────────────────────────────────
+    // Use the snapshot saved just before cart was cleared
+    const orderItemsSnapshot = window._lastOrderItems || [];
+
+    const itemReceiptRows = orderItemsSnapshot.map(item => {
+      const del = this.getDeliveryDate(item);
+      return `
+        <div class="order-receipt-item">
+          <img src="${item.image}" alt="${item.name}" />
+          <div class="order-receipt-item-info">
+            <strong>${item.name}</strong>
+            <span>${item.quantity} × ₹${item.price.toLocaleString('en-IN')}</span>
+          </div>
+          <div class="delivery-date-badge order-receipt-date">🚚 ${del.label}</div>
+        </div>
+      `;
+    }).join('');
+
+    // ── Tracking timeline dates ────────────────────────────────────────────────
+    const now = new Date();
+    const addDays = (d, n) => { const r = new Date(d); r.setDate(r.getDate() + n); return r; };
+    const fmtFull = (d) => d.toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+    const fmtTime = (d) => d.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' });
+
+    const t0 = now;
+    const t1 = addDays(now, 1);
+    const t2 = addDays(now, 2);
+    const t3 = addDays(now, 4);
+    const t4 = addDays(now, 5);
+    // Overall estimated delivery = max delivery date across items
+    const maxDaysAll = orderItemsSnapshot.length > 0
+      ? Math.max(...orderItemsSnapshot.map(it => this.getDeliveryDate(it).maxDays))
+      : 6;
+    const tDelivered = addDays(now, maxDaysAll);
+
+    // ── Open Confirmation Receipt Modal ────────────────────────────────────────
     const modalContent = `
       <div class="order-success-content">
         <div class="success-icon-wrap">
           <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
         </div>
-        <h3 style="font-family: var(--font-serif); color: var(--secondary);">Order Confirmed Successfully!</h3>
+        <h3 style="font-family: var(--font-serif); color: var(--secondary);">Order Confirmed! 🎉</h3>
         <p style="margin-bottom: 18px;">
           Order ID: <strong>#${orderId}</strong>. We've notified our rural artisan collective to carefully pack and ship your craft items.
         </p>
@@ -790,26 +915,76 @@ const Cart = {
           <div style="color: var(--text-muted);">${address.street}${address.landmark ? ', ' + address.landmark : ''}</div>
           <div style="color: var(--text-muted);">${address.city}, ${address.state} – <strong>${address.pinCode}</strong></div>
           <div style="margin-top: 8px; font-size: 0.82rem; color: var(--text-main); font-weight: 700;">
-            Payment Method: <span style="color: var(--primary);">${paymentSummaryText}</span>
+            Payment: <span style="color: var(--primary);">${paymentSummaryText}</span>
           </div>
         </div>
 
         ${wasFirstTime ? `
-          <div style="background: #ECFDF5; border: 1px solid #10B981; border-radius: 12px; padding: 14px 18px; margin-bottom: 18px; text-align: left;">
+          <div style="background: #ECFDF5; border: 1px solid #10B981; border-radius: 12px; padding: 14px 18px; margin-bottom: 16px; text-align: left;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <span style="font-weight: 700; color: #065F46; font-size: 0.9rem;">🎉 First-Time User 40% Discount Applied</span>
+              <span style="font-weight: 700; color: #065F46; font-size: 0.9rem;">🎉 First-Time 40% Discount Applied</span>
               <span style="background: #059669; color: white; padding: 2px 8px; border-radius: 999px; font-size: 0.72rem; font-weight: 800;">SAVED ₹${discount.toLocaleString('en-IN')}</span>
             </div>
             <div style="display: flex; justify-content: space-between; font-size: 0.82rem; color: #047857;">
-              <span>Original Craft Value: <s>₹${subtotal.toLocaleString('en-IN')}</s></span>
-              <span><strong>Total Paid: ₹${total.toLocaleString('en-IN')}</strong></span>
+              <span>Original: <s>₹${subtotal.toLocaleString('en-IN')}</s></span>
+              <span><strong>Paid: ₹${total.toLocaleString('en-IN')}</strong></span>
             </div>
+          </div>
+        ` : ''}
+
+        <!-- Order Tracking Timeline -->
+        <div class="order-tracking-section">
+          <div class="tracking-section-title">📦 Live Order Tracking</div>
+          <div class="tracking-timeline">
+            <div class="tracking-step done">
+              <div class="tracking-dot"></div>
+              <div class="tracking-content">
+                <div class="tracking-label">✅ Order Placed</div>
+                <div class="tracking-date">${fmtFull(t0)}, ${fmtTime(t0)}</div>
+              </div>
+            </div>
+            <div class="tracking-step done">
+              <div class="tracking-dot"></div>
+              <div class="tracking-content">
+                <div class="tracking-label">🧵 Artisan Packing</div>
+                <div class="tracking-date">Expected by ${fmtFull(t1)}</div>
+              </div>
+            </div>
+            <div class="tracking-step active">
+              <div class="tracking-dot"></div>
+              <div class="tracking-content">
+                <div class="tracking-label">🚚 In Transit</div>
+                <div class="tracking-date">Est. ${fmtFull(t2)} – ${fmtFull(t3)}</div>
+              </div>
+            </div>
+            <div class="tracking-step">
+              <div class="tracking-dot"></div>
+              <div class="tracking-content">
+                <div class="tracking-label">🏠 Out for Delivery</div>
+                <div class="tracking-date">Est. ${fmtFull(t4)}</div>
+              </div>
+            </div>
+            <div class="tracking-step">
+              <div class="tracking-dot"></div>
+              <div class="tracking-content">
+                <div class="tracking-label">🎁 Delivered</div>
+                <div class="tracking-date">Est. by ${fmtFull(tDelivered)}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Per-item delivery dates -->
+        ${orderItemsSnapshot.length > 0 ? `
+          <div class="order-items-receipt">
+            <div class="tracking-section-title" style="margin-bottom: 10px;">🛍️ Item-wise Delivery Estimates</div>
+            ${itemReceiptRows}
           </div>
         ` : ''}
 
         <div class="order-impact-card">
           <h5>🌿 Direct Social Impact Verified</h5>
-          <p><strong>₹${artisanDirect.toLocaleString('en-IN')}</strong> will be disbursed directly to rural artisan bank accounts. The 40% promotional welcome subsidy is fully absorbed by the Market Linkage Grant so the makers receive 100% of their fair earnings.</p>
+          <p><strong>₹${artisanDirect.toLocaleString('en-IN')}</strong> will be disbursed directly to rural artisan bank accounts.</p>
         </div>
 
         <div style="display: flex; gap: 10px; justify-content: center;">
@@ -824,7 +999,7 @@ const Cart = {
     `;
 
     window.App.openModal(modalContent);
-    window.App.showToast(`Order #${orderId} placed successfully! Thank you for empowering artisans.`, 'success');
+    window.App.showToast(`Order #${orderId} placed! Estimated delivery by ${fmtFull(tDelivered)}.`, 'success');
   },
 
   resetFirstTimeStatus() {
