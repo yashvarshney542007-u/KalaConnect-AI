@@ -1,87 +1,100 @@
 """
 app/schemas/price.py
 ====================
-Pydantic request / response schemas for the /api/price/predict endpoint.
+Price prediction schemas for the AI pipeline.
+
+Pipeline order in /docs:
+  1. POST /api/vision/analyze   -> copy JSON response
+  2. POST /api/voice/transcribe -> copy JSON response
+  3. POST /api/price/predict    -> paste both above -> returns INR price
 """
 
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
 from pydantic import BaseModel, Field
 
 
-class AiData(BaseModel):
-    """Fields populated by the Vision AI."""
-    productName: Optional[str] = None
-    craft: Optional[str] = None
-    material: Optional[str] = None
-    technique: Optional[str] = None
-    description: Optional[str] = None
+CRAFT_COMPLEXITY = {
+    "blue pottery": 7.0,
+    "pashmina": 9.5,
+    "pashmina weaving": 9.5,
+    "dhokra": 8.0,
+    "dhokra metal craft": 8.0,
+    "wood carving": 7.5,
+    "zardozi": 9.0,
+    "block printing": 5.0,
+    "weaving": 6.5,
+    "embroidery": 8.5,
+    "pottery": 5.5,
+    "terracotta": 5.0,
+    "metalwork": 7.0,
+    "jewelry": 8.0,
+    "painting": 7.0,
+    "leather": 5.5,
+}
 
 
-class ArtisanData(BaseModel):
-    """Fields provided directly by the artisan."""
-    state: Optional[str] = None
-    region: Optional[str] = None
-    district: Optional[str] = None
-    size_length_cm: Optional[float] = None
-    size_width_cm: Optional[float] = None
-    size_height_cm: Optional[float] = None
-    weight_kg: Optional[float] = None
-    labor_days: Optional[float] = None
-    artisan_skill_level: Optional[str] = None
-    production_quantity: Optional[int] = None
-    market_channel: Optional[str] = None
+class VisionOutput(BaseModel):
+    """Exact JSON returned by POST /api/vision/analyze"""
+    craft: Optional[str] = Field(None, description="Craft type detected from image")
+    material: Optional[str] = Field(None, description="Material identified from image")
+    product_type: Optional[str] = Field(None, description="Object type detected")
+    visual_description: Optional[str] = Field(None, description="Visual summary of the product")
+    colors: Optional[List[str]] = Field(default_factory=list, description="Main visible colors")
+    design_features: Optional[List[str]] = Field(default_factory=list, description="Motifs and patterns")
+    craftsmanship_features: Optional[List[str]] = Field(default_factory=list, description="Artisan characteristics")
+    possible_region: Optional[str] = Field(None, description="Geographic region if visually justified")
+    confidence: Optional[float] = Field(None, description="Model confidence 0.0 to 1.0")
 
 
-class DerivedData(BaseModel):
-    """Computed / derived fields (costs, scores, etc.)."""
-    product_type: Optional[str] = None
-    labor_hours: Optional[float] = None
-    complexity_score: Optional[float] = None
-    material_cost_inr: Optional[float] = None
-    labor_cost_inr: Optional[float] = None
-    overhead_cost_inr: Optional[float] = None
-    market_demand_score: Optional[float] = None
-    seasonality_score: Optional[float] = None
+class VoiceOutput(BaseModel):
+    """Exact JSON returned by POST /api/voice/transcribe"""
+    text: Optional[str] = Field(None, description="Transcription of the artisan voice recording")
+    language: Optional[str] = Field(None, description="Detected language code")
+    language_probability: Optional[float] = Field(None, description="Language detection confidence")
+
 
 
 class PricePredictRequest(BaseModel):
-    """Full price prediction request body."""
-    ai_data: AiData = Field(default_factory=AiData)
-    artisan_data: ArtisanData = Field(default_factory=ArtisanData)
-    derived_data: DerivedData = Field(default_factory=DerivedData)
+    """
+    Price Prediction Input.
+
+    This endpoint is the FINAL STEP of the AI pipeline:
+
+      Step 1: POST /api/vision/analyze   -> analyze product image -> copy full JSON response
+      Step 2: POST /api/voice/transcribe -> transcribe voice note  -> copy full JSON response
+      Step 3: POST /api/price/predict    -> paste both responses below -> get predicted price INR
+
+    The system automatically derives craft complexity, labor cost, overhead,
+    and all other required model features from the Vision and Voice outputs.
+    No manual JSON construction is needed.
+    """
+    vision_output: VisionOutput = Field(
+        ...,
+        description="[Step 1 output] Paste full JSON from POST /api/vision/analyze"
+    )
+    voice_output: VoiceOutput = Field(
+        ...,
+        description="[Step 2 output] Paste full JSON from POST /api/voice/transcribe"
+    )
 
     model_config = {
         "json_schema_extra": {
             "example": {
-                "ai_data": {
-                    "productName": "Blue Pottery Vase",
+                "vision_output": {
                     "craft": "Blue Pottery",
                     "material": "Ceramic",
-                    "technique": "Hand-painted",
-                    "description": "Handcrafted decorative floral vase"
-                },
-                "artisan_data": {
-                    "state": "Rajasthan",
-                    "region": "Jaipur",
-                    "district": "Jaipur",
-                    "size_length_cm": 20.0,
-                    "size_width_cm": 20.0,
-                    "size_height_cm": 30.0,
-                    "weight_kg": 1.8,
-                    "labor_days": 3.0,
-                    "artisan_skill_level": "Skilled",
-                    "production_quantity": 10,
-                    "market_channel": "Artisan Direct"
-                },
-                "derived_data": {
                     "product_type": "Vase",
-                    "labor_hours": 24.0,
-                    "complexity_score": 6.5,
-                    "material_cost_inr": 500.0,
-                    "labor_cost_inr": 900.0,
-                    "overhead_cost_inr": 200.0,
-                    "market_demand_score": 7.2,
-                    "seasonality_score": 5.0
+                    "visual_description": "Hand-painted blue and white ceramic vase with floral motifs",
+                    "colors": ["blue", "white"],
+                    "design_features": ["floral motifs", "geometric borders"],
+                    "craftsmanship_features": ["hand-painted", "wheel-thrown"],
+                    "possible_region": "Jaipur",
+                    "confidence": 0.92
+                },
+                "voice_output": {
+                    "text": "Handcrafted Blue Pottery decorative vase, took 3 days to make",
+                    "language": "en",
+                    "language_probability": 0.99
                 }
             }
         }
@@ -93,27 +106,3 @@ class PricePredictResponse(BaseModel):
     success: bool
     predicted_price_inr: float
     features_used: Dict[str, Any]
-
-
-class VoiceImagePriceRequest(BaseModel):
-    """Request body for voice + image based price prediction.
-    The `voice_audio_base64` and `image_base64` fields should contain
-    base64‑encoded binary data (e.g., WAV audio and JPEG/PNG image).
-    """
-    voice_audio_base64: str = Field(..., description="Base64‑encoded audio (WAV/MP3)")
-    image_base64: str = Field(..., description="Base64‑encoded image (JPEG/PNG)")
-    # Optional inclusion of existing nested data
-    ai_data: AiData = Field(default_factory=AiData)
-    artisan_data: ArtisanData = Field(default_factory=ArtisanData)
-    derived_data: DerivedData = Field(default_factory=DerivedData)
-
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "voice_audio_base64": "<base64-string>",
-                "image_base64": "<base64-string>",
-                "ai_data": {},
-                "artisan_data": {},
-                "derived_data": {}
-            }
-        }
