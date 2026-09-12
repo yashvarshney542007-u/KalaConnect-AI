@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -743,12 +744,12 @@ main{
 <header class="topbar">
 
   <a
-    href="index.html"
+    href="{% url 'artisan_dashboard' %}"
     class="brand"
   >
 
     <img
-      src="logo.jpeg"
+      src="{% static 'assets/images/logo.png' %}"
       alt="Kala Connect AI Logo"
     >
 
@@ -781,7 +782,7 @@ main{
     </button>
 
     <a
-      href="artisan-upload-camera-fixed.html"
+      href="{% url 'artisan_upload' %}"
       class="back-top"
       id="topBack"
     >
@@ -1227,8 +1228,7 @@ document
     "click",
     () => {
 
-      window.location.href =
-        "artisan-upload-camera-fixed.html";
+      window.location.href="{% url 'artisan_upload' %}"
 
     }
   );
@@ -1484,7 +1484,7 @@ document
 
 
     window.location.href =
-      "artisan-price-prediction.html";
+      "{% url 'artisan_price' %}";
 
   };
 

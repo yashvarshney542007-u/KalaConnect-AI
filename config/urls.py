@@ -6,12 +6,70 @@ from config import views
 
 urlpatterns = [
 
-    # Test endpoint
-    path(
-        "",
-        views.home,
-        name="home"
-    ),
+    path("", views.home, name="home"),
+path("customer/", views.customer_page, name="customer_page"),
+path("artisan/", views.artisan_page, name="artisan_page"),
+path(
+    "artisan/login/",
+    views.artisan_login_page,
+    name="artisan_login_page"
+),
+
+path(
+    "artisan/register/",
+    views.artisan_register_page,
+    name="artisan_register_page"
+),
+
+
+path(
+    "artisan/dashboard/",
+    views.artisan_dashboard_page,
+    name="artisan_dashboard"
+),
+
+path(
+    "artisan/upload/",
+    views.artisan_upload_page,
+    name="artisan_upload"
+),
+
+path(
+    "artisan/review/",
+    views.artisan_review_page,
+    name="artisan_review"
+),
+
+path(
+    "artisan/price/",
+    views.artisan_price_page,
+    name="artisan_price"
+),
+
+path(
+    "artisan/publish/",
+    views.artisan_publish_page,
+    name="artisan_publish"
+),
+
+path(
+    "artisan/profile/page/",
+    views.artisan_profile_page,
+    name="artisan_profile_page"
+),
+
+path(
+    "artisan/product/edit/",
+    views.artisan_edit_page,
+    name="artisan_edit"
+),
+
+path(
+    "artisan/product/view/",
+    views.artisan_view_page,
+    name="artisan_view"
+),
+
 
     path(
     "auth/protected-test/",

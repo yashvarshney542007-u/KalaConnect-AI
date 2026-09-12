@@ -5,18 +5,57 @@ import os
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from config.supabase_client import supabase, supabase_admin
+from django.shortcuts import render
 
 # --------------------------------------------------
 # TEST API
 # --------------------------------------------------
 
 def home(request):
+    return render(request, "landingpage.html")
+def customer_page(request):
+    return render(request, "index.html")
 
-    return JsonResponse({
-        "message": "KalaConnect Django API is running"
-    })
+def artisan_page(request):
+    return render(request, "artisan.html")
+
+def artisan_login_page(request):
+    return render(request, "artisan-login.html")
 
 
+def artisan_register_page(request):
+    return render(request, "artisan-register.html")
+
+def artisan_dashboard_page(request):
+    return render(request, "artisan-dashboard.html")
+
+
+def artisan_upload_page(request):
+    return render(request, "artisan-upload-camera-fixed.html")
+
+
+def artisan_review_page(request):
+    return render(request, "artisan-review-product.html")
+
+
+def artisan_price_page(request):
+    return render(request, "artisan-price-prediction.html")
+
+
+def artisan_publish_page(request):
+    return render(request, "artisan-publish-product.html")
+
+
+def artisan_profile_page(request):
+    return render(request, "artisan-profile.html")
+
+
+def artisan_edit_page(request):
+    return render(request, "artisan-edit-product.html")
+
+
+def artisan_view_page(request):
+    return render(request, "artisan-view-product.html")
 # --------------------------------------------------
 # SIGNUP
 # --------------------------------------------------
@@ -1599,11 +1638,9 @@ def public_products(request):
 
     try:
         query = (
-            supabase.table("products")
-            .select("*")
-            .eq("status", "published")
-            .eq("is_available", True)
-        )
+    supabase.table("products")
+    .select("*")
+)
 
         search = request.GET.get("search")
         category = request.GET.get("category")

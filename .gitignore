@@ -39,3 +39,6 @@ Thumbs.db
 .coverage
 htmlcov/
 db.sqlite3
+
+venv/
+.venv/
