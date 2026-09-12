@@ -1,7 +1,7 @@
 import sys
 from pathlib import Path
 
-# Ensure project root is in sys.path so direct execution (e.g. IDE Run button) works
+# Ensure project root is in sys.path so direct execution works
 project_root = Path(__file__).resolve().parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
@@ -12,7 +12,8 @@ from dotenv import load_dotenv
 load_dotenv(project_root / ".env")
 
 import uvicorn
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
+from fastapi.responses import HTMLResponse
 
 from app.api.price import router as price_router
 from app.api.voice import router as voice_router
@@ -25,15 +26,21 @@ app = FastAPI(
     version="1.0.0",
 )
 
-
-from fastapi.responses import HTMLResponse
-
 TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
 
 
-@app.get("/", response_class=HTMLResponse)
+@app.get("/")
+def root(request: Request):
+    accept = request.headers.get("accept", "")
+    if "text/html" in accept and not accept.startswith("*/*"):
+        index_file = TEMPLATES_DIR / "index.html"
+        if index_file.exists():
+            return HTMLResponse(content=index_file.read_text(encoding="utf-8"))
+    return {"message": "KalaConnect AI service is running"}
+
+
 @app.get("/ui", response_class=HTMLResponse)
-def root():
+def ui():
     index_file = TEMPLATES_DIR / "index.html"
     if index_file.exists():
         return HTMLResponse(content=index_file.read_text(encoding="utf-8"))

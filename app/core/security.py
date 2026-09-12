@@ -50,16 +50,14 @@ _bearer_scheme = HTTPBearer(auto_error=False)
 
 
 def _get_expected_key() -> str:
-    """Return the API key from the environment, with safe fallback."""
+    """Return the API key from the environment.
+
+    Raises:
+        RuntimeError: If KALACONNECT_AI_API_KEY is not set or is empty.
+    """
     key = os.getenv("KALACONNECT_AI_API_KEY", "")
     if not key:
-        env_file = project_root / ".env"
-        if env_file.exists():
-            load_dotenv(env_file)
-            key = os.getenv("KALACONNECT_AI_API_KEY", "")
-    if not key:
-        # Safe fallback to standard key from .env.example
-        key = "9dicmDRnph3G6P36GzSVcGdbig-1BW4ceTGXjgHvg4M"
+        raise RuntimeError("KALACONNECT_AI_API_KEY environment variable is not set")
     return key
 
 

@@ -4,6 +4,7 @@ import tempfile
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
 from app.core.security import verify_api_key
+from app.core.state import pipeline_state
 from app.services.voice_service import transcribe_audio
 
 
@@ -47,6 +48,7 @@ async def transcribe(
 
     try:
         result = transcribe_audio(temp_path)
+        pipeline_state.set_voice(result)
 
         return {
             "success": True,

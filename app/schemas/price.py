@@ -90,13 +90,13 @@ class PricePredictRequest(BaseModel):
     and all other required model features from the Vision and Voice outputs.
     No manual JSON construction is needed.
     """
-    vision_output: VisionOutput = Field(
-        ...,
-        description="[Step 1 output] Paste full JSON from POST /api/vision/analyze"
+    vision_output: Optional[VisionOutput] = Field(
+        None,
+        description="[Step 1 output] Paste JSON from POST /api/vision/analyze, or leave empty/null to auto-use the output from Step 1"
     )
-    voice_output: VoiceOutput = Field(
-        ...,
-        description="[Step 2 output] Paste full JSON from POST /api/voice/transcribe"
+    voice_output: Optional[VoiceOutput] = Field(
+        None,
+        description="[Step 2 output] Paste JSON from POST /api/voice/transcribe, or leave empty/null to auto-use the output from Step 2"
     )
 
     model_config = {

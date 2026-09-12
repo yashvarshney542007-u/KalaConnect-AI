@@ -4,6 +4,7 @@ import tempfile
 from fastapi import APIRouter, Depends, File, HTTPException, UploadFile
 
 from app.core.security import verify_api_key
+from app.core.state import pipeline_state
 from app.services.vision_service import analyze_image
 
 router = APIRouter(
@@ -50,6 +51,7 @@ def analyze(
 
     try:
         analysis = analyze_image(temp_path)
+        pipeline_state.set_vision(analysis)
 
         return {
             "success": True,

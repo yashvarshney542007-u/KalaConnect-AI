@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
-<html lang=en>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset=UTF-8 />
-  <meta name=viewport content=width=device-width, initial-scale=1.0 />
-  <title>KalaConnect AI - Multimodal Price Prediction</title>
-  <link rel=preconnect href=https://fonts.googleapis.com>
-  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
-  <link href=https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap rel=stylesheet>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KalaConnect AI - Automated Multimodal Price Prediction</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #0b0f19;
-      --card-bg: rgba(22, 30, 49, 0.7);
+      --card-bg: rgba(22, 30, 49, 0.75);
       --card-border: rgba(255, 255, 255, 0.08);
       --accent-saffron: #f59e0b;
       --accent-gold: #fbbf24;
@@ -34,13 +34,21 @@
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1240px;
       margin: 0 auto;
     }
 
     header {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
+    }
+
+    .badge-bar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
     }
 
     .badge {
@@ -50,29 +58,33 @@
       background: rgba(245, 158, 11, 0.15);
       border: 1px solid rgba(245, 158, 11, 0.3);
       color: var(--accent-gold);
-      padding: 6px 16px;
+      padding: 5px 14px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
-      letter-spacing: 0.5px;
-      margin-bottom: 12px;
+    }
+
+    .badge.sync {
+      background: rgba(16, 185, 129, 0.15);
+      border-color: rgba(16, 185, 129, 0.4);
+      color: #34d399;
     }
 
     h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.8rem;
+      font-size: 2.7rem;
       font-weight: 800;
       background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .subtitle {
       color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 650px;
-      margin: 0 auto 20px auto;
+      font-size: 1.05rem;
+      max-width: 700px;
+      margin: 0 auto 18px auto;
     }
 
     .presets-bar {
@@ -105,7 +117,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 25px;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
     }
 
     @media (max-width: 900px) {
@@ -128,18 +140,29 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: #ffffff;
     }
 
-    .card-title span.icon {
-      font-size: 1.4rem;
+    .status-pill {
+      font-size: 0.72rem;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-left: auto;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-muted);
+    }
+    .status-pill.active {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
 
     .media-box {
       border: 2px dashed rgba(255, 255, 255, 0.15);
       border-radius: 12px;
-      padding: 25px;
+      padding: 22px;
       text-align: center;
       transition: all 0.3s ease;
       cursor: pointer;
@@ -202,7 +225,7 @@
     .form-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 15px;
+      gap: 14px;
     }
 
     @media (max-width: 500px) {
@@ -224,7 +247,7 @@
     }
 
     label {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 600;
       color: var(--text-muted);
       text-transform: uppercase;
@@ -237,7 +260,7 @@
       color: var(--text-main);
       padding: 10px 14px;
       border-radius: 8px;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-family: inherit;
       outline: none;
       transition: border 0.2s;
@@ -248,56 +271,53 @@
 
     .action-bar {
       text-align: center;
-      margin: 30px 0;
+      margin: 25px 0;
     }
 
     .btn-predict {
       background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
-      color: #ffffff;
+      color: #0b0f19;
       border: none;
-      padding: 16px 48px;
+      padding: 14px 40px;
       border-radius: 999px;
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
       font-weight: 700;
-      letter-spacing: 0.5px;
+      font-family: 'Outfit', sans-serif;
       cursor: pointer;
-      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
-      transition: all 0.3s ease;
+      box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+      transition: all 0.3s;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .btn-predict:hover {
-      transform: translateY(-3px) scale(1.02);
-      box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.6);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(245, 158, 11, 0.6);
     }
-    .btn-predict:active {
-      transform: translateY(1px);
+    .btn-predict:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
     }
 
-    /* Result Showcase */
     .result-section {
-      display: none;
-      animation: fadeIn 0.4s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+      display: block;
+      margin-top: 15px;
     }
 
     .price-banner {
       background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
-      border: 1px solid rgba(245, 158, 11, 0.4);
+      border: 1px solid rgba(245, 158, 11, 0.3);
       border-radius: var(--radius);
-      padding: 30px;
+      padding: 30px 20px;
       text-align: center;
       margin-bottom: 25px;
+      backdrop-filter: blur(16px);
+      position: relative;
     }
 
     .price-label {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: var(--accent-gold);
       font-weight: 600;
       text-transform: uppercase;
@@ -306,10 +326,10 @@
 
     .price-val {
       font-family: 'Outfit', sans-serif;
-      font-size: 3.5rem;
+      font-size: 3.8rem;
       font-weight: 800;
       color: #ffffff;
-      margin: 10px 0;
+      margin: 8px 0;
       text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
     }
 
@@ -332,7 +352,7 @@
       text-transform: uppercase;
     }
     .feature-pill .f-val {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 600;
       color: #ffffff;
       margin-top: 2px;
@@ -353,236 +373,276 @@
     .links-footer a:hover {
       text-decoration: underline;
     }
+
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: #fff;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
   </style>
 </head>
 <body>
-  <div class=container>
+  <div class="container">
     <header>
-      <div class=badge>✨ KalaConnect AI Studio</div>
+      <div class="badge-bar">
+        <div class="badge">✨ KalaConnect AI Studio</div>
+        <div class="badge sync" id="syncBadge">⚡ Auto-Sync Pipeline Active</div>
+      </div>
       <h1>Multimodal Price Prediction</h1>
-      <p class=subtitle>Predict fair market value for Indian handcrafted products using CatBoost ML, Vision AI, and Voice Recognition.</p>
+      <p class="subtitle">Upload product photo & voice note — the AI automatically extracts features and predicts fair market price in real time.</p>
       
-      <div class=presets-bar>
-        <span style=align-self: center; font-size: 0.85rem; color: var(--text-muted);>Quick Presets:</span>
-        <button class=preset-btn onclick=loadPreset('blue_pottery')>🏺 Jaipur Blue Pottery</button>
-        <button class=preset-btn onclick=loadPreset('pashmina')>🧣 Kashmiri Pashmina Shawl</button>
-        <button class=preset-btn onclick=loadPreset('dhokra')>✨ Bastar Dhokra Bell Metal</button>
-        <button class=preset-btn onclick=loadPreset('wood_carving')>🪵 Saharanpur Wood Carving</button>
+      <div class="presets-bar">
+        <span style="align-self: center; font-size: 0.85rem; color: var(--text-muted);">Quick Presets:</span>
+        <button class="preset-btn" onclick="loadPreset('blue_pottery')">🏺 Jaipur Blue Pottery</button>
+        <button class="preset-btn" onclick="loadPreset('pashmina')">🧣 Kashmiri Pashmina Shawl</button>
+        <button class="preset-btn" onclick="loadPreset('dhokra')">✨ Bastar Dhokra Bell Metal</button>
+        <button class="preset-btn" onclick="loadPreset('wood_carving')">🪵 Saharanpur Wood Carving</button>
       </div>
     </header>
 
-    <div class=grid>
+    <div class="grid">
       <!-- Media Inputs: Image & Voice -->
-      <div class=card>
-        <div class=card-title>
-          <span class=icon>📸</span> Product Media & Voice Input
+      <div class="card">
+        <div class="card-title">
+          <span class="icon">📸</span> Step 1: Product Photo (Vision AI)
+          <span class="status-pill" id="visionStatusPill">Ready</span>
         </div>
 
         <!-- Image Upload -->
-        <label>Product Photograph</label>
-        <div class=media-box onclick=document.getElementById('imageInput').click()>
-          <input type=file id=imageInput accept=image/* style=display:none onchange=handleImage(event)>
-          <div id=imagePlaceholder>
-            <span style=font-size: 2rem;>🖼️</span>
-            <p style=margin-top: 8px; font-weight: 600;>Click or Drop Product Photo</p>
-            <p style=font-size: 0.8rem; color: var(--text-muted);>Supports JPG, PNG, WEBP</p>
+        <label>Product Photograph (Auto-Analyzed)</label>
+        <div class="media-box" onclick="document.getElementById('imageInput').click()">
+          <input type="file" id="imageInput" accept="image/*" style="display:none" onchange="handleImage(event)">
+          <div id="imagePlaceholder">
+            <span style="font-size: 2rem;">🖼️</span>
+            <p style="margin-top: 8px; font-weight: 600;">Click or Drop Product Photo</p>
+            <p style="font-size: 0.8rem; color: var(--text-muted);">SmolVLM will read craft, material, & technique</p>
           </div>
-          <img id=imagePreview class=preview-img alt=Product Preview />
+          <img id="imagePreview" class="preview-img" alt="Product Preview" />
         </div>
+        <div id="visionReport" style="margin-top: 10px; font-size: 0.82rem; color: #34d399; display: none;"></div>
 
         <!-- Voice Input -->
-        <div style=margin-top: 25px;>
-          <label>Artisan Voice Note / Description</label>
-          <div class=voice-controls>
-            <button id=recordBtn class=btn-record onclick=toggleRecording()>
-              <span>🎙️</span> <span id=recordBtnText>Record Voice</span>
-            </button>
-            <input type=file id=audioFileInput accept=audio/* style=display:none onchange=handleAudioFile(event)>
-            <button class=preset-btn onclick=document.getElementById('audioFileInput').click()>📁 Choose Audio File</button>
+        <div style="margin-top: 25px;">
+          <div class="card-title" style="margin-bottom: 12px; font-size: 1.15rem;">
+            <span class="icon">🎙️</span> Step 2: Voice Note (Whisper AI)
+            <span class="status-pill" id="voiceStatusPill">Ready</span>
           </div>
-          <audio id=audioPlayback class=audio-player controls></audio>
+          <label>Artisan Voice Note / Description</label>
+          <div class="voice-controls">
+            <button id="recordBtn" class="btn-record" onclick="toggleRecording()">
+              <span>🎙️</span> <span id="recordBtnText">Record Voice</span>
+            </button>
+            <input type="file" id="audioFileInput" accept="audio/*" style="display:none" onchange="handleAudioFile(event)">
+            <button class="preset-btn" onclick="document.getElementById('audioFileInput').click()">📁 Choose Audio File</button>
+          </div>
+          <audio id="audioPlayback" class="audio-player" controls></audio>
         </div>
 
-        <div class=form-group style=margin-top: 15px;>
-          <label>Transcribed / Spoken Description</label>
-          <textarea id=description rows=3 placeholder=Voice transcription will appear here, or type product details...></textarea>
+        <div class="form-group" style="margin-top: 15px;">
+          <label>Spoken / Transcribed Product Details</label>
+          <textarea id="description" rows="3" placeholder="Voice transcription will appear here automatically..."></textarea>
         </div>
       </div>
 
-      <!-- Craft & Artisan Details -->
-      <div class=card>
-        <div class=card-title>
-          <span class=icon>⚙️</span> Craft & Artisan Parameters
+      <!-- Craft & Artisan Details (Auto-filled & editable) -->
+      <div class="card">
+        <div class="card-title">
+          <span class="icon">⚙️</span> Step 3: Parameters (Auto-Extracted)
         </div>
 
-        <div class=form-grid>
-          <div class=form-group>
+        <div class="form-grid">
+          <div class="form-group">
             <label>Product Name</label>
-            <input type=text id=productName value=Blue Pottery Decorative Vase>
+            <input type="text" id="productName" value="Blue Pottery Decorative Vase">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Craft Form</label>
-            <input type=text id=craft value=Blue Pottery>
+            <input type="text" id="craft" value="Blue Pottery">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Material</label>
-            <input type=text id=material value=Ceramic>
+            <input type="text" id="material" value="Ceramic">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Technique</label>
-            <input type=text id=technique value=Hand-painted>
+            <input type="text" id="technique" value="Hand-painted">
           </div>
-          <div class=form-group>
-            <label>State</label>
-            <input type=text id=state value=Rajasthan>
+          <div class="form-group">
+            <label>State / Region</label>
+            <input type="text" id="state" value="Rajasthan">
           </div>
-          <div class=form-group>
-            <label>Region / District</label>
-            <input type=text id=district value=Jaipur>
+          <div class="form-group">
+            <label>District / City</label>
+            <input type="text" id="district" value="Jaipur">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Skill Level</label>
-            <select id=artisan_skill_level>
-              <option value=Skilled selected>Skilled Artisan</option>
-              <option value=Master>Master Artisan</option>
-              <option value=Semi-Skilled>Semi-Skilled</option>
-              <option value=Beginner>Beginner</option>
+            <select id="artisan_skill_level" onchange="predictPrice()">
+              <option value="Skilled" selected>Skilled Artisan</option>
+              <option value="Master">Master Artisan</option>
+              <option value="Semi-Skilled">Semi-Skilled</option>
+              <option value="Beginner">Beginner</option>
             </select>
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Market Channel</label>
-            <select id=market_channel>
-              <option value=Artisan Direct selected>Artisan Direct</option>
-              <option value=Fair Trade>Fair Trade</option>
-              <option value=Exhibition>Exhibition / Mela</option>
-              <option value=E-Commerce>E-Commerce</option>
+            <select id="market_channel" onchange="predictPrice()">
+              <option value="Artisan Direct" selected>Artisan Direct</option>
+              <option value="Fair Trade">Fair Trade</option>
+              <option value="Exhibition">Exhibition / Mela</option>
+              <option value="E-Commerce">E-Commerce</option>
             </select>
           </div>
         </div>
 
-        <div style=margin-top: 20px; class=card-title>
-          <span class=icon>📐</span> Dimensions & Cost Inputs
+        <div style="margin-top: 20px;" class="card-title">
+          <span class="icon">📐</span> Dimensions & Cost Inputs
         </div>
 
-        <div class=form-grid>
-          <div class=form-group>
+        <div class="form-grid">
+          <div class="form-group">
             <label>Dimensions L x W x H (cm)</label>
-            <div style=display: flex; gap: 6px;>
-              <input type=number id=dimL value=20 placeholder=L>
-              <input type=number id=dimW value=20 placeholder=W>
-              <input type=number id=dimH value=30 placeholder=H>
+            <div style="display: flex; gap: 6px;">
+              <input type="number" id="dimL" value="20" placeholder="L" onchange="predictPrice()">
+              <input type="number" id="dimW" value="20" placeholder="W" onchange="predictPrice()">
+              <input type="number" id="dimH" value="30" placeholder="H" onchange="predictPrice()">
             </div>
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Weight (kg)</label>
-            <input type=number step=0.1 id=weight_kg value=1.8>
+            <input type="number" step="0.1" id="weight_kg" value="1.8" onchange="predictPrice()">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Labor Days</label>
-            <input type=number step=0.5 id=labor_days value=3.0>
+            <input type="number" step="0.5" id="labor_days" value="3.0" onchange="predictPrice()">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Material Cost (₹)</label>
-            <input type=number id=material_cost_inr value=500>
+            <input type="number" id="material_cost_inr" value="500" onchange="predictPrice()">
           </div>
-          <div class=form-group>
+          <div class="form-group">
             <label>Labor Cost (₹)</label>
-            <input type=number id=labor_cost_inr value=900>
+            <input type="number" id="labor_cost_inr" value="1050" onchange="predictPrice()">
           </div>
-          <div class=form-group>
-            <label>Complexity (1 - 10)</label>
-            <input type=number step=0.1 id=complexity_score value=6.5>
+          <div class="form-group">
+            <label>Complexity Score (1 - 10)</label>
+            <input type="number" step="0.1" id="complexity_score" value="7.0" onchange="predictPrice()">
           </div>
         </div>
       </div>
     </div>
 
     <!-- Predict Action -->
-    <div class=action-bar>
-      <button class=btn-predict id=predictBtn onclick=predictPrice()>
-        <span>🔮</span> Predict Fair Price
+    <div class="action-bar">
+      <button class="btn-predict" id="predictBtn" onclick="predictPrice()">
+        <span>🔮</span> Recalculate Fair Price
       </button>
     </div>
 
     <!-- Result Section -->
-    <div class=result-section id=resultSection>
-      <div class=price-banner>
-        <div class=price-label>Estimated Fair Market Price</div>
-        <div class=price-val id=priceDisplay>₹ 0.00</div>
-        <div style=color: var(--text-muted); font-size: 0.95rem;>
-          Calculated via CatBoost Gradient Boosted Trees Model calibrated for Indian Handcrafted Products.
+    <div class="result-section" id="resultSection">
+      <div class="price-banner">
+        <div class="price-label">Estimated Fair Market Price</div>
+        <div class="price-val" id="priceDisplay">₹ 4,482.88</div>
+        <div id="priceSubtitle" style="color: var(--text-muted); font-size: 0.95rem;">
+          Calculated via CatBoost Model calibrated on 22 features from Vision & Voice outputs.
         </div>
       </div>
 
-      <div class=card>
-        <div class=card-title>
-          <span class=icon>📊</span> Extracted Features Breakdown (22 Model Features)
+      <div class="card">
+        <div class="card-title">
+          <span class="icon">📊</span> Extracted Features Breakdown (CatBoost 22 Features)
         </div>
-        <div class=features-grid id=featuresContainer></div>
+        <div class="features-grid" id="featuresContainer"></div>
       </div>
     </div>
 
-    <div class=links-footer>
+    <div class="links-footer">
       <span>KalaConnect AI Engine v1.0.0</span> •
-      <a href=/docs target=_blank>📖 Interactive OpenAPI /docs</a> •
-      <a href=/health target=_blank>🩺 Health Status</a>
+      <a href="/docs" target="_blank">📖 Interactive OpenAPI /docs</a> •
+      <a href="/health" target="_blank">🩺 Health Status</a>
     </div>
   </div>
 
   <script>
-    // Presets
+    const API_KEY = "9dicmDRnph3G6P36GzSVcGdbig-1BW4ceTGXjgHvg4M";
+    const authHeaders = { 'Authorization': `Bearer ${API_KEY}` };
+
+    let currentVisionOutput = {
+      craft: "Blue Pottery",
+      material: "Ceramic",
+      product_type: "Vase",
+      visual_description: "Hand-painted blue pottery floral vase",
+      possible_region: "Jaipur",
+      confidence: 0.92
+    };
+
+    let currentVoiceOutput = {
+      text: "Handcrafted Blue Pottery decorative vase, took 3 days to make",
+      language: "en",
+      language_probability: 0.99
+    };
+
+    // Quick Presets
     const presets = {
       blue_pottery: {
-        productName: Blue Pottery Vase,
-        craft: Blue Pottery,
-        material: Ceramic,
-        technique: Hand-painted,
-        description: Handcrafted traditional Jaipur blue pottery floral vase.,
-        state: Rajasthan,
-        district: Jaipur,
-        skill: Skilled,
-        channel: Artisan Direct,
+        productName: "Blue Pottery Vase",
+        craft: "Blue Pottery",
+        material: "Ceramic",
+        technique: "Hand-painted",
+        description: "Handcrafted traditional Jaipur blue pottery floral vase.",
+        state: "Rajasthan",
+        district: "Jaipur",
+        skill: "Skilled",
+        channel: "Artisan Direct",
         dimL: 20, dimW: 20, dimH: 30, weight: 1.8,
-        labor_days: 3, mat_cost: 500, labor_cost: 900, complexity: 6.5
+        labor_days: 3, mat_cost: 500, labor_cost: 1050, complexity: 7.0
       },
       pashmina: {
-        productName: Sozni Embroidered Pashmina Shawl,
-        craft: Pashmina Weaving,
-        material: Cashmere Wool,
-        technique: Hand-spun & Embroidered,
-        description: Pure fine Cashmere shawl with intricate Sozni needlework by master artisan.,
-        state: Jammu & Kashmir,
-        district: Srinagar,
-        skill: Master,
-        channel: Exhibition,
+        productName: "Sozni Embroidered Pashmina Shawl",
+        craft: "Pashmina Weaving",
+        material: "Cashmere Wool",
+        technique: "Hand-spun & Embroidered",
+        description: "Pure fine Cashmere shawl with intricate Sozni needlework by master artisan.",
+        state: "Jammu & Kashmir",
+        district: "Srinagar",
+        skill: "Master",
+        channel: "Exhibition",
         dimL: 200, dimW: 100, dimH: 0.2, weight: 0.35,
-        labor_days: 14, mat_cost: 3200, labor_cost: 4500, complexity: 9.0
+        labor_days: 14, mat_cost: 3200, labor_cost: 4500, complexity: 9.5
       },
       dhokra: {
-        productName: Dhokra Bell Metal Tribal Horse,
-        craft: Dhokra Metal Craft,
-        material: Brass / Bell Metal,
-        technique: Lost-wax Casting,
-        description: Ancient non-ferrous lost-wax tribal sculpture from Bastar.,
-        state: Chhattisgarh,
-        district: Bastar,
-        skill: Skilled,
-        channel: Fair Trade,
+        productName: "Dhokra Bell Metal Tribal Horse",
+        craft: "Dhokra Metal Craft",
+        material: "Bell Metal",
+        technique: "Lost-wax Casting",
+        description: "Ancient non-ferrous lost-wax tribal sculpture from Bastar.",
+        state: "Chhattisgarh",
+        district: "Bastar",
+        skill: "Skilled",
+        channel: "Fair Trade",
         dimL: 18, dimW: 10, dimH: 22, weight: 2.1,
-        labor_days: 5, mat_cost: 750, labor_cost: 1400, complexity: 7.8
+        labor_days: 5, mat_cost: 750, labor_cost: 1400, complexity: 8.0
       },
       wood_carving: {
-        productName: Saharanpur Carved Wooden Screen,
-        craft: Wood Carving,
-        material: Sheesham / Teak Wood,
-        technique: Jali / Relief Carving,
-        description: Detailed floral lattice pierced carving panel by hereditary woodwork artisans.,
-        state: Uttar Pradesh,
-        district: Saharanpur,
-        skill: Skilled,
-        channel: Artisan Direct,
+        productName: "Saharanpur Carved Wooden Screen",
+        craft: "Wood Carving",
+        material: "Teak Wood",
+        technique: "Jali Relief Carving",
+        description: "Detailed floral lattice pierced carving panel by hereditary woodwork artisans.",
+        state: "Uttar Pradesh",
+        district: "Saharanpur",
+        skill: "Skilled",
+        channel: "Artisan Direct",
         dimL: 60, dimW: 5, dimH: 90, weight: 6.5,
-        labor_days: 6, mat_cost: 1200, labor_cost: 2100, complexity: 7.2
+        labor_days: 6, mat_cost: 1200, labor_cost: 2100, complexity: 7.5
       }
     };
 
@@ -606,23 +666,77 @@
       document.getElementById('material_cost_inr').value = p.mat_cost;
       document.getElementById('labor_cost_inr').value = p.labor_cost;
       document.getElementById('complexity_score').value = p.complexity;
+
+      currentVisionOutput = {
+        craft: p.craft,
+        material: p.material,
+        product_type: p.productName,
+        visual_description: p.description,
+        possible_region: p.district
+      };
+      currentVoiceOutput = {
+        text: p.description,
+        language: "en"
+      };
+      predictPrice();
     }
 
-    // Image Handling
-    function handleImage(e) {
+    // Auto Image Handling with Vision AI API
+    async function handleImage(e) {
       const file = e.target.files[0];
       if (!file) return;
-      const reader = new FileReader();
-      reader.onload = function(evt) {
-        const preview = document.getElementById('imagePreview');
-        preview.src = evt.target.result;
-        preview.style.display = 'block';
-        document.getElementById('imagePlaceholder').style.display = 'none';
-      };
-      reader.readAsDataURL(file);
+
+      const preview = document.getElementById('imagePreview');
+      preview.src = URL.createObjectURL(file);
+      preview.style.display = 'block';
+      document.getElementById('imagePlaceholder').style.display = 'none';
+
+      const pill = document.getElementById('visionStatusPill');
+      const rep = document.getElementById('visionReport');
+      pill.className = 'status-pill active';
+      pill.innerHTML = '<span class="spinner"></span> Analyzing Image...';
+      rep.style.display = 'block';
+      rep.innerText = 'SmolVLM Vision AI is extracting craft & material...';
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const res = await fetch('/api/vision/analyze', {
+          method: 'POST',
+          headers: authHeaders,
+          body: formData
+        });
+
+        if (!res.ok) throw new Error('Vision analysis failed');
+        const data = await res.json();
+        const a = data.analysis || {};
+        currentVisionOutput = a;
+
+        if (a.craft && a.craft !== 'unknown') document.getElementById('craft').value = a.craft;
+        if (a.material && a.material !== 'unknown') document.getElementById('material').value = a.material;
+        if (a.possible_region && a.possible_region !== 'unknown') {
+          document.getElementById('district').value = a.possible_region;
+          document.getElementById('state').value = a.possible_region;
+        }
+        if (a.visual_description) {
+          document.getElementById('description').value = a.visual_description;
+        }
+
+        pill.className = 'status-pill active';
+        pill.innerText = '✓ Analysis Extracted';
+        rep.innerText = `Detected: ${a.craft || 'Handicraft'} • ${a.material || 'Traditional'} • Region: ${a.possible_region || 'India'}`;
+
+        // Automatically predict price!
+        predictPrice();
+      } catch (err) {
+        pill.className = 'status-pill';
+        pill.innerText = 'Offline fallback';
+        rep.innerText = 'Vision analysis note: ' + err.message;
+      }
     }
 
-    // Voice Recording (MediaRecorder API)
+    // Voice Recording
     let mediaRecorder = null;
     let audioChunks = [];
     let isRecording = false;
@@ -636,122 +750,141 @@
           mediaRecorder = new MediaRecorder(stream);
           audioChunks = [];
           mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
-          mediaRecorder.onstop = () => {
+          mediaRecorder.onstop = async () => {
             const blob = new Blob(audioChunks, { type: 'audio/wav' });
             const audioUrl = URL.createObjectURL(blob);
             const player = document.getElementById('audioPlayback');
             player.src = audioUrl;
             player.style.display = 'block';
-            document.getElementById('description').value = (document.getElementById('description').value ? document.getElementById('description').value +   : ") + [Artisan voice note recorded:  + (blob.size / 1024).toFixed(1) +  KB];
- };
- mediaRecorder.start();
- isRecording = true;
- btn.classList.add('recording');
- textSpan.innerText = Stop Recording;
- } catch (err) {
- alert(Microphone access unavailable or denied. You can also upload an audio file directly!);
- }
- } else {
- mediaRecorder.stop();
- isRecording = false;
- btn.classList.remove('recording');
- textSpan.innerText = Record Voice;
- }
- }
 
- function handleAudioFile(e) {
- const file = e.target.files[0];
- if (!file) return;
- const player = document.getElementById('audioPlayback');
- player.src = URL.createObjectURL(file);
- player.style.display = 'block';
- document.getElementById('description').value = (document.getElementById('description').value ? document.getElementById('description').value +   : ) + [Uploaded voice note:  + file.name + ];
- }
+            await uploadAudioBlob(blob, 'recorded_note.wav');
+          };
+          mediaRecorder.start();
+          isRecording = true;
+          btn.classList.add('recording');
+          textSpan.innerText = 'Stop Recording';
+        } catch (err) {
+          alert('Microphone access unavailable or denied. You can also upload an audio file directly!');
+        }
+      } else {
+        mediaRecorder.stop();
+        isRecording = false;
+        btn.classList.remove('recording');
+        textSpan.innerText = 'Record Voice';
+      }
+    }
 
- // Predict Price
- async function predictPrice() {
- const btn = document.getElementById('predictBtn');
- btn.innerText = ⏳ Predicting Price...;
- btn.disabled = true;
+    async function handleAudioFile(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const player = document.getElementById('audioPlayback');
+      player.src = URL.createObjectURL(file);
+      player.style.display = 'block';
+      await uploadAudioBlob(file, file.name);
+    }
 
- const laborDays = parseFloat(document.getElementById('labor_days').value) || 1.0;
- const matCost = parseFloat(document.getElementById('material_cost_inr').value) || 200.0;
- const laborCost = parseFloat(document.getElementById('labor_cost_inr').value) || 400.0;
- const overheadCost = Math.round(matCost * 0.25);
+    async function uploadAudioBlob(blob, filename) {
+      const pill = document.getElementById('voiceStatusPill');
+      pill.className = 'status-pill active';
+      pill.innerHTML = '<span class="spinner"></span> Transcribing...';
 
- const payload = {
- ai_data: {
- productName: document.getElementById('productName').value,
- craft: document.getElementById('craft').value,
- material: document.getElementById('material').value,
- technique: document.getElementById('technique').value,
- description: document.getElementById('description').value
- },
- artisan_data: {
- state: document.getElementById('state').value,
- region: document.getElementById('district').value,
- district: document.getElementById('district').value,
- size_length_cm: parseFloat(document.getElementById('dimL').value) || 10,
- size_width_cm: parseFloat(document.getElementById('dimW').value) || 10,
- size_height_cm: parseFloat(document.getElementById('dimH').value) || 10,
- weight_kg: parseFloat(document.getElementById('weight_kg').value) || 1.0,
- labor_days: laborDays,
- artisan_skill_level: document.getElementById('artisan_skill_level').value,
- production_quantity: 10,
- market_channel: document.getElementById('market_channel').value
- },
- derived_data: {
- product_type: document.getElementById('craft').value,
- labor_hours: laborDays * 8.0,
- complexity_score: parseFloat(document.getElementById('complexity_score').value) || 5.0,
- material_cost_inr: matCost,
- labor_cost_inr: laborCost,
- overhead_cost_inr: overheadCost,
- market_demand_score: 7.0,
- seasonality_score: 5.0
- }
- };
+      const formData = new FormData();
+      formData.append('file', blob, filename);
 
- try {
- const response = await fetch('/api/price/predict', {
- method: 'POST',
- headers: { 'Content-Type': 'application/json' },
- body: JSON.stringify(payload)
- });
+      try {
+        const res = await fetch('/api/voice/transcribe', {
+          method: 'POST',
+          headers: authHeaders,
+          body: formData
+        });
+        if (!res.ok) throw new Error('Transcription failed');
+        const data = await res.json();
+        currentVoiceOutput = data;
 
- if (!response.ok) {
- const errData = await response.json();
- throw new Error(errData.detail || 'Prediction failed');
- }
+        if (data.text) {
+          document.getElementById('description').value = data.text;
+          document.getElementById('productName').value = data.text.slice(0, 40);
+        }
 
- const data = await response.json();
- 
- // Display Result
- document.getElementById('priceDisplay').innerText = ₹  + Number(data.predicted_price_inr).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        pill.className = 'status-pill active';
+        pill.innerText = `✓ Transcribed (${data.language || 'en'})`;
 
- // Populate Features Grid
- const container = document.getElementById('featuresContainer');
- container.innerHTML = '';
- if (data.features_used) {
- for (const [k, v] of Object.entries(data.features_used)) {
- const pill = document.createElement('div');
- pill.className = 'feature-pill';
- pill.innerHTML = <div class=f-key></div><div class=f-val></div>;
- container.appendChild(pill);
- }
- }
+        // Automatically predict price!
+        predictPrice();
+      } catch (err) {
+        pill.className = 'status-pill';
+        pill.innerText = 'Transcription error';
+      }
+    }
 
- const resSec = document.getElementById('resultSection');
- resSec.style.display = 'block';
- resSec.scrollIntoView({ behavior: 'smooth' });
+    // Predict Price
+    async function predictPrice() {
+      const btn = document.getElementById('predictBtn');
+      btn.innerText = '⏳ Calculating Fair Price...';
+      btn.disabled = true;
 
- } catch (err) {
- alert(Error predicting price:  + err.message);
- } finally {
- btn.innerHTML = <span>🔮</span> Predict Fair Price;
- btn.disabled = false;
- }
- }
- </script>
+      // Sync user edits back to payload
+      const visionPayload = {
+        craft: document.getElementById('craft').value,
+        material: document.getElementById('material').value,
+        product_type: document.getElementById('productName').value,
+        visual_description: document.getElementById('description').value,
+        possible_region: document.getElementById('district').value,
+        confidence: currentVisionOutput.confidence || 0.9
+      };
+
+      const voicePayload = {
+        text: document.getElementById('description').value,
+        language: currentVoiceOutput.language || 'en',
+        language_probability: currentVoiceOutput.language_probability || 0.99
+      };
+
+      try {
+        const response = await fetch('/api/price/predict', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            vision_output: visionPayload,
+            voice_output: voicePayload
+          })
+        });
+
+        if (!response.ok) {
+          const errData = await response.json();
+          throw new Error(errData.detail || 'Prediction failed');
+        }
+
+        const data = await response.json();
+        
+        // Display Result
+        document.getElementById('priceDisplay').innerText = '₹ ' + Number(data.predicted_price_inr).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        document.getElementById('priceSubtitle').innerText = `Auto-calculated via CatBoost Model based on ${visionPayload.craft} and voice transcript.`;
+
+        // Populate Features Grid
+        const container = document.getElementById('featuresContainer');
+        container.innerHTML = '';
+        if (data.features_used) {
+          for (const [k, v] of Object.entries(data.features_used)) {
+            if (k === '_pipeline_summary' || k === '_pipeline') continue;
+            const pill = document.createElement('div');
+            pill.className = 'feature-pill';
+            pill.innerHTML = `<div class="f-key">${k.replace(/_/g, ' ')}</div><div class="f-val">${v}</div>`;
+            container.appendChild(pill);
+          }
+        }
+
+      } catch (err) {
+        console.error('Error predicting price:', err);
+      } finally {
+        btn.innerHTML = '<span>🔮</span> Recalculate Fair Price';
+        btn.disabled = false;
+      }
+    }
+
+    // Initial load
+    window.addEventListener('DOMContentLoaded', () => {
+      predictPrice();
+    });
+  </script>
 </body>
 </html>
