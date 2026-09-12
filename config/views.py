@@ -5,8 +5,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from config.supabase_client import supabase, supabase_admin
-
-
+from src.pricing_service import pricing_service
 # ============================================================
 # HELPERS
 # ============================================================
@@ -1294,3 +1293,118 @@ def update_transaction_status(request, transaction_id):
     return JsonResponse({
         "message": "Transaction status is not stored in the final schema. Use order status instead."
     }, status=400)
+# ============================================================
+# ML PRICE PREDICTION
+# ============================================================
+
+@csrf_exempt
+def predict_price(request):
+    if request.method != "POST":
+        return JsonResponse(
+            {"error": "POST required"},
+            status=405
+        )
+
+    data = json_body(request)
+
+    required_fields = [
+        "product",
+        "category",
+        "subcategory",
+        "craft",
+        "material",
+        "technique",
+        "state",
+        "region",
+        "size",
+        "complexity",
+        "customization",
+        "labor_hours",
+        "raw_material_cost",
+        "packaging_cost",
+        "transport_cost",
+        "direct_cost",
+    ]
+
+    missing_fields = [
+        field for field in required_fields
+        if field not in data
+    ]
+
+    if missing_fields:
+        return JsonResponse(
+            {
+                "error": "Missing required fields",
+                "fields": missing_fields,
+            },
+            status=400
+        )
+
+    numeric_fields = [
+        "labor_hours",
+        "raw_material_cost",
+        "packaging_cost",
+        "transport_cost",
+        "direct_cost",
+    ]
+
+    try:
+        for field in numeric_fields:
+            data[field] = float(data[field])
+    except (TypeError, ValueError):
+        return JsonResponse(
+            {
+                "error": "Numeric fields must contain valid numbers",
+                "fields": numeric_fields,
+            },
+            status=400
+        )
+
+    if data["labor_hours"] <= 0:
+        return JsonResponse(
+            {"error": "labor_hours must be greater than 0"},
+            status=400
+        )
+
+    for field in [
+        "raw_material_cost",
+        "packaging_cost",
+        "transport_cost",
+        "direct_cost",
+    ]:
+        if data[field] < 0:
+            return JsonResponse(
+                {"error": f"{field} cannot be negative"},
+                status=400
+            )
+
+    try:
+        result = pricing_service.predict(data)
+
+        return JsonResponse(
+            {
+                "success": True,
+                "predicted_price": result["predicted_price"],
+                "currency": "INR",
+                "market_features": result["market_features"],
+            }
+        )
+
+    except ValueError as e:
+        return JsonResponse(
+            {
+                "success": False,
+                "error": str(e),
+            },
+            status=400
+        )
+
+    except Exception as e:
+        return JsonResponse(
+            {
+                "success": False,
+                "error": "Price prediction failed",
+                "details": str(e),
+            },
+            status=500
+        )

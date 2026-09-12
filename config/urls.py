@@ -60,6 +60,13 @@ urlpatterns = [
         ),
         name="seller-publish",
     ),
+    path(
+    "seller/review-product/",
+    TemplateView.as_view(
+        template_name="artisan-review-product.html"
+    ),
+    name="seller-review-product",
+),
 
     path(
         "seller/price-prediction/",
@@ -245,5 +252,11 @@ path(
     "orders/<uuid:order_id>/status/",
     views.update_order_status,
     name="update_order_status"
+),
+
+path(
+    "api/predict-price/",
+    views.predict_price,
+    name="predict_price"
 ),
 ]
