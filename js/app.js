@@ -15,6 +15,15 @@ const App = {
     if (window.Marketplace) window.Marketplace.init();
     if (window.SpaceAI) window.SpaceAI.init();
 
+    // Load real product images from Supabase Storage bucket asynchronously
+    // This runs after the initial render so the page feels instant,
+    // then silently swaps in the real images once fetched.
+    if (window.ImageLoader) {
+      window.ImageLoader.load().catch(err => {
+        console.warn('[App] ImageLoader failed gracefully:', err);
+      });
+    }
+
     console.log('✨ KalaConnect AI Marketplace & AI Space Studio ready!');
   },
 

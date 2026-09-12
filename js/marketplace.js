@@ -166,7 +166,7 @@ const Marketplace = {
     grid.innerHTML = this.filteredProducts.map(p => `
       <article class="product-card" data-id="${p.id}">
         <div class="card-image-wrap" onclick="Marketplace.showProductModal('${p.id}')">
-          <img src="${p.image}" alt="${p.name}" loading="lazy" />
+          <img src="${p.image}" alt="${p.name}" loading="lazy" onerror="this.onerror=null; this.src='https://wbgntprnfvtvbvkfbyjp.supabase.co/storage/v1/object/public/product-images/handicraft/pexels-nata-37483660%20(1).jpg';" />
           <div class="card-badge-container">
             ${p.giCertified ? `<span class="badge badge-gi">✓ GI Tag Certified</span>` : ''}
             <span class="badge badge-fairprice">Fair Margin: ${p.artisanSharePercent}%</span>
@@ -280,7 +280,7 @@ const Marketplace = {
     const modalContent = `
       <div class="pdp-grid">
         <div class="pdp-image-container">
-          <img src="${p.image}" alt="${p.name}" />
+          <img src="${p.image}" alt="${p.name}" onerror="this.onerror=null; this.src='https://wbgntprnfvtvbvkfbyjp.supabase.co/storage/v1/object/public/product-images/handicraft/pexels-nata-37483660%20(1).jpg';" />
         </div>
 
         <div class="pdp-details">
