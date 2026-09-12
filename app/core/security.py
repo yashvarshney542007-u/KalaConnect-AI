@@ -35,6 +35,7 @@ import os
 
 from dotenv import load_dotenv
 from fastapi import Depends, HTTPException, Security, status
+from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from pathlib import Path
 
 # Load .env from the project root explicitly
