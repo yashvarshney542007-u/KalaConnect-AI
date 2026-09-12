@@ -14,6 +14,7 @@ load_dotenv()
 import uvicorn
 from fastapi import FastAPI
 
+from app.api.price import router as price_router
 from app.api.voice import router as voice_router
 from app.api.vision import router as vision_router
 
@@ -25,10 +26,27 @@ app = FastAPI(
 )
 
 
-@app.get("/")
+from fastapi.responses import HTMLResponse
+
+TEMPLATES_DIR = Path(__file__).resolve().parent / "templates"
+
+
+@app.get("/", response_class=HTMLResponse)
+@app.get("/ui", response_class=HTMLResponse)
 def root():
+    index_file = TEMPLATES_DIR / "index.html"
+    if index_file.exists():
+        return HTMLResponse(content=index_file.read_text(encoding="utf-8"))
+    return HTMLResponse(content="<h1>KalaConnect AI service is running</h1>")
+
+
+@app.get("/api/info")
+def api_info():
     return {
-        "message": "KalaConnect AI service is running"
+        "message": "KalaConnect AI service is running",
+        "docs": "/docs",
+        "health": "/health",
+        "ui": "/ui"
     }
 
 
@@ -40,6 +58,7 @@ def health():
     }
 
 
+app.include_router(price_router)
 app.include_router(voice_router)
 app.include_router(vision_router)
 

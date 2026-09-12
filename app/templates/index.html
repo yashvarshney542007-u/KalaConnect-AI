@@ -1,0 +1,757 @@
+﻿<!DOCTYPE html>
+<html lang=en>
+<head>
+  <meta charset=UTF-8 />
+  <meta name=viewport content=width=device-width, initial-scale=1.0 />
+  <title>KalaConnect AI - Multimodal Price Prediction</title>
+  <link rel=preconnect href=https://fonts.googleapis.com>
+  <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
+  <link href=https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap rel=stylesheet>
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card-bg: rgba(22, 30, 49, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-saffron: #f59e0b;
+      --accent-gold: #fbbf24;
+      --accent-indigo: #6366f1;
+      --accent-cyan: #06b6d4;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --success: #10b981;
+      --danger: #ef4444;
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at 20% 20%, #1e1b4b 0%, #0b0f19 70%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      padding: 30px 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--accent-gold);
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ffffff 40%, #fbbf24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 650px;
+      margin: 0 auto 20px auto;
+    }
+
+    .presets-bar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .preset-btn {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: #e5e7eb;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .preset-btn:hover {
+      background: rgba(99, 102, 241, 0.25);
+      border-color: var(--accent-indigo);
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    }
+
+    .card-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .card-title span.icon {
+      font-size: 1.4rem;
+    }
+
+    .media-box {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      background: rgba(0, 0, 0, 0.2);
+    }
+    .media-box:hover {
+      border-color: var(--accent-indigo);
+      background: rgba(99, 102, 241, 0.05);
+    }
+
+    .preview-img {
+      max-height: 180px;
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 12px;
+      display: none;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+
+    .voice-controls {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .btn-record {
+      background: #dc2626;
+      color: #ffffff;
+      border: none;
+      padding: 10px 18px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-record.recording {
+      animation: pulse 1s infinite;
+      background: #991b1b;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 1; }
+      50% { opacity: 0.5; }
+      100% { opacity: 1; }
+    }
+
+    .audio-player {
+      width: 100%;
+      margin-top: 12px;
+      display: none;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    @media (max-width: 500px) {
+      .form-grid { grid-template-columns: 1fr; }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group.full-width {
+      grid-column: span 2;
+    }
+
+    @media (max-width: 500px) {
+      .form-group.full-width { grid-column: span 1; }
+    }
+
+    label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, select, textarea {
+      background: rgba(11, 15, 25, 0.8);
+      border: 1px solid var(--card-border);
+      color: var(--text-main);
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-family: inherit;
+      outline: none;
+      transition: border 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--accent-indigo);
+    }
+
+    .action-bar {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .btn-predict {
+      background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+      color: #ffffff;
+      border: none;
+      padding: 16px 48px;
+      border-radius: 999px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px -5px rgba(245, 158, 11, 0.4);
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .btn-predict:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 15px 35px -5px rgba(245, 158, 11, 0.6);
+    }
+    .btn-predict:active {
+      transform: translateY(1px);
+    }
+
+    /* Result Showcase */
+    .result-section {
+      display: none;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .price-banner {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-radius: var(--radius);
+      padding: 30px;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .price-label {
+      font-size: 1rem;
+      color: var(--accent-gold);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .price-val {
+      font-family: 'Outfit', sans-serif;
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 10px 0;
+      text-shadow: 0 0 30px rgba(245, 158, 11, 0.5);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 12px;
+      margin-top: 15px;
+    }
+
+    .feature-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 10px;
+    }
+    .feature-pill .f-key {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .feature-pill .f-val {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-top: 2px;
+      word-break: break-all;
+    }
+
+    .links-footer {
+      text-align: center;
+      margin-top: 40px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+    .links-footer a {
+      color: var(--accent-gold);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+    .links-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class=container>
+    <header>
+      <div class=badge>✨ KalaConnect AI Studio</div>
+      <h1>Multimodal Price Prediction</h1>
+      <p class=subtitle>Predict fair market value for Indian handcrafted products using CatBoost ML, Vision AI, and Voice Recognition.</p>
+      
+      <div class=presets-bar>
+        <span style=align-self: center; font-size: 0.85rem; color: var(--text-muted);>Quick Presets:</span>
+        <button class=preset-btn onclick=loadPreset('blue_pottery')>🏺 Jaipur Blue Pottery</button>
+        <button class=preset-btn onclick=loadPreset('pashmina')>🧣 Kashmiri Pashmina Shawl</button>
+        <button class=preset-btn onclick=loadPreset('dhokra')>✨ Bastar Dhokra Bell Metal</button>
+        <button class=preset-btn onclick=loadPreset('wood_carving')>🪵 Saharanpur Wood Carving</button>
+      </div>
+    </header>
+
+    <div class=grid>
+      <!-- Media Inputs: Image & Voice -->
+      <div class=card>
+        <div class=card-title>
+          <span class=icon>📸</span> Product Media & Voice Input
+        </div>
+
+        <!-- Image Upload -->
+        <label>Product Photograph</label>
+        <div class=media-box onclick=document.getElementById('imageInput').click()>
+          <input type=file id=imageInput accept=image/* style=display:none onchange=handleImage(event)>
+          <div id=imagePlaceholder>
+            <span style=font-size: 2rem;>🖼️</span>
+            <p style=margin-top: 8px; font-weight: 600;>Click or Drop Product Photo</p>
+            <p style=font-size: 0.8rem; color: var(--text-muted);>Supports JPG, PNG, WEBP</p>
+          </div>
+          <img id=imagePreview class=preview-img alt=Product Preview />
+        </div>
+
+        <!-- Voice Input -->
+        <div style=margin-top: 25px;>
+          <label>Artisan Voice Note / Description</label>
+          <div class=voice-controls>
+            <button id=recordBtn class=btn-record onclick=toggleRecording()>
+              <span>🎙️</span> <span id=recordBtnText>Record Voice</span>
+            </button>
+            <input type=file id=audioFileInput accept=audio/* style=display:none onchange=handleAudioFile(event)>
+            <button class=preset-btn onclick=document.getElementById('audioFileInput').click()>📁 Choose Audio File</button>
+          </div>
+          <audio id=audioPlayback class=audio-player controls></audio>
+        </div>
+
+        <div class=form-group style=margin-top: 15px;>
+          <label>Transcribed / Spoken Description</label>
+          <textarea id=description rows=3 placeholder=Voice transcription will appear here, or type product details...></textarea>
+        </div>
+      </div>
+
+      <!-- Craft & Artisan Details -->
+      <div class=card>
+        <div class=card-title>
+          <span class=icon>⚙️</span> Craft & Artisan Parameters
+        </div>
+
+        <div class=form-grid>
+          <div class=form-group>
+            <label>Product Name</label>
+            <input type=text id=productName value=Blue Pottery Decorative Vase>
+          </div>
+          <div class=form-group>
+            <label>Craft Form</label>
+            <input type=text id=craft value=Blue Pottery>
+          </div>
+          <div class=form-group>
+            <label>Material</label>
+            <input type=text id=material value=Ceramic>
+          </div>
+          <div class=form-group>
+            <label>Technique</label>
+            <input type=text id=technique value=Hand-painted>
+          </div>
+          <div class=form-group>
+            <label>State</label>
+            <input type=text id=state value=Rajasthan>
+          </div>
+          <div class=form-group>
+            <label>Region / District</label>
+            <input type=text id=district value=Jaipur>
+          </div>
+          <div class=form-group>
+            <label>Skill Level</label>
+            <select id=artisan_skill_level>
+              <option value=Skilled selected>Skilled Artisan</option>
+              <option value=Master>Master Artisan</option>
+              <option value=Semi-Skilled>Semi-Skilled</option>
+              <option value=Beginner>Beginner</option>
+            </select>
+          </div>
+          <div class=form-group>
+            <label>Market Channel</label>
+            <select id=market_channel>
+              <option value=Artisan Direct selected>Artisan Direct</option>
+              <option value=Fair Trade>Fair Trade</option>
+              <option value=Exhibition>Exhibition / Mela</option>
+              <option value=E-Commerce>E-Commerce</option>
+            </select>
+          </div>
+        </div>
+
+        <div style=margin-top: 20px; class=card-title>
+          <span class=icon>📐</span> Dimensions & Cost Inputs
+        </div>
+
+        <div class=form-grid>
+          <div class=form-group>
+            <label>Dimensions L x W x H (cm)</label>
+            <div style=display: flex; gap: 6px;>
+              <input type=number id=dimL value=20 placeholder=L>
+              <input type=number id=dimW value=20 placeholder=W>
+              <input type=number id=dimH value=30 placeholder=H>
+            </div>
+          </div>
+          <div class=form-group>
+            <label>Weight (kg)</label>
+            <input type=number step=0.1 id=weight_kg value=1.8>
+          </div>
+          <div class=form-group>
+            <label>Labor Days</label>
+            <input type=number step=0.5 id=labor_days value=3.0>
+          </div>
+          <div class=form-group>
+            <label>Material Cost (₹)</label>
+            <input type=number id=material_cost_inr value=500>
+          </div>
+          <div class=form-group>
+            <label>Labor Cost (₹)</label>
+            <input type=number id=labor_cost_inr value=900>
+          </div>
+          <div class=form-group>
+            <label>Complexity (1 - 10)</label>
+            <input type=number step=0.1 id=complexity_score value=6.5>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Predict Action -->
+    <div class=action-bar>
+      <button class=btn-predict id=predictBtn onclick=predictPrice()>
+        <span>🔮</span> Predict Fair Price
+      </button>
+    </div>
+
+    <!-- Result Section -->
+    <div class=result-section id=resultSection>
+      <div class=price-banner>
+        <div class=price-label>Estimated Fair Market Price</div>
+        <div class=price-val id=priceDisplay>₹ 0.00</div>
+        <div style=color: var(--text-muted); font-size: 0.95rem;>
+          Calculated via CatBoost Gradient Boosted Trees Model calibrated for Indian Handcrafted Products.
+        </div>
+      </div>
+
+      <div class=card>
+        <div class=card-title>
+          <span class=icon>📊</span> Extracted Features Breakdown (22 Model Features)
+        </div>
+        <div class=features-grid id=featuresContainer></div>
+      </div>
+    </div>
+
+    <div class=links-footer>
+      <span>KalaConnect AI Engine v1.0.0</span> •
+      <a href=/docs target=_blank>📖 Interactive OpenAPI /docs</a> •
+      <a href=/health target=_blank>🩺 Health Status</a>
+    </div>
+  </div>
+
+  <script>
+    // Presets
+    const presets = {
+      blue_pottery: {
+        productName: Blue Pottery Vase,
+        craft: Blue Pottery,
+        material: Ceramic,
+        technique: Hand-painted,
+        description: Handcrafted traditional Jaipur blue pottery floral vase.,
+        state: Rajasthan,
+        district: Jaipur,
+        skill: Skilled,
+        channel: Artisan Direct,
+        dimL: 20, dimW: 20, dimH: 30, weight: 1.8,
+        labor_days: 3, mat_cost: 500, labor_cost: 900, complexity: 6.5
+      },
+      pashmina: {
+        productName: Sozni Embroidered Pashmina Shawl,
+        craft: Pashmina Weaving,
+        material: Cashmere Wool,
+        technique: Hand-spun & Embroidered,
+        description: Pure fine Cashmere shawl with intricate Sozni needlework by master artisan.,
+        state: Jammu & Kashmir,
+        district: Srinagar,
+        skill: Master,
+        channel: Exhibition,
+        dimL: 200, dimW: 100, dimH: 0.2, weight: 0.35,
+        labor_days: 14, mat_cost: 3200, labor_cost: 4500, complexity: 9.0
+      },
+      dhokra: {
+        productName: Dhokra Bell Metal Tribal Horse,
+        craft: Dhokra Metal Craft,
+        material: Brass / Bell Metal,
+        technique: Lost-wax Casting,
+        description: Ancient non-ferrous lost-wax tribal sculpture from Bastar.,
+        state: Chhattisgarh,
+        district: Bastar,
+        skill: Skilled,
+        channel: Fair Trade,
+        dimL: 18, dimW: 10, dimH: 22, weight: 2.1,
+        labor_days: 5, mat_cost: 750, labor_cost: 1400, complexity: 7.8
+      },
+      wood_carving: {
+        productName: Saharanpur Carved Wooden Screen,
+        craft: Wood Carving,
+        material: Sheesham / Teak Wood,
+        technique: Jali / Relief Carving,
+        description: Detailed floral lattice pierced carving panel by hereditary woodwork artisans.,
+        state: Uttar Pradesh,
+        district: Saharanpur,
+        skill: Skilled,
+        channel: Artisan Direct,
+        dimL: 60, dimW: 5, dimH: 90, weight: 6.5,
+        labor_days: 6, mat_cost: 1200, labor_cost: 2100, complexity: 7.2
+      }
+    };
+
+    function loadPreset(key) {
+      const p = presets[key];
+      if (!p) return;
+      document.getElementById('productName').value = p.productName;
+      document.getElementById('craft').value = p.craft;
+      document.getElementById('material').value = p.material;
+      document.getElementById('technique').value = p.technique;
+      document.getElementById('description').value = p.description;
+      document.getElementById('state').value = p.state;
+      document.getElementById('district').value = p.district;
+      document.getElementById('artisan_skill_level').value = p.skill;
+      document.getElementById('market_channel').value = p.channel;
+      document.getElementById('dimL').value = p.dimL;
+      document.getElementById('dimW').value = p.dimW;
+      document.getElementById('dimH').value = p.dimH;
+      document.getElementById('weight_kg').value = p.weight;
+      document.getElementById('labor_days').value = p.labor_days;
+      document.getElementById('material_cost_inr').value = p.mat_cost;
+      document.getElementById('labor_cost_inr').value = p.labor_cost;
+      document.getElementById('complexity_score').value = p.complexity;
+    }
+
+    // Image Handling
+    function handleImage(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function(evt) {
+        const preview = document.getElementById('imagePreview');
+        preview.src = evt.target.result;
+        preview.style.display = 'block';
+        document.getElementById('imagePlaceholder').style.display = 'none';
+      };
+      reader.readAsDataURL(file);
+    }
+
+    // Voice Recording (MediaRecorder API)
+    let mediaRecorder = null;
+    let audioChunks = [];
+    let isRecording = false;
+
+    async function toggleRecording() {
+      const btn = document.getElementById('recordBtn');
+      const textSpan = document.getElementById('recordBtnText');
+      if (!isRecording) {
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          mediaRecorder = new MediaRecorder(stream);
+          audioChunks = [];
+          mediaRecorder.ondataavailable = e => { if (e.data.size > 0) audioChunks.push(e.data); };
+          mediaRecorder.onstop = () => {
+            const blob = new Blob(audioChunks, { type: 'audio/wav' });
+            const audioUrl = URL.createObjectURL(blob);
+            const player = document.getElementById('audioPlayback');
+            player.src = audioUrl;
+            player.style.display = 'block';
+            document.getElementById('description').value = (document.getElementById('description').value ? document.getElementById('description').value +   : ") + [Artisan voice note recorded:  + (blob.size / 1024).toFixed(1) +  KB];
+ };
+ mediaRecorder.start();
+ isRecording = true;
+ btn.classList.add('recording');
+ textSpan.innerText = Stop Recording;
+ } catch (err) {
+ alert(Microphone access unavailable or denied. You can also upload an audio file directly!);
+ }
+ } else {
+ mediaRecorder.stop();
+ isRecording = false;
+ btn.classList.remove('recording');
+ textSpan.innerText = Record Voice;
+ }
+ }
+
+ function handleAudioFile(e) {
+ const file = e.target.files[0];
+ if (!file) return;
+ const player = document.getElementById('audioPlayback');
+ player.src = URL.createObjectURL(file);
+ player.style.display = 'block';
+ document.getElementById('description').value = (document.getElementById('description').value ? document.getElementById('description').value +   : ) + [Uploaded voice note:  + file.name + ];
+ }
+
+ // Predict Price
+ async function predictPrice() {
+ const btn = document.getElementById('predictBtn');
+ btn.innerText = ⏳ Predicting Price...;
+ btn.disabled = true;
+
+ const laborDays = parseFloat(document.getElementById('labor_days').value) || 1.0;
+ const matCost = parseFloat(document.getElementById('material_cost_inr').value) || 200.0;
+ const laborCost = parseFloat(document.getElementById('labor_cost_inr').value) || 400.0;
+ const overheadCost = Math.round(matCost * 0.25);
+
+ const payload = {
+ ai_data: {
+ productName: document.getElementById('productName').value,
+ craft: document.getElementById('craft').value,
+ material: document.getElementById('material').value,
+ technique: document.getElementById('technique').value,
+ description: document.getElementById('description').value
+ },
+ artisan_data: {
+ state: document.getElementById('state').value,
+ region: document.getElementById('district').value,
+ district: document.getElementById('district').value,
+ size_length_cm: parseFloat(document.getElementById('dimL').value) || 10,
+ size_width_cm: parseFloat(document.getElementById('dimW').value) || 10,
+ size_height_cm: parseFloat(document.getElementById('dimH').value) || 10,
+ weight_kg: parseFloat(document.getElementById('weight_kg').value) || 1.0,
+ labor_days: laborDays,
+ artisan_skill_level: document.getElementById('artisan_skill_level').value,
+ production_quantity: 10,
+ market_channel: document.getElementById('market_channel').value
+ },
+ derived_data: {
+ product_type: document.getElementById('craft').value,
+ labor_hours: laborDays * 8.0,
+ complexity_score: parseFloat(document.getElementById('complexity_score').value) || 5.0,
+ material_cost_inr: matCost,
+ labor_cost_inr: laborCost,
+ overhead_cost_inr: overheadCost,
+ market_demand_score: 7.0,
+ seasonality_score: 5.0
+ }
+ };
+
+ try {
+ const response = await fetch('/api/price/predict', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify(payload)
+ });
+
+ if (!response.ok) {
+ const errData = await response.json();
+ throw new Error(errData.detail || 'Prediction failed');
+ }
+
+ const data = await response.json();
+ 
+ // Display Result
+ document.getElementById('priceDisplay').innerText = ₹  + Number(data.predicted_price_inr).toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+ // Populate Features Grid
+ const container = document.getElementById('featuresContainer');
+ container.innerHTML = '';
+ if (data.features_used) {
+ for (const [k, v] of Object.entries(data.features_used)) {
+ const pill = document.createElement('div');
+ pill.className = 'feature-pill';
+ pill.innerHTML = <div class=f-key></div><div class=f-val></div>;
+ container.appendChild(pill);
+ }
+ }
+
+ const resSec = document.getElementById('resultSection');
+ resSec.style.display = 'block';
+ resSec.scrollIntoView({ behavior: 'smooth' });
+
+ } catch (err) {
+ alert(Error predicting price:  + err.message);
+ } finally {
+ btn.innerHTML = <span>🔮</span> Predict Fair Price;
+ btn.disabled = false;
+ }
+ }
+ </script>
+</body>
+</html>
