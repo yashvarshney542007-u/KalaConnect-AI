@@ -2,6 +2,7 @@ import json
 import uuid
 import os
 import tempfile
+import requests
 
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
@@ -10,6 +11,7 @@ from django.shortcuts import render
 from config.supabase_client import supabase, supabase_admin
 
 from src import pricing_service
+AI_BASE_URL = os.getenv("AI_BASE_URL")
 # from src.ai.vision_service import analyze_image
 # from src.ai.voice_service import transcribe_audio
 # --------------------------------------------------
@@ -2789,7 +2791,28 @@ def analyze_product_image(request):
 
             temp_path = temp_file.name
 
-        analysis = analyze_image(temp_path)
+        if not AI_BASE_URL:
+            return JsonResponse(
+                {"error": "AI_BASE_URL is not configured"},
+                status=500
+            )
+
+        with open(temp_path, "rb") as f:
+            ai_response = requests.post(
+                f"{AI_BASE_URL.rstrip('/')}/api/vision/analyze",
+                files={
+                    "file": (
+                        uploaded_file.name,
+                        f,
+                        uploaded_file.content_type
+                    )
+                },
+                timeout=180
+            )
+
+        ai_response.raise_for_status()
+        ai_data = ai_response.json()
+        analysis = ai_data.get("analysis")
 
         return JsonResponse({
             "success": True,
@@ -2858,7 +2881,32 @@ def transcribe_product_voice(request):
 
             temp_path = temp_file.name
 
-        result = transcribe_audio(temp_path)
+        if not AI_BASE_URL:
+            return JsonResponse(
+                {"error": "AI_BASE_URL is not configured"},
+                status=500
+            )
+
+        with open(temp_path, "rb") as f:
+            ai_response = requests.post(
+                f"{AI_BASE_URL.rstrip('/')}/api/voice/transcribe",
+                files={
+                    "file": (
+                        uploaded_file.name,
+                        f,
+                        uploaded_file.content_type
+                    )
+                },
+                timeout=180
+            )
+
+        ai_response.raise_for_status()
+        ai_data = ai_response.json()
+        result = {
+            "text": ai_data.get("text", ""),
+            "language": ai_data.get("language"),
+            "language_probability": ai_data.get("language_probability")
+        }
 
         return JsonResponse({
             "success": True,
