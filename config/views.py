@@ -1,12 +1,17 @@
 import json
 import uuid
 import os
+import tempfile
 
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
-from config.supabase_client import supabase, supabase_admin
 from django.shortcuts import render
 
+from config.supabase_client import supabase, supabase_admin
+
+from src import pricing_service
+from src.ai.vision_service import analyze_image
+from src.ai.voice_service import transcribe_audio
 # --------------------------------------------------
 # TEST API
 # --------------------------------------------------
@@ -2728,4 +2733,210 @@ def update_order_status(request, order_id):
         return JsonResponse(
             {"error": str(e)},
             status=400
+        )
+# --------------------------------------------------
+# IMAGE + VOICE AI
+# --------------------------------------------------
+
+@csrf_exempt
+def analyze_product_image(request):
+    if request.method != "POST":
+        return JsonResponse(
+            {"error": "POST required"},
+            status=405
+        )
+
+    uploaded_file = request.FILES.get("file")
+
+    if not uploaded_file:
+        return JsonResponse(
+            {"error": "No image file provided"},
+            status=400
+        )
+
+    allowed_types = {
+        "image/jpeg",
+        "image/jpg",
+        "image/png",
+        "image/webp",
+    }
+
+    if uploaded_file.content_type not in allowed_types:
+        return JsonResponse(
+            {
+                "error": "Unsupported image type",
+                "type": uploaded_file.content_type,
+            },
+            status=400
+        )
+
+    if uploaded_file.size > 10 * 1024 * 1024:
+        return JsonResponse(
+            {"error": "Image exceeds 10 MB limit"},
+            status=400
+        )
+
+    suffix = os.path.splitext(uploaded_file.name)[1] or ".jpg"
+    temp_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            delete=False,
+            suffix=suffix
+        ) as temp_file:
+            for chunk in uploaded_file.chunks():
+                temp_file.write(chunk)
+
+            temp_path = temp_file.name
+
+        analysis = analyze_image(temp_path)
+
+        return JsonResponse({
+            "success": True,
+            "filename": uploaded_file.name,
+            "analysis": analysis,
+        })
+
+    except Exception as e:
+        print("VISION AI ERROR:", repr(e))
+
+        return JsonResponse(
+            {"error": str(e)},
+            status=500
+        )
+
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+@csrf_exempt
+def transcribe_product_voice(request):
+    if request.method != "POST":
+        return JsonResponse(
+            {"error": "POST required"},
+            status=405
+        )
+
+    uploaded_file = request.FILES.get("file")
+
+    if not uploaded_file:
+        return JsonResponse(
+            {"error": "No audio file provided"},
+            status=400
+        )
+
+    allowed_types = {
+        "audio/wav",
+        "audio/mpeg",
+        "audio/mp3",
+        "audio/x-wav",
+        "audio/webm",
+        "audio/mp4",
+        "audio/ogg",
+    }
+
+    if uploaded_file.content_type not in allowed_types:
+        return JsonResponse(
+            {
+                "error": "Unsupported audio type",
+                "type": uploaded_file.content_type,
+            },
+            status=400
+        )
+
+    suffix = os.path.splitext(uploaded_file.name)[1] or ".webm"
+    temp_path = None
+
+    try:
+        with tempfile.NamedTemporaryFile(
+            delete=False,
+            suffix=suffix
+        ) as temp_file:
+            for chunk in uploaded_file.chunks():
+                temp_file.write(chunk)
+
+            temp_path = temp_file.name
+
+        result = transcribe_audio(temp_path)
+
+        return JsonResponse({
+            "success": True,
+            **result,
+        })
+
+    except Exception as e:
+        print("VOICE AI ERROR:", repr(e))
+
+        return JsonResponse(
+            {"error": str(e)},
+            status=500
+        )
+
+    finally:
+        if temp_path and os.path.exists(temp_path):
+            os.remove(temp_path)
+
+
+@csrf_exempt
+def predict_price(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "POST required"}, status=405)
+
+    try:
+        data = json.loads(request.body)
+
+        required_fields = [
+            "product",
+            "category",
+            "subcategory",
+            "craft",
+            "material",
+            "technique",
+            "state",
+            "region",
+            "size",
+            "complexity",
+            "customization",
+            "labor_hours",
+            "raw_material_cost",
+            "packaging_cost",
+            "transport_cost",
+            "direct_cost",
+        ]
+
+        missing_fields = [
+            field for field in required_fields
+            if field not in data
+        ]
+
+        if missing_fields:
+            return JsonResponse(
+                {
+                    "error": "Missing required fields",
+                    "fields": missing_fields,
+                },
+                status=400,
+            )
+
+        result = pricing_service.predict(data)
+
+        return JsonResponse({
+            "success": True,
+            "predicted_price": result["predicted_price"],
+            "currency": "INR",
+            "market_features": result["market_features"],
+        })
+
+    except json.JSONDecodeError:
+        return JsonResponse(
+            {"error": "Invalid JSON body"},
+            status=400,
+        )
+
+    except Exception as e:
+        print("PREDICT PRICE ERROR:", repr(e))
+        return JsonResponse(
+            {"error": str(e)},
+            status=400,
         )

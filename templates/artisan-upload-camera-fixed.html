@@ -1478,30 +1478,135 @@ cameraOverlay.addEventListener("click", event => {
   }
 });
 
-function handleImage(file) {
+async function handleImage(file) {
   if (!file) return;
 
   selectedImageFile = file;
 
+  // Show image preview immediately.
   const reader = new FileReader();
+
   reader.onload = e => {
     imagePreview.src = e.target.result;
     previewWrap.classList.add("show");
-
-    /*
-      DEMO AI FILL
-      Replace this block with actual image-AI API response.
-    */
-    if (!document.getElementById("productName").value) {
-      document.getElementById("productName").value = "Handcrafted Product";
-      document.getElementById("craftType").value = "Detected craft";
-      document.getElementById("material").value = "Detected material";
-      document.getElementById("technique").value = "Detected technique";
-      document.getElementById("description").value =
-        "AI-generated product details will appear here after image and voice analysis. You can edit this text.";
-    }
   };
+
   reader.readAsDataURL(file);
+
+  // Send the original image file to Django -> SmolVLM.
+  try {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    console.log("Sending image to Django AI...");
+
+    const response = await fetch(
+      "{% url 'analyze_product_image' %}",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    const result = await response.json();
+
+    console.log("IMAGE AI RESULT:", result);
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.error || "Image AI analysis failed."
+      );
+    }
+
+    const analysis = result.analysis || {};
+
+    // Fill the fields that SmolVLM can reasonably infer.
+    const productNameField =
+      document.getElementById("productName");
+
+    const craftField =
+      document.getElementById("craftType");
+
+    const materialField =
+      document.getElementById("material");
+
+    const descriptionField =
+      document.getElementById("description");
+
+    if (
+      productNameField &&
+      analysis.product_type &&
+      analysis.product_type !== "unknown"
+    ) {
+      productNameField.value =
+        analysis.product_type;
+    }
+
+    if (
+      craftField &&
+      analysis.craft &&
+      analysis.craft !== "unknown"
+    ) {
+      craftField.value =
+        analysis.craft;
+    }
+
+    if (
+      materialField &&
+      analysis.material &&
+      analysis.material !== "unknown"
+    ) {
+      materialField.value =
+        analysis.material;
+    }
+
+    if (
+      descriptionField &&
+      analysis.visual_description
+    ) {
+      descriptionField.value =
+        analysis.visual_description;
+    }
+
+    // Keep the complete AI result for the next page.
+    const draft = JSON.parse(
+      localStorage.getItem(
+        "kalaConnectDraftProduct"
+      ) || "{}"
+    );
+
+    draft.productName =
+      productNameField?.value || "";
+
+    draft.craft =
+      craftField?.value || "";
+
+    draft.material =
+      materialField?.value || "";
+
+    draft.technique =
+      document.getElementById("technique")?.value || "";
+
+    draft.description =
+      descriptionField?.value || "";
+
+    draft.imageAIAnalysis =
+      analysis;
+
+    localStorage.setItem(
+      "kalaConnectDraftProduct",
+      JSON.stringify(draft)
+    );
+
+    console.log("Image AI fields filled successfully.");
+
+  } catch (error) {
+    console.error("IMAGE AI ERROR:", error);
+
+    alert(
+      "Image AI analysis failed. You can enter the details manually."
+    );
+  }
 }
 
 galleryInput.addEventListener("change", e => handleImage(e.target.files[0]));
@@ -1539,6 +1644,85 @@ function stopTimer() {
   timerInterval = null;
 }
 
+async function transcribeRecordedVoice(blob) {
+  if (!blob) return;
+
+  try {
+    const voiceFile = new File(
+      [blob],
+      "recording.webm",
+      { type: "audio/webm" }
+    );
+
+    const formData = new FormData();
+    formData.append("file", voiceFile);
+
+    console.log("Sending voice recording to Django AI...");
+
+    const response = await fetch(
+      "{% url 'transcribe_product_voice' %}",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    const result = await response.json();
+
+    console.log("VOICE AI RESULT:", result);
+
+    if (!response.ok || !result.success) {
+      throw new Error(
+        result.error || "Voice transcription failed."
+      );
+    }
+
+    const transcript =
+      (result.text || "").trim();
+
+    // Save transcript so the review/publish workflow can use it.
+    const draft = JSON.parse(
+      localStorage.getItem(
+        "kalaConnectDraftProduct"
+      ) || "{}"
+    );
+
+    draft.transcript = transcript;
+    draft.voiceTranscript = transcript;
+    draft.voiceLanguage =
+      result.language ||
+      voiceLanguage.value;
+
+    // If image/manual description is empty,
+    // use the voice description as the description.
+    const descriptionField =
+      document.getElementById("description");
+
+    if (
+      descriptionField &&
+      !descriptionField.value.trim() &&
+      transcript
+    ) {
+      descriptionField.value = transcript;
+      draft.description = transcript;
+    }
+
+    localStorage.setItem(
+      "kalaConnectDraftProduct",
+      JSON.stringify(draft)
+    );
+
+    console.log("Voice transcription saved.");
+
+  } catch (error) {
+    console.error("VOICE AI ERROR:", error);
+
+    alert(
+      "Voice transcription failed. You can continue and enter the details manually."
+    );
+  }
+}
+
 async function startRecording() {
   try {
     const stream = await navigator.mediaDevices.getUserMedia({ audio:true });
@@ -1558,10 +1742,8 @@ async function startRecording() {
 
       stream.getTracks().forEach(track => track.stop());
 
-      /*
-        Voice AI integration:
-        send recordedBlob + voiceLanguage.value to teammate's API here.
-      */
+      // Send the recording to Django -> Whisper.
+      transcribeRecordedVoice(recordedBlob);
     };
 
     mediaRecorder.start();
@@ -1690,83 +1872,37 @@ document
           voiceLanguage.value,
 
         hasVoiceRecording:
-          Boolean(recordedBlob)
+          Boolean(recordedBlob),
+
+        transcript:
+          JSON.parse(
+            localStorage.getItem(
+              "kalaConnectDraftProduct"
+            ) || "{}"
+          ).transcript || "",
+
+        voiceTranscript:
+          JSON.parse(
+            localStorage.getItem(
+              "kalaConnectDraftProduct"
+            ) || "{}"
+          ).voiceTranscript || ""
 
       };
 
 
 
       /* =================================
-         AI API
+         IMAGE + VOICE AI
+
+         Image AI runs when the image is
+         selected/captured.
+
+         Voice AI runs when recording stops.
+
+         Both results are saved into the
+         draft automatically.
       ================================= */
-
-      if (false) {
-
-        try{
-
-          const result =
-            await analyzeProductWithAI({
-
-              imageFile:
-                selectedImageFile,
-
-              audioBlob:
-                recordedBlob,
-
-              language:
-                voiceLanguage.value
-
-            });
-
-
-          productData = {
-
-            ...productData,
-
-            productName:
-              result.data?.productName ||
-              productData.productName,
-
-            craft:
-              result.data?.craft ||
-              productData.craft,
-
-            material:
-              result.data?.material ||
-              productData.material,
-
-            technique:
-              result.data?.technique ||
-              productData.technique,
-
-            description:
-              result.data?.description ||
-              productData.description,
-
-            transcript:
-              result.transcript || ""
-
-          };
-
-
-        }catch(error){
-
-          console.error(
-            "AI analysis failed:",
-            error
-          );
-
-          /*
-            AI fail hone par current
-            manual data continue karega.
-            Frontend crash nahi karega.
-          */
-
-        }
-
-      }
-
-
 
       /* =================================
          SAVE TEMPORARILY

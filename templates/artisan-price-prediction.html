@@ -1,11 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Price Prediction - Kala Connect AI</title>
+<title>Review Product Details - Kala Connect AI</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,13 +17,16 @@
   --navy:#022D69;
   --orange:#F98509;
   --green:#04702D;
-  --terracotta:#D04F02;
   --bg:#FFFDF8;
-  --sand:#F8F3E9;
+  --surface:#FFFFFF;
+  --soft:#F8F3E9;
   --text:#1E252C;
   --muted:#68717A;
   --border:#E7DFD2;
-  --shadow:0 14px 36px rgba(31,42,55,.08);
+  --danger:#D93025;
+
+  --shadow:
+    0 14px 34px rgba(31,42,55,.08);
 }
 
 *{
@@ -34,15 +36,15 @@
 }
 
 body{
-  font-family:"DM Sans","Noto Sans Devanagari",sans-serif;
+  font-family:
+    "DM Sans",
+    "Noto Sans Devanagari",
+    sans-serif;
+
   background:var(--bg);
   color:var(--text);
-  min-height:100vh;
-}
 
-button,
-input{
-  font:inherit;
+  min-height:100vh;
 }
 
 a{
@@ -50,114 +52,167 @@ a{
   color:inherit;
 }
 
-/* HEADER */
+button,
+input,
+select,
+textarea{
+  font:inherit;
+}
+
+
+/* =========================
+   HEADER
+========================= */
 
 .topbar{
   min-height:92px;
+
   padding:0 40px;
 
   display:flex;
   align-items:center;
   justify-content:space-between;
 
-  background:rgba(255,253,248,.96);
-  border-bottom:1px solid var(--border);
+  gap:18px;
 
   position:sticky;
   top:0;
+
   z-index:1000;
 
-  backdrop-filter:blur(12px);
+  background:
+    rgba(255,253,248,.96);
+
+  backdrop-filter:
+    blur(14px);
+
+  border-bottom:
+    1px solid var(--border);
 }
 
 .brand{
   display:flex;
   align-items:center;
+
   gap:13px;
 }
 
 .brand img{
-  width:58px;
-  height:58px;
+  width:68px;
+  height:68px;
+
   object-fit:contain;
+
   padding:4px;
 
   background:#fff;
-  border:1px solid var(--border);
-  border-radius:16px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:18px;
 }
 
 .brand strong{
   display:block;
+
+  font-size:22px;
+
   color:var(--navy);
-  font-size:21px;
+
+  line-height:1.05;
 }
 
 .brand small{
   display:block;
-  margin-top:4px;
+
+  margin-top:5px;
+
   color:var(--muted);
-  font-size:12px;
+
+  font-size:13px;
 }
 
-.header-actions{
+.actions{
   display:flex;
   align-items:center;
+
   gap:10px;
 }
 
 .lang-btn,
 .back-top{
-  min-height:44px;
-  padding:9px 15px;
+  min-height:48px;
+
+  padding:
+    10px 15px;
 
   border-radius:999px;
 
-  cursor:pointer;
+  font-size:15px;
   font-weight:600;
+
+  cursor:pointer;
 }
 
 .lang-btn{
   border:none;
+
   background:#EEF4F9;
+
   color:var(--navy);
 }
 
 .back-top{
-  border:1px solid var(--border);
+  border:
+    1px solid var(--border);
+
   background:#fff;
+
   color:var(--navy);
 }
 
 
-/* MAIN */
+/* =========================
+   LAYOUT
+========================= */
 
 .container{
-  width:calc(100% - 80px);
-  max-width:960px;
-  margin:0 auto;
+  width:
+    calc(100% - 80px);
+
+  max-width:1180px;
+
+  margin:
+    0 auto;
 }
 
 main{
-  padding:28px 0 55px;
+  padding:
+    34px 0 52px;
 }
 
 
-/* PAGE HEADER */
+/* =========================
+   PAGE HEADER
+========================= */
 
 .page-head{
-  margin-bottom:24px;
+  margin-bottom:22px;
 }
 
-.step-badge{
+.eyebrow{
   display:inline-flex;
 
-  padding:6px 11px;
+  padding:
+    6px 10px;
+
   margin-bottom:10px;
 
   border-radius:999px;
 
   background:#EEF4F9;
+
   color:var(--navy);
 
   font-size:12px;
@@ -167,388 +222,465 @@ main{
 .page-head h1{
   color:var(--navy);
 
-  font-size:clamp(34px,4vw,45px);
-  line-height:1.08;
+  font-size:
+    clamp(
+      34px,
+      4vw,
+      48px
+    );
 
-  letter-spacing:-.7px;
+  line-height:1.05;
+
+  letter-spacing:-.6px;
 }
 
 .page-head p{
   margin-top:9px;
 
-  max-width:670px;
+  max-width:700px;
 
   color:var(--muted);
 
   font-size:16px;
+
   line-height:1.6;
 }
 
 
-/* MAIN PRICE CARD */
+/* =========================
+   REVIEW GRID
+========================= */
 
-.price-card{
-  background:#fff;
+.review-grid{
+  display:grid;
 
-  border:1px solid var(--border);
-  border-radius:25px;
+  grid-template-columns:
+    minmax(0,.9fr)
+    minmax(0,1.1fr);
 
-  padding:30px;
-
-  box-shadow:var(--shadow);
-}
-
-
-/* AI HEADER */
-
-.ai-heading{
-  display:flex;
-  align-items:flex-start;
-  justify-content:space-between;
   gap:20px;
 
-  padding-bottom:23px;
-  margin-bottom:25px;
-
-  border-bottom:1px solid var(--border);
+  align-items:start;
 }
 
-.ai-heading h2{
-  color:var(--navy);
-  font-size:25px;
-}
-
-.ai-heading p{
-  margin-top:5px;
-
-  color:var(--muted);
-
-  font-size:14px;
-  line-height:1.5;
-}
-
-.ai-chip{
-  flex-shrink:0;
-
-  padding:7px 11px;
-
-  border-radius:999px;
-
-  background:#FFF0DF;
-  color:#A25820;
-
-  font-size:12px;
-  font-weight:700;
-}
-
-
-/* PRICES */
-
-.price-results{
-  display:grid;
-
-  grid-template-columns:1fr 1fr;
-
-  gap:16px;
-
-  margin-bottom:25px;
-}
-
-.price-result{
-  min-height:158px;
-
-  padding:22px;
-
-  border-radius:20px;
-}
-
-.range-card{
-  background:#F8FBFF;
-  border:1px solid #DCE7F3;
-}
-
-.recommended-card{
-  background:#F2FAF4;
-  border:1px solid #CFE8D6;
-}
-
-.price-label{
-  display:block;
-
-  margin-bottom:12px;
-
-  color:var(--muted);
-
-  font-size:13px;
-  font-weight:600;
-}
-
-.price-number{
-  color:var(--navy);
-
-  font-size:31px;
-  font-weight:700;
-  line-height:1.1;
-}
-
-.recommended-card .price-number{
-  color:var(--green);
-}
-
-.price-result p{
-  margin-top:10px;
-
-  color:var(--muted);
-
-  font-size:13px;
-  line-height:1.5;
-}
-
-
-/* WHY THIS PRICE */
-
-.reason-section{
-  margin-top:5px;
-
-  padding:23px;
-
-  background:#FFFCF7;
-
-  border:1px solid var(--border);
-  border-radius:20px;
-}
-
-.reason-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  margin-bottom:17px;
-}
-
-.reason-title h3{
-  color:var(--navy);
-  font-size:20px;
-}
-
-.reason-title span{
-  color:var(--muted);
-  font-size:12px;
-}
-
-.reason-grid{
-  display:grid;
-
-  grid-template-columns:repeat(3,1fr);
-
-  gap:12px;
-}
-
-.reason-item{
-  padding:15px;
-
+.panel{
   background:#fff;
 
-  border:1px solid var(--border);
-  border-radius:14px;
-}
+  border:
+    1px solid var(--border);
 
-.reason-item small{
-  display:block;
+  border-radius:24px;
 
-  margin-bottom:5px;
-
-  color:var(--muted);
-  font-size:12px;
-}
-
-.reason-item strong{
-  color:var(--text);
-
-  font-size:15px;
-  font-weight:600;
-
-  overflow-wrap:anywhere;
-}
-
-
-/* SELLING PRICE */
-
-.final-price-section{
-  margin-top:25px;
-
-  padding-top:25px;
-
-  border-top:1px solid var(--border);
-}
-
-.final-price-section h3{
-  color:var(--navy);
-  font-size:21px;
-}
-
-.final-price-section > p{
-  margin-top:5px;
-
-  color:var(--muted);
-
-  font-size:14px;
-  line-height:1.5;
-}
-
-.price-input-wrapper{
-  max-width:430px;
-
-  margin-top:15px;
-
-  display:flex;
-  align-items:center;
-
-  border:1px solid #CEC5B7;
-  border-radius:15px;
-
-  background:#fff;
+  box-shadow:var(--shadow);
 
   overflow:hidden;
 }
 
-.rupee{
-  min-height:56px;
 
-  padding:0 17px;
+/* =========================
+   IMAGE PANEL
+========================= */
 
-  display:flex;
-  align-items:center;
-
-  background:#F8F5EF;
-
-  border-right:1px solid var(--border);
-
-  color:var(--navy);
-
-  font-size:20px;
-  font-weight:700;
+.image-panel{
+  padding:20px;
 }
 
-.price-input-wrapper input{
+.image-frame{
   width:100%;
-  min-height:56px;
 
-  padding:10px 15px;
+  aspect-ratio:4/3;
 
-  border:none;
-  outline:none;
+  overflow:hidden;
 
-  color:var(--text);
+  border-radius:18px;
 
-  font-size:19px;
-  font-weight:600;
+  background:#F4F0E9;
+
+  border:
+    1px solid var(--border);
 }
 
-.price-input-wrapper:focus-within{
-  border-color:rgba(2,45,105,.55);
+.image-frame img{
+  width:100%;
+  height:100%;
 
-  box-shadow:
-  0 0 0 4px rgba(2,45,105,.06);
-}
+  object-fit:cover;
 
-
-/* NOTE */
-
-.model-note{
-  margin-top:16px;
-
-  padding:12px 14px;
-
-  border-radius:12px;
-
-  background:#FFF8EE;
-
-  color:#80572D;
-
-  font-size:12px;
-  line-height:1.5;
-}
-
-
-/* BUTTONS */
-
-.bottom-actions{
-  margin-top:25px;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
-  gap:12px;
-}
-
-.btn{
-  min-height:52px;
-
-  padding:12px 22px;
-
-  border-radius:999px;
-
-  cursor:pointer;
-
-  font-size:15px;
-  font-weight:600;
-}
-
-.btn-secondary{
-  border:1px solid var(--border);
-
-  background:#fff;
-  color:var(--navy);
-}
-
-.btn-primary{
-  border:none;
-
-  background:var(--navy);
-  color:#fff;
-
-  padding-left:27px;
-  padding-right:27px;
-
-  box-shadow:0 9px 20px rgba(2,45,105,.15);
-}
-
-
-/* ERROR */
-
-.error-message{
-  display:none;
-
-  margin-top:10px;
-
-  color:#B42318;
-
-  font-size:13px;
-}
-
-.error-message.show{
   display:block;
 }
 
+.image-caption{
+  margin-top:14px;
+}
 
-/* MOBILE */
+.image-caption h3{
+  color:var(--navy);
 
-@media(max-width:720px){
+  font-size:18px;
+}
+
+.image-caption p{
+  margin-top:5px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.55;
+}
+
+
+/* =========================
+   DETAILS PANEL
+========================= */
+
+.details-panel{
+  padding:24px;
+}
+
+.panel-title{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  align-items:flex-start;
+
+  gap:14px;
+
+  margin-bottom:18px;
+}
+
+.panel-title h2{
+  color:var(--navy);
+
+  font-size:24px;
+}
+
+.ai-note{
+  padding:
+    8px 11px;
+
+  border-radius:999px;
+
+  background:#FFF2E2;
+
+  color:#9A4F10;
+
+  font-size:12px;
+  font-weight:700;
+
+  white-space:nowrap;
+}
+
+.helper{
+  margin-bottom:8px;
+
+  padding:
+    13px 14px;
+
+  border-left:
+    3px solid var(--orange);
+
+  border-radius:10px;
+
+  background:#FFF9F1;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.6;
+}
+
+.required-note{
+  margin-bottom:18px;
+
+  color:var(--muted);
+
+  font-size:13px;
+
+  line-height:1.5;
+}
+
+.required{
+  color:var(--danger);
+
+  font-weight:700;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-grid{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:14px;
+}
+
+.field.full{
+  grid-column:
+    1 / -1;
+}
+
+.field label{
+  display:block;
+
+  margin-bottom:7px;
+
+  color:#313A43;
+
+  font-size:14px;
+
+  font-weight:600;
+}
+
+.field input,
+.field select,
+.field textarea{
+  width:100%;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:14px;
+
+  background:#fff;
+
+  color:var(--text);
+
+  outline:none;
+
+  transition:
+    border-color .2s ease,
+    box-shadow .2s ease,
+    background .2s ease;
+}
+
+.field input,
+.field select{
+  min-height:50px;
+
+  padding:
+    11px 13px;
+}
+
+.field textarea{
+  min-height:130px;
+
+  padding:
+    12px 13px;
+
+  resize:vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  border-color:
+    rgba(2,45,105,.5);
+
+  box-shadow:
+    0 0 0 4px
+    rgba(2,45,105,.06);
+}
+
+
+/* =========================
+   ERROR STATE
+========================= */
+
+.field-error{
+  border-color:
+    var(--danger) !important;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(217,48,37,.10) !important;
+
+  background:
+    #FFF9F8 !important;
+}
+
+.field-error:focus{
+  border-color:
+    var(--danger) !important;
+
+  box-shadow:
+    0 0 0 4px
+    rgba(217,48,37,.14) !important;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.footer-actions{
+  display:flex;
+
+  justify-content:
+    space-between;
+
+  gap:12px;
+
+  margin-top:22px;
+}
+
+.secondary-btn,
+.primary-btn{
+  min-height:52px;
+
+  padding:
+    12px 20px;
+
+  border-radius:999px;
+
+  font-size:16px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+.secondary-btn{
+  border:
+    1px solid var(--border);
+
+  background:#fff;
+
+  color:var(--navy);
+}
+
+.primary-btn{
+  border:none;
+
+  background:var(--navy);
+
+  color:#fff;
+}
+
+
+/* =========================
+   LANGUAGE OVERLAY
+========================= */
+
+.overlay{
+  position:fixed;
+
+  inset:0;
+
+  z-index:5000;
+
+  display:none;
+
+  place-items:center;
+
+  padding:20px;
+
+  background:
+    rgba(12,21,31,.65);
+
+  backdrop-filter:
+    blur(12px);
+}
+
+.overlay.show{
+  display:grid;
+}
+
+.lang-card{
+  width:
+    min(460px,100%);
+
+  padding:24px;
+
+  background:#fff;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:24px;
+
+  box-shadow:
+    0 24px 70px
+    rgba(12,21,31,.22);
+}
+
+.lang-card h3{
+  font-size:22px;
+
+  margin-bottom:6px;
+}
+
+.lang-card p{
+  color:var(--muted);
+
+  font-size:14px;
+
+  margin-bottom:18px;
+}
+
+.lang-options{
+  display:grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:10px;
+}
+
+.lang-option{
+  min-height:62px;
+
+  border:
+    1px solid var(--border);
+
+  border-radius:15px;
+
+  background:#fff;
+
+  font-size:17px;
+
+  font-weight:600;
+
+  cursor:pointer;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+  .review-grid{
+    grid-template-columns:1fr;
+  }
+
+}
+
+@media(max-width:680px){
 
   .topbar{
-    min-height:80px;
-    padding:0 14px;
+    padding:
+      0 14px;
+
+    min-height:82px;
   }
 
   .brand img{
-    width:52px;
-    height:52px;
+    width:56px;
+    height:56px;
   }
 
   .brand strong{
-    font-size:17px;
+    font-size:18px;
   }
 
   .brand small{
@@ -560,36 +692,42 @@ main{
   }
 
   .container{
-    width:calc(100% - 28px);
+    width:
+      calc(100% - 28px);
   }
 
   main{
-    padding-top:23px;
+    padding:
+      26px 0 36px;
   }
 
-  .price-card{
-    padding:19px;
-    border-radius:20px;
+  .details-panel,
+  .image-panel{
+    padding:18px;
   }
 
-  .ai-heading{
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .field.full{
+    grid-column:auto;
+  }
+
+  .panel-title{
     flex-direction:column;
-    gap:12px;
   }
 
-  .price-results{
-    grid-template-columns:1fr;
+  .ai-note{
+    white-space:normal;
   }
 
-  .reason-grid{
-    grid-template-columns:1fr;
+  .footer-actions{
+    flex-direction:
+      column-reverse;
   }
 
-  .bottom-actions{
-    flex-direction:column-reverse;
-  }
-
-  .btn{
+  .footer-actions button{
     width:100%;
   }
 
@@ -598,38 +736,57 @@ main{
 </style>
 </head>
 
+
 <body>
+
 
 <header class="topbar">
 
-  <a href="{% url 'artisan_dashboard' %}" class="brand">
+  <a
+    href="index.html"
+    class="brand"
+  >
 
-    <img src="{% static 'assets/images/logo.png' %}" alt="Kala Connect AI Logo">
+    <img
+      src="logo.jpeg"
+      alt="Kala Connect AI Logo"
+    >
 
     <div>
-      <strong id="brandName">Kala Connect AI</strong>
-      <small>Artisan Market and Space AI</small>
+
+      <strong id="brandName">
+        Kala Connect AI
+      </strong>
+
+      <small>
+        Artisan Market and Space AI
+      </small>
+
     </div>
 
   </a>
 
-  <div class="header-actions">
+
+  <div class="actions">
 
     <button
       class="lang-btn"
-      id="languageBtn"
+      id="languageButton"
       type="button"
     >
-      🌐 EN
+      🌐
+      <span id="languageShort">
+        EN
+      </span>
     </button>
 
-    <button
+    <a
+      href="artisan-upload-camera-fixed.html"
       class="back-top"
-      id="topBackBtn"
-      type="button"
+      id="topBack"
     >
       Back
-    </button>
+    </a>
 
   </div>
 
@@ -638,739 +795,1379 @@ main{
 
 <main>
 
-<div class="container">
-
-  <section class="page-head">
-
-    <span
-      class="step-badge"
-      id="stepText"
-    >
-      Step 3 of 3
-    </span>
-
-    <h1 id="pageTitle">
-      Price Your Product
-    </h1>
-
-    <p id="pageDescription">
-      Review the AI suggested fair price and choose the final selling price for your product.
-    </p>
-
-  </section>
+  <div class="container">
 
 
-  <section class="price-card">
+    <section class="page-head">
 
-    <div class="ai-heading">
-
-      <div>
-
-        <h2 id="predictionHeading">
-          AI Price Prediction
-        </h2>
-
-        <p id="predictionDescription">
-          The suggested price is based on the verified product details you provided.
-        </p>
-
-      </div>
-
-      <span
-        class="ai-chip"
-        id="aiChip"
+      <div
+        class="eyebrow"
+        id="eyebrow"
       >
-        AI-assisted estimate
-      </span>
-
-    </div>
-
-
-    <!-- PRICE RESULTS -->
-
-    <div class="price-results">
-
-      <div class="price-result range-card">
-
-        <span
-          class="price-label"
-          id="rangeLabel"
-        >
-          Suggested Fair Price Range
-        </span>
-
-        <div
-          class="price-number"
-          id="priceRange"
-        >
-          ₹1,200 – ₹1,500
-        </div>
-
-        <p id="rangeHelp">
-          A reasonable market range predicted for this product.
-        </p>
-
+        Step 2 of 3
       </div>
 
+      <h1 id="pageTitle">
+        Review Product Details
+      </h1>
 
-      <div class="price-result recommended-card">
-
-        <span
-          class="price-label"
-          id="recommendedLabel"
-        >
-          Recommended Price
-        </span>
-
-        <div
-          class="price-number"
-          id="recommendedPrice"
-        >
-          ₹1,350
-        </div>
-
-        <p id="recommendedHelp">
-          This is the model's suggested selling price within the fair range.
-        </p>
-
-      </div>
-
-    </div>
-
-
-    <!-- WHY THIS PRICE -->
-
-    <div class="reason-section">
-
-      <div class="reason-title">
-
-        <h3 id="whyTitle">
-          Why this price?
-        </h3>
-
-        <span id="verifiedText">
-          Based on verified details
-        </span>
-
-      </div>
-
-      <div class="reason-grid">
-
-        <div class="reason-item">
-
-          <small id="craftLabel">
-            Craft
-          </small>
-
-          <strong id="craftValue">
-            Not provided
-          </strong>
-
-        </div>
-
-
-        <div class="reason-item">
-
-          <small id="materialLabel">
-            Material
-          </small>
-
-          <strong id="materialValue">
-            Not provided
-          </strong>
-
-        </div>
-
-
-        <div class="reason-item">
-
-          <small id="techniqueLabel">
-            Technique
-          </small>
-
-          <strong id="techniqueValue">
-            Not provided
-          </strong>
-
-        </div>
-
-      </div>
-
-    </div>
-
-
-    <!-- FINAL SELLING PRICE -->
-
-    <div class="final-price-section">
-
-      <h3 id="sellingTitle">
-        Final Selling Price
-      </h3>
-
-      <p id="sellingHelp">
-        You can keep the recommended price or enter the price you want to sell your product for.
+      <p id="pageText">
+        Please check the product information below. You can correct any detail before continuing to price prediction.
       </p>
 
+    </section>
 
-      <div class="price-input-wrapper">
 
-        <span class="rupee">
-          ₹
-        </span>
 
-        <input
-          type="number"
-          id="finalPrice"
-          min="1"
-          step="1"
-          value="1350"
-          aria-label="Final Selling Price"
+    <section class="review-grid">
+
+
+      <div class="panel image-panel">
+
+        <div class="image-frame">
+
+          <img
+            id="productImage"
+            src=""
+            alt="Product preview"
+          >
+
+        </div>
+
+        <div class="image-caption">
+
+          <h3 id="imageTitle">
+            Product Image
+          </h3>
+
+          <p id="imageText">
+            This image is shown for review only.
+          </p>
+
+        </div>
+
+      </div>
+
+
+
+      <div class="panel details-panel">
+
+
+        <div class="panel-title">
+
+          <div>
+
+            <h2 id="detailsTitle">
+              Product Details
+            </h2>
+
+          </div>
+
+          <span
+            class="ai-note"
+            id="aiNote"
+          >
+            AI-assisted details
+          </span>
+
+        </div>
+
+
+        <div
+          class="helper"
+          id="helperText"
         >
-
-      </div>
-
-      <div
-        class="error-message"
-        id="priceError"
-      >
-        Please enter a valid selling price.
-      </div>
+          Please review and correct anything that needs changes before moving to price prediction.
+        </div>
 
 
-      <div
-        class="model-note"
-        id="modelNote"
-      >
-        The AI suggestion is a pricing aid. You remain in control of the final selling price.
-      </div>
+        <p
+          class="required-note"
+          id="requiredNote"
+        >
+          Fields marked with
+          <span class="required">*</span>
+          are required.
+        </p>
 
-    </div>
+
+        <div class="form-grid">
 
 
-    <!-- ACTIONS -->
+          <div class="field full">
 
-    <div class="bottom-actions">
+            <label
+              for="productName"
+              id="labelName"
+            >
+              Product Name
+              <span class="required">*</span>
+            </label>
 
-      <button
-        type="button"
-        class="btn btn-secondary"
-        id="backBtn"
-      >
-        ← Back
-      </button>
+            <input
+              id="productName"
+              type="text"
+              placeholder="Enter product name"
+            >
 
-      <button
-        type="button"
-        class="btn btn-primary"
-        id="continueBtn"
-      >
-        Continue to Publish →
-      </button>
+          </div>
 
-    </div>
 
-  </section>
 
+          <div class="field">
+
+            <label
+              for="craft"
+              id="labelCraft"
+            >
+              Craft
+              <span class="required">*</span>
+            </label>
+
+            <select id="craft">
+
+              <option value="">
+                Select craft *
+              </option>
+
+              <option>
+                Blue Pottery
+              </option>
+
+              <option>
+                Handloom / Weaving
+              </option>
+
+              <option>
+                Madhubani Painting
+              </option>
+
+              <option>
+                Wood Carving
+              </option>
+
+              <option>
+                Metal Craft
+              </option>
+
+              <option>
+                Jewellery
+              </option>
+
+              <option>
+                Embroidery
+              </option>
+
+              <option>
+                Block Printing
+              </option>
+
+              <option>
+                Terracotta / Pottery
+              </option>
+
+              <option>
+                Basketry / Cane Craft
+              </option>
+
+              <option>
+                Leather Craft
+              </option>
+
+              <option>
+                Other
+              </option>
+
+            </select>
+
+          </div>
+
+
+
+          <div class="field">
+
+            <label
+              for="material"
+              id="labelMaterial"
+            >
+              Material
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="material"
+              type="text"
+              placeholder="Enter material"
+            >
+
+          </div>
+
+
+
+          <div class="field full">
+
+            <label
+              for="technique"
+              id="labelTechnique"
+            >
+              Technique
+              <span class="required">*</span>
+            </label>
+
+            <input
+              id="technique"
+              type="text"
+              placeholder="Enter technique"
+            >
+
+          </div>
+
+<!-- PRICING / ML INPUTS -->
+
+<div class="field">
+  <label for="category">
+    Category <span class="required">*</span>
+  </label>
+  <input
+    id="category"
+    type="text"
+    placeholder="Enter category"
+  >
 </div>
+
+<div class="field">
+  <label for="subcategory">
+    Subcategory <span class="required">*</span>
+  </label>
+  <input
+    id="subcategory"
+    type="text"
+    placeholder="Enter subcategory"
+  >
+</div>
+
+<div class="field">
+  <label for="state">
+    State <span class="required">*</span>
+  </label>
+  <input
+    id="state"
+    type="text"
+    placeholder="Enter state"
+  >
+</div>
+
+<div class="field">
+  <label for="region">
+    Region <span class="required">*</span>
+  </label>
+  <input
+    id="region"
+    type="text"
+    placeholder="Enter region"
+  >
+</div>
+
+<div class="field">
+  <label for="size">
+    Size <span class="required">*</span>
+  </label>
+  <input
+    id="size"
+    type="text"
+    placeholder="Enter size"
+  >
+</div>
+
+<div class="field">
+  <label for="complexity">
+    Complexity <span class="required">*</span>
+  </label>
+  <select id="complexity">
+    <option value="">Select complexity *</option>
+    <option value="Low">Low</option>
+    <option value="Medium">Medium</option>
+    <option value="High">High</option>
+  </select>
+</div>
+
+<div class="field">
+  <label for="customization">
+    Customization <span class="required">*</span>
+  </label>
+  <select id="customization">
+    <option value="">Select customization *</option>
+    <option value="None">None</option>
+    <option value="Basic">Basic</option>
+    <option value="High">High</option>
+  </select>
+</div>
+
+<div class="field">
+  <label for="laborHours">
+    Labor Hours <span class="required">*</span>
+  </label>
+  <input
+    id="laborHours"
+    type="number"
+    min="0.1"
+    step="0.1"
+    placeholder="e.g. 8"
+  >
+</div>
+
+<div class="field">
+  <label for="rawMaterialCost">
+    Raw Material Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="rawMaterialCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 500"
+  >
+</div>
+
+<div class="field">
+  <label for="packagingCost">
+    Packaging Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="packagingCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 50"
+  >
+</div>
+
+<div class="field">
+  <label for="transportCost">
+    Transport Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="transportCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 100"
+  >
+</div>
+
+<div class="field">
+  <label for="directCost">
+    Direct Cost (₹) <span class="required">*</span>
+  </label>
+  <input
+    id="directCost"
+    type="number"
+    min="0"
+    step="0.01"
+    placeholder="e.g. 650"
+  >
+</div>
+
+          <div class="field full">
+
+            <label
+              for="description"
+              id="labelDescription"
+            >
+              Product Description
+              <span class="required">*</span>
+            </label>
+
+            <textarea
+              id="description"
+              placeholder="Enter product description"
+            ></textarea>
+
+          </div>
+
+
+        </div>
+
+
+        <div class="footer-actions">
+
+          <button
+            class="secondary-btn"
+            id="backBtn"
+            type="button"
+          >
+            Back
+          </button>
+
+          <button
+            class="primary-btn"
+            id="continueBtn"
+            type="button"
+          >
+            Continue to Price Prediction
+          </button>
+
+        </div>
+
+
+      </div>
+
+
+    </section>
+
+
+  </div>
 
 </main>
 
 
+
+<div
+  class="overlay"
+  id="languageOverlay"
+>
+
+  <div class="lang-card">
+
+    <h3>
+      Choose your language
+    </h3>
+
+    <p>
+      Important actions will switch language.
+    </p>
+
+    <div class="lang-options">
+
+      <button
+        class="lang-option"
+        onclick="setLanguage('en')"
+        type="button"
+      >
+        English
+      </button>
+
+      <button
+        class="lang-option"
+        onclick="setLanguage('hi')"
+        type="button"
+      >
+        हिन्दी
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+
 <script>
 
-/* =========================================
-   LANGUAGE
-========================================= */
 
-let currentLanguage =
-  localStorage.getItem("kalaConnectLanguage") || "en";
+/* =====================================
+   LOAD DRAFT
+===================================== */
 
-
-const translations = {
-
-  en:{
-
-    brand:"Kala Connect AI",
-
-    step:"Step 3 of 3",
-
-    title:"Price Your Product",
-
-    description:
-    "Review the AI suggested fair price and choose the final selling price for your product.",
-
-    predictionHeading:"AI Price Prediction",
-
-    predictionDescription:
-    "The suggested price is based on the verified product details you provided.",
-
-    aiChip:"AI-assisted estimate",
-
-    rangeLabel:"Suggested Fair Price Range",
-
-    rangeHelp:
-    "A reasonable market range predicted for this product.",
-
-    recommendedLabel:"Recommended Price",
-
-    recommendedHelp:
-    "This is the model's suggested selling price within the fair range.",
-
-    whyTitle:"Why this price?",
-
-    verified:"Based on verified details",
-
-    craft:"Craft",
-
-    material:"Material",
-
-    technique:"Technique",
-
-    missing:"Not provided",
-
-    sellingTitle:"Final Selling Price",
-
-    sellingHelp:
-    "You can keep the recommended price or enter the price you want to sell your product for.",
-
-    note:
-    "The AI suggestion is a pricing aid. You remain in control of the final selling price.",
-
-    back:"← Back",
-
-    topBack:"Back",
-
-    continue:"Continue to Publish →",
-
-    error:"Please enter a valid selling price."
-
-  },
+const draft = JSON.parse(
+  localStorage.getItem(
+    "kalaConnectDraftProduct"
+  ) || "{}"
+);
 
 
-  hi:{
-
-    brand:"कला Connect AI",
-
-    step:"चरण 3 में से 3",
-
-    title:"अपने उत्पाद की कीमत तय करें",
-
-    description:
-    "AI द्वारा सुझाई गई उचित मूल्य सीमा देखें और अपने उत्पाद का अंतिम विक्रय मूल्य तय करें।",
-
-    predictionHeading:"AI मूल्य अनुमान",
-
-    predictionDescription:
-    "सुझाई गई कीमत आपके द्वारा सत्यापित उत्पाद विवरण पर आधारित है।",
-
-    aiChip:"AI-सहायता प्राप्त अनुमान",
-
-    rangeLabel:"सुझाई गई उचित मूल्य सीमा",
-
-    rangeHelp:
-    "इस उत्पाद के लिए अनुमानित उचित बाजार मूल्य सीमा।",
-
-    recommendedLabel:"अनुशंसित मूल्य",
-
-    recommendedHelp:
-    "यह उचित मूल्य सीमा के भीतर मॉडल द्वारा सुझाया गया विक्रय मूल्य है।",
-
-    whyTitle:"यह कीमत क्यों?",
-
-    verified:"सत्यापित विवरण पर आधारित",
-
-    craft:"शिल्प",
-
-    material:"सामग्री",
-
-    technique:"तकनीक",
-
-    missing:"जानकारी उपलब्ध नहीं",
-
-    sellingTitle:"अंतिम विक्रय मूल्य",
-
-    sellingHelp:
-    "आप अनुशंसित मूल्य रख सकते हैं या अपनी पसंद का विक्रय मूल्य दर्ज कर सकते हैं।",
-
-    note:
-    "AI सुझाव केवल मूल्य निर्धारण में सहायता के लिए है। अंतिम विक्रय मूल्य आपके नियंत्रण में है।",
-
-    back:"← वापस",
-
-    topBack:"वापस",
-
-    continue:"प्रकाशित करने के लिए आगे बढ़ें →",
-
-    error:"कृपया सही विक्रय मूल्य दर्ज करें।"
-
-  }
-
-};
-
-
-/* =========================================
-   LOAD PRODUCT DRAFT
-========================================= */
-
-let productDraft = {};
-
-try{
-
-  productDraft = JSON.parse(
-    localStorage.getItem("kalaConnectDraftProduct") || "{}"
+const productName =
+  document.getElementById(
+    "productName"
   );
 
-}catch(error){
-
-  console.error(
-    "Could not load product draft:",
-    error
+const craft =
+  document.getElementById(
+    "craft"
   );
 
-  productDraft = {};
-
-}
-
-
-/* =========================================
-   TEMPORARY MOCK PRICE
-   Later teammate's API will replace this.
-========================================= */
-
-const storedRecommendedPrice =
-  Number(productDraft.recommendedPrice) || 1350;
-
-const storedMinimumPrice =
-  Number(productDraft.minimumPrice) || 1200;
-
-const storedMaximumPrice =
-  Number(productDraft.maximumPrice) || 1500;
-
-
-/* =========================================
-   ELEMENTS
-========================================= */
-
-const brandName =
-  document.getElementById("brandName");
-
-const languageBtn =
-  document.getElementById("languageBtn");
-
-const stepText =
-  document.getElementById("stepText");
-
-const pageTitle =
-  document.getElementById("pageTitle");
-
-const pageDescription =
-  document.getElementById("pageDescription");
-
-const predictionHeading =
-  document.getElementById("predictionHeading");
-
-const predictionDescription =
-  document.getElementById("predictionDescription");
-
-const aiChip =
-  document.getElementById("aiChip");
-
-const rangeLabel =
-  document.getElementById("rangeLabel");
-
-const rangeHelp =
-  document.getElementById("rangeHelp");
-
-const recommendedLabel =
-  document.getElementById("recommendedLabel");
-
-const recommendedHelp =
-  document.getElementById("recommendedHelp");
-
-const whyTitle =
-  document.getElementById("whyTitle");
-
-const verifiedText =
-  document.getElementById("verifiedText");
-
-const craftLabel =
-  document.getElementById("craftLabel");
-
-const materialLabel =
-  document.getElementById("materialLabel");
-
-const techniqueLabel =
-  document.getElementById("techniqueLabel");
-
-const craftValue =
-  document.getElementById("craftValue");
-
-const materialValue =
-  document.getElementById("materialValue");
-
-const techniqueValue =
-  document.getElementById("techniqueValue");
-
-const sellingTitle =
-  document.getElementById("sellingTitle");
-
-const sellingHelp =
-  document.getElementById("sellingHelp");
-
-const modelNote =
-  document.getElementById("modelNote");
-
-const backBtn =
-  document.getElementById("backBtn");
-
-const topBackBtn =
-  document.getElementById("topBackBtn");
-
-const continueBtn =
-  document.getElementById("continueBtn");
-
-const finalPrice =
-  document.getElementById("finalPrice");
-
-const priceError =
-  document.getElementById("priceError");
-
-
-/* =========================================
-   PRODUCT DATA
-========================================= */
-
-function renderProductDetails(){
-
-  const text =
-    translations[currentLanguage];
-
-  craftValue.textContent =
-    productDraft.craft ||
-    text.missing;
-
-  materialValue.textContent =
-    productDraft.material ||
-    text.missing;
-
-  techniqueValue.textContent =
-    productDraft.technique ||
-    text.missing;
-
-}
-
-
-/* =========================================
-   PRICE
-========================================= */
-
-document.getElementById("priceRange").textContent =
-  `₹${storedMinimumPrice.toLocaleString("en-IN")} – ₹${storedMaximumPrice.toLocaleString("en-IN")}`;
-
-document.getElementById("recommendedPrice").textContent =
-  `₹${storedRecommendedPrice.toLocaleString("en-IN")}`;
-
-finalPrice.value =
-  productDraft.finalSellingPrice ||
-  storedRecommendedPrice;
-
-
-/* =========================================
-   APPLY LANGUAGE
-========================================= */
-
-function applyLanguage(){
-
-  const text =
-    translations[currentLanguage];
-
-  document.documentElement.lang =
-    currentLanguage;
-
-  brandName.textContent =
-    text.brand;
-
-  stepText.textContent =
-    text.step;
-
-  pageTitle.textContent =
-    text.title;
-
-  pageDescription.textContent =
-    text.description;
-
-  predictionHeading.textContent =
-    text.predictionHeading;
-
-  predictionDescription.textContent =
-    text.predictionDescription;
-
-  aiChip.textContent =
-    text.aiChip;
-
-  rangeLabel.textContent =
-    text.rangeLabel;
-
-  rangeHelp.textContent =
-    text.rangeHelp;
-
-  recommendedLabel.textContent =
-    text.recommendedLabel;
-
-  recommendedHelp.textContent =
-    text.recommendedHelp;
-
-  whyTitle.textContent =
-    text.whyTitle;
-
-  verifiedText.textContent =
-    text.verified;
-
-  craftLabel.textContent =
-    text.craft;
-
-  materialLabel.textContent =
-    text.material;
-
-  techniqueLabel.textContent =
-    text.technique;
-
-  sellingTitle.textContent =
-    text.sellingTitle;
-
-  sellingHelp.textContent =
-    text.sellingHelp;
-
-  modelNote.textContent =
-    text.note;
-
-  backBtn.textContent =
-    text.back;
-
-  topBackBtn.textContent =
-    text.topBack;
-
-  continueBtn.textContent =
-    text.continue;
-
-  priceError.textContent =
-    text.error;
-
-  languageBtn.textContent =
-    currentLanguage === "en"
-      ? "🌐 EN"
-      : "🌐 HI";
-
-  renderProductDetails();
-
-}
-
-
-applyLanguage();
-
-
-/* =========================================
-   LANGUAGE TOGGLE
-========================================= */
-
-languageBtn.onclick = () => {
-
-  currentLanguage =
-    currentLanguage === "en"
-      ? "hi"
-      : "en";
-
-  localStorage.setItem(
-    "kalaConnectLanguage",
-    currentLanguage
+const material =
+  document.getElementById(
+    "material"
   );
 
-  applyLanguage();
+const technique =
+  document.getElementById(
+    "technique"
+  );
 
-};
+const description =
+  document.getElementById(
+    "description"
+  );
+
+const productImage =
+  document.getElementById(
+    "productImage"
+  );
+
+const category =
+  document.getElementById("category");
+
+const subcategory =
+  document.getElementById("subcategory");
+
+const state =
+  document.getElementById("state");
+
+const region =
+  document.getElementById("region");
+
+const size =
+  document.getElementById("size");
+
+const complexity =
+  document.getElementById("complexity");
+
+const customization =
+  document.getElementById("customization");
+
+const laborHours =
+  document.getElementById("laborHours");
+
+const rawMaterialCost =
+  document.getElementById("rawMaterialCost");
+
+const packagingCost =
+  document.getElementById("packagingCost");
+
+const transportCost =
+  document.getElementById("transportCost");
+
+const directCost =
+  document.getElementById("directCost");
 
 
-/* =========================================
-   BACK
-========================================= */
+productName.value =
+  draft.productName ||
+  draft.name ||
+  "";
 
-function goBack(){
+craft.value =
+  draft.craft ||
+  "";
 
-  window.location.href = "{% url 'artisan_review' %}";
+material.value =
+  draft.material ||
+  "";
+
+technique.value =
+  draft.technique ||
+  "";
+
+description.value =
+  draft.description ||
+  "";
+category.value =
+  draft.category ||
+  "";
+
+subcategory.value =
+  draft.subcategory ||
+  "";
+
+state.value =
+  draft.state ||
+  "";
+
+region.value =
+  draft.region ||
+  "";
+
+size.value =
+  draft.size ||
+  "";
+
+complexity.value =
+  draft.complexity ||
+  "";
+
+customization.value =
+  draft.customization ||
+  "";
+
+laborHours.value =
+  draft.laborHours ??
+  "";
+
+rawMaterialCost.value =
+  draft.rawMaterialCost ??
+  "";
+
+packagingCost.value =
+  draft.packagingCost ??
+  "";
+
+transportCost.value =
+  draft.transportCost ??
+  "";
+
+directCost.value =
+  draft.directCost ??
+  "";
+
+
+/* =====================================
+   PRODUCT IMAGE
+===================================== */
+
+if(draft.imageDataUrl){
+
+  productImage.src =
+    draft.imageDataUrl;
+
+}else if(draft.imagePreview){
+
+  productImage.src =
+    draft.imagePreview;
+
+}else if(draft.image){
+
+  productImage.src =
+    draft.image;
+
+}else{
+
+  productImage.src =
+    "https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&fit=crop&w=1200&q=85";
+
 }
 
-backBtn.onclick =
-  goBack;
-
-topBackBtn.onclick =
-  goBack;
 
 
-/* =========================================
-   CONTINUE
-========================================= */
+/* =====================================
+   BACK BUTTON
+===================================== */
 
-continueBtn.onclick = () => {
+document
+  .getElementById(
+    "backBtn"
+  )
+  .addEventListener(
+    "click",
+    () => {
 
-  const enteredPrice =
-    Number(finalPrice.value);
+      window.location.href =
+        "{% url 'artisan_upload' %}";
 
-  if(
-    !enteredPrice ||
-    enteredPrice <= 0
-  ){
-
-    priceError.classList.add("show");
-
-    finalPrice.focus();
-
-    return;
-
-  }
-
-  priceError.classList.remove("show");
+    }
+  );
 
 
-  const updatedDraft = {
 
-    ...productDraft,
+/* =====================================
+   REMOVE ERROR WHILE EDITING
+===================================== */
 
-    minimumPrice:
-      storedMinimumPrice,
+[
+  productName,
+  craft,
+  material,
+  technique,
+  description,
+  category,
+  subcategory,
+  state,
+  region,
+  size,
+  complexity,
+  customization,
+  laborHours,
+  rawMaterialCost,
+  packagingCost,
+  transportCost,
+  directCost
+]
+.forEach(field => {
 
-    maximumPrice:
-      storedMaximumPrice,
+  field.addEventListener(
+    "input",
+    () => {
 
-    recommendedPrice:
-      storedRecommendedPrice,
+      field
+        .classList
+        .remove(
+          "field-error"
+        );
 
-    finalSellingPrice:
-      enteredPrice
+    }
+  );
+
+
+  field.addEventListener(
+    "change",
+    () => {
+
+      field
+        .classList
+        .remove(
+          "field-error"
+        );
+
+    }
+  );
+
+});
+
+
+
+/* =====================================
+   CONTINUE + VALIDATION
+===================================== */
+
+document
+  .getElementById(
+    "continueBtn"
+  )
+  .onclick = () => {
+
+
+    const productNameValue =
+      productName
+        .value
+        .trim();
+
+    const craftValue =
+      craft
+        .value
+        .trim();
+
+    const materialValue =
+      material
+        .value
+        .trim();
+
+    const techniqueValue =
+      technique
+        .value
+        .trim();
+
+    const descriptionValue =
+      description
+        .value
+        .trim();
+
+    const categoryValue =
+      category.value.trim();
+
+    const subcategoryValue =
+      subcategory.value.trim();
+
+    const stateValue =
+      state.value.trim();
+
+    const regionValue =
+      region.value.trim();
+
+    const sizeValue =
+      size.value.trim();
+
+    const complexityValue =
+      complexity.value.trim();
+
+    const customizationValue =
+      customization.value.trim();
+
+    const laborHoursValue =
+      laborHours.value.trim();
+
+    const rawMaterialCostValue =
+      rawMaterialCost.value.trim();
+
+    const packagingCostValue =
+      packagingCost.value.trim();
+
+    const transportCostValue =
+      transportCost.value.trim();
+
+    const directCostValue =
+      directCost.value.trim();
+
+
+    const allFields = [
+
+      productName,
+      craft,
+      material,
+      technique,
+      description,
+      category,
+      subcategory,
+      state,
+      region,
+      size,
+      complexity,
+      customization,
+      laborHours,
+      rawMaterialCost,
+      packagingCost,
+      transportCost,
+      directCost
+
+    ];
+
+
+    /* Remove old errors first */
+
+    allFields
+      .forEach(field => {
+
+        field
+          .classList
+          .remove(
+            "field-error"
+          );
+
+      });
+
+
+
+    /* Find first missing field */
+
+    let firstMissingField =
+      null;
+
+
+    if(!productNameValue){
+
+      productName
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        productName;
+
+    }
+
+
+    if(!craftValue){
+
+      craft
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        craft;
+
+    }
+
+
+    if(!materialValue){
+
+      material
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        material;
+
+    }
+
+
+    if(!techniqueValue){
+
+      technique
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        technique;
+
+    }
+
+
+    if(!descriptionValue){
+
+      description
+        .classList
+        .add(
+          "field-error"
+        );
+
+      firstMissingField =
+        firstMissingField ||
+        description;
+
+    }
+
+    if(!categoryValue){
+      category.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || category;
+    }
+
+    if(!subcategoryValue){
+      subcategory.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || subcategory;
+    }
+
+    if(!stateValue){
+      state.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || state;
+    }
+
+    if(!regionValue){
+      region.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || region;
+    }
+
+    if(!sizeValue){
+      size.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || size;
+    }
+
+    if(!complexityValue){
+      complexity.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || complexity;
+    }
+
+    if(!customizationValue){
+      customization.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || customization;
+    }
+
+    if(!laborHoursValue || Number(laborHoursValue) <= 0){
+      laborHours.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || laborHours;
+    }
+
+    if(!rawMaterialCostValue || Number(rawMaterialCostValue) < 0){
+      rawMaterialCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || rawMaterialCost;
+    }
+
+    if(!packagingCostValue || Number(packagingCostValue) < 0){
+      packagingCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || packagingCost;
+    }
+
+    if(!transportCostValue || Number(transportCostValue) < 0){
+      transportCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || transportCost;
+    }
+
+    if(!directCostValue || Number(directCostValue) < 0){
+      directCost.classList.add("field-error");
+      firstMissingField =
+        firstMissingField || directCost;
+    }
+
+
+
+    /* If something is missing,
+       stay on this page */
+
+    if(firstMissingField){
+
+      firstMissingField.focus();
+
+      firstMissingField
+        .scrollIntoView({
+          behavior:"smooth",
+          block:"center"
+        });
+
+      return;
+
+    }
+
+
+
+    /* All required values complete */
+
+    const oldDraft =
+      JSON.parse(
+        localStorage.getItem(
+          "kalaConnectDraftProduct"
+        ) || "{}"
+      );
+
+
+     const updatedDraft = {
+
+      ...oldDraft,
+
+      productName:
+        productNameValue,
+
+      craft:
+        craftValue,
+
+      material:
+        materialValue,
+
+      technique:
+        techniqueValue,
+
+      description:
+        descriptionValue,
+
+      category:
+        categoryValue,
+
+      subcategory:
+        subcategoryValue,
+
+      state:
+        stateValue,
+
+      region:
+        regionValue,
+
+      size:
+        sizeValue,
+
+      complexity:
+        complexityValue,
+
+      customization:
+        customizationValue,
+
+      laborHours:
+        Number(laborHoursValue),
+
+      rawMaterialCost:
+        Number(rawMaterialCostValue),
+
+      packagingCost:
+        Number(packagingCostValue),
+
+      transportCost:
+        Number(transportCostValue),
+
+      directCost:
+        Number(directCostValue)
+
+    };
+
+
+    localStorage.setItem(
+      "kalaConnectDraftProduct",
+      JSON.stringify(
+        updatedDraft
+      )
+    );
+
+
+    window.location.href =
+      "{% url 'artisan_price' %}";
 
   };
 
 
-  localStorage.setItem(
-    "kalaConnectDraftProduct",
-    JSON.stringify(updatedDraft)
+
+/* =====================================
+   LANGUAGE
+===================================== */
+
+const overlay =
+  document.getElementById(
+    "languageOverlay"
   );
 
 
-  window.location.href = "{% url 'artisan_publish' %}";
+document
+  .getElementById(
+    "languageButton"
+  )
+  .addEventListener(
+    "click",
+    () => {
 
-};
+      overlay
+        .classList
+        .add(
+          "show"
+        );
+
+    }
+  );
 
 
-/* remove error when typing */
 
-finalPrice.addEventListener(
-  "input",
-  () => {
+function setLanguage(lang){
 
-    priceError.classList.remove("show");
+  const hi =
+    lang === "hi";
 
-  }
+
+  document.documentElement.lang =
+    lang;
+
+
+  document
+    .getElementById(
+      "brandName"
+    )
+    .textContent =
+      hi
+        ? "कला Connect AI"
+        : "Kala Connect AI";
+
+
+  document
+    .getElementById(
+      "languageShort"
+    )
+    .textContent =
+      hi
+        ? "हि"
+        : "EN";
+
+
+  document
+    .getElementById(
+      "topBack"
+    )
+    .textContent =
+      hi
+        ? "वापस"
+        : "Back";
+
+
+  document
+    .getElementById(
+      "eyebrow"
+    )
+    .textContent =
+      hi
+        ? "चरण 2 / 3"
+        : "Step 2 of 3";
+
+
+  document
+    .getElementById(
+      "pageTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद विवरण जाँचें"
+        : "Review Product Details";
+
+
+  document
+    .getElementById(
+      "pageText"
+    )
+    .textContent =
+      hi
+        ? "नीचे दी गई उत्पाद जानकारी जाँचें। मूल्य अनुमान पर जाने से पहले आप किसी भी विवरण को सुधार सकते हैं।"
+        : "Please check the product information below. You can correct any detail before continuing to price prediction.";
+
+
+  document
+    .getElementById(
+      "imageTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद की तस्वीर"
+        : "Product Image";
+
+
+  document
+    .getElementById(
+      "imageText"
+    )
+    .textContent =
+      hi
+        ? "यह तस्वीर केवल जाँच के लिए दिखाई गई है।"
+        : "This image is shown for review only.";
+
+
+  document
+    .getElementById(
+      "detailsTitle"
+    )
+    .textContent =
+      hi
+        ? "उत्पाद विवरण"
+        : "Product Details";
+
+
+  document
+    .getElementById(
+      "aiNote"
+    )
+    .textContent =
+      hi
+        ? "AI-सहायित विवरण"
+        : "AI-assisted details";
+
+
+  document
+    .getElementById(
+      "helperText"
+    )
+    .textContent =
+      hi
+        ? "मूल्य अनुमान पर जाने से पहले सभी विवरण जाँचें और ज़रूरत होने पर सुधारें।"
+        : "Please review and correct anything that needs changes before moving to price prediction.";
+
+
+  document
+    .getElementById(
+      "requiredNote"
+    )
+    .innerHTML =
+      hi
+        ? 'जिन फ़ील्ड के साथ <span class="required">*</span> है, उन्हें भरना आवश्यक है।'
+        : 'Fields marked with <span class="required">*</span> are required.';
+
+
+
+  document
+    .getElementById(
+      "labelName"
+    )
+    .innerHTML =
+      hi
+        ? 'उत्पाद का नाम <span class="required">*</span>'
+        : 'Product Name <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelCraft"
+    )
+    .innerHTML =
+      hi
+        ? 'कला <span class="required">*</span>'
+        : 'Craft <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelMaterial"
+    )
+    .innerHTML =
+      hi
+        ? 'सामग्री <span class="required">*</span>'
+        : 'Material <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelTechnique"
+    )
+    .innerHTML =
+      hi
+        ? 'तकनीक <span class="required">*</span>'
+        : 'Technique <span class="required">*</span>';
+
+
+  document
+    .getElementById(
+      "labelDescription"
+    )
+    .innerHTML =
+      hi
+        ? 'उत्पाद विवरण <span class="required">*</span>'
+        : 'Product Description <span class="required">*</span>';
+
+
+
+  craft.options[0]
+    .textContent =
+      hi
+        ? "कला चुनें *"
+        : "Select craft *";
+
+
+  document
+    .getElementById(
+      "backBtn"
+    )
+    .textContent =
+      hi
+        ? "वापस"
+        : "Back";
+
+
+  document
+    .getElementById(
+      "continueBtn"
+    )
+    .textContent =
+      hi
+        ? "मूल्य अनुमान पर जाएँ"
+        : "Continue to Price Prediction";
+
+
+  productName.placeholder =
+    hi
+      ? "उत्पाद का नाम दर्ज करें"
+      : "Enter product name";
+
+
+  material.placeholder =
+    hi
+      ? "सामग्री दर्ज करें"
+      : "Enter material";
+
+
+  technique.placeholder =
+    hi
+      ? "तकनीक दर्ज करें"
+      : "Enter technique";
+
+
+  description.placeholder =
+    hi
+      ? "उत्पाद विवरण दर्ज करें"
+      : "Enter product description";
+
+
+  localStorage.setItem(
+    "kalaConnectLanguage",
+    lang
+  );
+
+
+  overlay
+    .classList
+    .remove(
+      "show"
+    );
+
+}
+
+
+
+setLanguage(
+  localStorage.getItem(
+    "kalaConnectLanguage"
+  ) || "en"
 );
+
 
 </script>
 
