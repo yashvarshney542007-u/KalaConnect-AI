@@ -10,8 +10,8 @@ from django.shortcuts import render
 from config.supabase_client import supabase, supabase_admin
 
 from src import pricing_service
-from src.ai.vision_service import analyze_image
-from src.ai.voice_service import transcribe_audio
+# from src.ai.vision_service import analyze_image
+# from src.ai.voice_service import transcribe_audio
 # --------------------------------------------------
 # TEST API
 # --------------------------------------------------
