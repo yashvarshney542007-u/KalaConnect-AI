@@ -1046,6 +1046,65 @@ main{
         </div>
 
 
+          <div class="field">
+            <label for="category">Category <span class="required">*</span></label>
+            <input id="category" type="text" placeholder="Enter category">
+          </div>
+          <div class="field">
+            <label for="subcategory">Subcategory <span class="required">*</span></label>
+            <input id="subcategory" type="text" placeholder="Enter subcategory">
+          </div>
+          <div class="field">
+            <label for="state">State <span class="required">*</span></label>
+            <input id="state" type="text" placeholder="Enter state">
+          </div>
+          <div class="field">
+            <label for="region">Region <span class="required">*</span></label>
+            <input id="region" type="text" placeholder="Enter region">
+          </div>
+          <div class="field">
+            <label for="size">Size <span class="required">*</span></label>
+            <input id="size" type="text" placeholder="Enter size">
+          </div>
+          <div class="field">
+            <label for="complexity">Complexity <span class="required">*</span></label>
+            <select id="complexity">
+              <option value="">Select complexity *</option>
+              <option>Low</option>
+              <option>Medium</option>
+              <option>High</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="customization">Customization <span class="required">*</span></label>
+            <select id="customization">
+              <option value="">Select customization *</option>
+              <option>None</option>
+              <option>Standard</option>
+              <option>Custom</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="laborHours">Labor Hours <span class="required">*</span></label>
+            <input id="laborHours" type="number" min="0" step="0.1" placeholder="e.g. 8">
+          </div>
+          <div class="field">
+            <label for="rawMaterialCost">Raw Material Cost <span class="required">*</span></label>
+            <input id="rawMaterialCost" type="number" min="0" step="0.01" placeholder="₹">
+          </div>
+          <div class="field">
+            <label for="packagingCost">Packaging Cost <span class="required">*</span></label>
+            <input id="packagingCost" type="number" min="0" step="0.01" placeholder="₹">
+          </div>
+          <div class="field">
+            <label for="transportCost">Transport Cost <span class="required">*</span></label>
+            <input id="transportCost" type="number" min="0" step="0.01" placeholder="₹">
+          </div>
+          <div class="field">
+            <label for="directCost">Direct Cost <span class="required">*</span></label>
+            <input id="directCost" type="number" min="0" step="0.01" placeholder="₹">
+          </div>
+
         <div class="footer-actions">
 
           <button
@@ -1187,6 +1246,25 @@ description.value =
   "";
 
 
+[
+  "category",
+  "subcategory",
+  "state",
+  "region",
+  "size",
+  "complexity",
+  "customization",
+  "laborHours",
+  "rawMaterialCost",
+  "packagingCost",
+  "transportCost",
+  "directCost"
+].forEach(id => {
+  const field = document.getElementById(id);
+  if (field) field.value = draft[id] ?? "";
+});
+
+
 
 /* =====================================
    PRODUCT IMAGE
@@ -1228,7 +1306,7 @@ document
     "click",
     () => {
 
-      window.location.href="{% url 'artisan_upload' %}"
+      window.location.href = "{% url 'artisan_upload' %}";
 
     }
   );
@@ -1316,132 +1394,47 @@ document
         .trim();
 
 
-    const allFields = [
-
+    const requiredFields = [
       productName,
       craft,
       material,
       technique,
-      description
-
+      description,
+      document.getElementById("category"),
+      document.getElementById("subcategory"),
+      document.getElementById("state"),
+      document.getElementById("region"),
+      document.getElementById("size"),
+      document.getElementById("complexity"),
+      document.getElementById("customization"),
+      document.getElementById("laborHours"),
+      document.getElementById("rawMaterialCost"),
+      document.getElementById("packagingCost"),
+      document.getElementById("transportCost"),
+      document.getElementById("directCost")
     ];
 
+    requiredFields.forEach(field => {
+      field.classList.remove("field-error");
+    });
 
-    /* Remove old errors first */
+    let firstMissingField = null;
 
-    allFields
-      .forEach(field => {
+    requiredFields.forEach(field => {
+      if (!String(field.value).trim()) {
+        field.classList.add("field-error");
+        firstMissingField = firstMissingField || field;
+      }
+    });
 
-        field
-          .classList
-          .remove(
-            "field-error"
-          );
-
-      });
-
-
-
-    /* Find first missing field */
-
-    let firstMissingField =
-      null;
-
-
-    if(!productNameValue){
-
-      productName
-        .classList
-        .add(
-          "field-error"
-        );
-
-      firstMissingField =
-        firstMissingField ||
-        productName;
-
-    }
-
-
-    if(!craftValue){
-
-      craft
-        .classList
-        .add(
-          "field-error"
-        );
-
-      firstMissingField =
-        firstMissingField ||
-        craft;
-
-    }
-
-
-    if(!materialValue){
-
-      material
-        .classList
-        .add(
-          "field-error"
-        );
-
-      firstMissingField =
-        firstMissingField ||
-        material;
-
-    }
-
-
-    if(!techniqueValue){
-
-      technique
-        .classList
-        .add(
-          "field-error"
-        );
-
-      firstMissingField =
-        firstMissingField ||
-        technique;
-
-    }
-
-
-    if(!descriptionValue){
-
-      description
-        .classList
-        .add(
-          "field-error"
-        );
-
-      firstMissingField =
-        firstMissingField ||
-        description;
-
-    }
-
-
-
-    /* If something is missing,
-       stay on this page */
-
-    if(firstMissingField){
-
+    if (firstMissingField) {
       firstMissingField.focus();
-
-      firstMissingField
-        .scrollIntoView({
-          behavior:"smooth",
-          block:"center"
-        });
-
+      firstMissingField.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
       return;
-
     }
-
-
 
     /* All required values complete */
 
@@ -1470,7 +1463,20 @@ document
         techniqueValue,
 
       description:
-        descriptionValue
+        descriptionValue,
+
+      category: document.getElementById("category").value.trim(),
+      subcategory: document.getElementById("subcategory").value.trim(),
+      state: document.getElementById("state").value.trim(),
+      region: document.getElementById("region").value.trim(),
+      size: document.getElementById("size").value.trim(),
+      complexity: document.getElementById("complexity").value.trim(),
+      customization: document.getElementById("customization").value.trim(),
+      laborHours: document.getElementById("laborHours").value.trim(),
+      rawMaterialCost: document.getElementById("rawMaterialCost").value.trim(),
+      packagingCost: document.getElementById("packagingCost").value.trim(),
+      transportCost: document.getElementById("transportCost").value.trim(),
+      directCost: document.getElementById("directCost").value.trim()
 
     };
 
