@@ -6,3 +6,4 @@ pandas
 catboost
 gunicorn
 whitenoise
+requests
