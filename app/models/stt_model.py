@@ -4,7 +4,7 @@ from faster_whisper import WhisperModel
 class STTModel:
     def __init__(self):
         self.model = WhisperModel(
-            "small",
+            "tiny",
             device="cpu",
             compute_type="int8"
         )
