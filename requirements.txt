@@ -139,3 +139,8 @@ uvicorn==0.52.4
 yarl==1.24.5
 
 python-dotenv==1.2.3
+
+Django
+pandas
+catboost
+supabase
